@@ -1,0 +1,559 @@
+/*
+ * eEvetype.java
+ *
+ * Created on March 26, 2007, 5:44 PM
+ * Generated on 8.4.2021 13:20
+ *
+ */
+
+package eve.entity;
+
+import data.interfaces.db.AbstractEntity;
+import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Filedata;
+import data.gis.shape.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.Iterator;
+
+import eve.entity.pk.*;
+import eve.interfaces.logicentity.IEvetype;
+import eve.interfaces.entity.pk.*;
+
+/**
+ * Entity class Evetype
+ * 
+ * Attributes: primary key, foreign keys en fields
+ * Attributes: Database independent SQL-construction strings
+ * Conversion methods for java.sql.ResultSet ==> Evetype Entity
+ * 
+ * @author Franky Laseure
+ */
+public class eEvetype extends AbstractEntity implements EntityInterface {
+
+    protected EvetypePK evetypePK;
+    private Market_groupPK market_groupPK;
+    private TypegroupPK typegroupPK;
+    private GraphicPK graphicPK;
+    private java.lang.String name;
+    private boolean published;
+    private java.lang.String description;
+    private double capacity;
+    private long icon;
+    private double mass;
+    private double packaged_volume;
+    private int portion_size;
+    private double radius;
+    private double volume;
+	  
+    public static final String table = "evetype";
+    public static final String SQLWhere1 = "id = :evetype.id:";
+    public static final String SQLSelect1 = "select evetype.* from evetype where " + SQLWhere1;
+    public static final String SQLSelectPKexists = "select count(*) as count from evetype where " + SQLWhere1;
+    public static final String SQLSelectAll = "select evetype.* from evetype";
+	  
+    public String getFieldname(short fieldconstant) {
+        return IEvetype.fieldnames[fieldconstant-1];
+    }
+        
+    public byte getFieldtype(short fieldconstant) {
+        return IEvetype.fieldtypes[fieldconstant-1];
+    }
+        
+    /**
+     * 
+     * @return table name for Evetype
+     */
+    public String getTable() { return table; }
+
+    /**
+     * 
+     * @return SQL where clause for one Evetype (=Primarykey)
+     */
+    public String getSQLWhere1() { return SQLWhere1; };
+
+    /**
+     * 
+     * @return SQL select statement for one Evetype (=Primarykey)
+     */
+    public String getSQLSelect1() { return SQLSelect1; };
+
+    /**
+     * @return Select statement for Primary key, with count field as result
+     * count = 1: exists
+     * count = 0: not found
+     */
+    public String getSQLPKExcists() { return SQLSelectPKexists; };
+    
+    /**
+     * 
+     * @return SQL select statement for all Evetypes
+     */
+    public String getSQLSelectAll() { return SQLSelectAll; };
+
+    /**
+     * 
+     * @return Evetype class name
+     */
+    public String getClassName() { return this.getClass().getName(); };
+	  
+    /** 
+     * Constructor
+     * Creates an empty Evetype entity
+     */
+    public eEvetype() {
+    }
+
+    /**
+     * Constructor
+     * build an empty Evetype entity with initialized field values
+     */
+    public eEvetype(long id) {
+        this.evetypePK = new EvetypePK(id);
+    }
+  
+    /**
+     * Constructor
+     * build an empty Evetype entity with initialized Primarykey parameter
+     * @param evetypePK: Evetype Primarykey
+     */
+    public eEvetype(EvetypePK evetypePK) {
+        this.evetypePK = evetypePK;
+    }
+
+    /**
+     * @return is Evetype Empty ?
+     */
+    public boolean isEmpty() {
+        return this.evetypePK == null;
+    }
+
+    /**
+     * 
+     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     */
+    @Override
+    public Object[][] getKeyFields() {
+        return this.evetypePK.getKeyFields();	  
+    }
+  
+    /**
+     * 
+     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     */
+    @Override
+    public Object[][] getInsertKeyFields() {
+        return this.evetypePK.getInsertKeyFields();	  
+    }
+  
+    /**
+     * 
+     * @return 2 dimentional Object array with all fields (fieldname, value)
+     */
+    public Object[][] getAll() {
+        updates.put(IEvetype.MARKET_GROUP, this.market_groupPK.getId());
+
+        updates.put(IEvetype.TYPEGROUP, this.typegroupPK.getId());
+
+        updates.put(IEvetype.GRAPHIC, this.graphicPK.getId());
+
+        updates.put(IEvetype.NAME, name);
+        updates.put(IEvetype.PUBLISHED, published);
+        updates.put(IEvetype.DESCRIPTION, description);
+        updates.put(IEvetype.CAPACITY, capacity);
+        updates.put(IEvetype.ICON, icon);
+        updates.put(IEvetype.MASS, mass);
+        updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
+        updates.put(IEvetype.PORTION_SIZE, portion_size);
+        updates.put(IEvetype.RADIUS, radius);
+        updates.put(IEvetype.VOLUME, volume);
+        return getAllFields();
+    }
+	
+    /* (non-Javadoc)
+     * @see .interfaces.db.EntityInterface#getKey()
+     */
+    public Object getKey() {
+        return this.getPrimaryKey();
+    }
+  
+    /**
+     * @return Primary Key Object
+     */
+    public EvetypePK getPrimaryKey() {
+        return this.evetypePK;
+    }
+
+    /**
+     * 
+     * @return name value
+     */
+    public java.lang.String getName() {
+        return this.name;
+    }
+
+    /**
+     * set name value
+     * @param name: new value
+     */
+    public void initName(java.lang.String name) {
+        this.name = name;
+    }
+
+    /**
+     * set name value
+     * @param name: new value
+     */
+    public void setName(java.lang.String name) {
+	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
+            updates.put(IEvetype.NAME, name);
+        }
+        this.name = name;
+    }
+
+    /**
+     * 
+     * @return published value
+     */
+    public boolean getPublished() {
+        return this.published;
+    }
+
+    /**
+     * set published value
+     * @param published: new value
+     */
+    public void initPublished(boolean published) {
+        this.published = published;
+    }
+
+    /**
+     * set published value
+     * @param published: new value
+     */
+    public void setPublished(boolean published) {
+	if(published!=this.published) {
+            updates.put(IEvetype.PUBLISHED, published);
+        }
+        this.published = published;
+    }
+
+    /**
+     * 
+     * @return description value
+     */
+    public java.lang.String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * set description value
+     * @param description: new value
+     */
+    public void initDescription(java.lang.String description) {
+        this.description = description;
+    }
+
+    /**
+     * set description value
+     * @param description: new value
+     */
+    public void setDescription(java.lang.String description) {
+	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
+            updates.put(IEvetype.DESCRIPTION, description);
+        }
+        this.description = description;
+    }
+
+    /**
+     * 
+     * @return capacity value
+     */
+    public double getCapacity() {
+        return this.capacity;
+    }
+
+    /**
+     * set capacity value
+     * @param capacity: new value
+     */
+    public void initCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+
+    /**
+     * set capacity value
+     * @param capacity: new value
+     */
+    public void setCapacity(double capacity) {
+	if(capacity!=this.capacity) {
+            updates.put(IEvetype.CAPACITY, capacity);
+        }
+        this.capacity = capacity;
+    }
+
+    /**
+     * 
+     * @return icon value
+     */
+    public long getIcon() {
+        return this.icon;
+    }
+
+    /**
+     * set icon value
+     * @param icon: new value
+     */
+    public void initIcon(long icon) {
+        this.icon = icon;
+    }
+
+    /**
+     * set icon value
+     * @param icon: new value
+     */
+    public void setIcon(long icon) {
+	if(icon!=this.icon) {
+            updates.put(IEvetype.ICON, icon);
+        }
+        this.icon = icon;
+    }
+
+    /**
+     * 
+     * @return mass value
+     */
+    public double getMass() {
+        return this.mass;
+    }
+
+    /**
+     * set mass value
+     * @param mass: new value
+     */
+    public void initMass(double mass) {
+        this.mass = mass;
+    }
+
+    /**
+     * set mass value
+     * @param mass: new value
+     */
+    public void setMass(double mass) {
+	if(mass!=this.mass) {
+            updates.put(IEvetype.MASS, mass);
+        }
+        this.mass = mass;
+    }
+
+    /**
+     * 
+     * @return packaged_volume value
+     */
+    public double getPackaged_volume() {
+        return this.packaged_volume;
+    }
+
+    /**
+     * set packaged_volume value
+     * @param packaged_volume: new value
+     */
+    public void initPackaged_volume(double packaged_volume) {
+        this.packaged_volume = packaged_volume;
+    }
+
+    /**
+     * set packaged_volume value
+     * @param packaged_volume: new value
+     */
+    public void setPackaged_volume(double packaged_volume) {
+	if(packaged_volume!=this.packaged_volume) {
+            updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
+        }
+        this.packaged_volume = packaged_volume;
+    }
+
+    /**
+     * 
+     * @return portion_size value
+     */
+    public int getPortion_size() {
+        return this.portion_size;
+    }
+
+    /**
+     * set portion_size value
+     * @param portion_size: new value
+     */
+    public void initPortion_size(int portion_size) {
+        this.portion_size = portion_size;
+    }
+
+    /**
+     * set portion_size value
+     * @param portion_size: new value
+     */
+    public void setPortion_size(int portion_size) {
+	if(portion_size!=this.portion_size) {
+            updates.put(IEvetype.PORTION_SIZE, portion_size);
+        }
+        this.portion_size = portion_size;
+    }
+
+    /**
+     * 
+     * @return radius value
+     */
+    public double getRadius() {
+        return this.radius;
+    }
+
+    /**
+     * set radius value
+     * @param radius: new value
+     */
+    public void initRadius(double radius) {
+        this.radius = radius;
+    }
+
+    /**
+     * set radius value
+     * @param radius: new value
+     */
+    public void setRadius(double radius) {
+	if(radius!=this.radius) {
+            updates.put(IEvetype.RADIUS, radius);
+        }
+        this.radius = radius;
+    }
+
+    /**
+     * 
+     * @return volume value
+     */
+    public double getVolume() {
+        return this.volume;
+    }
+
+    /**
+     * set volume value
+     * @param volume: new value
+     */
+    public void initVolume(double volume) {
+        this.volume = volume;
+    }
+
+    /**
+     * set volume value
+     * @param volume: new value
+     */
+    public void setVolume(double volume) {
+	if(volume!=this.volume) {
+            updates.put(IEvetype.VOLUME, volume);
+        }
+        this.volume = volume;
+    }
+
+    /**
+     * 
+     * @return foreign key market_groupPK, instance of Market_groupPK
+     */
+    public Market_groupPK getMarket_groupPK() {
+        return this.market_groupPK;
+    }
+
+    /**
+     * set foreign key market_group
+     * @param market_groupPK: instance of Market_groupPK
+     */
+    public void initMarket_groupPK(IMarket_groupPK market_groupPK) {
+        this.market_groupPK = (Market_groupPK)market_groupPK;
+    }
+
+    /**
+     * set foreign key market_group
+     * @param market_groupPK: instance of Market_groupPK
+     */
+    public void setMarket_groupPK(IMarket_groupPK market_groupPK) {
+	if(market_groupPK==null && market_groupPK!=this.market_groupPK || market_groupPK!=null) {
+            if(market_groupPK==null) {
+                updates.put(IEvetype.MARKET_GROUP, null);
+            } else {
+                updates.put(IEvetype.MARKET_GROUP, market_groupPK.getId());
+            }
+        }
+        this.market_groupPK = (Market_groupPK)market_groupPK;
+    }
+
+    /**
+     * 
+     * @return foreign key typegroupPK, instance of TypegroupPK
+     */
+    public TypegroupPK getTypegroupPK() {
+        return this.typegroupPK;
+    }
+
+    /**
+     * set foreign key typegroup
+     * @param typegroupPK: instance of TypegroupPK
+     */
+    public void initTypegroupPK(ITypegroupPK typegroupPK) {
+        this.typegroupPK = (TypegroupPK)typegroupPK;
+    }
+
+    /**
+     * set foreign key typegroup
+     * @param typegroupPK: instance of TypegroupPK
+     */
+    public void setTypegroupPK(ITypegroupPK typegroupPK) {
+	if(typegroupPK==null && typegroupPK!=this.typegroupPK || typegroupPK!=null) {
+            if(typegroupPK==null) {
+                updates.put(IEvetype.TYPEGROUP, null);
+            } else {
+                updates.put(IEvetype.TYPEGROUP, typegroupPK.getId());
+            }
+        }
+        this.typegroupPK = (TypegroupPK)typegroupPK;
+    }
+
+    /**
+     * 
+     * @return foreign key graphicPK, instance of GraphicPK
+     */
+    public GraphicPK getGraphicPK() {
+        return this.graphicPK;
+    }
+
+    /**
+     * set foreign key graphic
+     * @param graphicPK: instance of GraphicPK
+     */
+    public void initGraphicPK(IGraphicPK graphicPK) {
+        this.graphicPK = (GraphicPK)graphicPK;
+    }
+
+    /**
+     * set foreign key graphic
+     * @param graphicPK: instance of GraphicPK
+     */
+    public void setGraphicPK(IGraphicPK graphicPK) {
+	if(graphicPK==null && graphicPK!=this.graphicPK || graphicPK!=null) {
+            if(graphicPK==null) {
+                updates.put(IEvetype.GRAPHIC, null);
+            } else {
+                updates.put(IEvetype.GRAPHIC, graphicPK.getId());
+            }
+        }
+        this.graphicPK = (GraphicPK)graphicPK;
+    }
+
+    /**
+     * 
+     * @return Primarykey string value
+     */
+    public String toString() {
+        return this.getPrimaryKey().getKeystring();
+    }
+}
