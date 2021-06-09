@@ -38,6 +38,8 @@ public interface WSIEvetype {
 
     @WebMethod void delete4graphic(String json);
 
+    @WebMethod String getEvetypes4order_history(String json);
+
 
 }
 

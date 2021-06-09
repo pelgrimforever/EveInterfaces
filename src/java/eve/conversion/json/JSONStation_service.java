@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.Station_servicePK;
 import eve.interfaces.entity.pk.IStation_servicePK;
 import eve.interfaces.logicentity.IStation_service;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONStation_service {

@@ -26,6 +26,10 @@ public interface WSIRace {
 
     @WebMethod void deleteRace(String json);
 
+    @WebMethod String getRaces4faction(String json);
+
+    @WebMethod void delete4faction(String json);
+
 
 }
 

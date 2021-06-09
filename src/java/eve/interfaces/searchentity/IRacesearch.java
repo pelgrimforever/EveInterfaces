@@ -2,7 +2,7 @@
  * IRacesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -72,18 +72,9 @@ public interface IRacesearch extends ITablesearch {
 	public void description(String[] values, byte compare, byte andor);
 	
 	/**
-	 * add Numeric search values for field alliance, default OR operator is used
-	 * @param values: Array of numeric search values
-	 * @param operators: Array of byte contants for comparison (= < <= > >=)
-	 */
-	public void alliance(Double[] values, byte[] operators);
-	
-	/**
-	 * add Numeric search values for field alliance
-	 * @param values: Array of String search values
-	 * @param operators: Array of byte contants for comparison (= < <= > >=)
-	 * @param andor; AND/OR constant
-	 */
-	public void alliance(Double[] values, byte[] operators, byte andor);
+	* set subsearch faction tablesearch
+	* @param factionsearch: IFactionsearch
+	*/
+	public void faction(IFactionsearch factionsearch);
 	
 }

@@ -2,7 +2,7 @@
  * Region.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -11,6 +11,7 @@ package eve.logicentity;
 import data.gis.shape.*;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.entity.pk.*;
 import eve.interfaces.entity.pk.IRegionPK;
 import eve.interfaces.logicentity.*;
@@ -40,7 +41,11 @@ public class Region extends eve.entity.eRegion implements IRegion {
 
 //Custom code, do not change this line
     public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
+    public static final String SQLwhereaccess = "not noaccess";
+    public static final String SQLSelectAllaccess = SQLSelect + " where " + SQLwhereaccess + OrderBy;
+
+    public static final String updateNoaccess1 = "update region set noaccess = :noaccess: where id not in (select region from constellation where noaccess = :constellationnoaccess: group by region)";
+    public static final String updateNoaccess2 = "update region set noaccess = :noaccess: where id in (select region from constellation where noaccess = :constellationnoaccess: group by region)";
 //Custom code, do not change this line
 
 

@@ -2,7 +2,7 @@
  * IBLsystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -168,6 +168,13 @@ public interface IBLsystem extends Serializable {
     public void trans_deleteSystem(ISystem system) throws CustomException;
     
     /**
+     * @param security_islandPK: foreign key for Security_island
+     * @return all System Entity objects for Security_island
+     * @throws eve.general.exception.CustomException
+     */
+    public ArrayList getSystems4security_island(ISecurity_islandPK security_islandPK) throws CustomException;
+
+    /**
      * @param constellationPK: foreign key for Constellation
      * @return all System Entity objects for Constellation
      * @throws eve.general.exception.CustomException
@@ -175,6 +182,27 @@ public interface IBLsystem extends Serializable {
     public ArrayList getSystems4constellation(IConstellationPK constellationPK) throws CustomException;
 
     
+    /**
+     * @param systemjumpsPK: parent Systemjumps for child object System Entity
+     * @return child System Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public ISystem getSystemjumpssystem_end(ISystemjumpsPK systemjumpsPK) throws CustomException;
+
+    /**
+     * @param systemjumpsPK: parent Systemjumps for child object System Entity
+     * @return child System Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public ISystem getSystemjumpssystem_start(ISystemjumpsPK systemjumpsPK) throws CustomException;
+
+    /**
+     * @param routePK: parent Route for child object System Entity
+     * @return child System Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public ISystem getRoute(IRoutePK routePK) throws CustomException;
+
 //Custom code, do not change this line
 //Custom code, do not change this line
 

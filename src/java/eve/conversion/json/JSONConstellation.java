@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.ConstellationPK;
 import eve.interfaces.entity.pk.IConstellationPK;
 import eve.interfaces.logicentity.IConstellation;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONConstellation {
@@ -54,6 +55,7 @@ public class JSONConstellation {
         json.put("PK", toJSON(constellation.getPrimaryKey()));
         json.put("regionPK", JSONRegion.toJSON(constellation.getRegionPK()));
         json.put("name", constellation.getName());
+        json.put("noaccess", constellation.getNoaccess());
 //Custom code, do not change this line
 //Custom code, do not change this line
         return json;
@@ -96,6 +98,12 @@ public class JSONConstellation {
             if(constellationsearch.getRegionsearch()!=null && constellationsearch.getRegionsearch().used()) {
                 kss.put("regionsearcher", JSONRegion.toJSON((Regionsearch)constellationsearch.getRegionsearch()));
             }
+            if(constellationsearch.getConstellation_neighbourneighboursearch()!=null && constellationsearch.getConstellation_neighbourneighboursearch().used()) {
+                kss.put("constellation_neighbourNeighboursearcher", JSONConstellation_neighbour.toJSON((Constellation_neighboursearch)constellationsearch.getConstellation_neighbourneighboursearch()));
+            }
+            if(constellationsearch.getConstellation_neighbourconstellationsearch()!=null && constellationsearch.getConstellation_neighbourconstellationsearch().used()) {
+                kss.put("constellation_neighbourConstellationsearcher", JSONConstellation_neighbour.toJSON((Constellation_neighboursearch)constellationsearch.getConstellation_neighbourconstellationsearch()));
+            }
             json.put("keysearch", kss);
         }
         return json;
@@ -131,6 +139,11 @@ public class JSONConstellation {
             byte andor = JSONConversion.getbyte(field, "andor");
             constellationsearch.name(valuearray, compareoperator, andor);
         }
+        field = (JSONObject)fss.get("noaccess");
+        if(field!=null) {
+            boolean value = JSONConversion.getBooleanvalue(field);
+            constellationsearch.noaccess(value);
+        }
         JSONObject kss = (JSONObject)json.get("keysearch");
         JSONArray keysearch;
         keysearch = (JSONArray)kss.get("regionsearcher");
@@ -138,6 +151,20 @@ public class JSONConstellation {
             for(int i=0; i<keysearch.size(); i++) {
                 Regionsearch regionsearch = JSONRegion.toRegionsearch((JSONObject)keysearch.get(i));
                 constellationsearch.region(regionsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("constellation_neighbourNeighboursearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Constellation_neighboursearch constellation_neighbourNeighboursearch = JSONConstellation_neighbour.toConstellation_neighboursearch((JSONObject)keysearch.get(i));
+                constellationsearch.constellation_neighbourNeighbour(constellation_neighbourNeighboursearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("constellation_neighbourConstellationsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Constellation_neighboursearch constellation_neighbourConstellationsearch = JSONConstellation_neighbour.toConstellation_neighboursearch((JSONObject)keysearch.get(i));
+                constellationsearch.constellation_neighbourConstellation(constellation_neighbourConstellationsearch);
             }
         }
         return constellationsearch;
@@ -160,12 +187,14 @@ public class JSONConstellation {
     public static void updateConstellation(IConstellation constellation, JSONObject json) {
         constellation.setRegionPK(JSONRegion.toRegionPK((JSONObject)json.get("regionPK")));
         constellation.setName(JSONConversion.getString(json, "name"));
+        constellation.setNoaccess(JSONConversion.getboolean(json, "noaccess"));
     }
 
     public static Constellation initConstellation(JSONObject json) {
         Constellation constellation = new Constellation(toConstellationPK((JSONObject)json.get("PK")));
         constellation.initRegionPK(JSONRegion.toRegionPK((JSONObject)json.get("regionPK")));
         constellation.initName(JSONConversion.getString(json, "name"));
+        constellation.initNoaccess(JSONConversion.getboolean(json, "noaccess"));
         return constellation;
     }
 }

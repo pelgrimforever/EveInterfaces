@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.Market_groupPK;
 import eve.interfaces.entity.pk.IMarket_groupPK;
 import eve.interfaces.logicentity.IMarket_group;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONMarket_group {

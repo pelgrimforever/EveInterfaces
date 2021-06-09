@@ -30,6 +30,10 @@ public interface WSIConstellation {
 
     @WebMethod void delete4region(String json);
 
+    @WebMethod String getConstellations4constellation_neighbourNeighbour(String json);
+
+    @WebMethod String getConstellations4constellation_neighbourConstellation(String json);
+
 
 }
 

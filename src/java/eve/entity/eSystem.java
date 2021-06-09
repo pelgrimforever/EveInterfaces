@@ -2,7 +2,7 @@
  * eSystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.EntityInterface;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
+import data.json.piJson;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -34,11 +35,15 @@ import eve.interfaces.entity.pk.*;
 public class eSystem extends AbstractEntity implements EntityInterface {
 
     protected SystemPK systemPK;
+    private Security_islandPK security_islandPK;
     private ConstellationPK constellationPK;
     private java.lang.String name;
     private java.lang.String security_class;
     private double security_status;
     private long star_id;
+    private boolean noaccess;
+    private boolean isconstellationborder;
+    private boolean isregionborder;
 	  
     public static final String table = "system";
     public static final String SQLWhere1 = "id = :system.id:";
@@ -145,12 +150,17 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      * @return 2 dimentional Object array with all fields (fieldname, value)
      */
     public Object[][] getAll() {
+        updates.put(ISystem.SECURITY_ISLAND, this.security_islandPK.getId());
+
         updates.put(ISystem.CONSTELLATION, this.constellationPK.getId());
 
         updates.put(ISystem.NAME, name);
         updates.put(ISystem.SECURITY_CLASS, security_class);
         updates.put(ISystem.SECURITY_STATUS, security_status);
         updates.put(ISystem.STAR_ID, star_id);
+        updates.put(ISystem.NOACCESS, noaccess);
+        updates.put(ISystem.ISCONSTELLATIONBORDER, isconstellationborder);
+        updates.put(ISystem.ISREGIONBORDER, isregionborder);
         return getAllFields();
     }
 	
@@ -243,9 +253,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      * @param security_status: new value
      */
     public void setSecurity_status(double security_status) {
-	if(security_status!=this.security_status) {
-            updates.put(ISystem.SECURITY_STATUS, security_status);
-        }
+        updates.put(ISystem.SECURITY_STATUS, security_status);
         this.security_status = security_status;
     }
 
@@ -270,10 +278,114 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      * @param star_id: new value
      */
     public void setStar_id(long star_id) {
-	if(star_id!=this.star_id) {
-            updates.put(ISystem.STAR_ID, star_id);
-        }
+        updates.put(ISystem.STAR_ID, star_id);
         this.star_id = star_id;
+    }
+
+    /**
+     * 
+     * @return noaccess value
+     */
+    public boolean getNoaccess() {
+        return this.noaccess;
+    }
+
+    /**
+     * set noaccess value
+     * @param noaccess: new value
+     */
+    public void initNoaccess(boolean noaccess) {
+        this.noaccess = noaccess;
+    }
+
+    /**
+     * set noaccess value
+     * @param noaccess: new value
+     */
+    public void setNoaccess(boolean noaccess) {
+        updates.put(ISystem.NOACCESS, noaccess);
+        this.noaccess = noaccess;
+    }
+
+    /**
+     * 
+     * @return isconstellationborder value
+     */
+    public boolean getIsconstellationborder() {
+        return this.isconstellationborder;
+    }
+
+    /**
+     * set isconstellationborder value
+     * @param isconstellationborder: new value
+     */
+    public void initIsconstellationborder(boolean isconstellationborder) {
+        this.isconstellationborder = isconstellationborder;
+    }
+
+    /**
+     * set isconstellationborder value
+     * @param isconstellationborder: new value
+     */
+    public void setIsconstellationborder(boolean isconstellationborder) {
+        updates.put(ISystem.ISCONSTELLATIONBORDER, isconstellationborder);
+        this.isconstellationborder = isconstellationborder;
+    }
+
+    /**
+     * 
+     * @return isregionborder value
+     */
+    public boolean getIsregionborder() {
+        return this.isregionborder;
+    }
+
+    /**
+     * set isregionborder value
+     * @param isregionborder: new value
+     */
+    public void initIsregionborder(boolean isregionborder) {
+        this.isregionborder = isregionborder;
+    }
+
+    /**
+     * set isregionborder value
+     * @param isregionborder: new value
+     */
+    public void setIsregionborder(boolean isregionborder) {
+        updates.put(ISystem.ISREGIONBORDER, isregionborder);
+        this.isregionborder = isregionborder;
+    }
+
+    /**
+     * 
+     * @return foreign key security_islandPK, instance of Security_islandPK
+     */
+    public Security_islandPK getSecurity_islandPK() {
+        return this.security_islandPK;
+    }
+
+    /**
+     * set foreign key security_island
+     * @param security_islandPK: instance of Security_islandPK
+     */
+    public void initSecurity_islandPK(ISecurity_islandPK security_islandPK) {
+        this.security_islandPK = (Security_islandPK)security_islandPK;
+    }
+
+    /**
+     * set foreign key security_island
+     * @param security_islandPK: instance of Security_islandPK
+     */
+    public void setSecurity_islandPK(ISecurity_islandPK security_islandPK) {
+	if(security_islandPK==null && security_islandPK!=this.security_islandPK || security_islandPK!=null) {
+            if(security_islandPK==null) {
+                updates.put(ISystem.SECURITY_ISLAND, null);
+            } else {
+                updates.put(ISystem.SECURITY_ISLAND, security_islandPK.getId());
+            }
+        }
+        this.security_islandPK = (Security_islandPK)security_islandPK;
     }
 
     /**

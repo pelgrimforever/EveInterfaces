@@ -2,7 +2,7 @@
  * IBLrace.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -167,6 +167,13 @@ public interface IBLrace extends Serializable {
      */
     public void trans_deleteRace(IRace race) throws CustomException;
     
+    /**
+     * @param factionPK: foreign key for Faction
+     * @return all Race Entity objects for Faction
+     * @throws eve.general.exception.CustomException
+     */
+    public ArrayList getRaces4faction(IFactionPK factionPK) throws CustomException;
+
     
 //Custom code, do not change this line
 //Custom code, do not change this line

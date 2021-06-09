@@ -26,6 +26,12 @@ public interface WSIRegion {
 
     @WebMethod void deleteRegion(String json);
 
+    @WebMethod String getRegions4order_history(String json);
+
+    @WebMethod String getRegions4region_neighbourRegion(String json);
+
+    @WebMethod String getRegions4region_neighbourNeighbour(String json);
+
 
 }
 

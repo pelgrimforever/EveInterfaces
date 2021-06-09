@@ -2,7 +2,7 @@
  * eRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.EntityInterface;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
+import data.json.piJson;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -35,6 +36,8 @@ public class eRegion extends AbstractEntity implements EntityInterface {
 
     protected RegionPK regionPK;
     private java.lang.String name;
+    private boolean noaccess;
+    private int orderpages;
 	  
     public static final String table = "region";
     public static final String SQLWhere1 = "id = :region.id:";
@@ -142,6 +145,8 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public Object[][] getAll() {
         updates.put(IRegion.NAME, name);
+        updates.put(IRegion.NOACCESS, noaccess);
+        updates.put(IRegion.ORDERPAGES, orderpages);
         return getAllFields();
     }
 	
@@ -184,6 +189,56 @@ public class eRegion extends AbstractEntity implements EntityInterface {
             updates.put(IRegion.NAME, name);
         }
         this.name = name;
+    }
+
+    /**
+     * 
+     * @return noaccess value
+     */
+    public boolean getNoaccess() {
+        return this.noaccess;
+    }
+
+    /**
+     * set noaccess value
+     * @param noaccess: new value
+     */
+    public void initNoaccess(boolean noaccess) {
+        this.noaccess = noaccess;
+    }
+
+    /**
+     * set noaccess value
+     * @param noaccess: new value
+     */
+    public void setNoaccess(boolean noaccess) {
+        updates.put(IRegion.NOACCESS, noaccess);
+        this.noaccess = noaccess;
+    }
+
+    /**
+     * 
+     * @return orderpages value
+     */
+    public int getOrderpages() {
+        return this.orderpages;
+    }
+
+    /**
+     * set orderpages value
+     * @param orderpages: new value
+     */
+    public void initOrderpages(int orderpages) {
+        this.orderpages = orderpages;
+    }
+
+    /**
+     * set orderpages value
+     * @param orderpages: new value
+     */
+    public void setOrderpages(int orderpages) {
+        updates.put(IRegion.ORDERPAGES, orderpages);
+        this.orderpages = orderpages;
     }
 
     /**

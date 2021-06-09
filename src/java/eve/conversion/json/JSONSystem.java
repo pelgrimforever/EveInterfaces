@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.SystemPK;
 import eve.interfaces.entity.pk.ISystemPK;
 import eve.interfaces.logicentity.ISystem;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONSystem {
@@ -52,11 +53,15 @@ public class JSONSystem {
     public static JSONObject toJSON(ISystem system) {
         JSONObject json = new JSONObject();
         json.put("PK", toJSON(system.getPrimaryKey()));
+        json.put("security_islandPK", JSONSecurity_island.toJSON(system.getSecurity_islandPK()));
         json.put("constellationPK", JSONConstellation.toJSON(system.getConstellationPK()));
         json.put("name", system.getName());
         json.put("security_class", system.getSecurity_class());
         json.put("security_status", system.getSecurity_status());
         json.put("star_id", String.valueOf(system.getStar_id()));
+        json.put("noaccess", system.getNoaccess());
+        json.put("isconstellationborder", system.getIsconstellationborder());
+        json.put("isregionborder", system.getIsregionborder());
 //Custom code, do not change this line
 //Custom code, do not change this line
         return json;
@@ -96,8 +101,23 @@ public class JSONSystem {
             }
             json.put("fields", fss);
             JSONObject kss = new JSONObject();
+            if(systemsearch.getSecurity_islandsearch()!=null && systemsearch.getSecurity_islandsearch().used()) {
+                kss.put("security_islandsearcher", JSONSecurity_island.toJSON((Security_islandsearch)systemsearch.getSecurity_islandsearch()));
+            }
             if(systemsearch.getConstellationsearch()!=null && systemsearch.getConstellationsearch().used()) {
                 kss.put("constellationsearcher", JSONConstellation.toJSON((Constellationsearch)systemsearch.getConstellationsearch()));
+            }
+            if(systemsearch.getSystemjumpssystem_endsearch()!=null && systemsearch.getSystemjumpssystem_endsearch().used()) {
+                kss.put("systemjumpsSystem_endsearcher", JSONSystemjumps.toJSON((Systemjumpssearch)systemsearch.getSystemjumpssystem_endsearch()));
+            }
+            if(systemsearch.getSystemjumpssystem_startsearch()!=null && systemsearch.getSystemjumpssystem_startsearch().used()) {
+                kss.put("systemjumpsSystem_startsearcher", JSONSystemjumps.toJSON((Systemjumpssearch)systemsearch.getSystemjumpssystem_startsearch()));
+            }
+            if(systemsearch.getRoutesearch()!=null && systemsearch.getRoutesearch().used()) {
+                kss.put("routesearcher", JSONRoute.toJSON((Routesearch)systemsearch.getRoutesearch()));
+            }
+            if(systemsearch.getRoutetypesearch()!=null && systemsearch.getRoutetypesearch().used()) {
+                kss.put("routetypesearcher", JSONRoute.toJSON((Routesearch)systemsearch.getRoutetypesearch()));
             }
             json.put("keysearch", kss);
         }
@@ -155,13 +175,63 @@ public class JSONSystem {
             byte andor = JSONConversion.getbyte(field, "andor");
             systemsearch.star_id(valuearray, operators, andor);
         }
+        field = (JSONObject)fss.get("noaccess");
+        if(field!=null) {
+            boolean value = JSONConversion.getBooleanvalue(field);
+            systemsearch.noaccess(value);
+        }
+        field = (JSONObject)fss.get("isconstellationborder");
+        if(field!=null) {
+            boolean value = JSONConversion.getBooleanvalue(field);
+            systemsearch.isconstellationborder(value);
+        }
+        field = (JSONObject)fss.get("isregionborder");
+        if(field!=null) {
+            boolean value = JSONConversion.getBooleanvalue(field);
+            systemsearch.isregionborder(value);
+        }
         JSONObject kss = (JSONObject)json.get("keysearch");
         JSONArray keysearch;
+        keysearch = (JSONArray)kss.get("security_islandsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Security_islandsearch security_islandsearch = JSONSecurity_island.toSecurity_islandsearch((JSONObject)keysearch.get(i));
+                systemsearch.security_island(security_islandsearch);
+            }
+        }
         keysearch = (JSONArray)kss.get("constellationsearcher");
         if(keysearch!=null) {
             for(int i=0; i<keysearch.size(); i++) {
                 Constellationsearch constellationsearch = JSONConstellation.toConstellationsearch((JSONObject)keysearch.get(i));
                 systemsearch.constellation(constellationsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemjumpsSystem_endsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemjumpssearch systemjumpsSystem_endsearch = JSONSystemjumps.toSystemjumpssearch((JSONObject)keysearch.get(i));
+                systemsearch.systemjumpsSystem_end(systemjumpsSystem_endsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemjumpsSystem_startsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemjumpssearch systemjumpsSystem_startsearch = JSONSystemjumps.toSystemjumpssearch((JSONObject)keysearch.get(i));
+                systemsearch.systemjumpsSystem_start(systemjumpsSystem_startsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("routesearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Routesearch routesearch = JSONRoute.toRoutesearch((JSONObject)keysearch.get(i));
+                systemsearch.route(routesearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("routetypesearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Routetypesearch routetypesearch = JSONRoutetype.toRoutetypesearch((JSONObject)keysearch.get(i));
+                systemsearch.routetype(routetypesearch);
             }
         }
         return systemsearch;
@@ -182,20 +252,28 @@ public class JSONSystem {
     }
 
     public static void updateSystem(ISystem system, JSONObject json) {
+        system.setSecurity_islandPK(JSONSecurity_island.toSecurity_islandPK((JSONObject)json.get("security_islandPK")));
         system.setConstellationPK(JSONConstellation.toConstellationPK((JSONObject)json.get("constellationPK")));
         system.setName(JSONConversion.getString(json, "name"));
         system.setSecurity_class(JSONConversion.getString(json, "security_class"));
         system.setSecurity_status(JSONConversion.getdouble(json, "security_status"));
         system.setStar_id(JSONConversion.getlong(json, "star_id"));
+        system.setNoaccess(JSONConversion.getboolean(json, "noaccess"));
+        system.setIsconstellationborder(JSONConversion.getboolean(json, "isconstellationborder"));
+        system.setIsregionborder(JSONConversion.getboolean(json, "isregionborder"));
     }
 
     public static System initSystem(JSONObject json) {
         System system = new System(toSystemPK((JSONObject)json.get("PK")));
+        system.initSecurity_islandPK(JSONSecurity_island.toSecurity_islandPK((JSONObject)json.get("security_islandPK")));
         system.initConstellationPK(JSONConstellation.toConstellationPK((JSONObject)json.get("constellationPK")));
         system.initName(JSONConversion.getString(json, "name"));
         system.initSecurity_class(JSONConversion.getString(json, "security_class"));
         system.initSecurity_status(JSONConversion.getdouble(json, "security_status"));
         system.initStar_id(JSONConversion.getlong(json, "star_id"));
+        system.initNoaccess(JSONConversion.getboolean(json, "noaccess"));
+        system.initIsconstellationborder(JSONConversion.getboolean(json, "isconstellationborder"));
+        system.initIsregionborder(JSONConversion.getboolean(json, "isregionborder"));
         return system;
     }
 }

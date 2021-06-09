@@ -2,7 +2,7 @@
  * eMarket_group.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.EntityInterface;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
+import data.json.piJson;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;

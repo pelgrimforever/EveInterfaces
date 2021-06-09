@@ -2,7 +2,7 @@
  * Graphic.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -11,6 +11,7 @@ package eve.logicentity;
 import data.gis.shape.*;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.entity.pk.*;
 import eve.interfaces.entity.pk.IGraphicPK;
 import eve.interfaces.logicentity.*;

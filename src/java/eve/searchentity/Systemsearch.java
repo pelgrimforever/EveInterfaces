@@ -2,7 +2,7 @@
  * Systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -30,7 +30,15 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Stringsearch security_class = new Stringsearch("system.security_class");
     Numbersearch security_status = new Numbersearch("system.security_status");
     Numbersearch star_id = new Numbersearch("system.star_id");
+    Booleansearch noaccess = new Booleansearch("system.noaccess");
+    Booleansearch isconstellationborder = new Booleansearch("system.isconstellationborder");
+    Booleansearch isregionborder = new Booleansearch("system.isregionborder");
+    Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", ISystem.security_islandPKfields, ISystem.security_islandFKfields);
     Foreignkeysearch constellationsearcher = new Foreignkeysearch("constellation", ISystem.constellationPKfields, ISystem.constellationFKfields);
+    Primarykeysearch systemjumpsSystem_endsearcher = new Primarykeysearch(":extablename_o:", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
+    Primarykeysearch systemjumpsSystem_startsearcher = new Primarykeysearch(":extablename_o:", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
+    Primarykeysearch routesearcher = new Primarykeysearch(":extablename_o:", IRoute.systemPKfields, IRoute.systemFKfields);
+    Relationalkeysearch routetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
 
     /**
      * Constructor
@@ -60,7 +68,15 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
         addFieldsearcher(security_class);
         addFieldsearcher(security_status);
         addFieldsearcher(star_id);
+        addFieldsearcher(noaccess);
+        addFieldsearcher(isconstellationborder);
+        addFieldsearcher(isregionborder);
+        addKeysearcher(security_islandsearcher);
         addKeysearcher(constellationsearcher);
+        addKeysearcher(systemjumpsSystem_endsearcher);
+        addKeysearcher(systemjumpsSystem_startsearcher);
+        addKeysearcher(routesearcher);
+        addKeysearcher(routetypesearcher);
     }
 
     /**
@@ -172,6 +188,59 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
+     * add Boolean search values for field noaccess
+     * @param value: true or false
+     */
+    public void noaccess(Boolean value) {
+        addBooleanvalue(noaccess, value);
+    }
+    
+    /**
+     * add Boolean search values for field isconstellationborder
+     * @param value: true or false
+     */
+    public void isconstellationborder(Boolean value) {
+        addBooleanvalue(isconstellationborder, value);
+    }
+    
+    /**
+     * add Boolean search values for field isregionborder
+     * @param value: true or false
+     */
+    public void isregionborder(Boolean value) {
+        addBooleanvalue(isregionborder, value);
+    }
+    
+    /**
+     * set subsearch security_island tablesearch
+     * @param security_islandsearch: ISecurity_islandsearch
+     */
+    public void security_island(ISecurity_islandsearch security_islandsearch) {
+        security_islandsearcher.setTablesearch(security_islandsearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public ISecurity_islandsearch getSecurity_islandsearch() {
+        if(security_islandsearcher.used()) {
+            return (ISecurity_islandsearch)security_islandsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * force to return inner join statement
+     * ignore if security_islandsearcher is not used
+     * @return inner join statement
+     */
+    public String getSecurity_islandInnerjoin() {
+        return security_islandsearcher.getInnerjoin();
+    }
+
+    /**
      * set subsearch constellation tablesearch
      * @param constellationsearch: IConstellationsearch
      */
@@ -198,6 +267,86 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
      */
     public String getConstellationInnerjoin() {
         return constellationsearcher.getInnerjoin();
+    }
+
+    /**
+     * set subsearch systemjumps tablesearch
+     * @param systemjumpssearch: ISystemjumpssearch
+     */
+    public void systemjumpsSystem_end(ISystemjumpssearch systemjumpssearch) {
+        systemjumpsSystem_endsearcher.setTablesearch(systemjumpssearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public ISystemjumpssearch getSystemjumpssystem_endsearch() {
+        if(systemjumpsSystem_endsearcher.used()) {
+            return (ISystemjumpssearch)systemjumpsSystem_endsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set subsearch systemjumps tablesearch
+     * @param systemjumpssearch: ISystemjumpssearch
+     */
+    public void systemjumpsSystem_start(ISystemjumpssearch systemjumpssearch) {
+        systemjumpsSystem_startsearcher.setTablesearch(systemjumpssearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public ISystemjumpssearch getSystemjumpssystem_startsearch() {
+        if(systemjumpsSystem_startsearcher.used()) {
+            return (ISystemjumpssearch)systemjumpsSystem_startsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set subsearch route tablesearch
+     * @param routesearch: IRoutesearch
+     */
+    public void route(IRoutesearch routesearch) {
+        routesearcher.setTablesearch(routesearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public IRoutesearch getRoutesearch() {
+        if(routesearcher.used()) {
+            return (IRoutesearch)routesearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set relational subsearch routetype tablesearch
+     * @param routetypesearch: IRoutetypesearch
+     */
+    public void routetype(IRoutetypesearch routetypesearch) {
+        routetypesearcher.setTablesearch(routetypesearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public IRoutetypesearch getRoutetypesearch() {
+        if(routetypesearcher.used()) {
+            return (IRoutetypesearch)routetypesearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
     }
 
 }

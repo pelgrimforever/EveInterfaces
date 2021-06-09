@@ -2,7 +2,7 @@
  * Constellation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -11,6 +11,7 @@ package eve.logicentity;
 import data.gis.shape.*;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.entity.pk.*;
 import eve.interfaces.entity.pk.IConstellationPK;
 import eve.interfaces.logicentity.*;
@@ -42,10 +43,13 @@ public class Constellation extends eve.entity.eConstellation implements IConstel
 //Custom code, do not change this line
     public static final String OrderBy = " order by id";
     public static final String SQLSelectAll = SQLSelect + OrderBy;
+    
+    public static final String updateNoaccess1 = "update constellation set noaccess = :noaccess: where id not in (select constellation from system where noaccess = :systemnoaccess: group by constellation)";
+    public static final String updateNoaccess2 = "update constellation set noaccess = :noaccess: where id in (select constellation from system where noaccess = :systemnoaccess: group by constellation)";
 //Custom code, do not change this line
 
     public static final String SQLSelect4region = "select * from constellation where " + SQLWhereregion + OrderBy;
-    public static final String SQLDelete4region = "delete from constellation where " + SQLWhereregion + OrderBy;
+    public static final String SQLDelete4region = "delete from constellation where " + SQLWhereregion;
 
     /**
      * Constructor

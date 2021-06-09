@@ -2,7 +2,7 @@
  * Typegroup.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -11,6 +11,7 @@ package eve.logicentity;
 import data.gis.shape.*;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.entity.pk.*;
 import eve.interfaces.entity.pk.ITypegroupPK;
 import eve.interfaces.logicentity.*;
@@ -42,10 +43,11 @@ public class Typegroup extends eve.entity.eTypegroup implements ITypegroup {
 //Custom code, do not change this line
     public static final String OrderBy = " order by id";
     public static final String SQLSelectAll = SQLSelect + OrderBy;
+    public static final String SQLSelect4categoryCount = "select count(*) as count from typegroup where " + SQLWherecategory;
 //Custom code, do not change this line
 
     public static final String SQLSelect4category = "select * from typegroup where " + SQLWherecategory + OrderBy;
-    public static final String SQLDelete4category = "delete from typegroup where " + SQLWherecategory + OrderBy;
+    public static final String SQLDelete4category = "delete from typegroup where " + SQLWherecategory;
 
     /**
      * Constructor

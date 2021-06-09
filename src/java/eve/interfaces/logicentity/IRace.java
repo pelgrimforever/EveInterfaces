@@ -2,7 +2,7 @@
  * IRace.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.gis.shape.*;
 import data.interfaces.Datatypes;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.interfaces.entity.pk.*;
 import eve.entity.pk.*;
 import java.awt.image.BufferedImage;
@@ -35,15 +36,17 @@ public interface IRace extends LogicEntity {
     public static short ID = 1;
     public static short NAME = 2;
     public static short DESCRIPTION = 3;
-    public static short ALLIANCE = 4;
+    public static short FACTION = 4;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 30;
     public static final int SIZE_DESCRIPTION = 2147483647;
-    public static final int SIZE_ALLIANCE = 19;
-    public static final String[] fieldnames = { "id", "name", "description", "alliance" };
+    public static final int SIZE_FACTION = 19;
+    public static final String[] fieldnames = { "id", "name", "description", "faction" };
     public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_String, Datatypes.type_long };
 
+    public static final String[] factionPKfields = { "faction.id" };
+    public static final String[] factionFKfields = { "race.faction" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -75,15 +78,15 @@ public interface IRace extends LogicEntity {
 
     /**
      * 
-     * @return alliance value
+     * @return foreign key factionPK, instance of FactionPK
      */
-    public long getAlliance();
+    public IFactionPK getFactionPK();
 
     /**
-     * set alliance value
-     * @param alliance: new value
+     * set foreign key faction
+     * @param factionPK: instance of FactionPK
      */
-    public void setAlliance(long alliance);
+    public void setFactionPK(IFactionPK factionPK);
 
     
 //Custom code, do not change this line

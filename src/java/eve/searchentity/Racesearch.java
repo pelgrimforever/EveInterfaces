@@ -2,7 +2,7 @@
  * Racesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -28,7 +28,7 @@ public class Racesearch extends Tablesearch implements IRacesearch {
     Numbersearch id = new Numbersearch("race.id");
     Stringsearch name = new Stringsearch("race.name");
     Stringsearch description = new Stringsearch("race.description");
-    Numbersearch alliance = new Numbersearch("race.alliance");
+    Foreignkeysearch factionsearcher = new Foreignkeysearch("faction", IRace.factionPKfields, IRace.factionFKfields);
 
     /**
      * Constructor
@@ -56,7 +56,7 @@ public class Racesearch extends Tablesearch implements IRacesearch {
         addFieldsearcher(id);
         addFieldsearcher(name);
         addFieldsearcher(description);
-        addFieldsearcher(alliance);
+        addKeysearcher(factionsearcher);
     }
 
     /**
@@ -128,23 +128,32 @@ public class Racesearch extends Tablesearch implements IRacesearch {
     }
     
     /**
-     * add Numeric search values for field alliance, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * set subsearch faction tablesearch
+     * @param factionsearch: IFactionsearch
      */
-    public void alliance(Double[] values, byte[] operators) {
-        addNumbervalues(alliance, values, operators);
+    public void faction(IFactionsearch factionsearch) {
+        factionsearcher.setTablesearch(factionsearch);
     }
     
     /**
-     * add Numeric search values for field alliance
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
+     * 
+     * @return Tablesearch for Race
      */
-    public void alliance(Double[] values, byte[] operators, byte andor) {
-        addNumbervalues(alliance, values, operators);
-        alliance.setAndoroperator(andor);
+    public IFactionsearch getFactionsearch() {
+        if(factionsearcher.used()) {
+            return (IFactionsearch)factionsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
     }
-    
+
+    /**
+     * force to return inner join statement
+     * ignore if factionsearcher is not used
+     * @return inner join statement
+     */
+    public String getFactionInnerjoin() {
+        return factionsearcher.getInnerjoin();
+    }
+
 }

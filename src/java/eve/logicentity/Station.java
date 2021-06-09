@@ -2,7 +2,7 @@
  * Station.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -11,6 +11,7 @@ package eve.logicentity;
 import data.gis.shape.*;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.entity.pk.*;
 import eve.interfaces.entity.pk.IStationPK;
 import eve.interfaces.logicentity.*;
@@ -49,11 +50,11 @@ public class Station extends eve.entity.eStation implements IStation {
 //Custom code, do not change this line
 
     public static final String SQLSelect4race = "select * from station where " + SQLWhererace + OrderBy;
-    public static final String SQLDelete4race = "delete from station where " + SQLWhererace + OrderBy;
+    public static final String SQLDelete4race = "delete from station where " + SQLWhererace;
     public static final String SQLSelect4evetype = "select * from station where " + SQLWhereevetype + OrderBy;
-    public static final String SQLDelete4evetype = "delete from station where " + SQLWhereevetype + OrderBy;
+    public static final String SQLDelete4evetype = "delete from station where " + SQLWhereevetype;
     public static final String SQLSelect4system = "select * from station where " + SQLWheresystem + OrderBy;
-    public static final String SQLDelete4system = "delete from station where " + SQLWheresystem + OrderBy;
+    public static final String SQLDelete4system = "delete from station where " + SQLWheresystem;
 
     /**
      * Constructor

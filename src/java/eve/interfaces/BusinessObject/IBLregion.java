@@ -2,7 +2,7 @@
  * IBLregion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -168,6 +168,27 @@ public interface IBLregion extends Serializable {
     public void trans_deleteRegion(IRegion region) throws CustomException;
     
     
+    /**
+     * @param order_historyPK: parent Order_history for child object Region Entity
+     * @return child Region Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IRegion getOrder_history(IOrder_historyPK order_historyPK) throws CustomException;
+
+    /**
+     * @param region_neighbourPK: parent Region_neighbour for child object Region Entity
+     * @return child Region Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IRegion getRegion_neighbourregion(IRegion_neighbourPK region_neighbourPK) throws CustomException;
+
+    /**
+     * @param region_neighbourPK: parent Region_neighbour for child object Region Entity
+     * @return child Region Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IRegion getRegion_neighbourneighbour(IRegion_neighbourPK region_neighbourPK) throws CustomException;
+
 //Custom code, do not change this line
 //Custom code, do not change this line
 

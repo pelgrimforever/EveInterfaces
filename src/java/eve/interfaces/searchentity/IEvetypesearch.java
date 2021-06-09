@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -183,6 +183,96 @@ public interface IEvetypesearch extends ITablesearch {
 	public void volume(Double[] values, byte[] operators, byte andor);
 	
 	/**
+	 * add Numeric search values for field avg_buyorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void avg_buyorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field avg_buyorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void avg_buyorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field avg_sellorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void avg_sellorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field avg_sellorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void avg_sellorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field min_buyorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void min_buyorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field min_buyorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void min_buyorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field max_buyorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void max_buyorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field max_buyorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void max_buyorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field min_selorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void min_selorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field min_selorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void min_selorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field max_selorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void max_selorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field max_selorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void max_selorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
 	* set subsearch market_group tablesearch
 	* @param market_groupsearch: IMarket_groupsearch
 	*/
@@ -200,4 +290,16 @@ public interface IEvetypesearch extends ITablesearch {
 	*/
 	public void graphic(IGraphicsearch graphicsearch);
 	
+    /**
+     * set subsearch order_history tablesearch
+     * @param order_historysearch: IOrder_historysearch
+     */
+    public void order_history(IOrder_historysearch order_historysearch);
+    
+    /**
+     * set relational subsearch region tablesearch
+     * @param regionsearch: IRegionsearch
+     */
+    public void region(IRegionsearch regionsearch);
+    
 }

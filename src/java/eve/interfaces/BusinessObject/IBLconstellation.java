@@ -2,7 +2,7 @@
  * IBLconstellation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -175,6 +175,20 @@ public interface IBLconstellation extends Serializable {
     public ArrayList getConstellations4region(IRegionPK regionPK) throws CustomException;
 
     
+    /**
+     * @param constellation_neighbourPK: parent Constellation_neighbour for child object Constellation Entity
+     * @return child Constellation Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IConstellation getConstellation_neighbourneighbour(IConstellation_neighbourPK constellation_neighbourPK) throws CustomException;
+
+    /**
+     * @param constellation_neighbourPK: parent Constellation_neighbour for child object Constellation Entity
+     * @return child Constellation Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IConstellation getConstellation_neighbourconstellation(IConstellation_neighbourPK constellation_neighbourPK) throws CustomException;
+
 //Custom code, do not change this line
 //Custom code, do not change this line
 

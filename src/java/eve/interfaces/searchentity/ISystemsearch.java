@@ -2,7 +2,7 @@
  * ISystemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -102,9 +102,57 @@ public interface ISystemsearch extends ITablesearch {
 	public void star_id(Double[] values, byte[] operators, byte andor);
 	
 	/**
+	 * add Boolean search values for field noaccess
+	 * @param value: true or false
+	 */
+	public void noaccess(Boolean value);
+	
+	/**
+	 * add Boolean search values for field isconstellationborder
+	 * @param value: true or false
+	 */
+	public void isconstellationborder(Boolean value);
+	
+	/**
+	 * add Boolean search values for field isregionborder
+	 * @param value: true or false
+	 */
+	public void isregionborder(Boolean value);
+	
+	/**
+	* set subsearch security_island tablesearch
+	* @param security_islandsearch: ISecurity_islandsearch
+	*/
+	public void security_island(ISecurity_islandsearch security_islandsearch);
+	
+	/**
 	* set subsearch constellation tablesearch
 	* @param constellationsearch: IConstellationsearch
 	*/
 	public void constellation(IConstellationsearch constellationsearch);
 	
+    /**
+     * set subsearch systemjumps tablesearch
+     * @param systemjumpssearch: ISystemjumpssearch
+     */
+    public void systemjumpsSystem_end(ISystemjumpssearch systemjumpssearch);
+    
+    /**
+     * set subsearch systemjumps tablesearch
+     * @param systemjumpssearch: ISystemjumpssearch
+     */
+    public void systemjumpsSystem_start(ISystemjumpssearch systemjumpssearch);
+    
+    /**
+     * set subsearch route tablesearch
+     * @param routesearch: IRoutesearch
+     */
+    public void route(IRoutesearch routesearch);
+    
+    /**
+     * set relational subsearch routetype tablesearch
+     * @param routetypesearch: IRoutetypesearch
+     */
+    public void routetype(IRoutetypesearch routetypesearch);
+    
 }

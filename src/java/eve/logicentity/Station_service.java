@@ -2,7 +2,7 @@
  * Station_service.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -11,6 +11,7 @@ package eve.logicentity;
 import data.gis.shape.*;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.entity.pk.*;
 import eve.interfaces.entity.pk.IStation_servicePK;
 import eve.interfaces.logicentity.*;
@@ -45,7 +46,7 @@ public class Station_service extends eve.entity.eStation_service implements ISta
 //Custom code, do not change this line
 
     public static final String SQLSelect4station = "select * from station_service where " + SQLWherestation + OrderBy;
-    public static final String SQLDelete4station = "delete from station_service where " + SQLWherestation + OrderBy;
+    public static final String SQLDelete4station = "delete from station_service where " + SQLWherestation;
 
     /**
      * Constructor

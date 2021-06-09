@@ -2,7 +2,7 @@
  * IRaceOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -25,6 +25,7 @@ public interface IRaceOperation extends IDataServlet {
     public static final byte SELECT_RACE = 2;
     public static final byte SELECT_SEARCH = 3;
     public static final byte SELECT_SEARCHCOUNT = 4;
+    public static final byte SELECT_Faction = 100 + 0;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
@@ -43,6 +44,7 @@ public interface IRaceOperation extends IDataServlet {
 
     //DELETE OPERATIONS
     public static final byte DELETE_RACE = 30;
+    public static final byte DELETE_Faction = 100 + 1;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   

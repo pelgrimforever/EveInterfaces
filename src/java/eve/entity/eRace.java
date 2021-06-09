@@ -2,7 +2,7 @@
  * eRace.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.EntityInterface;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
+import data.json.piJson;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -34,9 +35,9 @@ import eve.interfaces.entity.pk.*;
 public class eRace extends AbstractEntity implements EntityInterface {
 
     protected RacePK racePK;
+    private FactionPK factionPK;
     private java.lang.String name;
     private java.lang.String description;
-    private long alliance;
 	  
     public static final String table = "race";
     public static final String SQLWhere1 = "id = :race.id:";
@@ -143,9 +144,10 @@ public class eRace extends AbstractEntity implements EntityInterface {
      * @return 2 dimentional Object array with all fields (fieldname, value)
      */
     public Object[][] getAll() {
+        updates.put(IRace.FACTION, this.factionPK.getId());
+
         updates.put(IRace.NAME, name);
         updates.put(IRace.DESCRIPTION, description);
-        updates.put(IRace.ALLIANCE, alliance);
         return getAllFields();
     }
 	
@@ -219,29 +221,33 @@ public class eRace extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return alliance value
+     * @return foreign key factionPK, instance of FactionPK
      */
-    public long getAlliance() {
-        return this.alliance;
+    public FactionPK getFactionPK() {
+        return this.factionPK;
     }
 
     /**
-     * set alliance value
-     * @param alliance: new value
+     * set foreign key faction
+     * @param factionPK: instance of FactionPK
      */
-    public void initAlliance(long alliance) {
-        this.alliance = alliance;
+    public void initFactionPK(IFactionPK factionPK) {
+        this.factionPK = (FactionPK)factionPK;
     }
 
     /**
-     * set alliance value
-     * @param alliance: new value
+     * set foreign key faction
+     * @param factionPK: instance of FactionPK
      */
-    public void setAlliance(long alliance) {
-	if(alliance!=this.alliance) {
-            updates.put(IRace.ALLIANCE, alliance);
+    public void setFactionPK(IFactionPK factionPK) {
+	if(factionPK==null && factionPK!=this.factionPK || factionPK!=null) {
+            if(factionPK==null) {
+                updates.put(IRace.FACTION, null);
+            } else {
+                updates.put(IRace.FACTION, factionPK.getId());
+            }
         }
-        this.alliance = alliance;
+        this.factionPK = (FactionPK)factionPK;
     }
 
     /**

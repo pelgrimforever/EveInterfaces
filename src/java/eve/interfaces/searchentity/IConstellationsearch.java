@@ -2,7 +2,7 @@
  * IConstellationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -58,9 +58,27 @@ public interface IConstellationsearch extends ITablesearch {
 	public void name(String[] values, byte compare, byte andor);
 	
 	/**
+	 * add Boolean search values for field noaccess
+	 * @param value: true or false
+	 */
+	public void noaccess(Boolean value);
+	
+	/**
 	* set subsearch region tablesearch
 	* @param regionsearch: IRegionsearch
 	*/
 	public void region(IRegionsearch regionsearch);
 	
+    /**
+     * set subsearch constellation_neighbour tablesearch
+     * @param constellation_neighboursearch: IConstellation_neighboursearch
+     */
+    public void constellation_neighbourNeighbour(IConstellation_neighboursearch constellation_neighboursearch);
+    
+    /**
+     * set subsearch constellation_neighbour tablesearch
+     * @param constellation_neighboursearch: IConstellation_neighboursearch
+     */
+    public void constellation_neighbourConstellation(IConstellation_neighboursearch constellation_neighboursearch);
+    
 }

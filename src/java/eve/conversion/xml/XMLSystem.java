@@ -38,6 +38,11 @@ public class XMLSystem {
         Element PK = XMLElement.newContent("PK", "");
         addXML(PK, system.getPrimaryKey());
         SystemXML.addContent(PK);
+        if(system.getSecurity_islandPK()!=null) {
+            Element security_islandPK = XMLElement.newContent("security_islandPK", "");
+            XMLSecurity_island.addXML(security_islandPK, system.getSecurity_islandPK());
+            SystemXML.addContent(security_islandPK);
+        }
         if(system.getConstellationPK()!=null) {
             Element constellationPK = XMLElement.newContent("constellationPK", "");
             XMLConstellation.addXML(constellationPK, system.getConstellationPK());
@@ -47,6 +52,9 @@ public class XMLSystem {
         SystemXML.addContent(XMLElement.newContent("security_class", system.getSecurity_class()));
         SystemXML.addContent(XMLElement.newContent("security_status", system.getSecurity_status()));
         SystemXML.addContent(XMLElement.newContent("star_id", system.getStar_id()));
+        SystemXML.addContent(XMLElement.newContent("noaccess", system.getNoaccess()));
+        SystemXML.addContent(XMLElement.newContent("isconstellationborder", system.getIsconstellationborder()));
+        SystemXML.addContent(XMLElement.newContent("isregionborder", system.getIsregionborder()));
     }
 }
 

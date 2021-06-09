@@ -2,7 +2,7 @@
  * eStation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.EntityInterface;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
+import data.json.piJson;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -226,9 +227,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      * @param office_rental_cost: new value
      */
     public void setOffice_rental_cost(double office_rental_cost) {
-	if(office_rental_cost!=this.office_rental_cost) {
-            updates.put(IStation.OFFICE_RENTAL_COST, office_rental_cost);
-        }
+        updates.put(IStation.OFFICE_RENTAL_COST, office_rental_cost);
         this.office_rental_cost = office_rental_cost;
     }
 
@@ -253,9 +252,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      * @param reprocessing_efficiency: new value
      */
     public void setReprocessing_efficiency(double reprocessing_efficiency) {
-	if(reprocessing_efficiency!=this.reprocessing_efficiency) {
-            updates.put(IStation.REPROCESSING_EFFICIENCY, reprocessing_efficiency);
-        }
+        updates.put(IStation.REPROCESSING_EFFICIENCY, reprocessing_efficiency);
         this.reprocessing_efficiency = reprocessing_efficiency;
     }
 
@@ -280,9 +277,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      * @param reprocessing_stations_take: new value
      */
     public void setReprocessing_stations_take(double reprocessing_stations_take) {
-	if(reprocessing_stations_take!=this.reprocessing_stations_take) {
-            updates.put(IStation.REPROCESSING_STATIONS_TAKE, reprocessing_stations_take);
-        }
+        updates.put(IStation.REPROCESSING_STATIONS_TAKE, reprocessing_stations_take);
         this.reprocessing_stations_take = reprocessing_stations_take;
     }
 
@@ -307,9 +302,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      * @param max_dockable_ship_volume: new value
      */
     public void setMax_dockable_ship_volume(double max_dockable_ship_volume) {
-	if(max_dockable_ship_volume!=this.max_dockable_ship_volume) {
-            updates.put(IStation.MAX_DOCKABLE_SHIP_VOLUME, max_dockable_ship_volume);
-        }
+        updates.put(IStation.MAX_DOCKABLE_SHIP_VOLUME, max_dockable_ship_volume);
         this.max_dockable_ship_volume = max_dockable_ship_volume;
     }
 
@@ -334,9 +327,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      * @param owner: new value
      */
     public void setOwner(long owner) {
-	if(owner!=this.owner) {
-            updates.put(IStation.OWNER, owner);
-        }
+        updates.put(IStation.OWNER, owner);
         this.owner = owner;
     }
 

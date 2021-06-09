@@ -2,7 +2,7 @@
  * eEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.EntityInterface;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
+import data.json.piJson;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -47,6 +48,12 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
     private int portion_size;
     private double radius;
     private double volume;
+    private double avg_buyorder;
+    private double avg_sellorder;
+    private double min_buyorder;
+    private double max_buyorder;
+    private double min_selorder;
+    private double max_selorder;
 	  
     public static final String table = "evetype";
     public static final String SQLWhere1 = "id = :evetype.id:";
@@ -169,6 +176,12 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
         updates.put(IEvetype.PORTION_SIZE, portion_size);
         updates.put(IEvetype.RADIUS, radius);
         updates.put(IEvetype.VOLUME, volume);
+        updates.put(IEvetype.AVG_BUYORDER, avg_buyorder);
+        updates.put(IEvetype.AVG_SELLORDER, avg_sellorder);
+        updates.put(IEvetype.MIN_BUYORDER, min_buyorder);
+        updates.put(IEvetype.MAX_BUYORDER, max_buyorder);
+        updates.put(IEvetype.MIN_SELORDER, min_selorder);
+        updates.put(IEvetype.MAX_SELORDER, max_selorder);
         return getAllFields();
     }
 	
@@ -234,9 +247,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param published: new value
      */
     public void setPublished(boolean published) {
-	if(published!=this.published) {
-            updates.put(IEvetype.PUBLISHED, published);
-        }
+        updates.put(IEvetype.PUBLISHED, published);
         this.published = published;
     }
 
@@ -288,9 +299,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param capacity: new value
      */
     public void setCapacity(double capacity) {
-	if(capacity!=this.capacity) {
-            updates.put(IEvetype.CAPACITY, capacity);
-        }
+        updates.put(IEvetype.CAPACITY, capacity);
         this.capacity = capacity;
     }
 
@@ -315,9 +324,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param icon: new value
      */
     public void setIcon(long icon) {
-	if(icon!=this.icon) {
-            updates.put(IEvetype.ICON, icon);
-        }
+        updates.put(IEvetype.ICON, icon);
         this.icon = icon;
     }
 
@@ -342,9 +349,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param mass: new value
      */
     public void setMass(double mass) {
-	if(mass!=this.mass) {
-            updates.put(IEvetype.MASS, mass);
-        }
+        updates.put(IEvetype.MASS, mass);
         this.mass = mass;
     }
 
@@ -369,9 +374,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param packaged_volume: new value
      */
     public void setPackaged_volume(double packaged_volume) {
-	if(packaged_volume!=this.packaged_volume) {
-            updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
-        }
+        updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
         this.packaged_volume = packaged_volume;
     }
 
@@ -396,9 +399,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param portion_size: new value
      */
     public void setPortion_size(int portion_size) {
-	if(portion_size!=this.portion_size) {
-            updates.put(IEvetype.PORTION_SIZE, portion_size);
-        }
+        updates.put(IEvetype.PORTION_SIZE, portion_size);
         this.portion_size = portion_size;
     }
 
@@ -423,9 +424,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param radius: new value
      */
     public void setRadius(double radius) {
-	if(radius!=this.radius) {
-            updates.put(IEvetype.RADIUS, radius);
-        }
+        updates.put(IEvetype.RADIUS, radius);
         this.radius = radius;
     }
 
@@ -450,10 +449,158 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * @param volume: new value
      */
     public void setVolume(double volume) {
-	if(volume!=this.volume) {
-            updates.put(IEvetype.VOLUME, volume);
-        }
+        updates.put(IEvetype.VOLUME, volume);
         this.volume = volume;
+    }
+
+    /**
+     * 
+     * @return avg_buyorder value
+     */
+    public double getAvg_buyorder() {
+        return this.avg_buyorder;
+    }
+
+    /**
+     * set avg_buyorder value
+     * @param avg_buyorder: new value
+     */
+    public void initAvg_buyorder(double avg_buyorder) {
+        this.avg_buyorder = avg_buyorder;
+    }
+
+    /**
+     * set avg_buyorder value
+     * @param avg_buyorder: new value
+     */
+    public void setAvg_buyorder(double avg_buyorder) {
+        updates.put(IEvetype.AVG_BUYORDER, avg_buyorder);
+        this.avg_buyorder = avg_buyorder;
+    }
+
+    /**
+     * 
+     * @return avg_sellorder value
+     */
+    public double getAvg_sellorder() {
+        return this.avg_sellorder;
+    }
+
+    /**
+     * set avg_sellorder value
+     * @param avg_sellorder: new value
+     */
+    public void initAvg_sellorder(double avg_sellorder) {
+        this.avg_sellorder = avg_sellorder;
+    }
+
+    /**
+     * set avg_sellorder value
+     * @param avg_sellorder: new value
+     */
+    public void setAvg_sellorder(double avg_sellorder) {
+        updates.put(IEvetype.AVG_SELLORDER, avg_sellorder);
+        this.avg_sellorder = avg_sellorder;
+    }
+
+    /**
+     * 
+     * @return min_buyorder value
+     */
+    public double getMin_buyorder() {
+        return this.min_buyorder;
+    }
+
+    /**
+     * set min_buyorder value
+     * @param min_buyorder: new value
+     */
+    public void initMin_buyorder(double min_buyorder) {
+        this.min_buyorder = min_buyorder;
+    }
+
+    /**
+     * set min_buyorder value
+     * @param min_buyorder: new value
+     */
+    public void setMin_buyorder(double min_buyorder) {
+        updates.put(IEvetype.MIN_BUYORDER, min_buyorder);
+        this.min_buyorder = min_buyorder;
+    }
+
+    /**
+     * 
+     * @return max_buyorder value
+     */
+    public double getMax_buyorder() {
+        return this.max_buyorder;
+    }
+
+    /**
+     * set max_buyorder value
+     * @param max_buyorder: new value
+     */
+    public void initMax_buyorder(double max_buyorder) {
+        this.max_buyorder = max_buyorder;
+    }
+
+    /**
+     * set max_buyorder value
+     * @param max_buyorder: new value
+     */
+    public void setMax_buyorder(double max_buyorder) {
+        updates.put(IEvetype.MAX_BUYORDER, max_buyorder);
+        this.max_buyorder = max_buyorder;
+    }
+
+    /**
+     * 
+     * @return min_selorder value
+     */
+    public double getMin_selorder() {
+        return this.min_selorder;
+    }
+
+    /**
+     * set min_selorder value
+     * @param min_selorder: new value
+     */
+    public void initMin_selorder(double min_selorder) {
+        this.min_selorder = min_selorder;
+    }
+
+    /**
+     * set min_selorder value
+     * @param min_selorder: new value
+     */
+    public void setMin_selorder(double min_selorder) {
+        updates.put(IEvetype.MIN_SELORDER, min_selorder);
+        this.min_selorder = min_selorder;
+    }
+
+    /**
+     * 
+     * @return max_selorder value
+     */
+    public double getMax_selorder() {
+        return this.max_selorder;
+    }
+
+    /**
+     * set max_selorder value
+     * @param max_selorder: new value
+     */
+    public void initMax_selorder(double max_selorder) {
+        this.max_selorder = max_selorder;
+    }
+
+    /**
+     * set max_selorder value
+     * @param max_selorder: new value
+     */
+    public void setMax_selorder(double max_selorder) {
+        updates.put(IEvetype.MAX_SELORDER, max_selorder);
+        this.max_selorder = max_selorder;
     }
 
     /**

@@ -2,7 +2,7 @@
  * IRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.gis.shape.*;
 import data.interfaces.Datatypes;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.interfaces.entity.pk.*;
 import eve.entity.pk.*;
 import java.awt.image.BufferedImage;
@@ -34,11 +35,15 @@ public interface IRegion extends LogicEntity {
 	
     public static short ID = 1;
     public static short NAME = 2;
+    public static short NOACCESS = 3;
+    public static short ORDERPAGES = 4;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 30;
-    public static final String[] fieldnames = { "id", "name" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String };
+    public static final int SIZE_NOACCESS = 1;
+    public static final int SIZE_ORDERPAGES = 10;
+    public static final String[] fieldnames = { "id", "name", "noaccess", "orderpages" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_boolean, Datatypes.type_int };
 
 
 //Custom code, do not change this line
@@ -56,6 +61,30 @@ public interface IRegion extends LogicEntity {
      * @param name: new value
      */
     public void setName(java.lang.String name);
+
+    /**
+     * 
+     * @return noaccess value
+     */
+    public boolean getNoaccess();
+
+    /**
+     * set noaccess value
+     * @param noaccess: new value
+     */
+    public void setNoaccess(boolean noaccess);
+
+    /**
+     * 
+     * @return orderpages value
+     */
+    public int getOrderpages();
+
+    /**
+     * set orderpages value
+     * @param orderpages: new value
+     */
+    public void setOrderpages(int orderpages);
 
     
 //Custom code, do not change this line

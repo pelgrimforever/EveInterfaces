@@ -63,6 +63,12 @@ public class XMLEvetype {
         EvetypeXML.addContent(XMLElement.newContent("portion_size", evetype.getPortion_size()));
         EvetypeXML.addContent(XMLElement.newContent("radius", evetype.getRadius()));
         EvetypeXML.addContent(XMLElement.newContent("volume", evetype.getVolume()));
+        EvetypeXML.addContent(XMLElement.newContent("avg_buyorder", evetype.getAvg_buyorder()));
+        EvetypeXML.addContent(XMLElement.newContent("avg_sellorder", evetype.getAvg_sellorder()));
+        EvetypeXML.addContent(XMLElement.newContent("min_buyorder", evetype.getMin_buyorder()));
+        EvetypeXML.addContent(XMLElement.newContent("max_buyorder", evetype.getMax_buyorder()));
+        EvetypeXML.addContent(XMLElement.newContent("min_selorder", evetype.getMin_selorder()));
+        EvetypeXML.addContent(XMLElement.newContent("max_selorder", evetype.getMax_selorder()));
     }
 }
 

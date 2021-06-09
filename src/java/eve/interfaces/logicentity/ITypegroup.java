@@ -2,7 +2,7 @@
  * ITypegroup.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -12,6 +12,7 @@ import data.gis.shape.*;
 import data.interfaces.Datatypes;
 import data.interfaces.db.LogicEntity;
 import data.interfaces.db.Filedata;
+import data.json.piJson;
 import eve.interfaces.entity.pk.*;
 import eve.entity.pk.*;
 import java.awt.image.BufferedImage;
@@ -38,7 +39,7 @@ public interface ITypegroup extends LogicEntity {
     public static short CATEGORY = 4;
 
     public static final int SIZE_ID = 19;
-    public static final int SIZE_NAME = 50;
+    public static final int SIZE_NAME = 100;
     public static final int SIZE_PUBLISHED = 1;
     public static final int SIZE_CATEGORY = 19;
     public static final String[] fieldnames = { "id", "name", "published", "category" };

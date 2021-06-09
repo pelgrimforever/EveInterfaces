@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.TypegroupPK;
 import eve.interfaces.entity.pk.ITypegroupPK;
 import eve.interfaces.logicentity.ITypegroup;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONTypegroup {

@@ -2,7 +2,7 @@
  * Constellationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -27,7 +27,10 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
 
     Numbersearch id = new Numbersearch("constellation.id");
     Stringsearch name = new Stringsearch("constellation.name");
+    Booleansearch noaccess = new Booleansearch("constellation.noaccess");
     Foreignkeysearch regionsearcher = new Foreignkeysearch("region", IConstellation.regionPKfields, IConstellation.regionFKfields);
+    Primarykeysearch constellation_neighbourNeighboursearcher = new Primarykeysearch(":extablename_o:", IConstellation_neighbour.constellationNeighbourPKfields, IConstellation_neighbour.constellationNeighbourFKfields);
+    Primarykeysearch constellation_neighbourConstellationsearcher = new Primarykeysearch(":extablename_o:", IConstellation_neighbour.constellationConstellationPKfields, IConstellation_neighbour.constellationConstellationFKfields);
 
     /**
      * Constructor
@@ -54,7 +57,10 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     private void setFieldsearchers() {
         addFieldsearcher(id);
         addFieldsearcher(name);
+        addFieldsearcher(noaccess);
         addKeysearcher(regionsearcher);
+        addKeysearcher(constellation_neighbourNeighboursearcher);
+        addKeysearcher(constellation_neighbourConstellationsearcher);
     }
 
     /**
@@ -106,6 +112,14 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
     
     /**
+     * add Boolean search values for field noaccess
+     * @param value: true or false
+     */
+    public void noaccess(Boolean value) {
+        addBooleanvalue(noaccess, value);
+    }
+    
+    /**
      * set subsearch region tablesearch
      * @param regionsearch: IRegionsearch
      */
@@ -132,6 +146,46 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
      */
     public String getRegionInnerjoin() {
         return regionsearcher.getInnerjoin();
+    }
+
+    /**
+     * set subsearch constellation_neighbour tablesearch
+     * @param constellation_neighboursearch: IConstellation_neighboursearch
+     */
+    public void constellation_neighbourNeighbour(IConstellation_neighboursearch constellation_neighboursearch) {
+        constellation_neighbourNeighboursearcher.setTablesearch(constellation_neighboursearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Constellation
+     */
+    public IConstellation_neighboursearch getConstellation_neighbourneighboursearch() {
+        if(constellation_neighbourNeighboursearcher.used()) {
+            return (IConstellation_neighboursearch)constellation_neighbourNeighboursearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set subsearch constellation_neighbour tablesearch
+     * @param constellation_neighboursearch: IConstellation_neighboursearch
+     */
+    public void constellation_neighbourConstellation(IConstellation_neighboursearch constellation_neighboursearch) {
+        constellation_neighbourConstellationsearcher.setTablesearch(constellation_neighboursearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Constellation
+     */
+    public IConstellation_neighboursearch getConstellation_neighbourconstellationsearch() {
+        if(constellation_neighbourConstellationsearcher.used()) {
+            return (IConstellation_neighboursearch)constellation_neighbourConstellationsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
     }
 
 }

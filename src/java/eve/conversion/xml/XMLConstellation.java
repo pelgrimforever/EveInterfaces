@@ -44,6 +44,7 @@ public class XMLConstellation {
             ConstellationXML.addContent(regionPK);
         }
         ConstellationXML.addContent(XMLElement.newContent("name", constellation.getName()));
+        ConstellationXML.addContent(XMLElement.newContent("noaccess", constellation.getNoaccess()));
     }
 }
 

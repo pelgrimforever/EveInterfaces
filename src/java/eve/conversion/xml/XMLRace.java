@@ -38,9 +38,13 @@ public class XMLRace {
         Element PK = XMLElement.newContent("PK", "");
         addXML(PK, race.getPrimaryKey());
         RaceXML.addContent(PK);
+        if(race.getFactionPK()!=null) {
+            Element factionPK = XMLElement.newContent("factionPK", "");
+            XMLFaction.addXML(factionPK, race.getFactionPK());
+            RaceXML.addContent(factionPK);
+        }
         RaceXML.addContent(XMLElement.newContent("name", race.getName()));
         RaceXML.addContent(XMLElement.newContent("description", race.getDescription()));
-        RaceXML.addContent(XMLElement.newContent("alliance", race.getAlliance()));
     }
 }
 

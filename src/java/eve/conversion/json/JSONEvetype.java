@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.EvetypePK;
 import eve.interfaces.entity.pk.IEvetypePK;
 import eve.interfaces.logicentity.IEvetype;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONEvetype {
@@ -65,6 +66,12 @@ public class JSONEvetype {
         json.put("portion_size", evetype.getPortion_size());
         json.put("radius", evetype.getRadius());
         json.put("volume", evetype.getVolume());
+        json.put("avg_buyorder", evetype.getAvg_buyorder());
+        json.put("avg_sellorder", evetype.getAvg_sellorder());
+        json.put("min_buyorder", evetype.getMin_buyorder());
+        json.put("max_buyorder", evetype.getMax_buyorder());
+        json.put("min_selorder", evetype.getMin_selorder());
+        json.put("max_selorder", evetype.getMax_selorder());
 //Custom code, do not change this line
 //Custom code, do not change this line
         return json;
@@ -112,6 +119,12 @@ public class JSONEvetype {
             }
             if(evetypesearch.getGraphicsearch()!=null && evetypesearch.getGraphicsearch().used()) {
                 kss.put("graphicsearcher", JSONGraphic.toJSON((Graphicsearch)evetypesearch.getGraphicsearch()));
+            }
+            if(evetypesearch.getOrder_historysearch()!=null && evetypesearch.getOrder_historysearch().used()) {
+                kss.put("order_historysearcher", JSONOrder_history.toJSON((Order_historysearch)evetypesearch.getOrder_historysearch()));
+            }
+            if(evetypesearch.getRegionsearch()!=null && evetypesearch.getRegionsearch().used()) {
+                kss.put("regionsearcher", JSONOrder_history.toJSON((Order_historysearch)evetypesearch.getRegionsearch()));
             }
             json.put("keysearch", kss);
         }
@@ -209,6 +222,48 @@ public class JSONEvetype {
             byte andor = JSONConversion.getbyte(field, "andor");
             evetypesearch.volume(valuearray, operators, andor);
         }
+        field = (JSONObject)fss.get("avg_buyorder");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            evetypesearch.avg_buyorder(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("avg_sellorder");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            evetypesearch.avg_sellorder(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("min_buyorder");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            evetypesearch.min_buyorder(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("max_buyorder");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            evetypesearch.max_buyorder(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("min_selorder");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            evetypesearch.min_selorder(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("max_selorder");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            evetypesearch.max_selorder(valuearray, operators, andor);
+        }
         JSONObject kss = (JSONObject)json.get("keysearch");
         JSONArray keysearch;
         keysearch = (JSONArray)kss.get("market_groupsearcher");
@@ -230,6 +285,20 @@ public class JSONEvetype {
             for(int i=0; i<keysearch.size(); i++) {
                 Graphicsearch graphicsearch = JSONGraphic.toGraphicsearch((JSONObject)keysearch.get(i));
                 evetypesearch.graphic(graphicsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("order_historysearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Order_historysearch order_historysearch = JSONOrder_history.toOrder_historysearch((JSONObject)keysearch.get(i));
+                evetypesearch.order_history(order_historysearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("regionsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Regionsearch regionsearch = JSONRegion.toRegionsearch((JSONObject)keysearch.get(i));
+                evetypesearch.region(regionsearch);
             }
         }
         return evetypesearch;
@@ -263,6 +332,12 @@ public class JSONEvetype {
         evetype.setPortion_size(JSONConversion.getint(json, "portion_size"));
         evetype.setRadius(JSONConversion.getdouble(json, "radius"));
         evetype.setVolume(JSONConversion.getdouble(json, "volume"));
+        evetype.setAvg_buyorder(JSONConversion.getdouble(json, "avg_buyorder"));
+        evetype.setAvg_sellorder(JSONConversion.getdouble(json, "avg_sellorder"));
+        evetype.setMin_buyorder(JSONConversion.getdouble(json, "min_buyorder"));
+        evetype.setMax_buyorder(JSONConversion.getdouble(json, "max_buyorder"));
+        evetype.setMin_selorder(JSONConversion.getdouble(json, "min_selorder"));
+        evetype.setMax_selorder(JSONConversion.getdouble(json, "max_selorder"));
     }
 
     public static Evetype initEvetype(JSONObject json) {
@@ -280,6 +355,12 @@ public class JSONEvetype {
         evetype.initPortion_size(JSONConversion.getint(json, "portion_size"));
         evetype.initRadius(JSONConversion.getdouble(json, "radius"));
         evetype.initVolume(JSONConversion.getdouble(json, "volume"));
+        evetype.initAvg_buyorder(JSONConversion.getdouble(json, "avg_buyorder"));
+        evetype.initAvg_sellorder(JSONConversion.getdouble(json, "avg_sellorder"));
+        evetype.initMin_buyorder(JSONConversion.getdouble(json, "min_buyorder"));
+        evetype.initMax_buyorder(JSONConversion.getdouble(json, "max_buyorder"));
+        evetype.initMin_selorder(JSONConversion.getdouble(json, "min_selorder"));
+        evetype.initMax_selorder(JSONConversion.getdouble(json, "max_selorder"));
         return evetype;
     }
 }

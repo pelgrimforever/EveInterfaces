@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -36,9 +36,17 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Numbersearch portion_size = new Numbersearch("evetype.portion_size");
     Numbersearch radius = new Numbersearch("evetype.radius");
     Numbersearch volume = new Numbersearch("evetype.volume");
+    Numbersearch avg_buyorder = new Numbersearch("evetype.avg_buyorder");
+    Numbersearch avg_sellorder = new Numbersearch("evetype.avg_sellorder");
+    Numbersearch min_buyorder = new Numbersearch("evetype.min_buyorder");
+    Numbersearch max_buyorder = new Numbersearch("evetype.max_buyorder");
+    Numbersearch min_selorder = new Numbersearch("evetype.min_selorder");
+    Numbersearch max_selorder = new Numbersearch("evetype.max_selorder");
     Foreignkeysearch market_groupsearcher = new Foreignkeysearch("market_group", IEvetype.market_groupPKfields, IEvetype.market_groupFKfields);
     Foreignkeysearch typegroupsearcher = new Foreignkeysearch("typegroup", IEvetype.typegroupPKfields, IEvetype.typegroupFKfields);
     Foreignkeysearch graphicsearcher = new Foreignkeysearch("graphic", IEvetype.graphicPKfields, IEvetype.graphicFKfields);
+    Primarykeysearch order_historysearcher = new Primarykeysearch(":extablename_o:", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
+    Relationalkeysearch regionsearcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
 
     /**
      * Constructor
@@ -74,9 +82,17 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addFieldsearcher(portion_size);
         addFieldsearcher(radius);
         addFieldsearcher(volume);
+        addFieldsearcher(avg_buyorder);
+        addFieldsearcher(avg_sellorder);
+        addFieldsearcher(min_buyorder);
+        addFieldsearcher(max_buyorder);
+        addFieldsearcher(min_selorder);
+        addFieldsearcher(max_selorder);
         addKeysearcher(market_groupsearcher);
         addKeysearcher(typegroupsearcher);
         addKeysearcher(graphicsearcher);
+        addKeysearcher(order_historysearcher);
+        addKeysearcher(regionsearcher);
     }
 
     /**
@@ -296,6 +312,126 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
+     * add Numeric search values for field avg_buyorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void avg_buyorder(Double[] values, byte[] operators) {
+        addNumbervalues(avg_buyorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field avg_buyorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void avg_buyorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(avg_buyorder, values, operators);
+        avg_buyorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field avg_sellorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void avg_sellorder(Double[] values, byte[] operators) {
+        addNumbervalues(avg_sellorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field avg_sellorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void avg_sellorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(avg_sellorder, values, operators);
+        avg_sellorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field min_buyorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void min_buyorder(Double[] values, byte[] operators) {
+        addNumbervalues(min_buyorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field min_buyorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void min_buyorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(min_buyorder, values, operators);
+        min_buyorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field max_buyorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void max_buyorder(Double[] values, byte[] operators) {
+        addNumbervalues(max_buyorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field max_buyorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void max_buyorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(max_buyorder, values, operators);
+        max_buyorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field min_selorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void min_selorder(Double[] values, byte[] operators) {
+        addNumbervalues(min_selorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field min_selorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void min_selorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(min_selorder, values, operators);
+        min_selorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field max_selorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void max_selorder(Double[] values, byte[] operators) {
+        addNumbervalues(max_selorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field max_selorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void max_selorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(max_selorder, values, operators);
+        max_selorder.setAndoroperator(andor);
+    }
+    
+    /**
      * set subsearch market_group tablesearch
      * @param market_groupsearch: IMarket_groupsearch
      */
@@ -380,6 +516,46 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
      */
     public String getGraphicInnerjoin() {
         return graphicsearcher.getInnerjoin();
+    }
+
+    /**
+     * set subsearch order_history tablesearch
+     * @param order_historysearch: IOrder_historysearch
+     */
+    public void order_history(IOrder_historysearch order_historysearch) {
+        order_historysearcher.setTablesearch(order_historysearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Evetype
+     */
+    public IOrder_historysearch getOrder_historysearch() {
+        if(order_historysearcher.used()) {
+            return (IOrder_historysearch)order_historysearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set relational subsearch region tablesearch
+     * @param regionsearch: IRegionsearch
+     */
+    public void region(IRegionsearch regionsearch) {
+        regionsearcher.setTablesearch(regionsearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Evetype
+     */
+    public IRegionsearch getRegionsearch() {
+        if(regionsearcher.used()) {
+            return (IRegionsearch)regionsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
     }
 
 }

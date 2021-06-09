@@ -2,7 +2,7 @@
  * IRegionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.4.2021 13:20
+ * Generated on 8.5.2021 19:33
  *
  */
 
@@ -57,4 +57,49 @@ public interface IRegionsearch extends ITablesearch {
 	 */
 	public void name(String[] values, byte compare, byte andor);
 	
+	/**
+	 * add Boolean search values for field noaccess
+	 * @param value: true or false
+	 */
+	public void noaccess(Boolean value);
+	
+	/**
+	 * add Numeric search values for field orderpages, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void orderpages(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field orderpages
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void orderpages(Double[] values, byte[] operators, byte andor);
+	
+    /**
+     * set subsearch order_history tablesearch
+     * @param order_historysearch: IOrder_historysearch
+     */
+    public void order_history(IOrder_historysearch order_historysearch);
+    
+    /**
+     * set relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void evetype(IEvetypesearch evetypesearch);
+    
+    /**
+     * set subsearch region_neighbour tablesearch
+     * @param region_neighboursearch: IRegion_neighboursearch
+     */
+    public void region_neighbourRegion(IRegion_neighboursearch region_neighboursearch);
+    
+    /**
+     * set subsearch region_neighbour tablesearch
+     * @param region_neighboursearch: IRegion_neighboursearch
+     */
+    public void region_neighbourNeighbour(IRegion_neighboursearch region_neighboursearch);
+    
 }

@@ -26,9 +26,19 @@ public interface WSISystem {
 
     @WebMethod void deleteSystem(String json);
 
+    @WebMethod String getSystems4security_island(String json);
+
+    @WebMethod void delete4security_island(String json);
+
     @WebMethod String getSystems4constellation(String json);
 
     @WebMethod void delete4constellation(String json);
+
+    @WebMethod String getSystems4systemjumpsSystem_end(String json);
+
+    @WebMethod String getSystems4systemjumpsSystem_start(String json);
+
+    @WebMethod String getSystems4route(String json);
 
 
 }

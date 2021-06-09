@@ -4,6 +4,7 @@ import data.conversion.JSONConversion;
 import data.gis.shape.GISConversion;
 import data.interfaces.db.EntityPKInterface;
 import data.interfaces.db.IFieldsearcher;
+import data.json.piJson;
 import eve.entity.pk.RacePK;
 import eve.interfaces.entity.pk.IRacePK;
 import eve.interfaces.logicentity.IRace;
@@ -18,7 +19,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 /**
- *
+ * JSON fields are by default ignored
  * @author Franky Laseure
  */
 public class JSONRace {
@@ -52,9 +53,9 @@ public class JSONRace {
     public static JSONObject toJSON(IRace race) {
         JSONObject json = new JSONObject();
         json.put("PK", toJSON(race.getPrimaryKey()));
+        json.put("factionPK", JSONFaction.toJSON(race.getFactionPK()));
         json.put("name", race.getName());
         json.put("description", race.getDescription());
-        json.put("alliance", String.valueOf(race.getAlliance()));
 //Custom code, do not change this line
 //Custom code, do not change this line
         return json;
@@ -94,6 +95,9 @@ public class JSONRace {
             }
             json.put("fields", fss);
             JSONObject kss = new JSONObject();
+            if(racesearch.getFactionsearch()!=null && racesearch.getFactionsearch().used()) {
+                kss.put("factionsearcher", JSONFaction.toJSON((Factionsearch)racesearch.getFactionsearch()));
+            }
             json.put("keysearch", kss);
         }
         return json;
@@ -136,15 +140,15 @@ public class JSONRace {
             byte andor = JSONConversion.getbyte(field, "andor");
             racesearch.description(valuearray, compareoperator, andor);
         }
-        field = (JSONObject)fss.get("alliance");
-        if(field!=null) {
-            Double[] valuearray = JSONConversion.getDoublevalues(field);
-            byte[] operators = JSONConversion.getNumberoperators(field);
-            byte andor = JSONConversion.getbyte(field, "andor");
-            racesearch.alliance(valuearray, operators, andor);
-        }
         JSONObject kss = (JSONObject)json.get("keysearch");
         JSONArray keysearch;
+        keysearch = (JSONArray)kss.get("factionsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Factionsearch factionsearch = JSONFaction.toFactionsearch((JSONObject)keysearch.get(i));
+                racesearch.faction(factionsearch);
+            }
+        }
         return racesearch;
     }
     
@@ -163,16 +167,16 @@ public class JSONRace {
     }
 
     public static void updateRace(IRace race, JSONObject json) {
+        race.setFactionPK(JSONFaction.toFactionPK((JSONObject)json.get("factionPK")));
         race.setName(JSONConversion.getString(json, "name"));
         race.setDescription(JSONConversion.getString(json, "description"));
-        race.setAlliance(JSONConversion.getlong(json, "alliance"));
     }
 
     public static Race initRace(JSONObject json) {
         Race race = new Race(toRacePK((JSONObject)json.get("PK")));
+        race.initFactionPK(JSONFaction.toFactionPK((JSONObject)json.get("factionPK")));
         race.initName(JSONConversion.getString(json, "name"));
         race.initDescription(JSONConversion.getString(json, "description"));
-        race.initAlliance(JSONConversion.getlong(json, "alliance"));
         return race;
     }
 }
