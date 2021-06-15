@@ -2,7 +2,7 @@
  * IOrders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -47,6 +47,7 @@ public interface IOrders extends LogicEntity {
     public static short IS_BUY_ORDER = 12;
     public static short ISSUED = 13;
     public static short DURATION = 14;
+    public static short PAGE = 15;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_ISOPEN = 1;
@@ -62,8 +63,9 @@ public interface IOrders extends LogicEntity {
     public static final int SIZE_IS_BUY_ORDER = 1;
     public static final int SIZE_ISSUED = 29;
     public static final int SIZE_DURATION = 10;
-    public static final String[] fieldnames = { "id", "isopen", "system", "evetype", "volume_total", "volume_remain", "range", "range_number", "price", "min_volume", "location", "is_buy_order", "issued", "duration" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_String, Datatypes.type_int, Datatypes.type_double, Datatypes.type_int, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_Timestamp, Datatypes.type_int };
+    public static final int SIZE_PAGE = 10;
+    public static final String[] fieldnames = { "id", "isopen", "system", "evetype", "volume_total", "volume_remain", "range", "range_number", "price", "min_volume", "location", "is_buy_order", "issued", "duration", "page" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_String, Datatypes.type_int, Datatypes.type_double, Datatypes.type_int, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_Timestamp, Datatypes.type_int, Datatypes.type_int };
 
     public static final String[] evetypePKfields = { "evetype.id" };
     public static final String[] evetypeFKfields = { "orders.evetype" };
@@ -205,6 +207,18 @@ public interface IOrders extends LogicEntity {
      * @param duration: new value
      */
     public void setDuration(int duration);
+
+    /**
+     * 
+     * @return page value
+     */
+    public int getPage();
+
+    /**
+     * set page value
+     * @param page: new value
+     */
+    public void setPage(int page);
 
     /**
      * 

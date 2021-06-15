@@ -2,7 +2,7 @@
  * eOrders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -48,6 +48,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
     private boolean is_buy_order;
     private java.sql.Timestamp issued;
     private int duration;
+    private int page;
 	  
     public static final String table = "orders";
     public static final String SQLWhere1 = "id = :orders.id:";
@@ -169,6 +170,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
         updates.put(IOrders.IS_BUY_ORDER, is_buy_order);
         updates.put(IOrders.ISSUED, issued);
         updates.put(IOrders.DURATION, duration);
+        updates.put(IOrders.PAGE, page);
         return getAllFields();
     }
 	
@@ -461,6 +463,31 @@ public class eOrders extends AbstractEntity implements EntityInterface {
     public void setDuration(int duration) {
         updates.put(IOrders.DURATION, duration);
         this.duration = duration;
+    }
+
+    /**
+     * 
+     * @return page value
+     */
+    public int getPage() {
+        return this.page;
+    }
+
+    /**
+     * set page value
+     * @param page: new value
+     */
+    public void initPage(int page) {
+        this.page = page;
+    }
+
+    /**
+     * set page value
+     * @param page: new value
+     */
+    public void setPage(int page) {
+        updates.put(IOrders.PAGE, page);
+        this.page = page;
     }
 
     /**

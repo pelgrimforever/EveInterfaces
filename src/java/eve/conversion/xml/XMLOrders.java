@@ -61,6 +61,7 @@ public class XMLOrders {
             OrdersXML.addContent(XMLElement.newContent("issued", orders.getIssued().toString()));
         }
         OrdersXML.addContent(XMLElement.newContent("duration", orders.getDuration()));
+        OrdersXML.addContent(XMLElement.newContent("page", orders.getPage()));
     }
 }
 

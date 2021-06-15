@@ -2,7 +2,7 @@
  * IRegionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -77,6 +77,21 @@ public interface IRegionsearch extends ITablesearch {
 	 * @param andor; AND/OR constant
 	 */
 	public void orderpages(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field ordererrors, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void ordererrors(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field ordererrors
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void ordererrors(Double[] values, byte[] operators, byte andor);
 	
     /**
      * set subsearch order_history tablesearch

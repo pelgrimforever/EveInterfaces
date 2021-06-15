@@ -2,7 +2,7 @@
  * Regionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -29,6 +29,7 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     Stringsearch name = new Stringsearch("region.name");
     Booleansearch noaccess = new Booleansearch("region.noaccess");
     Numbersearch orderpages = new Numbersearch("region.orderpages");
+    Numbersearch ordererrors = new Numbersearch("region.ordererrors");
     Primarykeysearch order_historysearcher = new Primarykeysearch(":extablename_o:", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
     Relationalkeysearch evetypesearcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     Primarykeysearch region_neighbourRegionsearcher = new Primarykeysearch(":extablename_o:", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
@@ -61,6 +62,7 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
         addFieldsearcher(name);
         addFieldsearcher(noaccess);
         addFieldsearcher(orderpages);
+        addFieldsearcher(ordererrors);
         addKeysearcher(order_historysearcher);
         addKeysearcher(evetypesearcher);
         addKeysearcher(region_neighbourRegionsearcher);
@@ -141,6 +143,26 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     public void orderpages(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(orderpages, values, operators);
         orderpages.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field ordererrors, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void ordererrors(Double[] values, byte[] operators) {
+        addNumbervalues(ordererrors, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field ordererrors
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void ordererrors(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(ordererrors, values, operators);
+        ordererrors.setAndoroperator(andor);
     }
     
     /**

@@ -2,7 +2,7 @@
  * IRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -37,13 +37,15 @@ public interface IRegion extends LogicEntity {
     public static short NAME = 2;
     public static short NOACCESS = 3;
     public static short ORDERPAGES = 4;
+    public static short ORDERERRORS = 5;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 30;
     public static final int SIZE_NOACCESS = 1;
     public static final int SIZE_ORDERPAGES = 10;
-    public static final String[] fieldnames = { "id", "name", "noaccess", "orderpages" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_boolean, Datatypes.type_int };
+    public static final int SIZE_ORDERERRORS = 10;
+    public static final String[] fieldnames = { "id", "name", "noaccess", "orderpages", "ordererrors" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_boolean, Datatypes.type_int, Datatypes.type_int };
 
 
 //Custom code, do not change this line
@@ -85,6 +87,18 @@ public interface IRegion extends LogicEntity {
      * @param orderpages: new value
      */
     public void setOrderpages(int orderpages);
+
+    /**
+     * 
+     * @return ordererrors value
+     */
+    public int getOrdererrors();
+
+    /**
+     * set ordererrors value
+     * @param ordererrors: new value
+     */
+    public void setOrdererrors(int ordererrors);
 
     
 //Custom code, do not change this line

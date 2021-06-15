@@ -68,6 +68,7 @@ public class JSONOrders {
 	        json.put("issued", orders.getIssued().getTime());
         }
         json.put("duration", orders.getDuration());
+        json.put("page", orders.getPage());
 //Custom code, do not change this line
 //Custom code, do not change this line
         return json;
@@ -220,6 +221,13 @@ public class JSONOrders {
             byte andor = JSONConversion.getbyte(field, "andor");
             orderssearch.duration(valuearray, operators, andor);
         }
+        field = (JSONObject)fss.get("page");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            orderssearch.page(valuearray, operators, andor);
+        }
         JSONObject kss = (JSONObject)json.get("keysearch");
         JSONArray keysearch;
         keysearch = (JSONArray)kss.get("evetypesearcher");
@@ -281,6 +289,7 @@ public class JSONOrders {
         orders.setIs_buy_order(JSONConversion.getboolean(json, "is_buy_order"));
         orders.setIssued(JSONConversion.getTimestamp(json, "issued"));
         orders.setDuration(JSONConversion.getint(json, "duration"));
+        orders.setPage(JSONConversion.getint(json, "page"));
     }
 
     public static Orders initOrders(JSONObject json) {
@@ -298,6 +307,7 @@ public class JSONOrders {
         orders.initIs_buy_order(JSONConversion.getboolean(json, "is_buy_order"));
         orders.initIssued(JSONConversion.getTimestamp(json, "issued"));
         orders.initDuration(JSONConversion.getint(json, "duration"));
+        orders.initPage(JSONConversion.getint(json, "page"));
         return orders;
     }
 }

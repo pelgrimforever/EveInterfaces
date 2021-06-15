@@ -2,7 +2,7 @@
  * Orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -37,6 +37,7 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     Booleansearch is_buy_order = new Booleansearch("orders.is_buy_order");
     Timesearch issued = new Timesearch("orders.issued");
     Numbersearch duration = new Numbersearch("orders.duration");
+    Numbersearch page = new Numbersearch("orders.page");
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrders.evetypePKfields, IOrders.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IOrders.systemPKfields, IOrders.systemFKfields);
     Primarykeysearch tradeSell_order_idsearcher = new Primarykeysearch(":extablename_o:", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
@@ -77,6 +78,7 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
         addFieldsearcher(is_buy_order);
         addFieldsearcher(issued);
         addFieldsearcher(duration);
+        addFieldsearcher(page);
         addKeysearcher(evetypesearcher);
         addKeysearcher(systemsearcher);
         addKeysearcher(tradeSell_order_idsearcher);
@@ -305,6 +307,26 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     public void duration(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(duration, values, operators);
         duration.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field page, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void page(Double[] values, byte[] operators) {
+        addNumbervalues(page, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field page
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void page(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(page, values, operators);
+        page.setAndoroperator(andor);
     }
     
     /**

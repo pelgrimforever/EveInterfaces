@@ -41,6 +41,7 @@ public class XMLRegion {
         RegionXML.addContent(XMLElement.newContent("name", region.getName()));
         RegionXML.addContent(XMLElement.newContent("noaccess", region.getNoaccess()));
         RegionXML.addContent(XMLElement.newContent("orderpages", region.getOrderpages()));
+        RegionXML.addContent(XMLElement.newContent("ordererrors", region.getOrdererrors()));
     }
 }
 

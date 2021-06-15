@@ -2,7 +2,7 @@
  * eRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.5.2021 19:33
+ * Generated on 14.5.2021 13:35
  *
  */
 
@@ -38,6 +38,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
     private java.lang.String name;
     private boolean noaccess;
     private int orderpages;
+    private int ordererrors;
 	  
     public static final String table = "region";
     public static final String SQLWhere1 = "id = :region.id:";
@@ -147,6 +148,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
         updates.put(IRegion.NAME, name);
         updates.put(IRegion.NOACCESS, noaccess);
         updates.put(IRegion.ORDERPAGES, orderpages);
+        updates.put(IRegion.ORDERERRORS, ordererrors);
         return getAllFields();
     }
 	
@@ -239,6 +241,31 @@ public class eRegion extends AbstractEntity implements EntityInterface {
     public void setOrderpages(int orderpages) {
         updates.put(IRegion.ORDERPAGES, orderpages);
         this.orderpages = orderpages;
+    }
+
+    /**
+     * 
+     * @return ordererrors value
+     */
+    public int getOrdererrors() {
+        return this.ordererrors;
+    }
+
+    /**
+     * set ordererrors value
+     * @param ordererrors: new value
+     */
+    public void initOrdererrors(int ordererrors) {
+        this.ordererrors = ordererrors;
+    }
+
+    /**
+     * set ordererrors value
+     * @param ordererrors: new value
+     */
+    public void setOrdererrors(int ordererrors) {
+        updates.put(IRegion.ORDERERRORS, ordererrors);
+        this.ordererrors = ordererrors;
     }
 
     /**

@@ -56,6 +56,7 @@ public class JSONRegion {
         json.put("name", region.getName());
         json.put("noaccess", region.getNoaccess());
         json.put("orderpages", region.getOrderpages());
+        json.put("ordererrors", region.getOrdererrors());
 //Custom code, do not change this line
 //Custom code, do not change this line
         return json;
@@ -154,6 +155,13 @@ public class JSONRegion {
             byte andor = JSONConversion.getbyte(field, "andor");
             regionsearch.orderpages(valuearray, operators, andor);
         }
+        field = (JSONObject)fss.get("ordererrors");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            regionsearch.ordererrors(valuearray, operators, andor);
+        }
         JSONObject kss = (JSONObject)json.get("keysearch");
         JSONArray keysearch;
         keysearch = (JSONArray)kss.get("order_historysearcher");
@@ -205,6 +213,7 @@ public class JSONRegion {
         region.setName(JSONConversion.getString(json, "name"));
         region.setNoaccess(JSONConversion.getboolean(json, "noaccess"));
         region.setOrderpages(JSONConversion.getint(json, "orderpages"));
+        region.setOrdererrors(JSONConversion.getint(json, "ordererrors"));
     }
 
     public static Region initRegion(JSONObject json) {
@@ -212,6 +221,7 @@ public class JSONRegion {
         region.initName(JSONConversion.getString(json, "name"));
         region.initNoaccess(JSONConversion.getboolean(json, "noaccess"));
         region.initOrderpages(JSONConversion.getint(json, "orderpages"));
+        region.initOrdererrors(JSONConversion.getint(json, "ordererrors"));
         return region;
     }
 }
