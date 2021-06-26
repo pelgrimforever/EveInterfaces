@@ -2,7 +2,7 @@
  * Orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -40,8 +40,8 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     Numbersearch page = new Numbersearch("orders.page");
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrders.evetypePKfields, IOrders.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IOrders.systemPKfields, IOrders.systemFKfields);
-    Primarykeysearch tradeSell_order_idsearcher = new Primarykeysearch(":extablename_o:", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
-    Primarykeysearch tradeBuy_order_idsearcher = new Primarykeysearch(":extablename_o:", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
+    Primarykeysearch tradeSell_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
+    Primarykeysearch tradeBuy_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
 
     /**
      * Constructor

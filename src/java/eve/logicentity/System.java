@@ -2,7 +2,7 @@
  * System.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -42,7 +42,7 @@ public class System extends eve.entity.eSystem implements ISystem {
     public static final String SQLWhereconstellation = "constellation = :constellation.id:";
 
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
+    public static final String OrderBy = " order by name";
     public static final String SQLSelectAll = SQLSelect + OrderBy;
     
     public static final String SQLupdateconstellationborders = "update system set isconstellationborder = :isborder: where id in (select system from stargate where isconstellationborder group by system)";

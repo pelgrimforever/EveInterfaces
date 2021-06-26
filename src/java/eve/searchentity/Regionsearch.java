@@ -2,7 +2,7 @@
  * Regionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -30,10 +30,10 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     Booleansearch noaccess = new Booleansearch("region.noaccess");
     Numbersearch orderpages = new Numbersearch("region.orderpages");
     Numbersearch ordererrors = new Numbersearch("region.ordererrors");
-    Primarykeysearch order_historysearcher = new Primarykeysearch(":extablename_o:", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+    Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
     Relationalkeysearch evetypesearcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
-    Primarykeysearch region_neighbourRegionsearcher = new Primarykeysearch(":extablename_o:", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
-    Primarykeysearch region_neighbourNeighboursearcher = new Primarykeysearch(":extablename_o:", IRegion_neighbour.regionNeighbourPKfields, IRegion_neighbour.regionNeighbourFKfields);
+    Primarykeysearch region_neighbourRegionsearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
+    Primarykeysearch region_neighbourNeighboursearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionNeighbourPKfields, IRegion_neighbour.regionNeighbourFKfields);
 
     /**
      * Constructor

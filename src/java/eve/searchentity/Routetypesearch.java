@@ -2,7 +2,7 @@
  * Routetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -28,7 +28,7 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     Numbersearch id = new Numbersearch("routetype.id");
     Stringsearch name = new Stringsearch("routetype.name");
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", IRoutetype.security_islandPKfields, IRoutetype.security_islandFKfields);
-    Primarykeysearch routesearcher = new Primarykeysearch(":extablename_o:", IRoute.routetypePKfields, IRoute.routetypeFKfields);
+    Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields);
     Relationalkeysearch systemsearcher = new Relationalkeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields, "system", IRoute.systemPKfields, IRoute.systemFKfields);
 
     /**

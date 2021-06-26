@@ -2,7 +2,7 @@
  * Constellationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -29,8 +29,8 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     Stringsearch name = new Stringsearch("constellation.name");
     Booleansearch noaccess = new Booleansearch("constellation.noaccess");
     Foreignkeysearch regionsearcher = new Foreignkeysearch("region", IConstellation.regionPKfields, IConstellation.regionFKfields);
-    Primarykeysearch constellation_neighbourNeighboursearcher = new Primarykeysearch(":extablename_o:", IConstellation_neighbour.constellationNeighbourPKfields, IConstellation_neighbour.constellationNeighbourFKfields);
-    Primarykeysearch constellation_neighbourConstellationsearcher = new Primarykeysearch(":extablename_o:", IConstellation_neighbour.constellationConstellationPKfields, IConstellation_neighbour.constellationConstellationFKfields);
+    Primarykeysearch constellation_neighbourNeighboursearcher = new Primarykeysearch("constellation_neighbour", IConstellation_neighbour.constellationNeighbourPKfields, IConstellation_neighbour.constellationNeighbourFKfields);
+    Primarykeysearch constellation_neighbourConstellationsearcher = new Primarykeysearch("constellation_neighbour", IConstellation_neighbour.constellationConstellationPKfields, IConstellation_neighbour.constellationConstellationFKfields);
 
     /**
      * Constructor

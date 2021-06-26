@@ -2,7 +2,7 @@
  * Trade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -44,6 +44,8 @@ public class Trade extends eve.entity.eTrade implements ITrade {
 //Custom code, do not change this line
     public static final String OrderBy = " order by sell_order_id, buy_order_id";
     public static final String SQLSelectAll = SQLSelect + OrderBy;
+    
+    public static final String SQLSellBuyOrders = SQLSelect + " where sell_order_id = :trade.sell_order_id: or buy_order_id = :trade.buy_order_id:";
 
     public static final String SQLdeleteall = "delete from trade";
 //Custom code, do not change this line

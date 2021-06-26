@@ -2,7 +2,7 @@
  * Systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -35,9 +35,9 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Booleansearch isregionborder = new Booleansearch("system.isregionborder");
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", ISystem.security_islandPKfields, ISystem.security_islandFKfields);
     Foreignkeysearch constellationsearcher = new Foreignkeysearch("constellation", ISystem.constellationPKfields, ISystem.constellationFKfields);
-    Primarykeysearch systemjumpsSystem_endsearcher = new Primarykeysearch(":extablename_o:", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
-    Primarykeysearch systemjumpsSystem_startsearcher = new Primarykeysearch(":extablename_o:", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
-    Primarykeysearch routesearcher = new Primarykeysearch(":extablename_o:", IRoute.systemPKfields, IRoute.systemFKfields);
+    Primarykeysearch systemjumpsSystem_endsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
+    Primarykeysearch systemjumpsSystem_startsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
+    Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields);
     Relationalkeysearch routetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
 
     /**

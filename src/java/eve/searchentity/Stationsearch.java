@@ -2,7 +2,7 @@
  * Stationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -35,7 +35,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     Foreignkeysearch racesearcher = new Foreignkeysearch("race", IStation.racePKfields, IStation.raceFKfields);
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IStation.evetypePKfields, IStation.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IStation.systemPKfields, IStation.systemFKfields);
-    Primarykeysearch station_servicesearcher = new Primarykeysearch(":extablename_o:", IStation_service.stationPKfields, IStation_service.stationFKfields);
+    Primarykeysearch station_servicesearcher = new Primarykeysearch("station_service", IStation_service.stationPKfields, IStation_service.stationFKfields);
 
     /**
      * Constructor

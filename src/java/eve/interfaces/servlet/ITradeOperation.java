@@ -2,7 +2,7 @@
  * ITradeOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 14.5.2021 13:35
+ * Generated on 23.5.2021 16:2
  *
  */
 
@@ -36,6 +36,7 @@ public interface ITradeOperation extends IDataServlet {
 //Custom code, do not change this line
 //add here custom operations
     public static final byte UPDATE_DOWNLOAD = 11;
+    public static final byte UPDATE_TRADING = 12;
 //Custom code, do not change this line   
 
     //INSERT OPERATIONS
