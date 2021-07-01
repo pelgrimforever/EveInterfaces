@@ -114,6 +114,18 @@ public class JSONOrders {
             if(orderssearch.getSystemsearch()!=null && orderssearch.getSystemsearch().used()) {
                 kss.put("systemsearcher", JSONSystem.toJSON((Systemsearch)orderssearch.getSystemsearch()));
             }
+            if(orderssearch.getSystemtrade_orderbuy_ordersearch()!=null && orderssearch.getSystemtrade_orderbuy_ordersearch().used()) {
+                kss.put("systemtrade_orderBuy_ordersearcher", JSONSystemtrade_order.toJSON((Systemtrade_ordersearch)orderssearch.getSystemtrade_orderbuy_ordersearch()));
+            }
+            if(orderssearch.getSystemtrade1search()!=null && orderssearch.getSystemtrade1search().used()) {
+                kss.put("systemtrade1searcher", JSONSystemtrade_order.toJSON((Systemtrade_ordersearch)orderssearch.getSystemtrade1search()));
+            }
+            if(orderssearch.getSystemtrade_ordersell_ordersearch()!=null && orderssearch.getSystemtrade_ordersell_ordersearch().used()) {
+                kss.put("systemtrade_orderSell_ordersearcher", JSONSystemtrade_order.toJSON((Systemtrade_ordersearch)orderssearch.getSystemtrade_ordersell_ordersearch()));
+            }
+            if(orderssearch.getSystemtrade2search()!=null && orderssearch.getSystemtrade2search().used()) {
+                kss.put("systemtrade2searcher", JSONSystemtrade_order.toJSON((Systemtrade_ordersearch)orderssearch.getSystemtrade2search()));
+            }
             if(orderssearch.getTradesell_order_idsearch()!=null && orderssearch.getTradesell_order_idsearch().used()) {
                 kss.put("tradeSell_order_idsearcher", JSONTrade.toJSON((Tradesearch)orderssearch.getTradesell_order_idsearch()));
             }
@@ -242,6 +254,34 @@ public class JSONOrders {
             for(int i=0; i<keysearch.size(); i++) {
                 Systemsearch systemsearch = JSONSystem.toSystemsearch((JSONObject)keysearch.get(i));
                 orderssearch.system(systemsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemtrade_orderBuy_ordersearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemtrade_ordersearch systemtrade_orderBuy_ordersearch = JSONSystemtrade_order.toSystemtrade_ordersearch((JSONObject)keysearch.get(i));
+                orderssearch.systemtrade_orderBuy_order(systemtrade_orderBuy_ordersearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemtrade1searcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemtradesearch systemtrade1search = JSONSystemtrade.toSystemtradesearch((JSONObject)keysearch.get(i));
+                orderssearch.systemtrade1(systemtrade1search);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemtrade_orderSell_ordersearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemtrade_ordersearch systemtrade_orderSell_ordersearch = JSONSystemtrade_order.toSystemtrade_ordersearch((JSONObject)keysearch.get(i));
+                orderssearch.systemtrade_orderSell_order(systemtrade_orderSell_ordersearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemtrade2searcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemtradesearch systemtrade2search = JSONSystemtrade.toSystemtradesearch((JSONObject)keysearch.get(i));
+                orderssearch.systemtrade2(systemtrade2search);
             }
         }
         keysearch = (JSONArray)kss.get("tradeSell_order_idsearcher");

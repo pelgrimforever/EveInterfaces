@@ -2,7 +2,7 @@
  * ISystemOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -30,6 +30,8 @@ public interface ISystemOperation extends IDataServlet {
     public static final byte SELECT_Systemjumpssystem_end = 100 + 2;
     public static final byte SELECT_Systemjumpssystem_start = 100 + 3;
     public static final byte SELECT_Route = 100 + 4;
+    public static final byte SELECT_Systemtradesell_system = 100 + 5;
+    public static final byte SELECT_Systemtradebuy_system = 100 + 6;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
@@ -48,8 +50,8 @@ public interface ISystemOperation extends IDataServlet {
 
     //DELETE OPERATIONS
     public static final byte DELETE_SYSTEM = 30;
-    public static final byte DELETE_Security_island = 100 + 5;
-    public static final byte DELETE_Constellation = 100 + 6;
+    public static final byte DELETE_Security_island = 100 + 7;
+    public static final byte DELETE_Constellation = 100 + 8;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   

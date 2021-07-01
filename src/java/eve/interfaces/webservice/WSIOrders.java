@@ -34,6 +34,10 @@ public interface WSIOrders {
 
     @WebMethod void delete4system(String json);
 
+    @WebMethod String getOrderss4systemtrade_orderBuy_order(String json);
+
+    @WebMethod String getOrderss4systemtrade_orderSell_order(String json);
+
     @WebMethod String getOrderss4tradeSell_order_id(String json);
 
     @WebMethod String getOrderss4tradeBuy_order_id(String json);

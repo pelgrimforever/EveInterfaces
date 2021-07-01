@@ -2,7 +2,7 @@
  * IBLorders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -182,6 +182,20 @@ public interface IBLorders extends Serializable {
     public ArrayList getOrderss4system(ISystemPK systemPK) throws CustomException;
 
     
+    /**
+     * @param systemtrade_orderPK: parent Systemtrade_order for child object Orders Entity
+     * @return child Orders Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IOrders getSystemtrade_orderbuy_order(ISystemtrade_orderPK systemtrade_orderPK) throws CustomException;
+
+    /**
+     * @param systemtrade_orderPK: parent Systemtrade_order for child object Orders Entity
+     * @return child Orders Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IOrders getSystemtrade_ordersell_order(ISystemtrade_orderPK systemtrade_orderPK) throws CustomException;
+
     /**
      * @param tradePK: parent Trade for child object Orders Entity
      * @return child Orders Entity object

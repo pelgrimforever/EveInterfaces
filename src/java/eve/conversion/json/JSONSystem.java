@@ -119,6 +119,12 @@ public class JSONSystem {
             if(systemsearch.getRoutetypesearch()!=null && systemsearch.getRoutetypesearch().used()) {
                 kss.put("routetypesearcher", JSONRoute.toJSON((Routesearch)systemsearch.getRoutetypesearch()));
             }
+            if(systemsearch.getSystemtradesell_systemsearch()!=null && systemsearch.getSystemtradesell_systemsearch().used()) {
+                kss.put("systemtradeSell_systemsearcher", JSONSystemtrade.toJSON((Systemtradesearch)systemsearch.getSystemtradesell_systemsearch()));
+            }
+            if(systemsearch.getSystemtradebuy_systemsearch()!=null && systemsearch.getSystemtradebuy_systemsearch().used()) {
+                kss.put("systemtradeBuy_systemsearcher", JSONSystemtrade.toJSON((Systemtradesearch)systemsearch.getSystemtradebuy_systemsearch()));
+            }
             json.put("keysearch", kss);
         }
         return json;
@@ -232,6 +238,20 @@ public class JSONSystem {
             for(int i=0; i<keysearch.size(); i++) {
                 Routetypesearch routetypesearch = JSONRoutetype.toRoutetypesearch((JSONObject)keysearch.get(i));
                 systemsearch.routetype(routetypesearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemtradeSell_systemsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemtradesearch systemtradeSell_systemsearch = JSONSystemtrade.toSystemtradesearch((JSONObject)keysearch.get(i));
+                systemsearch.systemtradeSell_system(systemtradeSell_systemsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("systemtradeBuy_systemsearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Systemtradesearch systemtradeBuy_systemsearch = JSONSystemtrade.toSystemtradesearch((JSONObject)keysearch.get(i));
+                systemsearch.systemtradeBuy_system(systemtradeBuy_systemsearch);
             }
         }
         return systemsearch;

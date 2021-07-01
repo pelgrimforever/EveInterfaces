@@ -2,7 +2,7 @@
  * ISystemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -154,5 +154,17 @@ public interface ISystemsearch extends ITablesearch {
      * @param routetypesearch: IRoutetypesearch
      */
     public void routetype(IRoutetypesearch routetypesearch);
+    
+    /**
+     * set subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtradeSell_system(ISystemtradesearch systemtradesearch);
+    
+    /**
+     * set subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtradeBuy_system(ISystemtradesearch systemtradesearch);
     
 }

@@ -2,7 +2,7 @@
  * Systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -39,6 +39,8 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Primarykeysearch systemjumpsSystem_startsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
     Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields);
     Relationalkeysearch routetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
+    Primarykeysearch systemtradeSell_systemsearcher = new Primarykeysearch("systemtrade", ISystemtrade.systemSell_systemPKfields, ISystemtrade.systemSell_systemFKfields);
+    Primarykeysearch systemtradeBuy_systemsearcher = new Primarykeysearch("systemtrade", ISystemtrade.systemBuy_systemPKfields, ISystemtrade.systemBuy_systemFKfields);
 
     /**
      * Constructor
@@ -77,6 +79,8 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
         addKeysearcher(systemjumpsSystem_startsearcher);
         addKeysearcher(routesearcher);
         addKeysearcher(routetypesearcher);
+        addKeysearcher(systemtradeSell_systemsearcher);
+        addKeysearcher(systemtradeBuy_systemsearcher);
     }
 
     /**
@@ -344,6 +348,46 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     public IRoutetypesearch getRoutetypesearch() {
         if(routetypesearcher.used()) {
             return (IRoutetypesearch)routetypesearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtradeSell_system(ISystemtradesearch systemtradesearch) {
+        systemtradeSell_systemsearcher.setTablesearch(systemtradesearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public ISystemtradesearch getSystemtradesell_systemsearch() {
+        if(systemtradeSell_systemsearcher.used()) {
+            return (ISystemtradesearch)systemtradeSell_systemsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtradeBuy_system(ISystemtradesearch systemtradesearch) {
+        systemtradeBuy_systemsearcher.setTablesearch(systemtradesearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for System
+     */
+    public ISystemtradesearch getSystemtradebuy_systemsearch() {
+        if(systemtradeBuy_systemsearcher.used()) {
+            return (ISystemtradesearch)systemtradeBuy_systemsearcher.getTablesearches().get(0);
         } else {
             return null;
         }

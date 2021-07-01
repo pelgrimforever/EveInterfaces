@@ -40,6 +40,10 @@ public interface WSISystem {
 
     @WebMethod String getSystems4route(String json);
 
+    @WebMethod String getSystems4systemtradeSell_system(String json);
+
+    @WebMethod String getSystems4systemtradeBuy_system(String json);
+
 
 }
 

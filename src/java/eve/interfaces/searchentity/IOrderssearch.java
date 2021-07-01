@@ -2,7 +2,7 @@
  * IOrderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -216,6 +216,30 @@ public interface IOrderssearch extends ITablesearch {
 	*/
 	public void system(ISystemsearch systemsearch);
 	
+    /**
+     * set subsearch systemtrade_order tablesearch
+     * @param systemtrade_ordersearch: ISystemtrade_ordersearch
+     */
+    public void systemtrade_orderBuy_order(ISystemtrade_ordersearch systemtrade_ordersearch);
+    
+    /**
+     * set relational subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtrade1(ISystemtradesearch systemtradesearch);
+    
+    /**
+     * set subsearch systemtrade_order tablesearch
+     * @param systemtrade_ordersearch: ISystemtrade_ordersearch
+     */
+    public void systemtrade_orderSell_order(ISystemtrade_ordersearch systemtrade_ordersearch);
+    
+    /**
+     * set relational subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtrade2(ISystemtradesearch systemtradesearch);
+    
     /**
      * set subsearch trade tablesearch
      * @param tradesearch: ITradesearch

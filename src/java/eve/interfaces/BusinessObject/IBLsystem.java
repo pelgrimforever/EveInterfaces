@@ -2,7 +2,7 @@
  * IBLsystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -202,6 +202,20 @@ public interface IBLsystem extends Serializable {
      * @throws eve.general.exception.CustomException
      */
     public ISystem getRoute(IRoutePK routePK) throws CustomException;
+
+    /**
+     * @param systemtradePK: parent Systemtrade for child object System Entity
+     * @return child System Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public ISystem getSystemtradesell_system(ISystemtradePK systemtradePK) throws CustomException;
+
+    /**
+     * @param systemtradePK: parent Systemtrade for child object System Entity
+     * @return child System Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public ISystem getSystemtradebuy_system(ISystemtradePK systemtradePK) throws CustomException;
 
 //Custom code, do not change this line
 //Custom code, do not change this line

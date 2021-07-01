@@ -2,7 +2,7 @@
  * IOrdersOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -27,8 +27,10 @@ public interface IOrdersOperation extends IDataServlet {
     public static final byte SELECT_SEARCHCOUNT = 4;
     public static final byte SELECT_Evetype = 100 + 0;
     public static final byte SELECT_System = 100 + 1;
-    public static final byte SELECT_Tradesell_order_id = 100 + 2;
-    public static final byte SELECT_Tradebuy_order_id = 100 + 3;
+    public static final byte SELECT_Systemtrade_orderbuy_order = 100 + 2;
+    public static final byte SELECT_Systemtrade_ordersell_order = 100 + 3;
+    public static final byte SELECT_Tradesell_order_id = 100 + 4;
+    public static final byte SELECT_Tradebuy_order_id = 100 + 5;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
@@ -47,8 +49,8 @@ public interface IOrdersOperation extends IDataServlet {
 
     //DELETE OPERATIONS
     public static final byte DELETE_ORDERS = 30;
-    public static final byte DELETE_Evetype = 100 + 4;
-    public static final byte DELETE_System = 100 + 5;
+    public static final byte DELETE_Evetype = 100 + 6;
+    public static final byte DELETE_System = 100 + 7;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   

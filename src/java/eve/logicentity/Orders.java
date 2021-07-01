@@ -2,7 +2,7 @@
  * Orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -48,6 +48,27 @@ public class Orders extends eve.entity.eOrders implements IOrders {
     public static final String SQLdeleteall = "delete from orders";
     public static final String SQLreset = "update orders set isopen = :isopen:";
     
+    public static final String SQLgetSellorders4system = "select * from orders o " +
+        "where o.system = :system.id: and o.id in " +
+        "(select sellorderid from view_systemtradeorders " +
+        "where packaged_volume <= :max_cargovolume: and buy_totalprice * :net_perc: > sell_totalprice) " +
+        "order by evetype, price";
+    public static final String SQLgetBuyorders4system = "select * from orders o " +
+        "where o.system = :system.id: and o.id in " +
+        "(select buyorderid from view_systemtradeorders " +
+        "where packaged_volume <= :max_cargovolume: and buy_totalprice * :net_perc: > sell_totalprice) " +
+        "order by evetype, price desc";
+    public static final String SQLgetSellorders4system2 = "select * from orders o inner join evetype e on e.id = o.evetype " +
+        "where not o.is_buy_order and o.system = :system.id: and e.packaged_volume <= :max_cargovolume: " +
+        "order by evetype, price";
+    public static final String SQLgetSellorders4systemevetype = "select * from orders " +
+        "where not is_buy_order and system = :system.id: and evetype = :evetype.id: and price < :max_price: " +
+        "order by price";
+    public static final String SQLgetBuyorders4system2 = "select * from orders o inner join evetype e on e.id = o.evetype " +
+        "where o.is_buy_order and o.system = :system.id: and e.packaged_volume <= :max_cargovolume: " +
+        "order by evetype, price desc";
+
+/*    
     public static final String SQLbuy_orders = "select o.*, e.packaged_volume from orders o " +
         "inner join evetype e on e.id = o.evetype and o.price > e.min_selorder and e.packaged_volume<=:maxvolume: " +
         "inner join system s on s.id = o.system and s.security_island = :security_island.id: " +
@@ -62,7 +83,7 @@ public class Orders extends eve.entity.eOrders implements IOrders {
         "inner join system s on s.id = o.system and s.security_island = :security_island.id: " +
         "where not o.is_buy_order " +
         "order by o.evetype, o.system, o.volume_remain*o.price";
-    
+*/    
     private double packaged_volume = 0;
 //Custom code, do not change this line
 

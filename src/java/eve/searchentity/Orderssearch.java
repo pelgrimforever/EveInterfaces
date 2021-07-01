@@ -2,7 +2,7 @@
  * Orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 23.5.2021 16:2
+ * Generated on 30.5.2021 15:39
  *
  */
 
@@ -40,6 +40,10 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     Numbersearch page = new Numbersearch("orders.page");
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrders.evetypePKfields, IOrders.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IOrders.systemPKfields, IOrders.systemFKfields);
+    Primarykeysearch systemtrade_orderBuy_ordersearcher = new Primarykeysearch("systemtrade_order", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields);
+    Relationalkeysearch systemtrade1searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields, "systemtrade", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
+    Primarykeysearch systemtrade_orderSell_ordersearcher = new Primarykeysearch("systemtrade_order", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields);
+    Relationalkeysearch systemtrade2searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields, "systemtrade", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
     Primarykeysearch tradeSell_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
     Primarykeysearch tradeBuy_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
 
@@ -81,6 +85,10 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
         addFieldsearcher(page);
         addKeysearcher(evetypesearcher);
         addKeysearcher(systemsearcher);
+        addKeysearcher(systemtrade_orderBuy_ordersearcher);
+        addKeysearcher(systemtrade1searcher);
+        addKeysearcher(systemtrade_orderSell_ordersearcher);
+        addKeysearcher(systemtrade2searcher);
         addKeysearcher(tradeSell_order_idsearcher);
         addKeysearcher(tradeBuy_order_idsearcher);
     }
@@ -385,6 +393,86 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
      */
     public String getSystemInnerjoin() {
         return systemsearcher.getInnerjoin();
+    }
+
+    /**
+     * set subsearch systemtrade_order tablesearch
+     * @param systemtrade_ordersearch: ISystemtrade_ordersearch
+     */
+    public void systemtrade_orderBuy_order(ISystemtrade_ordersearch systemtrade_ordersearch) {
+        systemtrade_orderBuy_ordersearcher.setTablesearch(systemtrade_ordersearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Orders
+     */
+    public ISystemtrade_ordersearch getSystemtrade_orderbuy_ordersearch() {
+        if(systemtrade_orderBuy_ordersearcher.used()) {
+            return (ISystemtrade_ordersearch)systemtrade_orderBuy_ordersearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set relational subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtrade1(ISystemtradesearch systemtradesearch) {
+        systemtrade1searcher.setTablesearch(systemtradesearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Orders
+     */
+    public ISystemtradesearch getSystemtrade1search() {
+        if(systemtrade1searcher.used()) {
+            return (ISystemtradesearch)systemtrade1searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set subsearch systemtrade_order tablesearch
+     * @param systemtrade_ordersearch: ISystemtrade_ordersearch
+     */
+    public void systemtrade_orderSell_order(ISystemtrade_ordersearch systemtrade_ordersearch) {
+        systemtrade_orderSell_ordersearcher.setTablesearch(systemtrade_ordersearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Orders
+     */
+    public ISystemtrade_ordersearch getSystemtrade_ordersell_ordersearch() {
+        if(systemtrade_orderSell_ordersearcher.used()) {
+            return (ISystemtrade_ordersearch)systemtrade_orderSell_ordersearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set relational subsearch systemtrade tablesearch
+     * @param systemtradesearch: ISystemtradesearch
+     */
+    public void systemtrade2(ISystemtradesearch systemtradesearch) {
+        systemtrade2searcher.setTablesearch(systemtradesearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Orders
+     */
+    public ISystemtradesearch getSystemtrade2search() {
+        if(systemtrade2searcher.used()) {
+            return (ISystemtradesearch)systemtrade2searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
     }
 
     /**
