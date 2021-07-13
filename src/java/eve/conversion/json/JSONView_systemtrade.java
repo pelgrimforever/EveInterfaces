@@ -36,6 +36,9 @@ public class JSONView_systemtrade {
         JSONObject json = new JSONObject();
         json.put("sell_system", String.valueOf(view_systemtrade.getSell_system()));
         json.put("buy_system", String.valueOf(view_systemtrade.getBuy_system()));
+        json.put("ordercount", String.valueOf(view_systemtrade.getOrdercount()));
+        json.put("totalsell", view_systemtrade.getTotalsell());
+        json.put("totalbuy", view_systemtrade.getTotalbuy());
         json.put("profit", view_systemtrade.getProfit());
         json.put("total_cargo_volume", view_systemtrade.getTotal_cargo_volume());
         json.put("jumps", view_systemtrade.getJumps());
@@ -44,6 +47,8 @@ public class JSONView_systemtrade {
         json.put("regionbuyname", view_systemtrade.getRegionbuyname());
         json.put("systembuyname", view_systemtrade.getSystembuyname());
 //Custom code, do not change this line
+        json.put("start_system", String.valueOf(view_systemtrade.getStart_system()));
+        json.put("start_system_jumps", view_systemtrade.getStart_system_jumps());
 //Custom code, do not change this line
         return json;
     }
@@ -52,6 +57,9 @@ public class JSONView_systemtrade {
         View_systemtrade view_systemtrade = new View_systemtrade();
         view_systemtrade.setSell_system(JSONConversion.getlong(json, "sell_system"));
         view_systemtrade.setBuy_system(JSONConversion.getlong(json, "buy_system"));
+        view_systemtrade.setOrdercount(JSONConversion.getlong(json, "ordercount"));
+        view_systemtrade.setTotalsell(JSONConversion.getdouble(json, "totalsell"));
+        view_systemtrade.setTotalbuy(JSONConversion.getdouble(json, "totalbuy"));
         view_systemtrade.setProfit(JSONConversion.getdouble(json, "profit"));
         view_systemtrade.setTotal_cargo_volume(JSONConversion.getdouble(json, "total_cargo_volume"));
         view_systemtrade.setJumps(JSONConversion.getint(json, "jumps"));
@@ -87,6 +95,27 @@ public class JSONView_systemtrade {
             byte[] operators = JSONConversion.getNumberoperators(field);
             byte andor = JSONConversion.getbyte(field, "andor");
             view_systemtradesearch.buy_system(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("ordercount");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            view_systemtradesearch.ordercount(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("totalsell");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            view_systemtradesearch.totalsell(valuearray, operators, andor);
+        }
+        field = (JSONObject)fss.get("totalbuy");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            view_systemtradesearch.totalbuy(valuearray, operators, andor);
         }
         field = (JSONObject)fss.get("profit");
         if(field!=null) {

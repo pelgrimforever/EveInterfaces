@@ -2,7 +2,7 @@
  * IView_systemtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 30.5.2021 15:39
+ * Generated on 12.6.2021 13:57
  *
  */
 
@@ -50,6 +50,51 @@ public interface IView_systemtradesearch extends ITablesearch {
 	 * @param andor; AND/OR constant
 	 */
 	public void buy_system(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field ordercount, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void ordercount(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field ordercount
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void ordercount(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field totalsell, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void totalsell(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field totalsell
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void totalsell(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field totalbuy, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void totalbuy(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field totalbuy
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void totalbuy(Double[] values, byte[] operators, byte andor);
 	
 	/**
 	 * add Numeric search values for field profit, default OR operator is used

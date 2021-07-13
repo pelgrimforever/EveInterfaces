@@ -2,7 +2,7 @@
  * IView_systemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 30.5.2021 15:39
+ * Generated on 12.6.2021 13:57
  *
  */
 
@@ -30,16 +30,22 @@ public interface IView_systemtrade extends View {
 
     public static byte SELL_SYSTEM = 1;
     public static byte BUY_SYSTEM = 2;
-    public static byte PROFIT = 3;
-    public static byte TOTAL_CARGO_VOLUME = 4;
-    public static byte JUMPS = 5;
-    public static byte REGIONSELLNAME = 6;
-    public static byte SYSTEMSELLNAME = 7;
-    public static byte REGIONBUYNAME = 8;
-    public static byte SYSTEMBUYNAME = 9;
+    public static byte ORDERCOUNT = 3;
+    public static byte TOTALSELL = 4;
+    public static byte TOTALBUY = 5;
+    public static byte PROFIT = 6;
+    public static byte TOTAL_CARGO_VOLUME = 7;
+    public static byte JUMPS = 8;
+    public static byte REGIONSELLNAME = 9;
+    public static byte SYSTEMSELLNAME = 10;
+    public static byte REGIONBUYNAME = 11;
+    public static byte SYSTEMBUYNAME = 12;
 
     public static final int SIZE_SELL_SYSTEM = 19;
     public static final int SIZE_BUY_SYSTEM = 19;
+    public static final int SIZE_ORDERCOUNT = 19;
+    public static final int SIZE_TOTALSELL = 17;
+    public static final int SIZE_TOTALBUY = 17;
     public static final int SIZE_PROFIT = 17;
     public static final int SIZE_TOTAL_CARGO_VOLUME = 17;
     public static final int SIZE_JUMPS = 10;
@@ -47,7 +53,7 @@ public interface IView_systemtrade extends View {
     public static final int SIZE_SYSTEMSELLNAME = 30;
     public static final int SIZE_REGIONBUYNAME = 30;
     public static final int SIZE_SYSTEMBUYNAME = 30;
-    public static final String[] fieldnames = { "sell_system", "buy_system", "profit", "total_cargo_volume", "jumps", "regionsellname", "systemsellname", "regionbuyname", "systembuyname" };
+    public static final String[] fieldnames = { "sell_system", "buy_system", "ordercount", "totalsell", "totalbuy", "profit", "total_cargo_volume", "jumps", "regionsellname", "systemsellname", "regionbuyname", "systembuyname" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -64,6 +70,24 @@ public interface IView_systemtrade extends View {
      * @return buy_system value
      */
     public long getBuy_system();
+
+    /**
+     * 
+     * @return ordercount value
+     */
+    public long getOrdercount();
+
+    /**
+     * 
+     * @return totalsell value
+     */
+    public double getTotalsell();
+
+    /**
+     * 
+     * @return totalbuy value
+     */
+    public double getTotalbuy();
 
     /**
      * 
@@ -110,6 +134,12 @@ public interface IView_systemtrade extends View {
     
 //Custom code, do not change this line
 //Put custom functions here
+    public long getStart_system();
 
+    public void setStart_system(long start_system);
+
+    public int getStart_system_jumps();
+
+    public void setStart_system_jumps(int start_system_jumps);
 //Custom code, do not change this line
 }

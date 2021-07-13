@@ -2,7 +2,7 @@
  * eView_systemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 30.5.2021 15:39
+ * Generated on 12.6.2021 13:57
  *
  */
 
@@ -30,6 +30,9 @@ public class eView_systemtrade implements EntityViewInterface {
 
     private long sell_system;
     private long buy_system;
+    private long ordercount;
+    private double totalsell;
+    private double totalbuy;
     private double profit;
     private double total_cargo_volume;
     private int jumps;
@@ -103,6 +106,54 @@ public class eView_systemtrade implements EntityViewInterface {
      */
     public void setBuy_system(long buy_system) {
         this.buy_system = buy_system;
+    }
+
+    /**
+     * 
+     * @return ordercount value
+     */
+    public long getOrdercount() {
+        return this.ordercount;
+    }
+
+    /**
+     * set ordercount value
+     * @param ordercount: new value
+     */
+    public void setOrdercount(long ordercount) {
+        this.ordercount = ordercount;
+    }
+
+    /**
+     * 
+     * @return totalsell value
+     */
+    public double getTotalsell() {
+        return this.totalsell;
+    }
+
+    /**
+     * set totalsell value
+     * @param totalsell: new value
+     */
+    public void setTotalsell(double totalsell) {
+        this.totalsell = totalsell;
+    }
+
+    /**
+     * 
+     * @return totalbuy value
+     */
+    public double getTotalbuy() {
+        return this.totalbuy;
+    }
+
+    /**
+     * set totalbuy value
+     * @param totalbuy: new value
+     */
+    public void setTotalbuy(double totalbuy) {
+        this.totalbuy = totalbuy;
     }
 
     /**

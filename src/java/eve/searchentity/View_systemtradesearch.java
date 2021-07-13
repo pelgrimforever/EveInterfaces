@@ -2,7 +2,7 @@
  * View_systemtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 30.5.2021 15:39
+ * Generated on 12.6.2021 13:57
  *
  */
 
@@ -26,6 +26,9 @@ public class View_systemtradesearch extends Tablesearch implements IView_systemt
 
     Numbersearch sell_system = new Numbersearch("view_systemtrade.sell_system");
     Numbersearch buy_system = new Numbersearch("view_systemtrade.buy_system");
+    Numbersearch ordercount = new Numbersearch("view_systemtrade.ordercount");
+    Numbersearch totalsell = new Numbersearch("view_systemtrade.totalsell");
+    Numbersearch totalbuy = new Numbersearch("view_systemtrade.totalbuy");
     Numbersearch profit = new Numbersearch("view_systemtrade.profit");
     Numbersearch total_cargo_volume = new Numbersearch("view_systemtrade.total_cargo_volume");
     Numbersearch jumps = new Numbersearch("view_systemtrade.jumps");
@@ -59,6 +62,9 @@ public class View_systemtradesearch extends Tablesearch implements IView_systemt
     private void setFieldsearchers() {
         addFieldsearcher(sell_system);
         addFieldsearcher(buy_system);
+        addFieldsearcher(ordercount);
+        addFieldsearcher(totalsell);
+        addFieldsearcher(totalbuy);
         addFieldsearcher(profit);
         addFieldsearcher(total_cargo_volume);
         addFieldsearcher(jumps);
@@ -106,6 +112,66 @@ public class View_systemtradesearch extends Tablesearch implements IView_systemt
     public void buy_system(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(buy_system, values, operators);
         buy_system.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field ordercount, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void ordercount(Double[] values, byte[] operators) {
+        addNumbervalues(ordercount, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field ordercount
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void ordercount(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(ordercount, values, operators);
+        ordercount.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field totalsell, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void totalsell(Double[] values, byte[] operators) {
+        addNumbervalues(totalsell, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field totalsell
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void totalsell(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(totalsell, values, operators);
+        totalsell.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field totalbuy, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void totalbuy(Double[] values, byte[] operators) {
+        addNumbervalues(totalbuy, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field totalbuy
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void totalbuy(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(totalbuy, values, operators);
+        totalbuy.setAndoroperator(andor);
     }
     
     /**
