@@ -2,7 +2,7 @@
  * Region.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 12.6.2021 13:57
+ * Generated on 18.6.2021 14:35
  *
  */
 
@@ -41,8 +41,9 @@ public class Region extends eve.entity.eRegion implements IRegion {
 
 //Custom code, do not change this line
     public static final String OrderBy = " order by id";
+    public static final String OrderByPages = " order by orderpages desc";
     public static final String SQLwhereaccess = "not noaccess";
-    public static final String SQLSelectAllaccess = SQLSelect + " where " + SQLwhereaccess + OrderBy;
+    public static final String SQLSelectAllaccess = SQLSelect + " where " + SQLwhereaccess + OrderByPages;
 
     public static final String updateNoaccess1 = "update region set noaccess = :noaccess: where id not in (select region from constellation where noaccess = :constellationnoaccess: group by region)";
     public static final String updateNoaccess2 = "update region set noaccess = :noaccess: where id in (select region from constellation where noaccess = :constellationnoaccess: group by region)";
