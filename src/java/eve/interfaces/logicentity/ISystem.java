@@ -181,5 +181,29 @@ public interface ISystem extends LogicEntity {
      * @return Entity string representation
      */
     public String toString();
+
+    public int getNpc_kills();
+
+    public void setNpc_kills(int npc_kills);
+
+    public int getPod_kills();
+
+    public void setPod_kills(int pod_kills);
+
+    public int getShip_kills();
+
+    public void setShip_kills(int ship_kills);
+
+    public int getKillmailcount();
+
+    public void setKillmailcount(int killmailcount);
+
+    public int getKillmailgatecount();
+
+    public void setKillmailgatecount(int killmailgatecount);
+
+    public org.json.simple.JSONObject getKillmaildata();
+
+    public void setKillmaildata(org.json.simple.JSONObject killmaildata);
 //Custom code, do not change this line
 }

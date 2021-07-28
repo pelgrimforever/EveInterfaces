@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
+import org.json.simple.JSONObject;
 
 /**
  * Entity class System
@@ -58,6 +59,14 @@ public class System extends eve.entity.eSystem implements ISystem {
         "inner join system s_to on sg.to_system = s_to.id " +
         "where system.security_island = :security_island.id: " +
         "and s_to.security_island is null and s_to.security_status >= :highsec:";
+    
+    private int npc_kills = 0;
+    private int pod_kills = 0;
+    private int ship_kills = 0;
+    
+    private int killmailcount = 0;
+    private int killmailgatecount = 0;
+    private org.json.simple.JSONObject killmaildata = new org.json.simple.JSONObject();
 //Custom code, do not change this line
 
     public static final String SQLSelect4security_island = "select * from system where " + SQLWheresecurity_island + OrderBy;
@@ -95,6 +104,54 @@ public class System extends eve.entity.eSystem implements ISystem {
      */
     public String toString() {
         return super.toString();
+    }
+        
+    public int getNpc_kills() {
+        return npc_kills;
+    }
+
+    public void setNpc_kills(int npc_kills) {
+        this.npc_kills = npc_kills;
+    }
+
+    public int getPod_kills() {
+        return pod_kills;
+    }
+
+    public void setPod_kills(int pod_kills) {
+        this.pod_kills = pod_kills;
+    }
+
+    public int getShip_kills() {
+        return ship_kills;
+    }
+
+    public void setShip_kills(int ship_kills) {
+        this.ship_kills = ship_kills;
+    }
+    
+    public int getKillmailcount() {
+        return killmailcount;
+    }
+
+    public void setKillmailcount(int killmailcount) {
+        this.killmailcount = killmailcount;
+    }
+
+    public int getKillmailgatecount() {
+        return killmailgatecount;
+    }
+
+    public void setKillmailgatecount(int killmailgatecount) {
+        this.killmailgatecount = killmailgatecount;
+    }
+
+    public org.json.simple.JSONObject getKillmaildata() {
+        return killmaildata;
+    }
+
+    public void setKillmaildata(org.json.simple.JSONObject killmaildata) {
+        this.killmaildata = killmaildata;
     }
 //Custom code, do not change this line
 }

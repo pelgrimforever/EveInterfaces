@@ -63,6 +63,12 @@ public class JSONSystem {
         json.put("isconstellationborder", system.getIsconstellationborder());
         json.put("isregionborder", system.getIsregionborder());
 //Custom code, do not change this line
+        json.put("npc_kills", system.getNpc_kills());
+        json.put("pod_kills", system.getPod_kills());
+        json.put("ship_kills", system.getShip_kills());
+        json.put("killmailcount", system.getKillmailcount());
+        json.put("killmailgatecount", system.getKillmailgatecount());
+        json.put("killmaildata", system.getKillmaildata());
 //Custom code, do not change this line
         return json;
     }
