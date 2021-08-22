@@ -25,6 +25,8 @@ public interface IView_orderOperation extends IDataServlet {
 //Custom code, do not change this line
 //add here custom operations
     public static final byte SELECT_ONE = 2;
+    public static final byte SELECT_EVETYPE_SELL = 3;
+    public static final byte SELECT_EVETYPE_BUY = 4;
 //Custom code, do not change this line
 }
 

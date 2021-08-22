@@ -42,6 +42,8 @@ public class Orders extends eve.entity.eOrders implements IOrders {
     public static final String SQLWheresystem = "system = :system.id:";
 
 //Custom code, do not change this line
+    public static final String Truncate = "truncate table systemtrade_order, trade, orders";
+    
     public static final String OrderBy = " order by id";
     public static final String SQLSelectAll = SQLSelect + OrderBy;
 

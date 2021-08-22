@@ -44,7 +44,8 @@ public class System extends eve.entity.eSystem implements ISystem {
 
 //Custom code, do not change this line
     public static final String OrderBy = " order by name";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
+    public static final String WhereAccess = "not noaccess";
+    public static final String SQLSelectAll = SQLSelect + " where " + WhereAccess + OrderBy;
     
     public static final String SQLupdateconstellationborders = "update system set isconstellationborder = :isborder: where id in (select system from stargate where isconstellationborder group by system)";
     public static final String SQLupdateregionborders = "update system set isregionborder = :isborder: where id in (select system from stargate where isregionborder group by system)";
