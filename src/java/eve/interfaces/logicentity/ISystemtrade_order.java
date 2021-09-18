@@ -2,7 +2,7 @@
  * ISystemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -59,8 +59,8 @@ public interface ISystemtrade_order extends LogicEntity {
     public static final String[] ordersBuy_orderFKfields = { "systemtrade_order.buy_order" };
     public static final String[] ordersSell_orderPKfields = { "orders.id" };
     public static final String[] ordersSell_orderFKfields = { "systemtrade_order.sell_order" };
-    public static final String[] systemtradePKfields = { "systemtrade.sell_system", "systemtrade.buy_system" };
-    public static final String[] systemtradeFKfields = { "systemtrade_order.sell_system", "systemtrade_order.buy_system" };
+    public static final String[] systemtradePKfields = { "systemtrade.buy_system", "systemtrade.sell_system" };
+    public static final String[] systemtradeFKfields = { "systemtrade_order.buy_system", "systemtrade_order.sell_system" };
 
 //Custom code, do not change this line
 //Put custom variables here

@@ -2,7 +2,7 @@
  * System.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
-import org.json.simple.JSONObject;
 
 /**
  * Entity class System

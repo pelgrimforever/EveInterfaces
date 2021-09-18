@@ -2,7 +2,7 @@
  * Systemtrade_orderPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -42,7 +42,7 @@ public class Systemtrade_orderPK implements EntityPKInterface, ISystemtrade_orde
     public Systemtrade_orderPK(long sell_system, long buy_system, long sell_order, long buy_order) {
         this.ordersBuy_orderPK = new OrdersPK(buy_order);
         this.ordersSell_orderPK = new OrdersPK(sell_order);
-        this.systemtradePK = new SystemtradePK(sell_system, buy_system);
+        this.systemtradePK = new SystemtradePK(buy_system, sell_system);
     }
 
     /**

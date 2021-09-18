@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -290,6 +290,12 @@ public interface IEvetypesearch extends ITablesearch {
 	*/
 	public void graphic(IGraphicsearch graphicsearch);
 	
+    /**
+     * set subsearch stock tablesearch
+     * @param stocksearch: IStocksearch
+     */
+    public void stock(IStocksearch stocksearch);
+    
     /**
      * set subsearch order_history tablesearch
      * @param order_historysearch: IOrder_historysearch

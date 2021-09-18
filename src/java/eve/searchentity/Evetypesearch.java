@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -45,6 +45,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Foreignkeysearch market_groupsearcher = new Foreignkeysearch("market_group", IEvetype.market_groupPKfields, IEvetype.market_groupFKfields);
     Foreignkeysearch typegroupsearcher = new Foreignkeysearch("typegroup", IEvetype.typegroupPKfields, IEvetype.typegroupFKfields);
     Foreignkeysearch graphicsearcher = new Foreignkeysearch("graphic", IEvetype.graphicPKfields, IEvetype.graphicFKfields);
+    Primarykeysearch stocksearcher = new Primarykeysearch("stock", IStock.evetypePKfields, IStock.evetypeFKfields);
     Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     Relationalkeysearch regionsearcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
 
@@ -91,6 +92,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addKeysearcher(market_groupsearcher);
         addKeysearcher(typegroupsearcher);
         addKeysearcher(graphicsearcher);
+        addKeysearcher(stocksearcher);
         addKeysearcher(order_historysearcher);
         addKeysearcher(regionsearcher);
     }
@@ -516,6 +518,26 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
      */
     public String getGraphicInnerjoin() {
         return graphicsearcher.getInnerjoin();
+    }
+
+    /**
+     * set subsearch stock tablesearch
+     * @param stocksearch: IStocksearch
+     */
+    public void stock(IStocksearch stocksearch) {
+        stocksearcher.setTablesearch(stocksearch);
+    }
+    
+    /**
+     * 
+     * @return Tablesearch for Evetype
+     */
+    public IStocksearch getStocksearch() {
+        if(stocksearcher.used()) {
+            return (IStocksearch)stocksearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
     }
 
     /**

@@ -120,6 +120,9 @@ public class JSONEvetype {
             if(evetypesearch.getGraphicsearch()!=null && evetypesearch.getGraphicsearch().used()) {
                 kss.put("graphicsearcher", JSONGraphic.toJSON((Graphicsearch)evetypesearch.getGraphicsearch()));
             }
+            if(evetypesearch.getStocksearch()!=null && evetypesearch.getStocksearch().used()) {
+                kss.put("stocksearcher", JSONStock.toJSON((Stocksearch)evetypesearch.getStocksearch()));
+            }
             if(evetypesearch.getOrder_historysearch()!=null && evetypesearch.getOrder_historysearch().used()) {
                 kss.put("order_historysearcher", JSONOrder_history.toJSON((Order_historysearch)evetypesearch.getOrder_historysearch()));
             }
@@ -285,6 +288,13 @@ public class JSONEvetype {
             for(int i=0; i<keysearch.size(); i++) {
                 Graphicsearch graphicsearch = JSONGraphic.toGraphicsearch((JSONObject)keysearch.get(i));
                 evetypesearch.graphic(graphicsearch);
+            }
+        }
+        keysearch = (JSONArray)kss.get("stocksearcher");
+        if(keysearch!=null) {
+            for(int i=0; i<keysearch.size(); i++) {
+                Stocksearch stocksearch = JSONStock.toStocksearch((JSONObject)keysearch.get(i));
+                evetypesearch.stock(stocksearch);
             }
         }
         keysearch = (JSONArray)kss.get("order_historysearcher");

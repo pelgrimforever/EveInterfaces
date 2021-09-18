@@ -2,7 +2,7 @@
  * ITradeOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 

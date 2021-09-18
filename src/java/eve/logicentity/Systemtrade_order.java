@@ -2,7 +2,7 @@
  * Systemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -40,7 +40,7 @@ public class Systemtrade_order extends eve.entity.eSystemtrade_order implements 
     public static final String SQLSelect = "select systemtrade_order.* from systemtrade_order";
     public static final String SQLWhereordersBuy_order = "buy_order = :orders.id:";
     public static final String SQLWhereordersSell_order = "sell_order = :orders.id:";
-    public static final String SQLWheresystemtrade = "sell_system = :systemtrade.sell_system: and buy_system = :systemtrade.buy_system:";
+    public static final String SQLWheresystemtrade = "buy_system = :systemtrade.buy_system: and sell_system = :systemtrade.sell_system:";
 
 //Custom code, do not change this line
     public static final String OrderBy = " order by sell_system, buy_system, sell_order, buy_order";

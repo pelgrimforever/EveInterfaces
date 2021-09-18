@@ -2,7 +2,7 @@
  * IBLevetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.6.2021 14:35
+ * Generated on 18.8.2021 11:31
  *
  */
 
@@ -189,6 +189,13 @@ public interface IBLevetype extends Serializable {
     public ArrayList getEvetypes4graphic(IGraphicPK graphicPK) throws CustomException;
 
     
+    /**
+     * @param stockPK: parent Stock for child object Evetype Entity
+     * @return child Evetype Entity object
+     * @throws eve.general.exception.CustomException
+     */
+    public IEvetype getStock(IStockPK stockPK) throws CustomException;
+
     /**
      * @param order_historyPK: parent Order_history for child object Evetype Entity
      * @return child Evetype Entity object
