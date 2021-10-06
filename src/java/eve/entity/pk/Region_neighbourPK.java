@@ -2,7 +2,7 @@
  * Region_neighbourPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -138,9 +138,12 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
     public String getKeystring() {
         String key = "";
         key += getRegion();
+
+
         key += "_";
 
         key += getNeighbour();
+
         return key;
     }
 
@@ -159,7 +162,10 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long region = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -167,7 +173,9 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long neighbour = Long.valueOf(keys.substring(0, keylength));
+
             return new Region_neighbourPK(region, neighbour);
         }
     }

@@ -2,7 +2,7 @@
  * eStargate.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -200,6 +200,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
      */
     public void setTo_stargate(long to_stargate) {
         updates.put(IStargate.TO_STARGATE, to_stargate);
+
         this.to_stargate = to_stargate;
     }
 
@@ -227,6 +228,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IStargate.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -252,6 +254,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
      */
     public void setX(double x) {
         updates.put(IStargate.X, x);
+
         this.x = x;
     }
 
@@ -277,6 +280,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
      */
     public void setY(double y) {
         updates.put(IStargate.Y, y);
+
         this.y = y;
     }
 
@@ -302,6 +306,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
      */
     public void setZ(double z) {
         updates.put(IStargate.Z, z);
+
         this.z = z;
     }
 
@@ -327,6 +332,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
      */
     public void setIsconstellationborder(boolean isconstellationborder) {
         updates.put(IStargate.ISCONSTELLATIONBORDER, isconstellationborder);
+
         this.isconstellationborder = isconstellationborder;
     }
 
@@ -352,6 +358,7 @@ public class eStargate extends AbstractEntity implements EntityInterface {
      */
     public void setIsregionborder(boolean isregionborder) {
         updates.put(IStargate.ISREGIONBORDER, isregionborder);
+
         this.isregionborder = isregionborder;
     }
 

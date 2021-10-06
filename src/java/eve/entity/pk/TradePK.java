@@ -2,7 +2,7 @@
  * TradePK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -138,9 +138,12 @@ public class TradePK implements EntityPKInterface, ITradePK {
     public String getKeystring() {
         String key = "";
         key += getSell_order_id();
+
+
         key += "_";
 
         key += getBuy_order_id();
+
         return key;
     }
 
@@ -159,7 +162,10 @@ public class TradePK implements EntityPKInterface, ITradePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long sell_order_id = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -167,7 +173,9 @@ public class TradePK implements EntityPKInterface, ITradePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long buy_order_id = Long.valueOf(keys.substring(0, keylength));
+
             return new TradePK(sell_order_id, buy_order_id);
         }
     }

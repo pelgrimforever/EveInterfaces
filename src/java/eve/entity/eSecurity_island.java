@@ -2,7 +2,7 @@
  * eSecurity_island.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -186,6 +186,7 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ISecurity_island.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -211,6 +212,7 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
      */
     public void setSecurity_status(double security_status) {
         updates.put(ISecurity_island.SECURITY_STATUS, security_status);
+
         this.security_status = security_status;
     }
 

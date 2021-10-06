@@ -2,7 +2,7 @@
  * eStocktrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -182,6 +182,7 @@ public class eStocktrade extends AbstractEntity implements EntityInterface {
      */
     public void setSellamount(long sellamount) {
         updates.put(IStocktrade.SELLAMOUNT, sellamount);
+
         this.sellamount = sellamount;
     }
 

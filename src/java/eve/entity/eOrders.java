@@ -2,7 +2,7 @@
  * eOrders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -210,6 +210,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setIsopen(boolean isopen) {
         updates.put(IOrders.ISOPEN, isopen);
+
         this.isopen = isopen;
     }
 
@@ -235,6 +236,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_total(long volume_total) {
         updates.put(IOrders.VOLUME_TOTAL, volume_total);
+
         this.volume_total = volume_total;
     }
 
@@ -260,6 +262,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_remain(long volume_remain) {
         updates.put(IOrders.VOLUME_REMAIN, volume_remain);
+
         this.volume_remain = volume_remain;
     }
 
@@ -287,6 +290,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
 	if(range==null && range!=this.range || range!=null && !range.equals(this.range)) {
             updates.put(IOrders.RANGE, range);
         }
+
         this.range = range;
     }
 
@@ -312,6 +316,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setRange_number(int range_number) {
         updates.put(IOrders.RANGE_NUMBER, range_number);
+
         this.range_number = range_number;
     }
 
@@ -337,6 +342,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setPrice(double price) {
         updates.put(IOrders.PRICE, price);
+
         this.price = price;
     }
 
@@ -362,6 +368,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setMin_volume(int min_volume) {
         updates.put(IOrders.MIN_VOLUME, min_volume);
+
         this.min_volume = min_volume;
     }
 
@@ -387,6 +394,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setLocation(long location) {
         updates.put(IOrders.LOCATION, location);
+
         this.location = location;
     }
 
@@ -412,6 +420,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setIs_buy_order(boolean is_buy_order) {
         updates.put(IOrders.IS_BUY_ORDER, is_buy_order);
+
         this.is_buy_order = is_buy_order;
     }
 
@@ -437,6 +446,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setIssued(java.sql.Timestamp issued) {
         updates.put(IOrders.ISSUED, issued);
+
         this.issued = issued;
     }
 
@@ -462,6 +472,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setDuration(int duration) {
         updates.put(IOrders.DURATION, duration);
+
         this.duration = duration;
     }
 
@@ -487,6 +498,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setPage(int page) {
         updates.put(IOrders.PAGE, page);
+
         this.page = page;
     }
 

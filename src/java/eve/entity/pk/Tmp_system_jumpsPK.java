@@ -2,7 +2,7 @@
  * Tmp_system_jumpsPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -86,6 +86,7 @@ public class Tmp_system_jumpsPK implements EntityPKInterface, ITmp_system_jumpsP
     public String getKeystring() {
         String key = "";
         key += getSystem();
+
         return key;
     }
 
@@ -104,7 +105,9 @@ public class Tmp_system_jumpsPK implements EntityPKInterface, ITmp_system_jumpsP
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long system = Long.valueOf(keys.substring(0, keylength));
+
             return new Tmp_system_jumpsPK(system);
         }
     }

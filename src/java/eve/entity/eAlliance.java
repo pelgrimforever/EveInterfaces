@@ -2,7 +2,7 @@
  * eAlliance.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -198,6 +198,7 @@ public class eAlliance extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IAlliance.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -223,6 +224,7 @@ public class eAlliance extends AbstractEntity implements EntityInterface {
      */
     public void setCreator(long creator) {
         updates.put(IAlliance.CREATOR, creator);
+
         this.creator = creator;
     }
 
@@ -248,6 +250,7 @@ public class eAlliance extends AbstractEntity implements EntityInterface {
      */
     public void setDate_founded(java.sql.Timestamp date_founded) {
         updates.put(IAlliance.DATE_FOUNDED, date_founded);
+
         this.date_founded = date_founded;
     }
 
@@ -275,6 +278,7 @@ public class eAlliance extends AbstractEntity implements EntityInterface {
 	if(ticker==null && ticker!=this.ticker || ticker!=null && !ticker.equals(this.ticker)) {
             updates.put(IAlliance.TICKER, ticker);
         }
+
         this.ticker = ticker;
     }
 
@@ -300,6 +304,7 @@ public class eAlliance extends AbstractEntity implements EntityInterface {
      */
     public void setFaction_id(long faction_id) {
         updates.put(IAlliance.FACTION_ID, faction_id);
+
         this.faction_id = faction_id;
     }
 

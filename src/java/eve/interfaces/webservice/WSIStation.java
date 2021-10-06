@@ -1,3 +1,11 @@
+/*
+ * WSIStation.java
+ *
+ * Created on March 26, 2007, 5:44 PM
+ * Generated on 6.9.2021 16:29
+ *
+ */
+
 package eve.interfaces.webservice;
 
 import java.util.ArrayList;

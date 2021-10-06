@@ -2,7 +2,7 @@
  * eGraphic.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -196,6 +196,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(collision_file==null && collision_file!=this.collision_file || collision_file!=null && !collision_file.equals(this.collision_file)) {
             updates.put(IGraphic.COLLISION_FILE, collision_file);
         }
+
         this.collision_file = collision_file;
     }
 
@@ -223,6 +224,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(graphic_file==null && graphic_file!=this.graphic_file || graphic_file!=null && !graphic_file.equals(this.graphic_file)) {
             updates.put(IGraphic.GRAPHIC_FILE, graphic_file);
         }
+
         this.graphic_file = graphic_file;
     }
 
@@ -250,6 +252,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(icon_folder==null && icon_folder!=this.icon_folder || icon_folder!=null && !icon_folder.equals(this.icon_folder)) {
             updates.put(IGraphic.ICON_FOLDER, icon_folder);
         }
+
         this.icon_folder = icon_folder;
     }
 
@@ -277,6 +280,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_dna==null && sof_dna!=this.sof_dna || sof_dna!=null && !sof_dna.equals(this.sof_dna)) {
             updates.put(IGraphic.SOF_DNA, sof_dna);
         }
+
         this.sof_dna = sof_dna;
     }
 
@@ -304,6 +308,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_fation_name==null && sof_fation_name!=this.sof_fation_name || sof_fation_name!=null && !sof_fation_name.equals(this.sof_fation_name)) {
             updates.put(IGraphic.SOF_FATION_NAME, sof_fation_name);
         }
+
         this.sof_fation_name = sof_fation_name;
     }
 
@@ -331,6 +336,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_hull_name==null && sof_hull_name!=this.sof_hull_name || sof_hull_name!=null && !sof_hull_name.equals(this.sof_hull_name)) {
             updates.put(IGraphic.SOF_HULL_NAME, sof_hull_name);
         }
+
         this.sof_hull_name = sof_hull_name;
     }
 
@@ -358,6 +364,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_race_name==null && sof_race_name!=this.sof_race_name || sof_race_name!=null && !sof_race_name.equals(this.sof_race_name)) {
             updates.put(IGraphic.SOF_RACE_NAME, sof_race_name);
         }
+
         this.sof_race_name = sof_race_name;
     }
 

@@ -2,7 +2,7 @@
  * eSystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -202,6 +202,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ISystem.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -229,6 +230,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
 	if(security_class==null && security_class!=this.security_class || security_class!=null && !security_class.equals(this.security_class)) {
             updates.put(ISystem.SECURITY_CLASS, security_class);
         }
+
         this.security_class = security_class;
     }
 
@@ -254,6 +256,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setSecurity_status(double security_status) {
         updates.put(ISystem.SECURITY_STATUS, security_status);
+
         this.security_status = security_status;
     }
 
@@ -279,6 +282,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setStar_id(long star_id) {
         updates.put(ISystem.STAR_ID, star_id);
+
         this.star_id = star_id;
     }
 
@@ -304,6 +308,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setNoaccess(boolean noaccess) {
         updates.put(ISystem.NOACCESS, noaccess);
+
         this.noaccess = noaccess;
     }
 
@@ -329,6 +334,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setIsconstellationborder(boolean isconstellationborder) {
         updates.put(ISystem.ISCONSTELLATIONBORDER, isconstellationborder);
+
         this.isconstellationborder = isconstellationborder;
     }
 
@@ -354,6 +360,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setIsregionborder(boolean isregionborder) {
         updates.put(ISystem.ISREGIONBORDER, isregionborder);
+
         this.isregionborder = isregionborder;
     }
 

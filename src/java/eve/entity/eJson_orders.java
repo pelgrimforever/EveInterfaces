@@ -2,7 +2,7 @@
  * eJson_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -184,6 +184,7 @@ public class eJson_orders extends AbstractEntity implements EntityInterface {
 	if(json==null && json!=this.json || json!=null && !json.equals(this.json)) {
             updates.put(IJson_orders.JSON, json);
         }
+
         this.json = json;
     }
 

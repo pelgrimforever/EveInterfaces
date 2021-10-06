@@ -2,7 +2,7 @@
  * RoutetypePK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -86,6 +86,7 @@ public class RoutetypePK implements EntityPKInterface, IRoutetypePK {
     public String getKeystring() {
         String key = "";
         key += getId();
+
         return key;
     }
 
@@ -104,7 +105,9 @@ public class RoutetypePK implements EntityPKInterface, IRoutetypePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long id = Long.valueOf(keys.substring(0, keylength));
+
             return new RoutetypePK(id);
         }
     }

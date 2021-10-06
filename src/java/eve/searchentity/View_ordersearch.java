@@ -2,7 +2,7 @@
  * View_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -44,6 +44,7 @@ public class View_ordersearch extends Tablesearch implements IView_ordersearch {
     Numbersearch locationid = new Numbersearch("view_order.locationid");
     Stringsearch locationname = new Stringsearch("view_order.locationname");
     Stringsearch systemname = new Stringsearch("view_order.systemname");
+    Numbersearch security_status = new Numbersearch("view_order.security_status");
     Numbersearch constellation = new Numbersearch("view_order.constellation");
     Stringsearch constellationname = new Stringsearch("view_order.constellationname");
     Numbersearch region = new Numbersearch("view_order.region");
@@ -94,6 +95,7 @@ public class View_ordersearch extends Tablesearch implements IView_ordersearch {
         addFieldsearcher(locationid);
         addFieldsearcher(locationname);
         addFieldsearcher(systemname);
+        addFieldsearcher(security_status);
         addFieldsearcher(constellation);
         addFieldsearcher(constellationname);
         addFieldsearcher(region);
@@ -476,6 +478,26 @@ public class View_ordersearch extends Tablesearch implements IView_ordersearch {
         addStringvalues(systemname, values);
         systemname.setCompareoperator(compare);
         systemname.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field security_status, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void security_status(Double[] values, byte[] operators) {
+        addNumbervalues(security_status, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field security_status
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void security_status(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(security_status, values, operators);
+        security_status.setAndoroperator(andor);
     }
     
     /**

@@ -2,7 +2,7 @@
  * eStation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -203,6 +203,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IStation.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -228,6 +229,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      */
     public void setOffice_rental_cost(double office_rental_cost) {
         updates.put(IStation.OFFICE_RENTAL_COST, office_rental_cost);
+
         this.office_rental_cost = office_rental_cost;
     }
 
@@ -253,6 +255,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      */
     public void setReprocessing_efficiency(double reprocessing_efficiency) {
         updates.put(IStation.REPROCESSING_EFFICIENCY, reprocessing_efficiency);
+
         this.reprocessing_efficiency = reprocessing_efficiency;
     }
 
@@ -278,6 +281,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      */
     public void setReprocessing_stations_take(double reprocessing_stations_take) {
         updates.put(IStation.REPROCESSING_STATIONS_TAKE, reprocessing_stations_take);
+
         this.reprocessing_stations_take = reprocessing_stations_take;
     }
 
@@ -303,6 +307,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      */
     public void setMax_dockable_ship_volume(double max_dockable_ship_volume) {
         updates.put(IStation.MAX_DOCKABLE_SHIP_VOLUME, max_dockable_ship_volume);
+
         this.max_dockable_ship_volume = max_dockable_ship_volume;
     }
 
@@ -328,6 +333,7 @@ public class eStation extends AbstractEntity implements EntityInterface {
      */
     public void setOwner(long owner) {
         updates.put(IStation.OWNER, owner);
+
         this.owner = owner;
     }
 

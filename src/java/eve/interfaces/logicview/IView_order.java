@@ -2,7 +2,7 @@
  * IView_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -48,12 +48,13 @@ public interface IView_order extends View {
     public static byte LOCATIONID = 18;
     public static byte LOCATIONNAME = 19;
     public static byte SYSTEMNAME = 20;
-    public static byte CONSTELLATION = 21;
-    public static byte CONSTELLATIONNAME = 22;
-    public static byte REGION = 23;
-    public static byte REGIONNAME = 24;
-    public static byte EVETYPENAME = 25;
-    public static byte PACKAGED_VOLUME = 26;
+    public static byte SECURITY_STATUS = 21;
+    public static byte CONSTELLATION = 22;
+    public static byte CONSTELLATIONNAME = 23;
+    public static byte REGION = 24;
+    public static byte REGIONNAME = 25;
+    public static byte EVETYPENAME = 26;
+    public static byte PACKAGED_VOLUME = 27;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_ISOPEN = 1;
@@ -75,13 +76,14 @@ public interface IView_order extends View {
     public static final int SIZE_LOCATIONID = 19;
     public static final int SIZE_LOCATIONNAME = 100;
     public static final int SIZE_SYSTEMNAME = 30;
+    public static final int SIZE_SECURITY_STATUS = 17;
     public static final int SIZE_CONSTELLATION = 19;
     public static final int SIZE_CONSTELLATIONNAME = 30;
     public static final int SIZE_REGION = 19;
     public static final int SIZE_REGIONNAME = 30;
     public static final int SIZE_EVETYPENAME = 100;
     public static final int SIZE_PACKAGED_VOLUME = 17;
-    public static final String[] fieldnames = { "id", "isopen", "system", "evetype", "volume_total", "volume_remain", "range", "range_number", "price", "min_volume", "location", "is_buy_order", "issued", "duration", "page", "stationid", "stationname", "locationid", "locationname", "systemname", "constellation", "constellationname", "region", "regionname", "evetypename", "packaged_volume" };
+    public static final String[] fieldnames = { "id", "isopen", "system", "evetype", "volume_total", "volume_remain", "range", "range_number", "price", "min_volume", "location", "is_buy_order", "issued", "duration", "page", "stationid", "stationname", "locationid", "locationname", "systemname", "security_status", "constellation", "constellationname", "region", "regionname", "evetypename", "packaged_volume" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -206,6 +208,12 @@ public interface IView_order extends View {
      * @return systemname value
      */
     public java.lang.String getSystemname();
+
+    /**
+     * 
+     * @return security_status value
+     */
+    public double getSecurity_status();
 
     /**
      * 

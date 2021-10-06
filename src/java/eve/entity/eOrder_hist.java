@@ -2,7 +2,7 @@
  * eOrder_hist.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -208,6 +208,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setIsopen(boolean isopen) {
         updates.put(IOrder_hist.ISOPEN, isopen);
+
         this.isopen = isopen;
     }
 
@@ -233,6 +234,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_total(int volume_total) {
         updates.put(IOrder_hist.VOLUME_TOTAL, volume_total);
+
         this.volume_total = volume_total;
     }
 
@@ -258,6 +260,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_remain(int volume_remain) {
         updates.put(IOrder_hist.VOLUME_REMAIN, volume_remain);
+
         this.volume_remain = volume_remain;
     }
 
@@ -285,6 +288,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
 	if(range==null && range!=this.range || range!=null && !range.equals(this.range)) {
             updates.put(IOrder_hist.RANGE, range);
         }
+
         this.range = range;
     }
 
@@ -310,6 +314,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setRange_number(int range_number) {
         updates.put(IOrder_hist.RANGE_NUMBER, range_number);
+
         this.range_number = range_number;
     }
 
@@ -335,6 +340,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setPrice(double price) {
         updates.put(IOrder_hist.PRICE, price);
+
         this.price = price;
     }
 
@@ -360,6 +366,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setMin_volume(int min_volume) {
         updates.put(IOrder_hist.MIN_VOLUME, min_volume);
+
         this.min_volume = min_volume;
     }
 
@@ -385,6 +392,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setLocation(long location) {
         updates.put(IOrder_hist.LOCATION, location);
+
         this.location = location;
     }
 
@@ -410,6 +418,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setIs_buy_order(boolean is_buy_order) {
         updates.put(IOrder_hist.IS_BUY_ORDER, is_buy_order);
+
         this.is_buy_order = is_buy_order;
     }
 
@@ -435,6 +444,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setIssued(java.sql.Timestamp issued) {
         updates.put(IOrder_hist.ISSUED, issued);
+
         this.issued = issued;
     }
 
@@ -460,6 +470,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setDuration(int duration) {
         updates.put(IOrder_hist.DURATION, duration);
+
         this.duration = duration;
     }
 

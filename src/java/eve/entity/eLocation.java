@@ -2,7 +2,7 @@
  * eLocation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -191,6 +191,7 @@ public class eLocation extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ILocation.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -216,6 +217,7 @@ public class eLocation extends AbstractEntity implements EntityInterface {
      */
     public void setVisited(boolean visited) {
         updates.put(ILocation.VISITED, visited);
+
         this.visited = visited;
     }
 
@@ -241,6 +243,7 @@ public class eLocation extends AbstractEntity implements EntityInterface {
      */
     public void setAccess(boolean access) {
         updates.put(ILocation.ACCESS, access);
+
         this.access = access;
     }
 

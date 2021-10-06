@@ -2,7 +2,7 @@
  * eSystemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -186,6 +186,7 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      */
     public void setProfit(double profit) {
         updates.put(ISystemtrade.PROFIT, profit);
+
         this.profit = profit;
     }
 
@@ -211,6 +212,7 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      */
     public void setTotal_cargo_volume(double total_cargo_volume) {
         updates.put(ISystemtrade.TOTAL_CARGO_VOLUME, total_cargo_volume);
+
         this.total_cargo_volume = total_cargo_volume;
     }
 
@@ -236,6 +238,7 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      */
     public void setJumps(int jumps) {
         updates.put(ISystemtrade.JUMPS, jumps);
+
         this.jumps = jumps;
     }
 

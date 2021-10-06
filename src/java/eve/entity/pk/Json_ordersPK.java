@@ -2,7 +2,7 @@
  * Json_ordersPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -86,6 +86,7 @@ public class Json_ordersPK implements EntityPKInterface, IJson_ordersPK {
     public String getKeystring() {
         String key = "";
         key += getId();
+
         return key;
     }
 
@@ -104,7 +105,9 @@ public class Json_ordersPK implements EntityPKInterface, IJson_ordersPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             int id = Integer.valueOf(keys.substring(0, keylength));
+
             return new Json_ordersPK(id);
         }
     }

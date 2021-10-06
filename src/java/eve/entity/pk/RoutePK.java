@@ -2,7 +2,7 @@
  * RoutePK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -138,9 +138,12 @@ public class RoutePK implements EntityPKInterface, IRoutePK {
     public String getKeystring() {
         String key = "";
         key += getRoutetype();
+
+
         key += "_";
 
         key += getSystem();
+
         return key;
     }
 
@@ -159,7 +162,10 @@ public class RoutePK implements EntityPKInterface, IRoutePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long routetype = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -167,7 +173,9 @@ public class RoutePK implements EntityPKInterface, IRoutePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long system = Long.valueOf(keys.substring(0, keylength));
+
             return new RoutePK(routetype, system);
         }
     }

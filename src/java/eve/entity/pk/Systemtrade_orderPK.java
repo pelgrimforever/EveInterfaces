@@ -2,7 +2,7 @@
  * Systemtrade_orderPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -192,15 +192,22 @@ public class Systemtrade_orderPK implements EntityPKInterface, ISystemtrade_orde
     public String getKeystring() {
         String key = "";
         key += getSell_system();
+
+
         key += "_";
 
         key += getBuy_system();
+
+
         key += "_";
 
         key += getSell_order();
+
+
         key += "_";
 
         key += getBuy_order();
+
         return key;
     }
 
@@ -219,7 +226,10 @@ public class Systemtrade_orderPK implements EntityPKInterface, ISystemtrade_orde
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long sell_system = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -227,7 +237,10 @@ public class Systemtrade_orderPK implements EntityPKInterface, ISystemtrade_orde
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long buy_system = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -235,7 +248,10 @@ public class Systemtrade_orderPK implements EntityPKInterface, ISystemtrade_orde
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long sell_order = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -243,7 +259,9 @@ public class Systemtrade_orderPK implements EntityPKInterface, ISystemtrade_orde
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long buy_order = Long.valueOf(keys.substring(0, keylength));
+
             return new Systemtrade_orderPK(sell_system, buy_system, sell_order, buy_order);
         }
     }

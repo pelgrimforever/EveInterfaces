@@ -2,7 +2,7 @@
  * eTmp_system_jumps.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -186,6 +186,7 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      */
     public void setJump(int jump) {
         updates.put(ITmp_system_jumps.JUMP, jump);
+
         this.jump = jump;
     }
 
@@ -211,6 +212,7 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      */
     public void setMaxjumps(int maxjumps) {
         updates.put(ITmp_system_jumps.MAXJUMPS, maxjumps);
+
         this.maxjumps = maxjumps;
     }
 
@@ -236,6 +238,7 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      */
     public void setPrevioussystem(long previoussystem) {
         updates.put(ITmp_system_jumps.PREVIOUSSYSTEM, previoussystem);
+
         this.previoussystem = previoussystem;
     }
 

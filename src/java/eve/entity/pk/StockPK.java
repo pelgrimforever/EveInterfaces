@@ -2,7 +2,7 @@
  * StockPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -122,9 +122,12 @@ public class StockPK implements EntityPKInterface, IStockPK {
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
+
+
         key += "_";
 
         key += getEvetype();
+
         return key;
     }
 
@@ -141,6 +144,9 @@ public class StockPK implements EntityPKInterface, IStockPK {
             keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")));
             keys.substring(keys.indexOf("_")+1);
             String username = keys.substring(0, keylength);
+
+
+
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -148,7 +154,9 @@ public class StockPK implements EntityPKInterface, IStockPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long evetype = Long.valueOf(keys.substring(0, keylength));
+
             return new StockPK(username, evetype);
         }
     }

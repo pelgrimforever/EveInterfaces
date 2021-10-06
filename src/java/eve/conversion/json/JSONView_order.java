@@ -1,3 +1,11 @@
+/*
+ * JSONView_order.java
+ *
+ * Created on March 26, 2007, 5:44 PM
+ * Generated on 6.9.2021 16:29
+ *
+ */
+ 
 package eve.conversion.json;
 
 import data.conversion.JSONConversion;
@@ -56,6 +64,7 @@ public class JSONView_order {
         json.put("locationid", String.valueOf(view_order.getLocationid()));
         json.put("locationname", view_order.getLocationname());
         json.put("systemname", view_order.getSystemname());
+        json.put("security_status", view_order.getSecurity_status());
         json.put("constellation", String.valueOf(view_order.getConstellation()));
         json.put("constellationname", view_order.getConstellationname());
         json.put("region", String.valueOf(view_order.getRegion()));
@@ -89,6 +98,7 @@ public class JSONView_order {
         view_order.setLocationid(JSONConversion.getlong(json, "locationid"));
         view_order.setLocationname(JSONConversion.getString(json, "locationname"));
         view_order.setSystemname(JSONConversion.getString(json, "systemname"));
+        view_order.setSecurity_status(JSONConversion.getdouble(json, "security_status"));
         view_order.setConstellation(JSONConversion.getlong(json, "constellation"));
         view_order.setConstellationname(JSONConversion.getString(json, "constellationname"));
         view_order.setRegion(JSONConversion.getlong(json, "region"));
@@ -238,6 +248,13 @@ public class JSONView_order {
             byte compareoperator = JSONConversion.getbyte(field, "compareoperator");
             byte andor = JSONConversion.getbyte(field, "andor");
             view_ordersearch.systemname(valuearray, compareoperator, andor);
+        }
+        field = (JSONObject)fss.get("security_status");
+        if(field!=null) {
+            Double[] valuearray = JSONConversion.getDoublevalues(field);
+            byte[] operators = JSONConversion.getNumberoperators(field);
+            byte andor = JSONConversion.getbyte(field, "andor");
+            view_ordersearch.security_status(valuearray, operators, andor);
         }
         field = (JSONObject)fss.get("constellation");
         if(field!=null) {

@@ -2,7 +2,7 @@
  * eView_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -48,6 +48,7 @@ public class eView_order implements EntityViewInterface {
     private long locationid;
     private java.lang.String locationname;
     private java.lang.String systemname;
+    private double security_status;
     private long constellation;
     private java.lang.String constellationname;
     private long region;
@@ -408,6 +409,22 @@ public class eView_order implements EntityViewInterface {
      */
     public void setSystemname(java.lang.String systemname) {
         this.systemname = systemname;
+    }
+
+    /**
+     * 
+     * @return security_status value
+     */
+    public double getSecurity_status() {
+        return this.security_status;
+    }
+
+    /**
+     * set security_status value
+     * @param security_status: new value
+     */
+    public void setSecurity_status(double security_status) {
+        this.security_status = security_status;
     }
 
     /**

@@ -2,7 +2,7 @@
  * eOrder_history.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -190,6 +190,7 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setAverage(double average) {
         updates.put(IOrder_history.AVERAGE, average);
+
         this.average = average;
     }
 
@@ -215,6 +216,7 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setHighest(double highest) {
         updates.put(IOrder_history.HIGHEST, highest);
+
         this.highest = highest;
     }
 
@@ -240,6 +242,7 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setLowest(double lowest) {
         updates.put(IOrder_history.LOWEST, lowest);
+
         this.lowest = lowest;
     }
 
@@ -265,6 +268,7 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setVolume(int volume) {
         updates.put(IOrder_history.VOLUME, volume);
+
         this.volume = volume;
     }
 
@@ -290,6 +294,7 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setOrder_count(int order_count) {
         updates.put(IOrder_history.ORDER_COUNT, order_count);
+
         this.order_count = order_count;
     }
 

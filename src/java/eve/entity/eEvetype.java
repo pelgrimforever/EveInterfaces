@@ -2,7 +2,7 @@
  * eEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -223,6 +223,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IEvetype.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -248,6 +249,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setPublished(boolean published) {
         updates.put(IEvetype.PUBLISHED, published);
+
         this.published = published;
     }
 
@@ -275,6 +277,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(IEvetype.DESCRIPTION, description);
         }
+
         this.description = description;
     }
 
@@ -300,6 +303,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setCapacity(double capacity) {
         updates.put(IEvetype.CAPACITY, capacity);
+
         this.capacity = capacity;
     }
 
@@ -325,6 +329,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setIcon(long icon) {
         updates.put(IEvetype.ICON, icon);
+
         this.icon = icon;
     }
 
@@ -350,6 +355,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMass(double mass) {
         updates.put(IEvetype.MASS, mass);
+
         this.mass = mass;
     }
 
@@ -375,6 +381,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setPackaged_volume(double packaged_volume) {
         updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
+
         this.packaged_volume = packaged_volume;
     }
 
@@ -400,6 +407,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setPortion_size(int portion_size) {
         updates.put(IEvetype.PORTION_SIZE, portion_size);
+
         this.portion_size = portion_size;
     }
 
@@ -425,6 +433,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setRadius(double radius) {
         updates.put(IEvetype.RADIUS, radius);
+
         this.radius = radius;
     }
 
@@ -450,6 +459,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setVolume(double volume) {
         updates.put(IEvetype.VOLUME, volume);
+
         this.volume = volume;
     }
 
@@ -475,6 +485,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setAvg_buyorder(double avg_buyorder) {
         updates.put(IEvetype.AVG_BUYORDER, avg_buyorder);
+
         this.avg_buyorder = avg_buyorder;
     }
 
@@ -500,6 +511,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setAvg_sellorder(double avg_sellorder) {
         updates.put(IEvetype.AVG_SELLORDER, avg_sellorder);
+
         this.avg_sellorder = avg_sellorder;
     }
 
@@ -525,6 +537,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMin_buyorder(double min_buyorder) {
         updates.put(IEvetype.MIN_BUYORDER, min_buyorder);
+
         this.min_buyorder = min_buyorder;
     }
 
@@ -550,6 +563,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMax_buyorder(double max_buyorder) {
         updates.put(IEvetype.MAX_BUYORDER, max_buyorder);
+
         this.max_buyorder = max_buyorder;
     }
 
@@ -575,6 +589,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMin_selorder(double min_selorder) {
         updates.put(IEvetype.MIN_SELORDER, min_selorder);
+
         this.min_selorder = min_selorder;
     }
 
@@ -600,6 +615,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMax_selorder(double max_selorder) {
         updates.put(IEvetype.MAX_SELORDER, max_selorder);
+
         this.max_selorder = max_selorder;
     }
 

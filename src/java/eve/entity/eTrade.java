@@ -2,7 +2,7 @@
  * eTrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -200,6 +200,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setTotal_volume(double total_volume) {
         updates.put(ITrade.TOTAL_VOLUME, total_volume);
+
         this.total_volume = total_volume;
     }
 
@@ -225,6 +226,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setBuy_order_value(double buy_order_value) {
         updates.put(ITrade.BUY_ORDER_VALUE, buy_order_value);
+
         this.buy_order_value = buy_order_value;
     }
 
@@ -250,6 +252,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setSell_order_value(double sell_order_value) {
         updates.put(ITrade.SELL_ORDER_VALUE, sell_order_value);
+
         this.sell_order_value = sell_order_value;
     }
 
@@ -275,6 +278,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setProfit(double profit) {
         updates.put(ITrade.PROFIT, profit);
+
         this.profit = profit;
     }
 
@@ -300,6 +304,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setJumps(int jumps) {
         updates.put(ITrade.JUMPS, jumps);
+
         this.jumps = jumps;
     }
 
@@ -325,6 +330,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setRuns(int runs) {
         updates.put(ITrade.RUNS, runs);
+
         this.runs = runs;
     }
 
@@ -350,6 +356,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setTotal_jumps(int total_jumps) {
         updates.put(ITrade.TOTAL_JUMPS, total_jumps);
+
         this.total_jumps = total_jumps;
     }
 
@@ -375,6 +382,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setProfit_per_jump(double profit_per_jump) {
         updates.put(ITrade.PROFIT_PER_JUMP, profit_per_jump);
+
         this.profit_per_jump = profit_per_jump;
     }
 
@@ -400,6 +408,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setSinglerun_profit_per_jump(double singlerun_profit_per_jump) {
         updates.put(ITrade.SINGLERUN_PROFIT_PER_JUMP, singlerun_profit_per_jump);
+
         this.singlerun_profit_per_jump = singlerun_profit_per_jump;
     }
 
@@ -425,6 +434,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setMaxunits_per_run(int maxunits_per_run) {
         updates.put(ITrade.MAXUNITS_PER_RUN, maxunits_per_run);
+
         this.maxunits_per_run = maxunits_per_run;
     }
 

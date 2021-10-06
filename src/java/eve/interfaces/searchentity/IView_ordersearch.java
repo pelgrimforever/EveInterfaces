@@ -2,7 +2,7 @@
  * IView_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -298,6 +298,21 @@ public interface IView_ordersearch extends ITablesearch {
 	 * @param compare: EQUAL/LIKE constant
 	 */
 	public void systemname(String[] values, byte compare, byte andor);
+	
+	/**
+	 * add Numeric search values for field security_status, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void security_status(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field security_status
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void security_status(Double[] values, byte[] operators, byte andor);
 	
 	/**
 	 * add Numeric search values for field constellation, default OR operator is used

@@ -2,7 +2,7 @@
  * eSystemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -190,6 +190,7 @@ public class eSystemtrade_order extends AbstractEntity implements EntityInterfac
      */
     public void setAmount(long amount) {
         updates.put(ISystemtrade_order.AMOUNT, amount);
+
         this.amount = amount;
     }
 
@@ -215,6 +216,7 @@ public class eSystemtrade_order extends AbstractEntity implements EntityInterfac
      */
     public void setSellprice(double sellprice) {
         updates.put(ISystemtrade_order.SELLPRICE, sellprice);
+
         this.sellprice = sellprice;
     }
 
@@ -240,6 +242,7 @@ public class eSystemtrade_order extends AbstractEntity implements EntityInterfac
      */
     public void setBuyprice(double buyprice) {
         updates.put(ISystemtrade_order.BUYPRICE, buyprice);
+
         this.buyprice = buyprice;
     }
 
@@ -265,6 +268,7 @@ public class eSystemtrade_order extends AbstractEntity implements EntityInterfac
      */
     public void setProfit(double profit) {
         updates.put(ISystemtrade_order.PROFIT, profit);
+
         this.profit = profit;
     }
 
@@ -290,6 +294,7 @@ public class eSystemtrade_order extends AbstractEntity implements EntityInterfac
      */
     public void setCargovolume(double cargovolume) {
         updates.put(ISystemtrade_order.CARGOVOLUME, cargovolume);
+
         this.cargovolume = cargovolume;
     }
 

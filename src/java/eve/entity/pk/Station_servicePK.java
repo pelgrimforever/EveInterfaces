@@ -2,7 +2,7 @@
  * Station_servicePK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -122,9 +122,12 @@ public class Station_servicePK implements EntityPKInterface, IStation_servicePK 
     public String getKeystring() {
         String key = "";
         key += getStation();
+
+
         key += "_";
 
         if(getService()!=null) key += getService().length() + "_" + getService();
+
         return key;
     }
 
@@ -143,12 +146,17 @@ public class Station_servicePK implements EntityPKInterface, IStation_servicePK 
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
+
             long station = Long.valueOf(keys.substring(0, keylength));
+
+
             keys = keys.substring(keylength+1);
 
             keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")));
             keys.substring(keys.indexOf("_")+1);
             String service = keys.substring(0, keylength);
+
+
             return new Station_servicePK(station, service);
         }
     }

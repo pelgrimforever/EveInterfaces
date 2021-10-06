@@ -2,7 +2,7 @@
  * eRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -190,6 +190,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IRegion.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -215,6 +216,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public void setNoaccess(boolean noaccess) {
         updates.put(IRegion.NOACCESS, noaccess);
+
         this.noaccess = noaccess;
     }
 
@@ -240,6 +242,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public void setOrderpages(int orderpages) {
         updates.put(IRegion.ORDERPAGES, orderpages);
+
         this.orderpages = orderpages;
     }
 
@@ -265,6 +268,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public void setOrdererrors(int ordererrors) {
         updates.put(IRegion.ORDERERRORS, ordererrors);
+
         this.ordererrors = ordererrors;
     }
 

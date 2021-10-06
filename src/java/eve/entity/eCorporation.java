@@ -2,7 +2,7 @@
  * eCorporation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -213,6 +213,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ICorporation.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -238,6 +239,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setCeo(long ceo) {
         updates.put(ICorporation.CEO, ceo);
+
         this.ceo = ceo;
     }
 
@@ -263,6 +265,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setCreator(long creator) {
         updates.put(ICorporation.CREATOR, creator);
+
         this.creator = creator;
     }
 
@@ -288,6 +291,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setMember_count(int member_count) {
         updates.put(ICorporation.MEMBER_COUNT, member_count);
+
         this.member_count = member_count;
     }
 
@@ -313,6 +317,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setTax_rate(double tax_rate) {
         updates.put(ICorporation.TAX_RATE, tax_rate);
+
         this.tax_rate = tax_rate;
     }
 
@@ -340,6 +345,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(ticker==null && ticker!=this.ticker || ticker!=null && !ticker.equals(this.ticker)) {
             updates.put(ICorporation.TICKER, ticker);
         }
+
         this.ticker = ticker;
     }
 
@@ -365,6 +371,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setDate_founded(java.sql.Timestamp date_founded) {
         updates.put(ICorporation.DATE_FOUNDED, date_founded);
+
         this.date_founded = date_founded;
     }
 
@@ -392,6 +399,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(ICorporation.DESCRIPTION, description);
         }
+
         this.description = description;
     }
 
@@ -417,6 +425,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setShares(int shares) {
         updates.put(ICorporation.SHARES, shares);
+
         this.shares = shares;
     }
 
@@ -444,6 +453,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(url==null && url!=this.url || url!=null && !url.equals(this.url)) {
             updates.put(ICorporation.URL, url);
         }
+
         this.url = url;
     }
 
@@ -469,6 +479,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setWar_eligible(boolean war_eligible) {
         updates.put(ICorporation.WAR_ELIGIBLE, war_eligible);
+
         this.war_eligible = war_eligible;
     }
 

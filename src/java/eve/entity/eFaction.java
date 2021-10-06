@@ -2,7 +2,7 @@
  * eFaction.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 18.8.2021 11:31
+ * Generated on 6.9.2021 16:29
  *
  */
 
@@ -201,6 +201,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IFaction.NAME, name);
         }
+
         this.name = name;
     }
 
@@ -228,6 +229,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(IFaction.DESCRIPTION, description);
         }
+
         this.description = description;
     }
 
@@ -253,6 +255,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
      */
     public void setIs_unique(boolean is_unique) {
         updates.put(IFaction.IS_UNIQUE, is_unique);
+
         this.is_unique = is_unique;
     }
 
@@ -278,6 +281,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
      */
     public void setSize_factor(double size_factor) {
         updates.put(IFaction.SIZE_FACTOR, size_factor);
+
         this.size_factor = size_factor;
     }
 
@@ -303,6 +307,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
      */
     public void setStation_count(int station_count) {
         updates.put(IFaction.STATION_COUNT, station_count);
+
         this.station_count = station_count;
     }
 
@@ -328,6 +333,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
      */
     public void setStation_system_count(int station_system_count) {
         updates.put(IFaction.STATION_SYSTEM_COUNT, station_system_count);
+
         this.station_system_count = station_system_count;
     }
 
@@ -353,6 +359,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
      */
     public void setCorporation(long corporation) {
         updates.put(IFaction.CORPORATION, corporation);
+
         this.corporation = corporation;
     }
 
@@ -378,6 +385,7 @@ public class eFaction extends AbstractEntity implements EntityInterface {
      */
     public void setMilitia_corporation(long militia_corporation) {
         updates.put(IFaction.MILITIA_CORPORATION, militia_corporation);
+
         this.militia_corporation = militia_corporation;
     }
 
