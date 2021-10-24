@@ -2,14 +2,15 @@
  * eConstellation_neighbour.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IConstellation_neighbour;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Constellation_neighbour
@@ -32,15 +35,11 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eConstellation_neighbour extends AbstractEntity implements EntityInterface {
+public class eConstellation_neighbour extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Constellation_neighbourPK constellation_neighbourPK;
 	  
     public static final String table = "constellation_neighbour";
-    public static final String SQLWhere1 = "constellation = :constellation_neighbour.constellation: and neighbour = :constellation_neighbour.neighbour:";
-    public static final String SQLSelect1 = "select constellation_neighbour.* from constellation_neighbour where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from constellation_neighbour where " + SQLWhere1;
-    public static final String SQLSelectAll = "select constellation_neighbour.* from constellation_neighbour";
 	  
     public String getFieldname(short fieldconstant) {
         return IConstellation_neighbour.fieldnames[fieldconstant-1];
@@ -51,35 +50,26 @@ public class eConstellation_neighbour extends AbstractEntity implements EntityIn
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eConstellation_neighbour.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eConstellation_neighbour.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Constellation_neighbour
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Constellation_neighbour (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Constellation_neighbour (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Constellation_neighbours
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -120,40 +110,43 @@ public class eConstellation_neighbour extends AbstractEntity implements EntityIn
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.constellation_neighbourPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.constellation_neighbourPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.constellation_neighbourPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.constellation_neighbourPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Constellation_neighbourPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Constellation_neighbourPK
      */
+    @Override
     public Constellation_neighbourPK getPrimaryKey() {
         return this.constellation_neighbourPK;
     }
@@ -162,6 +155,7 @@ public class eConstellation_neighbour extends AbstractEntity implements EntityIn
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

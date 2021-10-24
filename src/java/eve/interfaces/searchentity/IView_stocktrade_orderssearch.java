@@ -2,13 +2,13 @@
  * IView_stocktrade_orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.interfaces.searchentity;
 
-import data.interfaces.db.ITablesearch;
+import data.interfaces.db.Tablesearcher;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -19,7 +19,7 @@ import eve.interfaces.searchentity.*;
  * construct sql where part and parameter array from search parameters
  * @author Franky Laseure
  */
-public interface IView_stocktrade_orderssearch extends ITablesearch {
+public interface IView_stocktrade_orderssearch extends Tablesearcher {
 
 	/**
 	 * add String search values for field username, default OR and LIKE operators are used

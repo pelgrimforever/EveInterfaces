@@ -2,14 +2,15 @@
  * eCorporation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ICorporation;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Corporation
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eCorporation extends AbstractEntity implements EntityInterface {
+public class eCorporation extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected CorporationPK corporationPK;
     private StationPK stationPK;
@@ -51,10 +54,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
     private boolean war_eligible;
 	  
     public static final String table = "corporation";
-    public static final String SQLWhere1 = "id = :corporation.id:";
-    public static final String SQLSelect1 = "select corporation.* from corporation where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from corporation where " + SQLWhere1;
-    public static final String SQLSelectAll = "select corporation.* from corporation";
 	  
     public String getFieldname(short fieldconstant) {
         return ICorporation.fieldnames[fieldconstant-1];
@@ -65,35 +64,26 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eCorporation.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eCorporation.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Corporation
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Corporation (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Corporation (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Corporations
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -134,27 +124,28 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.corporationPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.corporationPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.corporationPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.corporationPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ICorporation.HOME_STATION, this.stationPK.getId());
 
         updates.put(ICorporation.FACTION, this.factionPK.getId());
@@ -175,16 +166,18 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return CorporationPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return CorporationPK
      */
+    @Override
     public CorporationPK getPrimaryKey() {
         return this.corporationPK;
     }
@@ -213,7 +206,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ICorporation.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -239,7 +231,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setCeo(long ceo) {
         updates.put(ICorporation.CEO, ceo);
-
         this.ceo = ceo;
     }
 
@@ -265,7 +256,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setCreator(long creator) {
         updates.put(ICorporation.CREATOR, creator);
-
         this.creator = creator;
     }
 
@@ -291,7 +281,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setMember_count(int member_count) {
         updates.put(ICorporation.MEMBER_COUNT, member_count);
-
         this.member_count = member_count;
     }
 
@@ -317,7 +306,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setTax_rate(double tax_rate) {
         updates.put(ICorporation.TAX_RATE, tax_rate);
-
         this.tax_rate = tax_rate;
     }
 
@@ -345,7 +333,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(ticker==null && ticker!=this.ticker || ticker!=null && !ticker.equals(this.ticker)) {
             updates.put(ICorporation.TICKER, ticker);
         }
-
         this.ticker = ticker;
     }
 
@@ -371,7 +358,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setDate_founded(java.sql.Timestamp date_founded) {
         updates.put(ICorporation.DATE_FOUNDED, date_founded);
-
         this.date_founded = date_founded;
     }
 
@@ -399,7 +385,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(ICorporation.DESCRIPTION, description);
         }
-
         this.description = description;
     }
 
@@ -425,7 +410,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setShares(int shares) {
         updates.put(ICorporation.SHARES, shares);
-
         this.shares = shares;
     }
 
@@ -453,7 +437,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
 	if(url==null && url!=this.url || url!=null && !url.equals(this.url)) {
             updates.put(ICorporation.URL, url);
         }
-
         this.url = url;
     }
 
@@ -479,7 +462,6 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      */
     public void setWar_eligible(boolean war_eligible) {
         updates.put(ICorporation.WAR_ELIGIBLE, war_eligible);
-
         this.war_eligible = war_eligible;
     }
 
@@ -580,6 +562,7 @@ public class eCorporation extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

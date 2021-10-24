@@ -2,7 +2,7 @@
  * Stargatesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eStargate;
+import eve.logicentity.Stargate;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -35,6 +35,13 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     Booleansearch isregionborder = new Booleansearch("stargate.isregionborder");
     Foreignkeysearch systemSystemsearcher = new Foreignkeysearch("system", IStargate.systemSystemPKfields, IStargate.systemSystemFKfields);
     Foreignkeysearch systemTo_systemsearcher = new Foreignkeysearch("system", IStargate.systemTo_systemPKfields, IStargate.systemTo_systemFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Stargate.table;
+    }
 
     /**
      * Constructor

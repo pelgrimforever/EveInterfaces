@@ -2,14 +2,15 @@
  * eStocktrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IStocktrade;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Stocktrade
@@ -32,16 +35,12 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eStocktrade extends AbstractEntity implements EntityInterface {
+public class eStocktrade extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected StocktradePK stocktradePK;
     private long sellamount;
 	  
     public static final String table = "stocktrade";
-    public static final String SQLWhere1 = "username = :stocktrade.username: and evetype = :stocktrade.evetype: and orderid = :stocktrade.orderid:";
-    public static final String SQLSelect1 = "select stocktrade.* from stocktrade where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from stocktrade where " + SQLWhere1;
-    public static final String SQLSelectAll = "select stocktrade.* from stocktrade";
 	  
     public String getFieldname(short fieldconstant) {
         return IStocktrade.fieldnames[fieldconstant-1];
@@ -52,35 +51,26 @@ public class eStocktrade extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eStocktrade.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eStocktrade.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Stocktrade
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Stocktrade (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Stocktrade (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Stocktrades
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -121,41 +111,44 @@ public class eStocktrade extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.stocktradePK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.stocktradePK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.stocktradePK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.stocktradePK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IStocktrade.SELLAMOUNT, sellamount);
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return StocktradePK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return StocktradePK
      */
+    @Override
     public StocktradePK getPrimaryKey() {
         return this.stocktradePK;
     }
@@ -182,7 +175,6 @@ public class eStocktrade extends AbstractEntity implements EntityInterface {
      */
     public void setSellamount(long sellamount) {
         updates.put(IStocktrade.SELLAMOUNT, sellamount);
-
         this.sellamount = sellamount;
     }
 
@@ -190,6 +182,7 @@ public class eStocktrade extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

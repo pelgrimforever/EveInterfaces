@@ -2,13 +2,14 @@
  * eView_trade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,8 +27,9 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_trade implements EntityViewInterface {
+public class eView_trade implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_trade";
     private long sell_regionid;
     private java.lang.String sell_regionname;
     private long sell_systemid;
@@ -58,20 +60,27 @@ public class eView_trade implements EntityViewInterface {
     private double trade_singlerunprofit;
     private int trade_maxunits_per_run;
 	  
-    public static final String table = "view_trade";
-    public static final String SQLSelectAll = "select view_trade.* from view_trade";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_trade.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_trade.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_trade
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_trades
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

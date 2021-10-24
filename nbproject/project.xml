@@ -8,7 +8,6 @@
             <explicit-platform explicit-source-supported="true"/>
             <included-library dirs="200">reference.GeneralTools.jar</included-library>
             <included-library dirs="200">reference.ProjectInterfaces.jar</included-library>
-            <included-library dirs="200">file.reference.jdom-2.0.6.jar</included-library>
             <included-library dirs="200">file.reference.json-simple-1.1.1.jar</included-library>
             <source-roots>
                 <root id="src.dir"/>

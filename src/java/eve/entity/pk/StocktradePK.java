@@ -2,18 +2,20 @@
  * StocktradePK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity.pk;
 
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
 import eve.interfaces.entity.pk.*;
 import eve.interfaces.logicentity.IStocktrade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import db.SQLparameters;
+import db.Entityvalues;
 
 /**
  * Primarykey class StocktradePK
@@ -22,7 +24,7 @@ import java.sql.Timestamp;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public class StocktradePK implements EntityPKInterface, IStocktradePK {
+public class StocktradePK implements IStocktradePK {
 
     private IStockPK stockPK = new StockPK();
     private long orderid;
@@ -45,28 +47,28 @@ public class StocktradePK implements EntityPKInterface, IStocktradePK {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
-    public Object[][] getKeyFields() {
+    public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"stocktrade.username", stockPK.getUsername()}, 
             {"stocktrade.evetype", stockPK.getEvetype()}, 
             {"stocktrade.orderid", orderid}
         };
-        return keyfields;
+        return new SQLparameters(keyfields);
     }
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value) for sql insert statement
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
-    public Object[][] getInsertKeyFields() {
+    public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IStocktrade.USERNAME, stockPK.getUsername()}, 
             {IStocktrade.EVETYPE, stockPK.getEvetype()}, 
             {IStocktrade.ORDERID, orderid}
         };
-        return keyfields;
+        return new Entityvalues(keyfields);
     }
 
     /**
@@ -140,17 +142,12 @@ public class StocktradePK implements EntityPKInterface, IStocktradePK {
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
-
-
         key += "_";
 
         key += getEvetype();
-
-
         key += "_";
 
         key += getOrderid();
-
         return key;
     }
 
@@ -167,9 +164,6 @@ public class StocktradePK implements EntityPKInterface, IStocktradePK {
             keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")));
             keys.substring(keys.indexOf("_")+1);
             String username = keys.substring(0, keylength);
-
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -177,10 +171,7 @@ public class StocktradePK implements EntityPKInterface, IStocktradePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long evetype = Long.valueOf(keys.substring(0, keylength));
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -188,9 +179,7 @@ public class StocktradePK implements EntityPKInterface, IStocktradePK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long orderid = Long.valueOf(keys.substring(0, keylength));
-
             return new StocktradePK(username, evetype, orderid);
         }
     }

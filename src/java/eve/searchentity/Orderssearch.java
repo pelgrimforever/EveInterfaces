@@ -2,7 +2,7 @@
  * Orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eOrders;
+import eve.logicentity.Orders;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -46,6 +46,13 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     Relationalkeysearch systemtrade2searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields, "systemtrade", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
     Primarykeysearch tradeSell_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
     Primarykeysearch tradeBuy_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Orders.table;
+    }
 
     /**
      * Constructor

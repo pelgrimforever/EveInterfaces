@@ -2,7 +2,7 @@
  * Stocktrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,17 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Stocktrade extends eve.entity.eStocktrade implements IStocktrade {
 
-    public static final String SQLSelect = "select stocktrade.* from stocktrade";
-    public static final String SQLWherestock = "username = :stock.username: and evetype = :stock.evetype:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by username, evetype, order";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    public static final String SQLdeleteall = "delete from stocktrade";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4stock = "select * from stocktrade where " + SQLWherestock + OrderBy;
-    public static final String SQLDelete4stock = "delete from stocktrade where " + SQLWherestock;
 
     /**
      * Constructor

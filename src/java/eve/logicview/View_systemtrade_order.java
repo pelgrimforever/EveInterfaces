@@ -2,7 +2,7 @@
  * View_systemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -34,8 +34,6 @@ import javax.imageio.stream.ImageInputStream;
 public class View_systemtrade_order extends eve.view.eView_systemtrade_order implements IView_systemtrade_order {
 
 //Custom code, do not change this line
-    public final static String SQLSelectAll4systemtrade = "select * from view_systemtrade_order " +
-        "where sell_system = :systemtrade.sell_system: and buy_system = :systemtrade.buy_system:";
 //Custom code, do not change this line
 
     /**

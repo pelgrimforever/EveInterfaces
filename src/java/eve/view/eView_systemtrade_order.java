@@ -2,13 +2,14 @@
  * eView_systemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,8 +27,9 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_systemtrade_order implements EntityViewInterface {
+public class eView_systemtrade_order implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_systemtrade_order";
     private long sell_system;
     private long buy_system;
     private long sell_order;
@@ -48,20 +50,27 @@ public class eView_systemtrade_order implements EntityViewInterface {
     private long buy_station;
     private java.lang.String buy_stationname;
 	  
-    public static final String table = "view_systemtrade_order";
-    public static final String SQLSelectAll = "select view_systemtrade_order.* from view_systemtrade_order";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_systemtrade_order.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_systemtrade_order.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_systemtrade_order
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_systemtrade_orders
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

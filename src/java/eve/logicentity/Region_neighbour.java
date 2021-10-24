@@ -2,7 +2,7 @@
  * Region_neighbour.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,29 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Region_neighbour extends eve.entity.eRegion_neighbour implements IRegion_neighbour {
 
-    public static final String SQLSelect = "select region_neighbour.* from region_neighbour";
-    public static final String SQLWhereregionRegion = "region = :region.id:";
-    public static final String SQLWhereregionNeighbour = "neighbour = :region.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by region, neighbour";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-
-    public static final String SQLDeleteAll = "delete from region_neighbour";
-    public static final String SQLcreateneighours = "insert into region_neighbour " +
-        "select c1.region, c2.region from stargate sg " +
-        "inner join system s1 on sg.system = s1.id " +
-        "inner join constellation c1 on s1.constellation = c1.id " +
-        "inner join system s2 on sg.to_system = s2.id " +
-        "inner join constellation c2 on s2.constellation = c2.id " +
-        "where sg.isregionborder and c1.region <> c2.region " +
-        "group by c1.region, c2.region";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4regionRegion = "select * from region_neighbour where " + SQLWhereregionRegion + OrderBy;
-    public static final String SQLDelete4regionRegion = "delete from region_neighbour where " + SQLWhereregionRegion;
-    public static final String SQLSelect4regionNeighbour = "select * from region_neighbour where " + SQLWhereregionNeighbour + OrderBy;
-    public static final String SQLDelete4regionNeighbour = "delete from region_neighbour where " + SQLWhereregionNeighbour;
 
     /**
      * Constructor

@@ -2,14 +2,15 @@
  * eMarket_group.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IMarket_group;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Market_group
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eMarket_group extends AbstractEntity implements EntityInterface {
+public class eMarket_group extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Market_groupPK market_groupPK;
     private Market_groupPK market_groupParent_idPK;
@@ -40,10 +43,6 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
     private java.lang.String description;
 	  
     public static final String table = "market_group";
-    public static final String SQLWhere1 = "id = :market_group.id:";
-    public static final String SQLSelect1 = "select market_group.* from market_group where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from market_group where " + SQLWhere1;
-    public static final String SQLSelectAll = "select market_group.* from market_group";
 	  
     public String getFieldname(short fieldconstant) {
         return IMarket_group.fieldnames[fieldconstant-1];
@@ -54,35 +53,26 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eMarket_group.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eMarket_group.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Market_group
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Market_group (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Market_group (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Market_groups
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -123,27 +113,28 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.market_groupPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.market_groupPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.market_groupPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.market_groupPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IMarket_group.PARENT_ID, this.market_groupParent_idPK.getId());
 
         updates.put(IMarket_group.NAME, name);
@@ -151,16 +142,18 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Market_groupPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Market_groupPK
      */
+    @Override
     public Market_groupPK getPrimaryKey() {
         return this.market_groupPK;
     }
@@ -189,7 +182,6 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IMarket_group.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -217,7 +209,6 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(IMarket_group.DESCRIPTION, description);
         }
-
         this.description = description;
     }
 
@@ -256,6 +247,7 @@ public class eMarket_group extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

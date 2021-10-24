@@ -2,7 +2,7 @@
  * Stocktradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eStocktrade;
+import eve.logicentity.Stocktrade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -28,6 +28,13 @@ public class Stocktradesearch extends Tablesearch implements IStocktradesearch {
     Numbersearch orderid = new Numbersearch("stocktrade.orderid");
     Numbersearch sellamount = new Numbersearch("stocktrade.sellamount");
     Foreignkeysearch stocksearcher = new Foreignkeysearch("stock", IStocktrade.stockPKfields, IStocktrade.stockFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Stocktrade.table;
+    }
 
     /**
      * Constructor

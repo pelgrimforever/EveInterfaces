@@ -2,7 +2,7 @@
  * Tmp_system_jumps.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,27 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Tmp_system_jumps extends eve.entity.eTmp_system_jumps implements ITmp_system_jumps {
 
-    public static final String SQLSelect = "select tmp_system_jumps.* from tmp_system_jumps";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by system";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLDeleteAll = "delete from tmp_system_jumps";
-    public static final String SQLCopySystems4Security_island = 
-        "insert into tmp_system_jumps (system) " +
-        "select id from system where " + System.SQLWheresecurity_island;
-    public static final String SQLResetJump = "update tmp_system_jumps set jump = null";
-    public static final String SQLSelectnojump = "select count(*) as count from tmp_system_jumps where jump is null";
-    public static final String SQLSetnextjump = 
-        "update tmp_system_jumps set jump = :nextjump: " +
-        "where system in (" +
-        "select sg.to_system from stargate sg " +
-        "where sg.system in (select sj.system from tmp_system_jumps sj where sj.jump = :jump:) " +
-        "and sg.to_system in (select sj.system from tmp_system_jumps sj where sj.jump is null))";
-    public static final String SQLSelect4jump = SQLSelect + " where jump = :jump:";
 //Custom code, do not change this line
-
 
     /**
      * Constructor

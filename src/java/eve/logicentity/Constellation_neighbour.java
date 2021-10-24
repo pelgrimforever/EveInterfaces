@@ -2,7 +2,7 @@
  * Constellation_neighbour.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,27 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Constellation_neighbour extends eve.entity.eConstellation_neighbour implements IConstellation_neighbour {
 
-    public static final String SQLSelect = "select constellation_neighbour.* from constellation_neighbour";
-    public static final String SQLWhereconstellationNeighbour = "neighbour = :constellation.id:";
-    public static final String SQLWhereconstellationConstellation = "constellation = :constellation.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by constellation, neighbour";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLDeleteAll = "delete from constellation_neighbour";
-    public static final String SQLcreateneighours = "insert into constellation_neighbour " +
-        "select s1.constellation, s2.constellation from stargate sg " +
-        "inner join system s1 on sg.system = s1.id " +
-        "inner join system s2 on sg.to_system = s2.id " +
-        "where sg.isconstellationborder and s1.constellation <> s2.constellation " +
-        "group by s1.constellation, s2.constellation";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4constellationNeighbour = "select * from constellation_neighbour where " + SQLWhereconstellationNeighbour + OrderBy;
-    public static final String SQLDelete4constellationNeighbour = "delete from constellation_neighbour where " + SQLWhereconstellationNeighbour;
-    public static final String SQLSelect4constellationConstellation = "select * from constellation_neighbour where " + SQLWhereconstellationConstellation + OrderBy;
-    public static final String SQLDelete4constellationConstellation = "delete from constellation_neighbour where " + SQLWhereconstellationConstellation;
 
     /**
      * Constructor

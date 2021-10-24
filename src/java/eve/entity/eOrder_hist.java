@@ -2,14 +2,15 @@
  * eOrder_hist.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IOrder_hist;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Order_hist
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eOrder_hist extends AbstractEntity implements EntityInterface {
+public class eOrder_hist extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Order_histPK order_histPK;
     private EvetypePK evetypePK;
@@ -50,10 +53,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
     private int duration;
 	  
     public static final String table = "order_hist";
-    public static final String SQLWhere1 = "id = :order_hist.id:";
-    public static final String SQLSelect1 = "select order_hist.* from order_hist where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from order_hist where " + SQLWhere1;
-    public static final String SQLSelectAll = "select order_hist.* from order_hist";
 	  
     public String getFieldname(short fieldconstant) {
         return IOrder_hist.fieldnames[fieldconstant-1];
@@ -64,35 +63,26 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eOrder_hist.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eOrder_hist.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Order_hist
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Order_hist (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Order_hist (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Order_hists
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -133,27 +123,28 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.order_histPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.order_histPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.order_histPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.order_histPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IOrder_hist.EVETYPE, this.evetypePK.getId());
 
         updates.put(IOrder_hist.SYSTEM, this.systemPK.getId());
@@ -172,16 +163,18 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Order_histPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Order_histPK
      */
+    @Override
     public Order_histPK getPrimaryKey() {
         return this.order_histPK;
     }
@@ -208,7 +201,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setIsopen(boolean isopen) {
         updates.put(IOrder_hist.ISOPEN, isopen);
-
         this.isopen = isopen;
     }
 
@@ -234,7 +226,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_total(int volume_total) {
         updates.put(IOrder_hist.VOLUME_TOTAL, volume_total);
-
         this.volume_total = volume_total;
     }
 
@@ -260,7 +251,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_remain(int volume_remain) {
         updates.put(IOrder_hist.VOLUME_REMAIN, volume_remain);
-
         this.volume_remain = volume_remain;
     }
 
@@ -288,7 +278,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
 	if(range==null && range!=this.range || range!=null && !range.equals(this.range)) {
             updates.put(IOrder_hist.RANGE, range);
         }
-
         this.range = range;
     }
 
@@ -314,7 +303,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setRange_number(int range_number) {
         updates.put(IOrder_hist.RANGE_NUMBER, range_number);
-
         this.range_number = range_number;
     }
 
@@ -340,7 +328,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setPrice(double price) {
         updates.put(IOrder_hist.PRICE, price);
-
         this.price = price;
     }
 
@@ -366,7 +353,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setMin_volume(int min_volume) {
         updates.put(IOrder_hist.MIN_VOLUME, min_volume);
-
         this.min_volume = min_volume;
     }
 
@@ -392,7 +378,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setLocation(long location) {
         updates.put(IOrder_hist.LOCATION, location);
-
         this.location = location;
     }
 
@@ -418,7 +403,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setIs_buy_order(boolean is_buy_order) {
         updates.put(IOrder_hist.IS_BUY_ORDER, is_buy_order);
-
         this.is_buy_order = is_buy_order;
     }
 
@@ -444,7 +428,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setIssued(java.sql.Timestamp issued) {
         updates.put(IOrder_hist.ISSUED, issued);
-
         this.issued = issued;
     }
 
@@ -470,7 +453,6 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      */
     public void setDuration(int duration) {
         updates.put(IOrder_hist.DURATION, duration);
-
         this.duration = duration;
     }
 
@@ -540,6 +522,7 @@ public class eOrder_hist extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

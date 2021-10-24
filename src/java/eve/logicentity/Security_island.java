@@ -2,7 +2,7 @@
  * Security_island.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,15 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Security_island extends eve.entity.eSecurity_island implements ISecurity_island {
 
-    public static final String SQLSelect = "select security_island.* from security_island";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLDeleteAll = "delete from security_island";
 //Custom code, do not change this line
-
 
     /**
      * Constructor

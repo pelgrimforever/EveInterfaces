@@ -2,7 +2,7 @@
  * System.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,29 +37,7 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class System extends eve.entity.eSystem implements ISystem {
 
-    public static final String SQLSelect = "select system.* from system";
-    public static final String SQLWheresecurity_island = "security_island = :security_island.id:";
-    public static final String SQLWhereconstellation = "constellation = :constellation.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by name";
-    public static final String WhereAccess = "not noaccess";
-    public static final String SQLSelectAll = SQLSelect + " where " + WhereAccess + OrderBy;
-    
-    public static final String SQLupdateconstellationborders = "update system set isconstellationborder = :isborder: where id in (select system from stargate where isconstellationborder group by system)";
-    public static final String SQLupdateregionborders = "update system set isregionborder = :isborder: where id in (select system from stargate where isregionborder group by system)";
-
-    public static final String updateNoaccess1 = "update system set noaccess = :noaccess: where id not in (select system from stargate)";
-    public static final String updateNoaccess2 = "update system set noaccess = :noaccess: where id in (select system from stargate)";
-
-    public static final String SQLRemoveSecurityIslands = "update system set security_island = null";
-    public static final String SQLSelectHiSecNoIsland = "select s.* from system s where not noaccess and security_status >= :highsec: and security_island is null order by id";
-    public static final String SQLSelectHiSecSystemsConnected = "select s_to.* from stargate sg " +
-        "inner join system on sg.system = system.id " +
-        "inner join system s_to on sg.to_system = s_to.id " +
-        "where system.security_island = :security_island.id: " +
-        "and s_to.security_island is null and s_to.security_status >= :highsec:";
-    
     private int npc_kills = 0;
     private int pod_kills = 0;
     private int ship_kills = 0;
@@ -68,11 +46,6 @@ public class System extends eve.entity.eSystem implements ISystem {
     private int killmailgatecount = 0;
     private org.json.simple.JSONObject killmaildata = new org.json.simple.JSONObject();
 //Custom code, do not change this line
-
-    public static final String SQLSelect4security_island = "select * from system where " + SQLWheresecurity_island + OrderBy;
-    public static final String SQLDelete4security_island = "delete from system where " + SQLWheresecurity_island;
-    public static final String SQLSelect4constellation = "select * from system where " + SQLWhereconstellation + OrderBy;
-    public static final String SQLDelete4constellation = "delete from system where " + SQLWhereconstellation;
 
     /**
      * Constructor

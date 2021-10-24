@@ -2,7 +2,7 @@
  * Order_history.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,21 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Order_history extends eve.entity.eOrder_history implements IOrder_history {
 
-    public static final String SQLSelect = "select order_history.* from order_history";
-    public static final String SQLWhereevetype = "evetype = :evetype.id:";
-    public static final String SQLWhereregion = "region = :region.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by region, evetype, date";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLdeleteall = "Delete from order_history";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4evetype = "select * from order_history where " + SQLWhereevetype + OrderBy;
-    public static final String SQLDelete4evetype = "delete from order_history where " + SQLWhereevetype;
-    public static final String SQLSelect4region = "select * from order_history where " + SQLWhereregion + OrderBy;
-    public static final String SQLDelete4region = "delete from order_history where " + SQLWhereregion;
 
     /**
      * Constructor

@@ -2,7 +2,7 @@
  * View_systemtradeorderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_systemtradeorderssearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_systemtradeorders;
+import eve.logicview.View_systemtradeorders;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -35,6 +35,13 @@ public class View_systemtradeorderssearch extends Tablesearch implements IView_s
     Numbersearch sell_system = new Numbersearch("view_systemtradeorders.sell_system");
     Numbersearch buy_system = new Numbersearch("view_systemtradeorders.buy_system");
     Numbersearch jumps = new Numbersearch("view_systemtradeorders.jumps");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_systemtradeorders.table;
+    }
 
     /**
      * Constructor

@@ -2,13 +2,14 @@
  * eView_security_island_systemcount.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,26 +27,34 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_security_island_systemcount implements EntityViewInterface {
+public class eView_security_island_systemcount implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_security_island_systemcount";
     private long id;
     private java.lang.String name;
     private long systems;
 	  
-    public static final String table = "view_security_island_systemcount";
-    public static final String SQLSelectAll = "select view_security_island_systemcount.* from view_security_island_systemcount";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_security_island_systemcount.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_security_island_systemcount.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_security_island_systemcount
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_security_island_systemcounts
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

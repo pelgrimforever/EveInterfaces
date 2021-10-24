@@ -2,7 +2,7 @@
  * Trade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,23 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Trade extends eve.entity.eTrade implements ITrade {
 
-    public static final String SQLSelect = "select trade.* from trade";
-    public static final String SQLWhereordersSell_order_id = "sell_order_id = :orders.id:";
-    public static final String SQLWhereordersBuy_order_id = "buy_order_id = :orders.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by sell_order_id, buy_order_id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLSellBuyOrders = SQLSelect + " where sell_order_id = :trade.sell_order_id: or buy_order_id = :trade.buy_order_id:";
-
-    public static final String SQLdeleteall = "delete from trade";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4ordersSell_order_id = "select * from trade where " + SQLWhereordersSell_order_id + OrderBy;
-    public static final String SQLDelete4ordersSell_order_id = "delete from trade where " + SQLWhereordersSell_order_id;
-    public static final String SQLSelect4ordersBuy_order_id = "select * from trade where " + SQLWhereordersBuy_order_id + OrderBy;
-    public static final String SQLDelete4ordersBuy_order_id = "delete from trade where " + SQLWhereordersBuy_order_id;
 
     /**
      * Constructor

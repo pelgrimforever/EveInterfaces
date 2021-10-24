@@ -2,7 +2,7 @@
  * Market_group.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,16 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Market_group extends eve.entity.eMarket_group implements IMarket_group {
 
-    public static final String SQLSelect = "select market_group.* from market_group";
-    public static final String SQLWheremarket_groupParent_id = "parent_id = :market_group.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4market_groupParent_id = "select * from market_group where " + SQLWheremarket_groupParent_id + OrderBy;
-    public static final String SQLDelete4market_groupParent_id = "delete from market_group where " + SQLWheremarket_groupParent_id;
 
     /**
      * Constructor

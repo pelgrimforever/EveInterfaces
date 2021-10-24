@@ -2,7 +2,7 @@
  * Routetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eRoutetype;
+import eve.logicentity.Routetype;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -30,6 +30,13 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", IRoutetype.security_islandPKfields, IRoutetype.security_islandFKfields);
     Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields);
     Relationalkeysearch systemsearcher = new Relationalkeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields, "system", IRoute.systemPKfields, IRoute.systemFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Routetype.table;
+    }
 
     /**
      * Constructor

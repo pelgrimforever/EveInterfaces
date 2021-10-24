@@ -2,14 +2,15 @@
  * eOrder_history.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IOrder_history;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Order_history
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eOrder_history extends AbstractEntity implements EntityInterface {
+public class eOrder_history extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Order_historyPK order_historyPK;
     private double average;
@@ -42,10 +45,6 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
     private int order_count;
 	  
     public static final String table = "order_history";
-    public static final String SQLWhere1 = "region = :order_history.region: and evetype = :order_history.evetype: and date = :order_history.date:";
-    public static final String SQLSelect1 = "select order_history.* from order_history where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from order_history where " + SQLWhere1;
-    public static final String SQLSelectAll = "select order_history.* from order_history";
 	  
     public String getFieldname(short fieldconstant) {
         return IOrder_history.fieldnames[fieldconstant-1];
@@ -56,35 +55,26 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eOrder_history.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eOrder_history.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Order_history
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Order_history (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Order_history (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Order_historys
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -125,27 +115,28 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.order_historyPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.order_historyPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.order_historyPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.order_historyPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IOrder_history.AVERAGE, average);
         updates.put(IOrder_history.HIGHEST, highest);
         updates.put(IOrder_history.LOWEST, lowest);
@@ -154,16 +145,18 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Order_historyPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Order_historyPK
      */
+    @Override
     public Order_historyPK getPrimaryKey() {
         return this.order_historyPK;
     }
@@ -190,7 +183,6 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setAverage(double average) {
         updates.put(IOrder_history.AVERAGE, average);
-
         this.average = average;
     }
 
@@ -216,7 +208,6 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setHighest(double highest) {
         updates.put(IOrder_history.HIGHEST, highest);
-
         this.highest = highest;
     }
 
@@ -242,7 +233,6 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setLowest(double lowest) {
         updates.put(IOrder_history.LOWEST, lowest);
-
         this.lowest = lowest;
     }
 
@@ -268,7 +258,6 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setVolume(int volume) {
         updates.put(IOrder_history.VOLUME, volume);
-
         this.volume = volume;
     }
 
@@ -294,7 +283,6 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      */
     public void setOrder_count(int order_count) {
         updates.put(IOrder_history.ORDER_COUNT, order_count);
-
         this.order_count = order_count;
     }
 
@@ -302,6 +290,7 @@ public class eOrder_history extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

@@ -2,7 +2,7 @@
  * Evetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,40 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Evetype extends eve.entity.eEvetype implements IEvetype {
 
-    public static final String SQLSelect = "select evetype.* from evetype";
-    public static final String SQLWheremarket_group = "market_group = :market_group.id:";
-    public static final String SQLWheretypegroup = "typegroup = :typegroup.id:";
-    public static final String SQLWheregraphic = "graphic = :graphic.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    public static final String SQLSelect4typegroupCount = "select count(*) as count from evetype where " + SQLWheretypegroup;
-    
-    public static final String SQLUpdateSellprices = 
-        "update evetype set avg_sellorder = orders.avgprice, min_selorder = orders.min_price, max_selorder = orders.max_price " +
-        "from (select o.evetype as evetype, sum(o.volume_remain*o.price)/sum(o.volume_remain) as avgprice, " +
-        "min(o.price) as min_price, max(o.price) as max_price " + 
-        "from orders o " +
-        "inner join system s on o.system = s.id and s.security_island = 1 " +
-        "where not o.is_buy_order group by o.evetype) as orders " +
-        "where evetype.id = orders.evetype";
-    public static final String SQLUpdateBuyprices = 
-        "update evetype set avg_buyorder = orders.avgprice, min_buyorder = orders.min_price, max_buyorder = orders.max_price " +
-        "from (select o.evetype as evetype, sum(o.volume_remain*o.price)/sum(o.volume_remain) as avgprice, " +
-        "min(o.price) as min_price, max(o.price) as max_price " + 
-        "from orders o " +
-        "inner join system s on o.system = s.id and s.security_island = 1 " +
-        "where o.is_buy_order group by o.evetype) as orders " +
-        "where evetype.id = orders.evetype";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4market_group = "select * from evetype where " + SQLWheremarket_group + OrderBy;
-    public static final String SQLDelete4market_group = "delete from evetype where " + SQLWheremarket_group;
-    public static final String SQLSelect4typegroup = "select * from evetype where " + SQLWheretypegroup + OrderBy;
-    public static final String SQLDelete4typegroup = "delete from evetype where " + SQLWheretypegroup;
-    public static final String SQLSelect4graphic = "select * from evetype where " + SQLWheregraphic + OrderBy;
-    public static final String SQLDelete4graphic = "delete from evetype where " + SQLWheregraphic;
 
     /**
      * Constructor

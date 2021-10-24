@@ -2,18 +2,20 @@
  * Constellation_neighbourPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity.pk;
 
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
 import eve.interfaces.entity.pk.*;
 import eve.interfaces.logicentity.IConstellation_neighbour;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import db.SQLparameters;
+import db.Entityvalues;
 
 /**
  * Primarykey class Constellation_neighbourPK
@@ -22,7 +24,7 @@ import java.sql.Timestamp;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public class Constellation_neighbourPK implements EntityPKInterface, IConstellation_neighbourPK {
+public class Constellation_neighbourPK implements IConstellation_neighbourPK {
 
     private IConstellationPK constellationNeighbourPK = new ConstellationPK();
     private IConstellationPK constellationConstellationPK = new ConstellationPK();
@@ -45,26 +47,26 @@ public class Constellation_neighbourPK implements EntityPKInterface, IConstellat
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
-    public Object[][] getKeyFields() {
+    public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"constellation_neighbour.constellation", constellationConstellationPK.getId()}, 
             {"constellation_neighbour.neighbour", constellationNeighbourPK.getId()}
         };
-        return keyfields;
+        return new SQLparameters(keyfields);
     }
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value) for sql insert statement
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
-    public Object[][] getInsertKeyFields() {
+    public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IConstellation_neighbour.CONSTELLATION, constellationConstellationPK.getId()}, 
             {IConstellation_neighbour.NEIGHBOUR, constellationNeighbourPK.getId()}
         };
-        return keyfields;
+        return new Entityvalues(keyfields);
     }
 
     /**
@@ -138,12 +140,9 @@ public class Constellation_neighbourPK implements EntityPKInterface, IConstellat
     public String getKeystring() {
         String key = "";
         key += getConstellation();
-
-
         key += "_";
 
         key += getNeighbour();
-
         return key;
     }
 
@@ -162,10 +161,7 @@ public class Constellation_neighbourPK implements EntityPKInterface, IConstellat
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long constellation = Long.valueOf(keys.substring(0, keylength));
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -173,9 +169,7 @@ public class Constellation_neighbourPK implements EntityPKInterface, IConstellat
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long neighbour = Long.valueOf(keys.substring(0, keylength));
-
             return new Constellation_neighbourPK(constellation, neighbour);
         }
     }

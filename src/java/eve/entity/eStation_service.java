@@ -2,14 +2,15 @@
  * eStation_service.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IStation_service;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Station_service
@@ -32,15 +35,11 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eStation_service extends AbstractEntity implements EntityInterface {
+public class eStation_service extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Station_servicePK station_servicePK;
 	  
     public static final String table = "station_service";
-    public static final String SQLWhere1 = "station = :station_service.station: and service = :station_service.service:";
-    public static final String SQLSelect1 = "select station_service.* from station_service where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from station_service where " + SQLWhere1;
-    public static final String SQLSelectAll = "select station_service.* from station_service";
 	  
     public String getFieldname(short fieldconstant) {
         return IStation_service.fieldnames[fieldconstant-1];
@@ -51,35 +50,26 @@ public class eStation_service extends AbstractEntity implements EntityInterface 
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eStation_service.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eStation_service.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Station_service
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Station_service (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Station_service (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Station_services
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -120,40 +110,43 @@ public class eStation_service extends AbstractEntity implements EntityInterface 
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.station_servicePK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.station_servicePK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.station_servicePK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.station_servicePK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Station_servicePK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Station_servicePK
      */
+    @Override
     public Station_servicePK getPrimaryKey() {
         return this.station_servicePK;
     }
@@ -162,6 +155,7 @@ public class eStation_service extends AbstractEntity implements EntityInterface 
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

@@ -2,14 +2,15 @@
  * eRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IRegion;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Region
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eRegion extends AbstractEntity implements EntityInterface {
+public class eRegion extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected RegionPK regionPK;
     private java.lang.String name;
@@ -41,10 +44,6 @@ public class eRegion extends AbstractEntity implements EntityInterface {
     private int ordererrors;
 	  
     public static final String table = "region";
-    public static final String SQLWhere1 = "id = :region.id:";
-    public static final String SQLSelect1 = "select region.* from region where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from region where " + SQLWhere1;
-    public static final String SQLSelectAll = "select region.* from region";
 	  
     public String getFieldname(short fieldconstant) {
         return IRegion.fieldnames[fieldconstant-1];
@@ -55,35 +54,26 @@ public class eRegion extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eRegion.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eRegion.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Region
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Region (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Region (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Regions
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -124,27 +114,28 @@ public class eRegion extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.regionPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.regionPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.regionPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.regionPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IRegion.NAME, name);
         updates.put(IRegion.NOACCESS, noaccess);
         updates.put(IRegion.ORDERPAGES, orderpages);
@@ -152,16 +143,18 @@ public class eRegion extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return RegionPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return RegionPK
      */
+    @Override
     public RegionPK getPrimaryKey() {
         return this.regionPK;
     }
@@ -190,7 +183,6 @@ public class eRegion extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IRegion.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -216,7 +208,6 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public void setNoaccess(boolean noaccess) {
         updates.put(IRegion.NOACCESS, noaccess);
-
         this.noaccess = noaccess;
     }
 
@@ -242,7 +233,6 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public void setOrderpages(int orderpages) {
         updates.put(IRegion.ORDERPAGES, orderpages);
-
         this.orderpages = orderpages;
     }
 
@@ -268,7 +258,6 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      */
     public void setOrdererrors(int ordererrors) {
         updates.put(IRegion.ORDERERRORS, ordererrors);
-
         this.ordererrors = ordererrors;
     }
 
@@ -276,6 +265,7 @@ public class eRegion extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

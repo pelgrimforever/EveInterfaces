@@ -2,7 +2,7 @@
  * Categorysearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eCategory;
+import eve.logicentity.Category;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -28,6 +28,13 @@ public class Categorysearch extends Tablesearch implements ICategorysearch {
     Numbersearch id = new Numbersearch("category.id");
     Stringsearch name = new Stringsearch("category.name");
     Booleansearch published = new Booleansearch("category.published");
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Category.table;
+    }
 
     /**
      * Constructor

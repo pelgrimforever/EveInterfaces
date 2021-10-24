@@ -2,7 +2,7 @@
  * View_stocktrade_systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_stocktrade_systemsearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_stocktrade_system;
+import eve.logicview.View_stocktrade_system;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -29,6 +29,13 @@ public class View_stocktrade_systemsearch extends Tablesearch implements IView_s
     Stringsearch name = new Stringsearch("view_stocktrade_system.name");
     Numbersearch sellprice = new Numbersearch("view_stocktrade_system.sellprice");
     Numbersearch totalvolume = new Numbersearch("view_stocktrade_system.totalvolume");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_stocktrade_system.table;
+    }
 
     /**
      * Constructor

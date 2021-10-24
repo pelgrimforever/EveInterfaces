@@ -2,7 +2,7 @@
  * Systemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,23 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Systemtrade_order extends eve.entity.eSystemtrade_order implements ISystemtrade_order {
 
-    public static final String SQLSelect = "select systemtrade_order.* from systemtrade_order";
-    public static final String SQLWhereordersBuy_order = "buy_order = :orders.id:";
-    public static final String SQLWhereordersSell_order = "sell_order = :orders.id:";
-    public static final String SQLWheresystemtrade = "buy_system = :systemtrade.buy_system: and sell_system = :systemtrade.sell_system:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by sell_system, buy_system, sell_order, buy_order";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    public static final String SQLdeleteall = "delete from systemtrade_order";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4ordersBuy_order = "select * from systemtrade_order where " + SQLWhereordersBuy_order + OrderBy;
-    public static final String SQLDelete4ordersBuy_order = "delete from systemtrade_order where " + SQLWhereordersBuy_order;
-    public static final String SQLSelect4ordersSell_order = "select * from systemtrade_order where " + SQLWhereordersSell_order + OrderBy;
-    public static final String SQLDelete4ordersSell_order = "delete from systemtrade_order where " + SQLWhereordersSell_order;
-    public static final String SQLSelect4systemtrade = "select * from systemtrade_order where " + SQLWheresystemtrade + OrderBy;
-    public static final String SQLDelete4systemtrade = "delete from systemtrade_order where " + SQLWheresystemtrade;
 
     /**
      * Constructor

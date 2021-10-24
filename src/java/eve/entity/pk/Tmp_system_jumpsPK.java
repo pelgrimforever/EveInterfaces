@@ -2,18 +2,20 @@
  * Tmp_system_jumpsPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity.pk;
 
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
 import eve.interfaces.entity.pk.*;
 import eve.interfaces.logicentity.ITmp_system_jumps;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import db.SQLparameters;
+import db.Entityvalues;
 
 /**
  * Primarykey class Tmp_system_jumpsPK
@@ -22,7 +24,7 @@ import java.sql.Timestamp;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public class Tmp_system_jumpsPK implements EntityPKInterface, ITmp_system_jumpsPK {
+public class Tmp_system_jumpsPK implements ITmp_system_jumpsPK {
 
     private long system;
   
@@ -43,24 +45,24 @@ public class Tmp_system_jumpsPK implements EntityPKInterface, ITmp_system_jumpsP
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
-    public Object[][] getKeyFields() {
+    public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"tmp_system_jumps.system", system}
         };
-        return keyfields;
+        return new SQLparameters(keyfields);
     }
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value) for sql insert statement
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
-    public Object[][] getInsertKeyFields() {
+    public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {ITmp_system_jumps.SYSTEM, system}
         };
-        return keyfields;
+        return new Entityvalues(keyfields);
     }
 
     /**
@@ -86,7 +88,6 @@ public class Tmp_system_jumpsPK implements EntityPKInterface, ITmp_system_jumpsP
     public String getKeystring() {
         String key = "";
         key += getSystem();
-
         return key;
     }
 
@@ -105,9 +106,7 @@ public class Tmp_system_jumpsPK implements EntityPKInterface, ITmp_system_jumpsP
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long system = Long.valueOf(keys.substring(0, keylength));
-
             return new Tmp_system_jumpsPK(system);
         }
     }

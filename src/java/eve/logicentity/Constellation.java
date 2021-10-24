@@ -2,7 +2,7 @@
  * Constellation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,19 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Constellation extends eve.entity.eConstellation implements IConstellation {
 
-    public static final String SQLSelect = "select constellation.* from constellation";
-    public static final String SQLWhereregion = "region = :region.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String updateNoaccess1 = "update constellation set noaccess = :noaccess: where id not in (select constellation from system where noaccess = :systemnoaccess: group by constellation)";
-    public static final String updateNoaccess2 = "update constellation set noaccess = :noaccess: where id in (select constellation from system where noaccess = :systemnoaccess: group by constellation)";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4region = "select * from constellation where " + SQLWhereregion + OrderBy;
-    public static final String SQLDelete4region = "delete from constellation where " + SQLWhereregion;
 
     /**
      * Constructor

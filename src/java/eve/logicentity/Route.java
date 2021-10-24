@@ -2,7 +2,7 @@
  * Route.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,19 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Route extends eve.entity.eRoute implements IRoute {
 
-    public static final String SQLSelect = "select route.* from route";
-    public static final String SQLWhereroutetype = "routetype = :routetype.id:";
-    public static final String SQLWheresystem = "system = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by routetype, system";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4routetype = "select * from route where " + SQLWhereroutetype + OrderBy;
-    public static final String SQLDelete4routetype = "delete from route where " + SQLWhereroutetype;
-    public static final String SQLSelect4system = "select * from route where " + SQLWheresystem + OrderBy;
-    public static final String SQLDelete4system = "delete from route where " + SQLWheresystem;
 
     /**
      * Constructor

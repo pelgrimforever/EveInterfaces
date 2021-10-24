@@ -2,14 +2,15 @@
  * eSystemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ISystemtrade;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Systemtrade
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eSystemtrade extends AbstractEntity implements EntityInterface {
+public class eSystemtrade extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected SystemtradePK systemtradePK;
     private double profit;
@@ -40,10 +43,6 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
     private int jumps;
 	  
     public static final String table = "systemtrade";
-    public static final String SQLWhere1 = "sell_system = :systemtrade.sell_system: and buy_system = :systemtrade.buy_system:";
-    public static final String SQLSelect1 = "select systemtrade.* from systemtrade where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from systemtrade where " + SQLWhere1;
-    public static final String SQLSelectAll = "select systemtrade.* from systemtrade";
 	  
     public String getFieldname(short fieldconstant) {
         return ISystemtrade.fieldnames[fieldconstant-1];
@@ -54,35 +53,26 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eSystemtrade.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eSystemtrade.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Systemtrade
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Systemtrade (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Systemtrade (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Systemtrades
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -123,43 +113,46 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.systemtradePK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.systemtradePK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.systemtradePK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.systemtradePK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ISystemtrade.PROFIT, profit);
         updates.put(ISystemtrade.TOTAL_CARGO_VOLUME, total_cargo_volume);
         updates.put(ISystemtrade.JUMPS, jumps);
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return SystemtradePK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return SystemtradePK
      */
+    @Override
     public SystemtradePK getPrimaryKey() {
         return this.systemtradePK;
     }
@@ -186,7 +179,6 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      */
     public void setProfit(double profit) {
         updates.put(ISystemtrade.PROFIT, profit);
-
         this.profit = profit;
     }
 
@@ -212,7 +204,6 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      */
     public void setTotal_cargo_volume(double total_cargo_volume) {
         updates.put(ISystemtrade.TOTAL_CARGO_VOLUME, total_cargo_volume);
-
         this.total_cargo_volume = total_cargo_volume;
     }
 
@@ -238,7 +229,6 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      */
     public void setJumps(int jumps) {
         updates.put(ISystemtrade.JUMPS, jumps);
-
         this.jumps = jumps;
     }
 
@@ -246,6 +236,7 @@ public class eSystemtrade extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

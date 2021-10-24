@@ -2,7 +2,7 @@
  * Stock.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,16 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Stock extends eve.entity.eStock implements IStock {
 
-    public static final String SQLSelect = "select stock.* from stock";
-    public static final String SQLWhereevetype = "evetype = :evetype.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by username, evetype";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4evetype = "select * from stock where " + SQLWhereevetype + OrderBy;
-    public static final String SQLDelete4evetype = "delete from stock where " + SQLWhereevetype;
 
     /**
      * Constructor

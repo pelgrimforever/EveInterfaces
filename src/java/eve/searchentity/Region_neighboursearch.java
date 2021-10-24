@@ -2,7 +2,7 @@
  * Region_neighboursearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eRegion_neighbour;
+import eve.logicentity.Region_neighbour;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -27,6 +27,13 @@ public class Region_neighboursearch extends Tablesearch implements IRegion_neigh
 
     Foreignkeysearch regionRegionsearcher = new Foreignkeysearch("region", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
     Foreignkeysearch regionNeighboursearcher = new Foreignkeysearch("region", IRegion_neighbour.regionNeighbourPKfields, IRegion_neighbour.regionNeighbourFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Region_neighbour.table;
+    }
 
     /**
      * Constructor

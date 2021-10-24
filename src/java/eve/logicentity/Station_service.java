@@ -2,7 +2,7 @@
  * Station_service.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,16 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Station_service extends eve.entity.eStation_service implements IStation_service {
 
-    public static final String SQLSelect = "select station_service.* from station_service";
-    public static final String SQLWherestation = "station = :station.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by station";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4station = "select * from station_service where " + SQLWherestation + OrderBy;
-    public static final String SQLDelete4station = "delete from station_service where " + SQLWherestation;
 
     /**
      * Constructor

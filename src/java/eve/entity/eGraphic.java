@@ -2,14 +2,15 @@
  * eGraphic.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IGraphic;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Graphic
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eGraphic extends AbstractEntity implements EntityInterface {
+public class eGraphic extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected GraphicPK graphicPK;
     private java.lang.String collision_file;
@@ -44,10 +47,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
     private java.lang.String sof_race_name;
 	  
     public static final String table = "graphic";
-    public static final String SQLWhere1 = "id = :graphic.id:";
-    public static final String SQLSelect1 = "select graphic.* from graphic where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from graphic where " + SQLWhere1;
-    public static final String SQLSelectAll = "select graphic.* from graphic";
 	  
     public String getFieldname(short fieldconstant) {
         return IGraphic.fieldnames[fieldconstant-1];
@@ -58,35 +57,26 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eGraphic.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eGraphic.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Graphic
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Graphic (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Graphic (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Graphics
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -127,27 +117,28 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.graphicPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.graphicPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.graphicPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.graphicPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IGraphic.COLLISION_FILE, collision_file);
         updates.put(IGraphic.GRAPHIC_FILE, graphic_file);
         updates.put(IGraphic.ICON_FOLDER, icon_folder);
@@ -158,16 +149,18 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return GraphicPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return GraphicPK
      */
+    @Override
     public GraphicPK getPrimaryKey() {
         return this.graphicPK;
     }
@@ -196,7 +189,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(collision_file==null && collision_file!=this.collision_file || collision_file!=null && !collision_file.equals(this.collision_file)) {
             updates.put(IGraphic.COLLISION_FILE, collision_file);
         }
-
         this.collision_file = collision_file;
     }
 
@@ -224,7 +216,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(graphic_file==null && graphic_file!=this.graphic_file || graphic_file!=null && !graphic_file.equals(this.graphic_file)) {
             updates.put(IGraphic.GRAPHIC_FILE, graphic_file);
         }
-
         this.graphic_file = graphic_file;
     }
 
@@ -252,7 +243,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(icon_folder==null && icon_folder!=this.icon_folder || icon_folder!=null && !icon_folder.equals(this.icon_folder)) {
             updates.put(IGraphic.ICON_FOLDER, icon_folder);
         }
-
         this.icon_folder = icon_folder;
     }
 
@@ -280,7 +270,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_dna==null && sof_dna!=this.sof_dna || sof_dna!=null && !sof_dna.equals(this.sof_dna)) {
             updates.put(IGraphic.SOF_DNA, sof_dna);
         }
-
         this.sof_dna = sof_dna;
     }
 
@@ -308,7 +297,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_fation_name==null && sof_fation_name!=this.sof_fation_name || sof_fation_name!=null && !sof_fation_name.equals(this.sof_fation_name)) {
             updates.put(IGraphic.SOF_FATION_NAME, sof_fation_name);
         }
-
         this.sof_fation_name = sof_fation_name;
     }
 
@@ -336,7 +324,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_hull_name==null && sof_hull_name!=this.sof_hull_name || sof_hull_name!=null && !sof_hull_name.equals(this.sof_hull_name)) {
             updates.put(IGraphic.SOF_HULL_NAME, sof_hull_name);
         }
-
         this.sof_hull_name = sof_hull_name;
     }
 
@@ -364,7 +351,6 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
 	if(sof_race_name==null && sof_race_name!=this.sof_race_name || sof_race_name!=null && !sof_race_name.equals(this.sof_race_name)) {
             updates.put(IGraphic.SOF_RACE_NAME, sof_race_name);
         }
-
         this.sof_race_name = sof_race_name;
     }
 
@@ -372,6 +358,7 @@ public class eGraphic extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

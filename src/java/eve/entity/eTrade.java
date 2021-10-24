@@ -2,14 +2,15 @@
  * eTrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ITrade;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Trade
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eTrade extends AbstractEntity implements EntityInterface {
+public class eTrade extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected TradePK tradePK;
     private double total_volume;
@@ -47,10 +50,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
     private int maxunits_per_run;
 	  
     public static final String table = "trade";
-    public static final String SQLWhere1 = "sell_order_id = :trade.sell_order_id: and buy_order_id = :trade.buy_order_id:";
-    public static final String SQLSelect1 = "select trade.* from trade where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from trade where " + SQLWhere1;
-    public static final String SQLSelectAll = "select trade.* from trade";
 	  
     public String getFieldname(short fieldconstant) {
         return ITrade.fieldnames[fieldconstant-1];
@@ -61,35 +60,26 @@ public class eTrade extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eTrade.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eTrade.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Trade
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Trade (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Trade (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Trades
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -130,27 +120,28 @@ public class eTrade extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.tradePK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.tradePK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.tradePK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.tradePK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ITrade.TOTAL_VOLUME, total_volume);
         updates.put(ITrade.BUY_ORDER_VALUE, buy_order_value);
         updates.put(ITrade.SELL_ORDER_VALUE, sell_order_value);
@@ -164,16 +155,18 @@ public class eTrade extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return TradePK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return TradePK
      */
+    @Override
     public TradePK getPrimaryKey() {
         return this.tradePK;
     }
@@ -200,7 +193,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setTotal_volume(double total_volume) {
         updates.put(ITrade.TOTAL_VOLUME, total_volume);
-
         this.total_volume = total_volume;
     }
 
@@ -226,7 +218,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setBuy_order_value(double buy_order_value) {
         updates.put(ITrade.BUY_ORDER_VALUE, buy_order_value);
-
         this.buy_order_value = buy_order_value;
     }
 
@@ -252,7 +243,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setSell_order_value(double sell_order_value) {
         updates.put(ITrade.SELL_ORDER_VALUE, sell_order_value);
-
         this.sell_order_value = sell_order_value;
     }
 
@@ -278,7 +268,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setProfit(double profit) {
         updates.put(ITrade.PROFIT, profit);
-
         this.profit = profit;
     }
 
@@ -304,7 +293,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setJumps(int jumps) {
         updates.put(ITrade.JUMPS, jumps);
-
         this.jumps = jumps;
     }
 
@@ -330,7 +318,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setRuns(int runs) {
         updates.put(ITrade.RUNS, runs);
-
         this.runs = runs;
     }
 
@@ -356,7 +343,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setTotal_jumps(int total_jumps) {
         updates.put(ITrade.TOTAL_JUMPS, total_jumps);
-
         this.total_jumps = total_jumps;
     }
 
@@ -382,7 +368,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setProfit_per_jump(double profit_per_jump) {
         updates.put(ITrade.PROFIT_PER_JUMP, profit_per_jump);
-
         this.profit_per_jump = profit_per_jump;
     }
 
@@ -408,7 +393,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setSinglerun_profit_per_jump(double singlerun_profit_per_jump) {
         updates.put(ITrade.SINGLERUN_PROFIT_PER_JUMP, singlerun_profit_per_jump);
-
         this.singlerun_profit_per_jump = singlerun_profit_per_jump;
     }
 
@@ -434,7 +418,6 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      */
     public void setMaxunits_per_run(int maxunits_per_run) {
         updates.put(ITrade.MAXUNITS_PER_RUN, maxunits_per_run);
-
         this.maxunits_per_run = maxunits_per_run;
     }
 
@@ -442,6 +425,7 @@ public class eTrade extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

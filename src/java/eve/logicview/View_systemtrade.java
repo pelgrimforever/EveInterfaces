@@ -2,7 +2,7 @@
  * View_systemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -34,11 +34,6 @@ import javax.imageio.stream.ImageInputStream;
 public class View_systemtrade extends eve.view.eView_systemtrade implements IView_systemtrade {
 
 //Custom code, do not change this line
-    public static final String SQLSelectAll4Startingsystem = "select starts.id AS startsystem_id, sj.jumps AS startsystem_jumps, view_systemtrade.* from view_systemtrade " + 
-        "inner join systemjumps sj on view_systemtrade.sell_system = sj.system_end " +
-        "inner join system starts on sj.system_start = starts.id " + 
-        "where starts.id = :system.id:";
-    
     public long start_system;
     public int start_system_jumps;
 //Custom code, do not change this line

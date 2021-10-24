@@ -2,7 +2,7 @@
  * Stargate.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,41 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Stargate extends eve.entity.eStargate implements IStargate {
 
-    public static final String SQLSelect = "select stargate.* from stargate";
-    public static final String SQLWheresystemSystem = "system = :system.id:";
-    public static final String SQLWheresystemTo_system = "to_system = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-
-    public static final String SQLSelect4systemCount = "select count(*) as count from stargate where " + SQLWheresystemSystem;
-    
-    public static final String SQLupdateconstellationborders = "update stargate set isconstellationborder = :isborder: from stargate sg " +
-        "inner join system on system.id = sg.system " +
-        "inner join system systemto on systemto.id = sg.to_system " +
-        "inner join constellation on constellation.id = system.constellation " +
-        "inner join constellation constellationto on constellationto.id = systemto.constellation " +
-        "where constellation.id <> constellationto.id";
-    public static final String SQLupdateregionborders = "update stargate set isregionborder = :isborder: from stargate sg " +
-        "inner join system on system.id = sg.system " +
-        "inner join system systemto on systemto.id = sg.to_system " +
-        "inner join constellation on constellation.id = system.constellation " +
-        "inner join constellation constellationto on constellationto.id = systemto.constellation " +
-        "where constellation.region <> constellationto.region";
-    
-    //select only 1 stargate prevous to the given system id in the tmp_system_jumps configuration
-    public static final String SQLselectpreviousTMP = "select sg.* from tmp_system_jumps tmp " +
-        "inner join stargate sg on sg.to_system = tmp.system " +
-        "inner join tmp_system_jumps tmp2 on tmp2.system = sg.system and tmp2.jump+1 = tmp.jump " +
-        "where tmp.system = :system.id: " +
-        "limit 1";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4systemSystem = "select * from stargate where " + SQLWheresystemSystem + OrderBy;
-    public static final String SQLDelete4systemSystem = "delete from stargate where " + SQLWheresystemSystem;
-    public static final String SQLSelect4systemTo_system = "select * from stargate where " + SQLWheresystemTo_system + OrderBy;
-    public static final String SQLDelete4systemTo_system = "delete from stargate where " + SQLWheresystemTo_system;
 
     /**
      * Constructor

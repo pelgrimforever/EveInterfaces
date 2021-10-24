@@ -2,14 +2,15 @@
  * eRoutetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IRoutetype;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Routetype
@@ -32,17 +35,13 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eRoutetype extends AbstractEntity implements EntityInterface {
+public class eRoutetype extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected RoutetypePK routetypePK;
     private Security_islandPK security_islandPK;
     private java.lang.String name;
 	  
     public static final String table = "routetype";
-    public static final String SQLWhere1 = "id = :routetype.id:";
-    public static final String SQLSelect1 = "select routetype.* from routetype where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from routetype where " + SQLWhere1;
-    public static final String SQLSelectAll = "select routetype.* from routetype";
 	  
     public String getFieldname(short fieldconstant) {
         return IRoutetype.fieldnames[fieldconstant-1];
@@ -53,35 +52,26 @@ public class eRoutetype extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eRoutetype.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eRoutetype.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Routetype
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Routetype (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Routetype (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Routetypes
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -122,43 +112,46 @@ public class eRoutetype extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.routetypePK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.routetypePK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.routetypePK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.routetypePK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IRoutetype.SECURITY_ISLAND, this.security_islandPK.getId());
 
         updates.put(IRoutetype.NAME, name);
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return RoutetypePK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return RoutetypePK
      */
+    @Override
     public RoutetypePK getPrimaryKey() {
         return this.routetypePK;
     }
@@ -187,7 +180,6 @@ public class eRoutetype extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IRoutetype.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -226,6 +218,7 @@ public class eRoutetype extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

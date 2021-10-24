@@ -2,15 +2,15 @@
  * IRoutePK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.interfaces.entity.pk;
 
 import java.io.Serializable;
-
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
+import db.SQLparameters;
 
 /**
  * Primary Key class RoutePK for entity class Route
@@ -19,13 +19,7 @@ import data.interfaces.db.EntityPKInterface;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public interface IRoutePK extends EntityPKInterface, Serializable {
-
-    /**
-     *
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
-     */
-    public Object[][] getKeyFields();
+public interface IRoutePK extends EntityPK, Serializable {
 
     /**
      * 
@@ -73,11 +67,6 @@ public interface IRoutePK extends EntityPKInterface, Serializable {
      */
     public void setSystem(long system);
 
-    /**
-     *
-     * @return primary key in one formatted string
-     */
-    public String getKeystring();
 
     /**
      * compare this primary key with second primary key

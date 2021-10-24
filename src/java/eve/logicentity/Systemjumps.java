@@ -2,7 +2,7 @@
  * Systemjumps.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,25 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Systemjumps extends eve.entity.eSystemjumps implements ISystemjumps {
 
-    public static final String SQLSelect = "select systemjumps.* from systemjumps";
-    public static final String SQLWheresystemSystem_end = "system_end = :system.id:";
-    public static final String SQLWheresystemSystem_start = "system_start = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by system_start, system_end";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLDeleteall = "delete from systemjumps";
-    
-    public static final String SQLcopy_from_tmpjups = "insert into systemjumps " +
-        "select :system.id: as system_start, system, jump from tmp_system_jumps";
-    public static final String SQLset0jumpsto1 = "update systemjumps set jumps = 1 where jumps = 0";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4systemSystem_end = "select * from systemjumps where " + SQLWheresystemSystem_end + OrderBy;
-    public static final String SQLDelete4systemSystem_end = "delete from systemjumps where " + SQLWheresystemSystem_end;
-    public static final String SQLSelect4systemSystem_start = "select * from systemjumps where " + SQLWheresystemSystem_start + OrderBy;
-    public static final String SQLDelete4systemSystem_start = "delete from systemjumps where " + SQLWheresystemSystem_start;
 
     /**
      * Constructor

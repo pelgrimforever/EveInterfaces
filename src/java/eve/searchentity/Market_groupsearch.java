@@ -2,7 +2,7 @@
  * Market_groupsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eMarket_group;
+import eve.logicentity.Market_group;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -29,6 +29,13 @@ public class Market_groupsearch extends Tablesearch implements IMarket_groupsear
     Stringsearch name = new Stringsearch("market_group.name");
     Stringsearch description = new Stringsearch("market_group.description");
     Foreignkeysearch market_groupParent_idsearcher = new Foreignkeysearch("market_group", IMarket_group.market_groupParent_idPKfields, IMarket_group.market_groupParent_idFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Market_group.table;
+    }
 
     /**
      * Constructor

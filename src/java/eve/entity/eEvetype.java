@@ -2,14 +2,15 @@
  * eEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IEvetype;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Evetype
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eEvetype extends AbstractEntity implements EntityInterface {
+public class eEvetype extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected EvetypePK evetypePK;
     private Market_groupPK market_groupPK;
@@ -56,10 +59,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
     private double max_selorder;
 	  
     public static final String table = "evetype";
-    public static final String SQLWhere1 = "id = :evetype.id:";
-    public static final String SQLSelect1 = "select evetype.* from evetype where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from evetype where " + SQLWhere1;
-    public static final String SQLSelectAll = "select evetype.* from evetype";
 	  
     public String getFieldname(short fieldconstant) {
         return IEvetype.fieldnames[fieldconstant-1];
@@ -70,35 +69,26 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eEvetype.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eEvetype.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Evetype
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Evetype (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Evetype (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Evetypes
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -139,27 +129,28 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.evetypePK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.evetypePK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.evetypePK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.evetypePK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IEvetype.MARKET_GROUP, this.market_groupPK.getId());
 
         updates.put(IEvetype.TYPEGROUP, this.typegroupPK.getId());
@@ -185,16 +176,18 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return EvetypePK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return EvetypePK
      */
+    @Override
     public EvetypePK getPrimaryKey() {
         return this.evetypePK;
     }
@@ -223,7 +216,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IEvetype.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -249,7 +241,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setPublished(boolean published) {
         updates.put(IEvetype.PUBLISHED, published);
-
         this.published = published;
     }
 
@@ -277,7 +268,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(IEvetype.DESCRIPTION, description);
         }
-
         this.description = description;
     }
 
@@ -303,7 +293,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setCapacity(double capacity) {
         updates.put(IEvetype.CAPACITY, capacity);
-
         this.capacity = capacity;
     }
 
@@ -329,7 +318,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setIcon(long icon) {
         updates.put(IEvetype.ICON, icon);
-
         this.icon = icon;
     }
 
@@ -355,7 +343,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMass(double mass) {
         updates.put(IEvetype.MASS, mass);
-
         this.mass = mass;
     }
 
@@ -381,7 +368,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setPackaged_volume(double packaged_volume) {
         updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
-
         this.packaged_volume = packaged_volume;
     }
 
@@ -407,7 +393,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setPortion_size(int portion_size) {
         updates.put(IEvetype.PORTION_SIZE, portion_size);
-
         this.portion_size = portion_size;
     }
 
@@ -433,7 +418,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setRadius(double radius) {
         updates.put(IEvetype.RADIUS, radius);
-
         this.radius = radius;
     }
 
@@ -459,7 +443,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setVolume(double volume) {
         updates.put(IEvetype.VOLUME, volume);
-
         this.volume = volume;
     }
 
@@ -485,7 +468,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setAvg_buyorder(double avg_buyorder) {
         updates.put(IEvetype.AVG_BUYORDER, avg_buyorder);
-
         this.avg_buyorder = avg_buyorder;
     }
 
@@ -511,7 +493,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setAvg_sellorder(double avg_sellorder) {
         updates.put(IEvetype.AVG_SELLORDER, avg_sellorder);
-
         this.avg_sellorder = avg_sellorder;
     }
 
@@ -537,7 +518,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMin_buyorder(double min_buyorder) {
         updates.put(IEvetype.MIN_BUYORDER, min_buyorder);
-
         this.min_buyorder = min_buyorder;
     }
 
@@ -563,7 +543,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMax_buyorder(double max_buyorder) {
         updates.put(IEvetype.MAX_BUYORDER, max_buyorder);
-
         this.max_buyorder = max_buyorder;
     }
 
@@ -589,7 +568,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMin_selorder(double min_selorder) {
         updates.put(IEvetype.MIN_SELORDER, min_selorder);
-
         this.min_selorder = min_selorder;
     }
 
@@ -615,7 +593,6 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      */
     public void setMax_selorder(double max_selorder) {
         updates.put(IEvetype.MAX_SELORDER, max_selorder);
-
         this.max_selorder = max_selorder;
     }
 
@@ -716,6 +693,7 @@ public class eEvetype extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

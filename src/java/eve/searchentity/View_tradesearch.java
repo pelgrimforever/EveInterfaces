@@ -2,7 +2,7 @@
  * View_tradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_tradesearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_trade;
+import eve.logicview.View_trade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -53,6 +53,13 @@ public class View_tradesearch extends Tablesearch implements IView_tradesearch {
     Numbersearch trade_total_jumps = new Numbersearch("view_trade.trade_total_jumps");
     Numbersearch trade_singlerunprofit = new Numbersearch("view_trade.trade_singlerunprofit");
     Numbersearch trade_maxunits_per_run = new Numbersearch("view_trade.trade_maxunits_per_run");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_trade.table;
+    }
 
     /**
      * Constructor

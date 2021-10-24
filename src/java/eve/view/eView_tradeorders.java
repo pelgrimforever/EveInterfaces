@@ -2,13 +2,14 @@
  * eView_tradeorders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,8 +27,9 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_tradeorders implements EntityViewInterface {
+public class eView_tradeorders implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_tradeorders";
     private long tradevolume;
     private double buy_totalprice;
     private double sell_totalprice;
@@ -47,20 +49,27 @@ public class eView_tradeorders implements EntityViewInterface {
     private double buy_price;
     private int jumps;
 	  
-    public static final String table = "view_tradeorders";
-    public static final String SQLSelectAll = "select view_tradeorders.* from view_tradeorders";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_tradeorders.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_tradeorders.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_tradeorders
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_tradeorderss
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

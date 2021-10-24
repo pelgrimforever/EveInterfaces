@@ -2,7 +2,7 @@
  * View_combinedtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_combinedtradesearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_combinedtrade;
+import eve.logicview.View_combinedtrade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -37,6 +37,13 @@ public class View_combinedtradesearch extends Tablesearch implements IView_combi
     Numbersearch jumps = new Numbersearch("view_combinedtrade.jumps");
     Numbersearch runs = new Numbersearch("view_combinedtrade.runs");
     Numbersearch ordercount = new Numbersearch("view_combinedtrade.ordercount");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_combinedtrade.table;
+    }
 
     /**
      * Constructor

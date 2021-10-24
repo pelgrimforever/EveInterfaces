@@ -2,7 +2,7 @@
  * Faction.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,16 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Faction extends eve.entity.eFaction implements IFaction {
 
-    public static final String SQLSelect = "select faction.* from faction";
-    public static final String SQLWheresystem = "solar_system = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4system = "select * from faction where " + SQLWheresystem + OrderBy;
-    public static final String SQLDelete4system = "delete from faction where " + SQLWheresystem;
 
     /**
      * Constructor

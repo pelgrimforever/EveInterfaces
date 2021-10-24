@@ -2,7 +2,7 @@
  * Systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eSystem;
+import eve.logicentity.System;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -41,6 +41,13 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Relationalkeysearch routetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
     Primarykeysearch systemtradeSell_systemsearcher = new Primarykeysearch("systemtrade", ISystemtrade.systemSell_systemPKfields, ISystemtrade.systemSell_systemFKfields);
     Primarykeysearch systemtradeBuy_systemsearcher = new Primarykeysearch("systemtrade", ISystemtrade.systemBuy_systemPKfields, ISystemtrade.systemBuy_systemFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return System.table;
+    }
 
     /**
      * Constructor

@@ -2,13 +2,14 @@
  * eView_stocktrade_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,8 +27,9 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_stocktrade_orders implements EntityViewInterface {
+public class eView_stocktrade_orders implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_stocktrade_orders";
     private java.lang.String username;
     private long system;
     private long locationid;
@@ -39,20 +41,27 @@ public class eView_stocktrade_orders implements EntityViewInterface {
     private int min_volume;
     private long sellamount;
 	  
-    public static final String table = "view_stocktrade_orders";
-    public static final String SQLSelectAll = "select view_stocktrade_orders.* from view_stocktrade_orders";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_stocktrade_orders.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_stocktrade_orders.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_stocktrade_orders
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_stocktrade_orderss
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

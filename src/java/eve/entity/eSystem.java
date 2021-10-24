@@ -2,14 +2,15 @@
  * eSystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ISystem;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class System
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eSystem extends AbstractEntity implements EntityInterface {
+public class eSystem extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected SystemPK systemPK;
     private Security_islandPK security_islandPK;
@@ -46,10 +49,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
     private boolean isregionborder;
 	  
     public static final String table = "system";
-    public static final String SQLWhere1 = "id = :system.id:";
-    public static final String SQLSelect1 = "select system.* from system where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from system where " + SQLWhere1;
-    public static final String SQLSelectAll = "select system.* from system";
 	  
     public String getFieldname(short fieldconstant) {
         return ISystem.fieldnames[fieldconstant-1];
@@ -60,35 +59,26 @@ public class eSystem extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eSystem.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eSystem.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for System
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one System (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one System (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Systems
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -129,27 +119,28 @@ public class eSystem extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.systemPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.systemPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.systemPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.systemPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ISystem.SECURITY_ISLAND, this.security_islandPK.getId());
 
         updates.put(ISystem.CONSTELLATION, this.constellationPK.getId());
@@ -164,16 +155,18 @@ public class eSystem extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return SystemPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return SystemPK
      */
+    @Override
     public SystemPK getPrimaryKey() {
         return this.systemPK;
     }
@@ -202,7 +195,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ISystem.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -230,7 +222,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
 	if(security_class==null && security_class!=this.security_class || security_class!=null && !security_class.equals(this.security_class)) {
             updates.put(ISystem.SECURITY_CLASS, security_class);
         }
-
         this.security_class = security_class;
     }
 
@@ -256,7 +247,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setSecurity_status(double security_status) {
         updates.put(ISystem.SECURITY_STATUS, security_status);
-
         this.security_status = security_status;
     }
 
@@ -282,7 +272,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setStar_id(long star_id) {
         updates.put(ISystem.STAR_ID, star_id);
-
         this.star_id = star_id;
     }
 
@@ -308,7 +297,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setNoaccess(boolean noaccess) {
         updates.put(ISystem.NOACCESS, noaccess);
-
         this.noaccess = noaccess;
     }
 
@@ -334,7 +322,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setIsconstellationborder(boolean isconstellationborder) {
         updates.put(ISystem.ISCONSTELLATIONBORDER, isconstellationborder);
-
         this.isconstellationborder = isconstellationborder;
     }
 
@@ -360,7 +347,6 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      */
     public void setIsregionborder(boolean isregionborder) {
         updates.put(ISystem.ISREGIONBORDER, isregionborder);
-
         this.isregionborder = isregionborder;
     }
 
@@ -430,6 +416,7 @@ public class eSystem extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

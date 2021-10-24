@@ -2,14 +2,15 @@
  * eTmp_system_jumps.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ITmp_system_jumps;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Tmp_system_jumps
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eTmp_system_jumps extends AbstractEntity implements EntityInterface {
+public class eTmp_system_jumps extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Tmp_system_jumpsPK tmp_system_jumpsPK;
     private int jump;
@@ -40,10 +43,6 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
     private long previoussystem;
 	  
     public static final String table = "tmp_system_jumps";
-    public static final String SQLWhere1 = "system = :tmp_system_jumps.system:";
-    public static final String SQLSelect1 = "select tmp_system_jumps.* from tmp_system_jumps where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from tmp_system_jumps where " + SQLWhere1;
-    public static final String SQLSelectAll = "select tmp_system_jumps.* from tmp_system_jumps";
 	  
     public String getFieldname(short fieldconstant) {
         return ITmp_system_jumps.fieldnames[fieldconstant-1];
@@ -54,35 +53,26 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eTmp_system_jumps.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eTmp_system_jumps.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Tmp_system_jumps
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Tmp_system_jumps (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Tmp_system_jumps (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Tmp_system_jumpss
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -123,43 +113,46 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.tmp_system_jumpsPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.tmp_system_jumpsPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.tmp_system_jumpsPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.tmp_system_jumpsPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ITmp_system_jumps.JUMP, jump);
         updates.put(ITmp_system_jumps.MAXJUMPS, maxjumps);
         updates.put(ITmp_system_jumps.PREVIOUSSYSTEM, previoussystem);
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Tmp_system_jumpsPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Tmp_system_jumpsPK
      */
+    @Override
     public Tmp_system_jumpsPK getPrimaryKey() {
         return this.tmp_system_jumpsPK;
     }
@@ -186,7 +179,6 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      */
     public void setJump(int jump) {
         updates.put(ITmp_system_jumps.JUMP, jump);
-
         this.jump = jump;
     }
 
@@ -212,7 +204,6 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      */
     public void setMaxjumps(int maxjumps) {
         updates.put(ITmp_system_jumps.MAXJUMPS, maxjumps);
-
         this.maxjumps = maxjumps;
     }
 
@@ -238,7 +229,6 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      */
     public void setPrevioussystem(long previoussystem) {
         updates.put(ITmp_system_jumps.PREVIOUSSYSTEM, previoussystem);
-
         this.previoussystem = previoussystem;
     }
 
@@ -246,6 +236,7 @@ public class eTmp_system_jumps extends AbstractEntity implements EntityInterface
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

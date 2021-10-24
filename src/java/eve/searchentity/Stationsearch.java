@@ -2,7 +2,7 @@
  * Stationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eStation;
+import eve.logicentity.Station;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -36,6 +36,13 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IStation.evetypePKfields, IStation.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IStation.systemPKfields, IStation.systemFKfields);
     Primarykeysearch station_servicesearcher = new Primarykeysearch("station_service", IStation_service.stationPKfields, IStation_service.stationFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Station.table;
+    }
 
     /**
      * Constructor

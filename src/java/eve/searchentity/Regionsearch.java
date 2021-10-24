@@ -2,7 +2,7 @@
  * Regionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eRegion;
+import eve.logicentity.Region;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -34,6 +34,13 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     Relationalkeysearch evetypesearcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     Primarykeysearch region_neighbourRegionsearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
     Primarykeysearch region_neighbourNeighboursearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionNeighbourPKfields, IRegion_neighbour.regionNeighbourFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Region.table;
+    }
 
     /**
      * Constructor

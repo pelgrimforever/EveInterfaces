@@ -2,13 +2,14 @@
  * eView_order_region_evetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,25 +27,33 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_order_region_evetype implements EntityViewInterface {
+public class eView_order_region_evetype implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_order_region_evetype";
     private long region;
     private long evetype;
 	  
-    public static final String table = "view_order_region_evetype";
-    public static final String SQLSelectAll = "select view_order_region_evetype.* from view_order_region_evetype";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_order_region_evetype.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_order_region_evetype.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_order_region_evetype
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_order_region_evetypes
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

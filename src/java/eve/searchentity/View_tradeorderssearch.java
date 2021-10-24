@@ -2,7 +2,7 @@
  * View_tradeorderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_tradeorderssearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_tradeorders;
+import eve.logicview.View_tradeorders;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -42,6 +42,13 @@ public class View_tradeorderssearch extends Tablesearch implements IView_tradeor
     Numbersearch buy_volume_remain = new Numbersearch("view_tradeorders.buy_volume_remain");
     Numbersearch buy_price = new Numbersearch("view_tradeorders.buy_price");
     Numbersearch jumps = new Numbersearch("view_tradeorders.jumps");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_tradeorders.table;
+    }
 
     /**
      * Constructor

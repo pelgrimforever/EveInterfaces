@@ -2,7 +2,7 @@
  * Alliance.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,19 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Alliance extends eve.entity.eAlliance implements IAlliance {
 
-    public static final String SQLSelect = "select alliance.* from alliance";
-    public static final String SQLWherecorporationCreator_corporation = "creator_corporation = :corporation.id:";
-    public static final String SQLWherecorporationExecutor_corporation = "executor_corporation = :corporation.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4corporationCreator_corporation = "select * from alliance where " + SQLWherecorporationCreator_corporation + OrderBy;
-    public static final String SQLDelete4corporationCreator_corporation = "delete from alliance where " + SQLWherecorporationCreator_corporation;
-    public static final String SQLSelect4corporationExecutor_corporation = "select * from alliance where " + SQLWherecorporationExecutor_corporation + OrderBy;
-    public static final String SQLDelete4corporationExecutor_corporation = "delete from alliance where " + SQLWherecorporationExecutor_corporation;
 
     /**
      * Constructor

@@ -2,7 +2,7 @@
  * Systemtrade_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eSystemtrade_order;
+import eve.logicentity.Systemtrade_order;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -33,6 +33,13 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     Foreignkeysearch ordersBuy_ordersearcher = new Foreignkeysearch("orders", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields);
     Foreignkeysearch ordersSell_ordersearcher = new Foreignkeysearch("orders", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields);
     Foreignkeysearch systemtradesearcher = new Foreignkeysearch("systemtrade", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Systemtrade_order.table;
+    }
 
     /**
      * Constructor

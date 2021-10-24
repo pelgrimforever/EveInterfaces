@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eEvetype;
+import eve.logicentity.Evetype;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -48,6 +48,13 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Primarykeysearch stocksearcher = new Primarykeysearch("stock", IStock.evetypePKfields, IStock.evetypeFKfields);
     Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     Relationalkeysearch regionsearcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Evetype.table;
+    }
 
     /**
      * Constructor

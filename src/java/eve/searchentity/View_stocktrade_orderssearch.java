@@ -2,7 +2,7 @@
  * View_stocktrade_orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_stocktrade_orderssearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_stocktrade_orders;
+import eve.logicview.View_stocktrade_orders;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -34,6 +34,13 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
     Numbersearch packaged_volume = new Numbersearch("view_stocktrade_orders.packaged_volume");
     Numbersearch min_volume = new Numbersearch("view_stocktrade_orders.min_volume");
     Numbersearch sellamount = new Numbersearch("view_stocktrade_orders.sellamount");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_stocktrade_orders.table;
+    }
 
     /**
      * Constructor

@@ -2,7 +2,7 @@
  * Routesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eRoute;
+import eve.logicentity.Route;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -28,6 +28,13 @@ public class Routesearch extends Tablesearch implements IRoutesearch {
     Stringsearch jsonroutes = new Stringsearch("route.jsonroutes");
     Foreignkeysearch routetypesearcher = new Foreignkeysearch("routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IRoute.systemPKfields, IRoute.systemFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Route.table;
+    }
 
     /**
      * Constructor

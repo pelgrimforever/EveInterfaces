@@ -2,7 +2,7 @@
  * Routetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,16 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Routetype extends eve.entity.eRoutetype implements IRoutetype {
 
-    public static final String SQLSelect = "select routetype.* from routetype";
-    public static final String SQLWheresecurity_island = "security_island = :security_island.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4security_island = "select * from routetype where " + SQLWheresecurity_island + OrderBy;
-    public static final String SQLDelete4security_island = "delete from routetype where " + SQLWheresecurity_island;
 
     /**
      * Constructor

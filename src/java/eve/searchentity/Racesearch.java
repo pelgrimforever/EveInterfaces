@@ -2,7 +2,7 @@
  * Racesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eRace;
+import eve.logicentity.Race;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -29,6 +29,13 @@ public class Racesearch extends Tablesearch implements IRacesearch {
     Stringsearch name = new Stringsearch("race.name");
     Stringsearch description = new Stringsearch("race.description");
     Foreignkeysearch factionsearcher = new Foreignkeysearch("faction", IRace.factionPKfields, IRace.factionFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Race.table;
+    }
 
     /**
      * Constructor

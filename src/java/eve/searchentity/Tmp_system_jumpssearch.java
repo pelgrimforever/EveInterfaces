@@ -2,7 +2,7 @@
  * Tmp_system_jumpssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eTmp_system_jumps;
+import eve.logicentity.Tmp_system_jumps;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -29,6 +29,13 @@ public class Tmp_system_jumpssearch extends Tablesearch implements ITmp_system_j
     Numbersearch jump = new Numbersearch("tmp_system_jumps.jump");
     Numbersearch maxjumps = new Numbersearch("tmp_system_jumps.maxjumps");
     Numbersearch previoussystem = new Numbersearch("tmp_system_jumps.previoussystem");
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Tmp_system_jumps.table;
+    }
 
     /**
      * Constructor

@@ -2,13 +2,14 @@
  * eView_combinedtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,8 +27,9 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_combinedtrade implements EntityViewInterface {
+public class eView_combinedtrade implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_combinedtrade";
     private java.lang.String sellregion;
     private java.lang.String buyregion;
     private long sell_systemid;
@@ -42,20 +44,27 @@ public class eView_combinedtrade implements EntityViewInterface {
     private long runs;
     private long ordercount;
 	  
-    public static final String table = "view_combinedtrade";
-    public static final String SQLSelectAll = "select view_combinedtrade.* from view_combinedtrade";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_combinedtrade.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_combinedtrade.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_combinedtrade
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_combinedtrades
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

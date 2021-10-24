@@ -2,7 +2,7 @@
  * View_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -34,12 +34,6 @@ import javax.imageio.stream.ImageInputStream;
 public class View_order extends eve.view.eView_order implements IView_order {
 
 //Custom code, do not change this line
-    public static final String SQLSelectOne = SQLSelectAll + " where view_order.id = :orders.id:";
-
-    public static final String SQLorderbyprice_asc = " order by view_order.price asc";
-    public static final String SQLorderbyprice_desc = " order by view_order.price desc";
-    public static final String SQLSelect4Evetypebuy = SQLSelectAll + " where view_order.evetype = :evetype.id: and view_order.is_buy_order" + SQLorderbyprice_desc;
-    public static final String SQLSelect4Evetypesell = SQLSelectAll + " where view_order.evetype = :evetype.id: and not view_order.is_buy_order" + SQLorderbyprice_asc;
 //Custom code, do not change this line
 
     /**

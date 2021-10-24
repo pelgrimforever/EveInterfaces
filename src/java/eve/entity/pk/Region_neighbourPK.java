@@ -2,18 +2,20 @@
  * Region_neighbourPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity.pk;
 
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
 import eve.interfaces.entity.pk.*;
 import eve.interfaces.logicentity.IRegion_neighbour;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import db.SQLparameters;
+import db.Entityvalues;
 
 /**
  * Primarykey class Region_neighbourPK
@@ -22,7 +24,7 @@ import java.sql.Timestamp;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourPK {
+public class Region_neighbourPK implements IRegion_neighbourPK {
 
     private IRegionPK regionRegionPK = new RegionPK();
     private IRegionPK regionNeighbourPK = new RegionPK();
@@ -45,26 +47,26 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
-    public Object[][] getKeyFields() {
+    public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"region_neighbour.region", regionRegionPK.getId()}, 
             {"region_neighbour.neighbour", regionNeighbourPK.getId()}
         };
-        return keyfields;
+        return new SQLparameters(keyfields);
     }
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value) for sql insert statement
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
-    public Object[][] getInsertKeyFields() {
+    public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IRegion_neighbour.REGION, regionRegionPK.getId()}, 
             {IRegion_neighbour.NEIGHBOUR, regionNeighbourPK.getId()}
         };
-        return keyfields;
+        return new Entityvalues(keyfields);
     }
 
     /**
@@ -138,12 +140,9 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
     public String getKeystring() {
         String key = "";
         key += getRegion();
-
-
         key += "_";
 
         key += getNeighbour();
-
         return key;
     }
 
@@ -162,10 +161,7 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long region = Long.valueOf(keys.substring(0, keylength));
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -173,9 +169,7 @@ public class Region_neighbourPK implements EntityPKInterface, IRegion_neighbourP
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long neighbour = Long.valueOf(keys.substring(0, keylength));
-
             return new Region_neighbourPK(region, neighbour);
         }
     }

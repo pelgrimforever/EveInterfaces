@@ -2,14 +2,15 @@
  * eOrders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IOrders;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Orders
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eOrders extends AbstractEntity implements EntityInterface {
+public class eOrders extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected OrdersPK ordersPK;
     private EvetypePK evetypePK;
@@ -51,10 +54,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
     private int page;
 	  
     public static final String table = "orders";
-    public static final String SQLWhere1 = "id = :orders.id:";
-    public static final String SQLSelect1 = "select orders.* from orders where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from orders where " + SQLWhere1;
-    public static final String SQLSelectAll = "select orders.* from orders";
 	  
     public String getFieldname(short fieldconstant) {
         return IOrders.fieldnames[fieldconstant-1];
@@ -65,35 +64,26 @@ public class eOrders extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eOrders.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eOrders.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Orders
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Orders (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Orders (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Orderss
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -134,27 +124,28 @@ public class eOrders extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.ordersPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.ordersPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.ordersPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.ordersPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IOrders.EVETYPE, this.evetypePK.getId());
 
         updates.put(IOrders.SYSTEM, this.systemPK.getId());
@@ -174,16 +165,18 @@ public class eOrders extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return OrdersPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return OrdersPK
      */
+    @Override
     public OrdersPK getPrimaryKey() {
         return this.ordersPK;
     }
@@ -210,7 +203,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setIsopen(boolean isopen) {
         updates.put(IOrders.ISOPEN, isopen);
-
         this.isopen = isopen;
     }
 
@@ -236,7 +228,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_total(long volume_total) {
         updates.put(IOrders.VOLUME_TOTAL, volume_total);
-
         this.volume_total = volume_total;
     }
 
@@ -262,7 +253,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setVolume_remain(long volume_remain) {
         updates.put(IOrders.VOLUME_REMAIN, volume_remain);
-
         this.volume_remain = volume_remain;
     }
 
@@ -290,7 +280,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
 	if(range==null && range!=this.range || range!=null && !range.equals(this.range)) {
             updates.put(IOrders.RANGE, range);
         }
-
         this.range = range;
     }
 
@@ -316,7 +305,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setRange_number(int range_number) {
         updates.put(IOrders.RANGE_NUMBER, range_number);
-
         this.range_number = range_number;
     }
 
@@ -342,7 +330,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setPrice(double price) {
         updates.put(IOrders.PRICE, price);
-
         this.price = price;
     }
 
@@ -368,7 +355,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setMin_volume(int min_volume) {
         updates.put(IOrders.MIN_VOLUME, min_volume);
-
         this.min_volume = min_volume;
     }
 
@@ -394,7 +380,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setLocation(long location) {
         updates.put(IOrders.LOCATION, location);
-
         this.location = location;
     }
 
@@ -420,7 +405,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setIs_buy_order(boolean is_buy_order) {
         updates.put(IOrders.IS_BUY_ORDER, is_buy_order);
-
         this.is_buy_order = is_buy_order;
     }
 
@@ -446,7 +430,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setIssued(java.sql.Timestamp issued) {
         updates.put(IOrders.ISSUED, issued);
-
         this.issued = issued;
     }
 
@@ -472,7 +455,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setDuration(int duration) {
         updates.put(IOrders.DURATION, duration);
-
         this.duration = duration;
     }
 
@@ -498,7 +480,6 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      */
     public void setPage(int page) {
         updates.put(IOrders.PAGE, page);
-
         this.page = page;
     }
 
@@ -568,6 +549,7 @@ public class eOrders extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

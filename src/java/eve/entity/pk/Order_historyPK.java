@@ -2,18 +2,20 @@
  * Order_historyPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity.pk;
 
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
 import eve.interfaces.entity.pk.*;
 import eve.interfaces.logicentity.IOrder_history;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import db.SQLparameters;
+import db.Entityvalues;
 
 /**
  * Primarykey class Order_historyPK
@@ -22,7 +24,7 @@ import java.sql.Timestamp;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public class Order_historyPK implements EntityPKInterface, IOrder_historyPK {
+public class Order_historyPK implements IOrder_historyPK {
 
     private IEvetypePK evetypePK = new EvetypePK();
     private IRegionPK regionPK = new RegionPK();
@@ -47,28 +49,28 @@ public class Order_historyPK implements EntityPKInterface, IOrder_historyPK {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
-    public Object[][] getKeyFields() {
+    public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"order_history.region", regionPK.getId()}, 
             {"order_history.evetype", evetypePK.getId()}, 
             {"order_history.date", date}
         };
-        return keyfields;
+        return new SQLparameters(keyfields);
     }
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value) for sql insert statement
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
-    public Object[][] getInsertKeyFields() {
+    public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IOrder_history.REGION, regionPK.getId()}, 
             {IOrder_history.EVETYPE, evetypePK.getId()}, 
             {IOrder_history.DATE, date}
         };
-        return keyfields;
+        return new Entityvalues(keyfields);
     }
 
     /**
@@ -158,17 +160,12 @@ public class Order_historyPK implements EntityPKInterface, IOrder_historyPK {
     public String getKeystring() {
         String key = "";
         key += getRegion();
-
-
         key += "_";
 
         key += getEvetype();
-
-
         key += "_";
 
         if(getDate()!=null) key += getDate().getTime();
-
         return key;
     }
 
@@ -187,10 +184,7 @@ public class Order_historyPK implements EntityPKInterface, IOrder_historyPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long region = Long.valueOf(keys.substring(0, keylength));
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -198,10 +192,7 @@ public class Order_historyPK implements EntityPKInterface, IOrder_historyPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long evetype = Long.valueOf(keys.substring(0, keylength));
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -209,9 +200,7 @@ public class Order_historyPK implements EntityPKInterface, IOrder_historyPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             java.sql.Date date = new Date(Long.valueOf(keys.substring(0, keylength)));
-
             return new Order_historyPK(region, evetype, date);
         }
     }

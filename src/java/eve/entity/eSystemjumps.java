@@ -2,14 +2,15 @@
  * eSystemjumps.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ISystemjumps;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Systemjumps
@@ -32,16 +35,12 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eSystemjumps extends AbstractEntity implements EntityInterface {
+public class eSystemjumps extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected SystemjumpsPK systemjumpsPK;
     private int jumps;
 	  
     public static final String table = "systemjumps";
-    public static final String SQLWhere1 = "system_start = :systemjumps.system_start: and system_end = :systemjumps.system_end:";
-    public static final String SQLSelect1 = "select systemjumps.* from systemjumps where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from systemjumps where " + SQLWhere1;
-    public static final String SQLSelectAll = "select systemjumps.* from systemjumps";
 	  
     public String getFieldname(short fieldconstant) {
         return ISystemjumps.fieldnames[fieldconstant-1];
@@ -52,35 +51,26 @@ public class eSystemjumps extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eSystemjumps.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eSystemjumps.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Systemjumps
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Systemjumps (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Systemjumps (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Systemjumpss
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -121,41 +111,44 @@ public class eSystemjumps extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.systemjumpsPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.systemjumpsPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.systemjumpsPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.systemjumpsPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ISystemjumps.JUMPS, jumps);
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return SystemjumpsPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return SystemjumpsPK
      */
+    @Override
     public SystemjumpsPK getPrimaryKey() {
         return this.systemjumpsPK;
     }
@@ -182,7 +175,6 @@ public class eSystemjumps extends AbstractEntity implements EntityInterface {
      */
     public void setJumps(int jumps) {
         updates.put(ISystemjumps.JUMPS, jumps);
-
         this.jumps = jumps;
     }
 
@@ -190,6 +182,7 @@ public class eSystemjumps extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

@@ -2,7 +2,7 @@
  * Order_histsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eOrder_hist;
+import eve.logicentity.Order_hist;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -39,6 +39,13 @@ public class Order_histsearch extends Tablesearch implements IOrder_histsearch {
     Numbersearch duration = new Numbersearch("order_hist.duration");
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrder_hist.evetypePKfields, IOrder_hist.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IOrder_hist.systemPKfields, IOrder_hist.systemFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Order_hist.table;
+    }
 
     /**
      * Constructor

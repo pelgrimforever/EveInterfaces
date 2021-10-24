@@ -2,7 +2,7 @@
  * Constellation_neighboursearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eConstellation_neighbour;
+import eve.logicentity.Constellation_neighbour;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -27,6 +27,13 @@ public class Constellation_neighboursearch extends Tablesearch implements IConst
 
     Foreignkeysearch constellationNeighboursearcher = new Foreignkeysearch("constellation", IConstellation_neighbour.constellationNeighbourPKfields, IConstellation_neighbour.constellationNeighbourFKfields);
     Foreignkeysearch constellationConstellationsearcher = new Foreignkeysearch("constellation", IConstellation_neighbour.constellationConstellationPKfields, IConstellation_neighbour.constellationConstellationFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Constellation_neighbour.table;
+    }
 
     /**
      * Constructor

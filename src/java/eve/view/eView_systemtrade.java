@@ -2,13 +2,14 @@
  * eView_systemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.view;
 
-import data.interfaces.db.EntityViewInterface;
+import eve.eveDatabaseproperties;
+import data.interfaces.db.EntityView;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import java.sql.ResultSet;
@@ -26,8 +27,9 @@ import java.util.Iterator;
  * 
  * @author Franky Laseure
  */
-public class eView_systemtrade implements EntityViewInterface {
+public class eView_systemtrade implements eveDatabaseproperties, EntityView {
 
+    public static final String table = "view_systemtrade";
     private long sell_system;
     private long buy_system;
     private long ordercount;
@@ -41,20 +43,27 @@ public class eView_systemtrade implements EntityViewInterface {
     private java.lang.String regionbuyname;
     private java.lang.String systembuyname;
 	  
-    public static final String table = "view_systemtrade";
-    public static final String SQLSelectAll = "select view_systemtrade.* from view_systemtrade";
-	  
+    /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eView_systemtrade.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eView_systemtrade.connectionpool;
+    }
+    
     /**
      * 
      * @return view name for View_systemtrade
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL select statement for all View_systemtrades
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 

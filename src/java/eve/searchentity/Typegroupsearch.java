@@ -2,7 +2,7 @@
  * Typegroupsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eTypegroup;
+import eve.logicentity.Typegroup;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -29,6 +29,13 @@ public class Typegroupsearch extends Tablesearch implements ITypegroupsearch {
     Stringsearch name = new Stringsearch("typegroup.name");
     Booleansearch published = new Booleansearch("typegroup.published");
     Foreignkeysearch categorysearcher = new Foreignkeysearch("category", ITypegroup.categoryPKfields, ITypegroup.categoryFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Typegroup.table;
+    }
 
     /**
      * Constructor

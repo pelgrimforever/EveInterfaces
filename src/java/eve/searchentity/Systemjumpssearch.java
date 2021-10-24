@@ -2,7 +2,7 @@
  * Systemjumpssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eSystemjumps;
+import eve.logicentity.Systemjumps;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -28,6 +28,13 @@ public class Systemjumpssearch extends Tablesearch implements ISystemjumpssearch
     Numbersearch jumps = new Numbersearch("systemjumps.jumps");
     Foreignkeysearch systemSystem_endsearcher = new Foreignkeysearch("system", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
     Foreignkeysearch systemSystem_startsearcher = new Foreignkeysearch("system", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Systemjumps.table;
+    }
 
     /**
      * Constructor

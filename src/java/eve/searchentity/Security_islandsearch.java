@@ -2,7 +2,7 @@
  * Security_islandsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eSecurity_island;
+import eve.logicentity.Security_island;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -28,6 +28,13 @@ public class Security_islandsearch extends Tablesearch implements ISecurity_isla
     Numbersearch id = new Numbersearch("security_island.id");
     Stringsearch name = new Stringsearch("security_island.name");
     Numbersearch security_status = new Numbersearch("security_island.security_status");
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Security_island.table;
+    }
 
     /**
      * Constructor

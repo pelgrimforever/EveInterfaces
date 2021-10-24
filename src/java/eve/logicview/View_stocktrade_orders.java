@@ -2,7 +2,7 @@
  * View_stocktrade_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -34,7 +34,6 @@ import javax.imageio.stream.ImageInputStream;
 public class View_stocktrade_orders extends eve.view.eView_stocktrade_orders implements IView_stocktrade_orders {
 
 //Custom code, do not change this line
-    public static final String SQLSelect4usernamesystem = SQLSelectAll + " where username = :username: and system = :system:";
 //Custom code, do not change this line
 
     /**

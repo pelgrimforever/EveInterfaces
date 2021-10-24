@@ -2,7 +2,7 @@
  * View_tradeorders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -34,9 +34,6 @@ import javax.imageio.stream.ImageInputStream;
 public class View_tradeorders extends eve.view.eView_tradeorders implements IView_tradeorders {
 
 //Custom code, do not change this line
-    public final static String SQLSelect4tradevalues = "select * from view_tradeorders " +
-        "where sell_packaged_volume <= :max_cargovolume: and security_island = :security_island.id: and " +
-        "buy_totalprice * :net_perc: - sell_totalprice > :min_profit:";
 //Custom code, do not change this line
 
     /**

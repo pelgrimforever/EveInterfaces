@@ -2,7 +2,7 @@
  * View_security_island_systemcountsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_security_island_systemcountsearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_security_island_systemcount;
+import eve.logicview.View_security_island_systemcount;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -27,6 +27,13 @@ public class View_security_island_systemcountsearch extends Tablesearch implemen
     Numbersearch id = new Numbersearch("view_security_island_systemcount.id");
     Stringsearch name = new Stringsearch("view_security_island_systemcount.name");
     Numbersearch systems = new Numbersearch("view_security_island_systemcount.systems");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_security_island_systemcount.table;
+    }
 
     /**
      * Constructor

@@ -2,7 +2,7 @@
  * View_stocksearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_stocksearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_stock;
+import eve.logicview.View_stock;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -28,6 +28,13 @@ public class View_stocksearch extends Tablesearch implements IView_stocksearch {
     Numbersearch evetype = new Numbersearch("view_stock.evetype");
     Numbersearch amount = new Numbersearch("view_stock.amount");
     Stringsearch name = new Stringsearch("view_stock.name");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_stock.table;
+    }
 
     /**
      * Constructor

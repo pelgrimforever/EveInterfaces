@@ -2,7 +2,7 @@
  * View_combinedtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -34,16 +34,6 @@ import javax.imageio.stream.ImageInputStream;
 public class View_combinedtrade extends eve.view.eView_combinedtrade implements IView_combinedtrade {
 
 //Custom code, do not change this line
-    public static final String SQLSelectAll4Startingsystem = "select starts.id AS startsystem_id, sj.jumps AS startsystem_jumps, view_combinedtrade.* from view_combinedtrade " + 
-        "inner join systemjumps sj on view_combinedtrade.sell_systemid = sj.system_end " +
-        "inner join system starts on sj.system_start = starts.id " + 
-        "where starts.id = :system.id:";
-    
-    public static final String SQLSelect4Startendsystem = "select starts.id AS startsystem_id, sj.jumps AS startsystem_jumps, view_combinedtrade.* from view_combinedtrade " + 
-        "inner join systemjumps sj on view_combinedtrade.sell_systemid = sj.system_end " +
-        "inner join system starts on sj.system_start = starts.id " + 
-        "where starts.id = :system.id: and view_combinedtrade.sell_systemid = :startsystemid: and view_combinedtrade.buy_systemid = :endsystemid:";
-    
     public long start_system;
     public int start_system_jumps;
 //Custom code, do not change this line

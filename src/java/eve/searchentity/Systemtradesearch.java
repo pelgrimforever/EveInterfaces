@@ -2,7 +2,7 @@
  * Systemtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eSystemtrade;
+import eve.logicentity.Systemtrade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -33,6 +33,13 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     Primarykeysearch systemtrade_ordersearcher = new Primarykeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
     Relationalkeysearch orders1searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields, "orders", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields);
     Relationalkeysearch orders2searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields, "orders", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Systemtrade.table;
+    }
 
     /**
      * Constructor

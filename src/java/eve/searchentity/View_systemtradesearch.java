@@ -2,7 +2,7 @@
  * View_systemtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -12,7 +12,7 @@ import eve.interfaces.searchentity.IView_systemtradesearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.view.eView_systemtrade;
+import eve.logicview.View_systemtrade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -36,6 +36,13 @@ public class View_systemtradesearch extends Tablesearch implements IView_systemt
     Stringsearch systemsellname = new Stringsearch("view_systemtrade.systemsellname");
     Stringsearch regionbuyname = new Stringsearch("view_systemtrade.regionbuyname");
     Stringsearch systembuyname = new Stringsearch("view_systemtrade.systembuyname");
+
+    /**
+     * @return viewname
+     */
+    public String getTable() {
+        return View_systemtrade.table;
+    }
 
     /**
      * Constructor

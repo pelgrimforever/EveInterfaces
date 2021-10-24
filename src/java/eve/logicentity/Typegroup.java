@@ -2,7 +2,7 @@
  * Typegroup.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,17 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Typegroup extends eve.entity.eTypegroup implements ITypegroup {
 
-    public static final String SQLSelect = "select typegroup.* from typegroup";
-    public static final String SQLWherecategory = "category = :category.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    public static final String SQLSelect4categoryCount = "select count(*) as count from typegroup where " + SQLWherecategory;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4category = "select * from typegroup where " + SQLWherecategory + OrderBy;
-    public static final String SQLDelete4category = "delete from typegroup where " + SQLWherecategory;
 
     /**
      * Constructor

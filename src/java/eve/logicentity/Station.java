@@ -2,7 +2,7 @@
  * Station.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,24 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Station extends eve.entity.eStation implements IStation {
 
-    public static final String SQLSelect = "select station.* from station";
-    public static final String SQLWhererace = "race_id = :race.id:";
-    public static final String SQLWhereevetype = "type_id = :evetype.id:";
-    public static final String SQLWheresystem = "system_id = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    
-    public static final String SQLSelect4systemCount = "select count(*) as count from station where " + SQLWheresystem;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4race = "select * from station where " + SQLWhererace + OrderBy;
-    public static final String SQLDelete4race = "delete from station where " + SQLWhererace;
-    public static final String SQLSelect4evetype = "select * from station where " + SQLWhereevetype + OrderBy;
-    public static final String SQLDelete4evetype = "delete from station where " + SQLWhereevetype;
-    public static final String SQLSelect4system = "select * from station where " + SQLWheresystem + OrderBy;
-    public static final String SQLDelete4system = "delete from station where " + SQLWheresystem;
 
     /**
      * Constructor

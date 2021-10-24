@@ -2,7 +2,7 @@
  * Systemtrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,29 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Systemtrade extends eve.entity.eSystemtrade implements ISystemtrade {
 
-    public static final String SQLSelect = "select systemtrade.* from systemtrade";
-    public static final String SQLWheresystemSell_system = "sell_system = :system.id:";
-    public static final String SQLWheresystemBuy_system = "buy_system = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by sell_system, buy_system";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-    public static final String SQLdeleteall = "delete from systemtrade";
-    public static final String SQLSelectSystemtrade = "select sell_system, buy_system, sum(buy_totalprice * :net_perc: - sell_totalprice) as profit, " +
-        "sum(cargo_volume) as total_cargo_volume, max(jumps) as jumps from view_systemtradeorders " +
-        "where packaged_volume <= :max_cargovolume: and security_island = :security_island.id: and " +
-        "buy_totalprice * :net_perc: > sell_totalprice " +
-        "group by sell_system, buy_system " +
-        "having sum(buy_totalprice * :net_perc: - sell_totalprice) > :min_profit: " +
-        "order by sell_system";
-    public static final String SQLInsertSystemtrade = "insert into systemtrade " +
-        SQLSelectSystemtrade;
 //Custom code, do not change this line
-
-    public static final String SQLSelect4systemSell_system = "select * from systemtrade where " + SQLWheresystemSell_system + OrderBy;
-    public static final String SQLDelete4systemSell_system = "delete from systemtrade where " + SQLWheresystemSell_system;
-    public static final String SQLSelect4systemBuy_system = "select * from systemtrade where " + SQLWheresystemBuy_system + OrderBy;
-    public static final String SQLDelete4systemBuy_system = "delete from systemtrade where " + SQLWheresystemBuy_system;
 
     /**
      * Constructor

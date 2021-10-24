@@ -2,7 +2,7 @@
  * Tradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eTrade;
+import eve.logicentity.Trade;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -37,6 +37,13 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     Numbersearch maxunits_per_run = new Numbersearch("trade.maxunits_per_run");
     Foreignkeysearch ordersSell_order_idsearcher = new Foreignkeysearch("orders", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
     Foreignkeysearch ordersBuy_order_idsearcher = new Foreignkeysearch("orders", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Trade.table;
+    }
 
     /**
      * Constructor

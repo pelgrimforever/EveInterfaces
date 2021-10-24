@@ -2,7 +2,7 @@
  * Order_historysearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eOrder_history;
+import eve.logicentity.Order_history;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -33,6 +33,13 @@ public class Order_historysearch extends Tablesearch implements IOrder_historyse
     Numbersearch order_count = new Numbersearch("order_history.order_count");
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     Foreignkeysearch regionsearcher = new Foreignkeysearch("region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Order_history.table;
+    }
 
     /**
      * Constructor

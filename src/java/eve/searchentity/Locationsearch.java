@@ -2,7 +2,7 @@
  * Locationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -13,7 +13,7 @@ import eve.interfaces.entity.pk.*;
 import data.interfaces.db.*;
 import eve.interfaces.logicentity.*;
 import eve.interfaces.searchentity.*;
-import eve.entity.eLocation;
+import eve.logicentity.Location;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -30,6 +30,13 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
     Booleansearch visited = new Booleansearch("location.visited");
     Booleansearch access = new Booleansearch("location.access");
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", ILocation.systemPKfields, ILocation.systemFKfields);
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Location.table;
+    }
 
     /**
      * Constructor

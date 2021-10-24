@@ -2,14 +2,15 @@
  * eSecurity_island.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ISecurity_island;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Security_island
@@ -32,17 +35,13 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eSecurity_island extends AbstractEntity implements EntityInterface {
+public class eSecurity_island extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Security_islandPK security_islandPK;
     private java.lang.String name;
     private double security_status;
 	  
     public static final String table = "security_island";
-    public static final String SQLWhere1 = "id = :security_island.id:";
-    public static final String SQLSelect1 = "select security_island.* from security_island where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from security_island where " + SQLWhere1;
-    public static final String SQLSelectAll = "select security_island.* from security_island";
 	  
     public String getFieldname(short fieldconstant) {
         return ISecurity_island.fieldnames[fieldconstant-1];
@@ -53,35 +52,26 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eSecurity_island.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eSecurity_island.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Security_island
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Security_island (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Security_island (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Security_islands
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -122,42 +112,45 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.security_islandPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.security_islandPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.security_islandPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.security_islandPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(ISecurity_island.NAME, name);
         updates.put(ISecurity_island.SECURITY_STATUS, security_status);
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return Security_islandPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return Security_islandPK
      */
+    @Override
     public Security_islandPK getPrimaryKey() {
         return this.security_islandPK;
     }
@@ -186,7 +179,6 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ISecurity_island.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -212,7 +204,6 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
      */
     public void setSecurity_status(double security_status) {
         updates.put(ISecurity_island.SECURITY_STATUS, security_status);
-
         this.security_status = security_status;
     }
 
@@ -220,6 +211,7 @@ public class eSecurity_island extends AbstractEntity implements EntityInterface 
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

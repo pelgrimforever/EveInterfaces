@@ -2,14 +2,15 @@
  * eConstellation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
-import data.interfaces.db.EntityInterface;
+import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
 import data.gis.shape.*;
 import data.json.piJson;
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IConstellation;
 import eve.interfaces.entity.pk.*;
+import db.Entityvalues;
+import db.SQLparameters;
 
 /**
  * Entity class Constellation
@@ -32,7 +35,7 @@ import eve.interfaces.entity.pk.*;
  * 
  * @author Franky Laseure
  */
-public class eConstellation extends AbstractEntity implements EntityInterface {
+public class eConstellation extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected ConstellationPK constellationPK;
     private RegionPK regionPK;
@@ -40,10 +43,6 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
     private boolean noaccess;
 	  
     public static final String table = "constellation";
-    public static final String SQLWhere1 = "id = :constellation.id:";
-    public static final String SQLSelect1 = "select constellation.* from constellation where " + SQLWhere1;
-    public static final String SQLSelectPKexists = "select count(*) as count from constellation where " + SQLWhere1;
-    public static final String SQLSelectAll = "select constellation.* from constellation";
 	  
     public String getFieldname(short fieldconstant) {
         return IConstellation.fieldnames[fieldconstant-1];
@@ -54,35 +53,26 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
     }
         
     /**
+     * @return database tool name
+     */
+    @Override
+    public String getDbtool() {
+        return eConstellation.databasetool;
+    }
+    
+    /**
+     * @return connection pool name
+     */
+    @Override
+    public String getConnectionpool() {
+        return eConstellation.connectionpool;
+    }
+    
+    /**
      * 
      * @return table name for Constellation
      */
     public String getTable() { return table; }
-
-    /**
-     * 
-     * @return SQL where clause for one Constellation (=Primarykey)
-     */
-    public String getSQLWhere1() { return SQLWhere1; };
-
-    /**
-     * 
-     * @return SQL select statement for one Constellation (=Primarykey)
-     */
-    public String getSQLSelect1() { return SQLSelect1; };
-
-    /**
-     * @return Select statement for Primary key, with count field as result
-     * count = 1: exists
-     * count = 0: not found
-     */
-    public String getSQLPKExcists() { return SQLSelectPKexists; };
-    
-    /**
-     * 
-     * @return SQL select statement for all Constellations
-     */
-    public String getSQLSelectAll() { return SQLSelectAll; };
 
     /**
      * 
@@ -123,27 +113,28 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
     @Override
-    public Object[][] getKeyFields() {
-        return this.constellationPK.getKeyFields();	  
+    public SQLparameters getSQLprimarykey() {
+        return this.constellationPK.getSQLprimarykey();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
     @Override
-    public Object[][] getInsertKeyFields() {
-        return this.constellationPK.getInsertKeyFields();	  
+    public Entityvalues getPrimarykeyvalues() {
+        return this.constellationPK.getPrimarykeyvalues();	  
     }
   
     /**
      * 
-     * @return 2 dimentional Object array with all fields (fieldname, value)
+     * @return all fields (fieldname, value)
      */
-    public Object[][] getAll() {
+    @Override
+    public Entityvalues getAll() {
         updates.put(IConstellation.REGION, this.regionPK.getId());
 
         updates.put(IConstellation.NAME, name);
@@ -151,16 +142,18 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
         return getAllFields();
     }
 	
-    /* (non-Javadoc)
-     * @see .interfaces.db.EntityInterface#getKey()
+    /**
+     * @return ConstellationPK
      */
+    @Override
     public Object getKey() {
         return this.getPrimaryKey();
     }
   
     /**
-     * @return Primary Key Object
+     * @return ConstellationPK
      */
+    @Override
     public ConstellationPK getPrimaryKey() {
         return this.constellationPK;
     }
@@ -189,7 +182,6 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IConstellation.NAME, name);
         }
-
         this.name = name;
     }
 
@@ -215,7 +207,6 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
      */
     public void setNoaccess(boolean noaccess) {
         updates.put(IConstellation.NOACCESS, noaccess);
-
         this.noaccess = noaccess;
     }
 
@@ -254,6 +245,7 @@ public class eConstellation extends AbstractEntity implements EntityInterface {
      * 
      * @return Primarykey string value
      */
+    @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
     }

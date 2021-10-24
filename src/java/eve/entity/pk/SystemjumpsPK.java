@@ -2,18 +2,20 @@
  * SystemjumpsPK.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
 package eve.entity.pk;
 
-import data.interfaces.db.EntityPKInterface;
+import data.interfaces.db.EntityPK;
 import eve.interfaces.entity.pk.*;
 import eve.interfaces.logicentity.ISystemjumps;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import db.SQLparameters;
+import db.Entityvalues;
 
 /**
  * Primarykey class SystemjumpsPK
@@ -22,7 +24,7 @@ import java.sql.Timestamp;
  * Methods: conversion to and from string for use in GUI
  * @author Franky Laseure
  */
-public class SystemjumpsPK implements EntityPKInterface, ISystemjumpsPK {
+public class SystemjumpsPK implements ISystemjumpsPK {
 
     private ISystemPK systemSystem_endPK = new SystemPK();
     private ISystemPK systemSystem_startPK = new SystemPK();
@@ -45,26 +47,26 @@ public class SystemjumpsPK implements EntityPKInterface, ISystemjumpsPK {
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value)
+     * @return primarykey fields (fieldname, value) as a SQLparameters object
      */
-    public Object[][] getKeyFields() {
+    public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"systemjumps.system_start", systemSystem_startPK.getId()}, 
             {"systemjumps.system_end", systemSystem_endPK.getId()}
         };
-        return keyfields;
+        return new SQLparameters(keyfields);
     }
 
     /**
      * 
-     * @return 2 dimentional Object array with primarykey fields (fieldname, value) for sql insert statement
+     * @return primarykey fields (fieldreference, value) as Entityvalues
      */
-    public Object[][] getInsertKeyFields() {
+    public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {ISystemjumps.SYSTEM_START, systemSystem_startPK.getId()}, 
             {ISystemjumps.SYSTEM_END, systemSystem_endPK.getId()}
         };
-        return keyfields;
+        return new Entityvalues(keyfields);
     }
 
     /**
@@ -138,12 +140,9 @@ public class SystemjumpsPK implements EntityPKInterface, ISystemjumpsPK {
     public String getKeystring() {
         String key = "";
         key += getSystem_start();
-
-
         key += "_";
 
         key += getSystem_end();
-
         return key;
     }
 
@@ -162,10 +161,7 @@ public class SystemjumpsPK implements EntityPKInterface, ISystemjumpsPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long system_start = Long.valueOf(keys.substring(0, keylength));
-
-
             keys = keys.substring(keylength+1);
 
             if(keys.indexOf("_")==-1) {
@@ -173,9 +169,7 @@ public class SystemjumpsPK implements EntityPKInterface, ISystemjumpsPK {
             } else {
                 keylength = Integer.valueOf(keys.substring(0, keys.indexOf("_")).length());
             }
-
             long system_end = Long.valueOf(keys.substring(0, keylength));
-
             return new SystemjumpsPK(system_start, system_end);
         }
     }

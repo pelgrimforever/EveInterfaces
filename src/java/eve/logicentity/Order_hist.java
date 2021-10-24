@@ -2,7 +2,7 @@
  * Order_hist.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 6.9.2021 16:29
+ * Generated on 24.9.2021 14:40
  *
  */
 
@@ -37,22 +37,8 @@ import javax.imageio.stream.ImageInputStream;
  */
 public class Order_hist extends eve.entity.eOrder_hist implements IOrder_hist {
 
-    public static final String SQLSelect = "select order_hist.* from order_hist";
-    public static final String SQLWhereevetype = "evetype = :evetype.id:";
-    public static final String SQLWheresystem = "system = :system.id:";
-
 //Custom code, do not change this line
-    public static final String OrderBy = " order by id";
-    public static final String SQLSelectAll = SQLSelect + OrderBy;
-
-    public static final String SQLdeleteall = "delete from order_hist";
-    public static final String SQLcopyorders = "insert into order_hist select * from orders where id not in (select id from order_hist)";
 //Custom code, do not change this line
-
-    public static final String SQLSelect4evetype = "select * from order_hist where " + SQLWhereevetype + OrderBy;
-    public static final String SQLDelete4evetype = "delete from order_hist where " + SQLWhereevetype;
-    public static final String SQLSelect4system = "select * from order_hist where " + SQLWheresystem + OrderBy;
-    public static final String SQLDelete4system = "delete from order_hist where " + SQLWheresystem;
 
     /**
      * Constructor
