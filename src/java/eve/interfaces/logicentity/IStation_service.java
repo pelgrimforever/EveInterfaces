@@ -2,7 +2,7 @@
  * IStation_service.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 24.9.2021 14:40
+ * Generated on 25.9.2021 15:16
  *
  */
 
@@ -31,7 +31,7 @@ import java.util.ArrayList;
  */
 public interface IStation_service extends LogicEntity {
 
-	public IStation_servicePK getPrimaryKey();
+    public IStation_servicePK getPrimaryKey();
 	
     public static short STATION = 1;
     public static short SERVICE = 2;

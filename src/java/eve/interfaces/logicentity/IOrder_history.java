@@ -2,7 +2,7 @@
  * IOrder_history.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 24.9.2021 14:40
+ * Generated on 25.9.2021 15:16
  *
  */
 
@@ -31,7 +31,7 @@ import java.util.ArrayList;
  */
 public interface IOrder_history extends LogicEntity {
 
-	public IOrder_historyPK getPrimaryKey();
+    public IOrder_historyPK getPrimaryKey();
 	
     public static short REGION = 1;
     public static short EVETYPE = 2;

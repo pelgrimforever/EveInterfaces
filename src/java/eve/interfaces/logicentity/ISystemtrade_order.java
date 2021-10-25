@@ -2,7 +2,7 @@
  * ISystemtrade_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 24.9.2021 14:40
+ * Generated on 25.9.2021 15:16
  *
  */
 
@@ -31,7 +31,7 @@ import java.util.ArrayList;
  */
 public interface ISystemtrade_order extends LogicEntity {
 
-	public ISystemtrade_orderPK getPrimaryKey();
+    public ISystemtrade_orderPK getPrimaryKey();
 	
     public static short SELL_SYSTEM = 1;
     public static short BUY_SYSTEM = 2;
