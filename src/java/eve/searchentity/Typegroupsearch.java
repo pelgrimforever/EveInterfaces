@@ -2,7 +2,7 @@
  * Typegroupsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -28,7 +28,9 @@ public class Typegroupsearch extends Tablesearch implements ITypegroupsearch {
     Numbersearch id = new Numbersearch("typegroup.id");
     Stringsearch name = new Stringsearch("typegroup.name");
     Booleansearch published = new Booleansearch("typegroup.published");
+//foreign keys
     Foreignkeysearch categorysearcher = new Foreignkeysearch("category", ITypegroup.categoryPKfields, ITypegroup.categoryFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -123,7 +125,7 @@ public class Typegroupsearch extends Tablesearch implements ITypegroupsearch {
     }
     
     /**
-     * set subsearch category tablesearch
+     * set foreign key subsearch category ICategorysearch
      * @param categorysearch: ICategorysearch
      */
     public void category(ICategorysearch categorysearch) {
@@ -131,7 +133,7 @@ public class Typegroupsearch extends Tablesearch implements ITypegroupsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch category ICategorysearch
      * @return Tablesearch for Typegroup
      */
     public ICategorysearch getCategorysearch() {

@@ -2,7 +2,7 @@
  * IAlliancesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -117,15 +117,17 @@ public interface IAlliancesearch extends Tablesearcher {
 	public void faction_id(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch corporationCreator_corporation tablesearch
-	* @param corporationsearch: ICorporationsearch
-	*/
+   * foreign key
+	 * set subsearch corporationCreator_corporation tablesearch
+	 * @param corporationsearch: ICorporationsearch
+	 */
 	public void corporationCreator_corporation(ICorporationsearch corporationsearch);
 	
 	/**
-	* set subsearch corporationExecutor_corporation tablesearch
-	* @param corporationsearch: ICorporationsearch
-	*/
+   * foreign key
+	 * set subsearch corporationExecutor_corporation tablesearch
+	 * @param corporationsearch: ICorporationsearch
+	 */
 	public void corporationExecutor_corporation(ICorporationsearch corporationsearch);
 	
 }

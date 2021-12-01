@@ -2,7 +2,7 @@
  * ISystemtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -74,33 +74,38 @@ public interface ISystemtradesearch extends Tablesearcher {
 	public void jumps(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch systemSell_system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch systemSell_system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void systemSell_system(ISystemsearch systemsearch);
 	
 	/**
-	* set subsearch systemBuy_system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch systemBuy_system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void systemBuy_system(ISystemsearch systemsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch systemtrade_order tablesearch
      * @param systemtrade_ordersearch: ISystemtrade_ordersearch
      */
     public void systemtrade_order(ISystemtrade_ordersearch systemtrade_ordersearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch orders tablesearch
      * @param orderssearch: IOrderssearch
      */
-    public void orders1(IOrderssearch orderssearch);
+    public void relorders1(IOrderssearch orderssearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch orders tablesearch
      * @param orderssearch: IOrderssearch
      */
-    public void orders2(IOrderssearch orderssearch);
+    public void relorders2(IOrderssearch orderssearch);
     
 }

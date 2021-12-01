@@ -2,7 +2,7 @@
  * Constellation_neighboursearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -25,8 +25,10 @@ import java.sql.Timestamp;
  */
 public class Constellation_neighboursearch extends Tablesearch implements IConstellation_neighboursearch {
 
+//foreign keys
     Foreignkeysearch constellationNeighboursearcher = new Foreignkeysearch("constellation", IConstellation_neighbour.constellationNeighbourPKfields, IConstellation_neighbour.constellationNeighbourFKfields);
     Foreignkeysearch constellationConstellationsearcher = new Foreignkeysearch("constellation", IConstellation_neighbour.constellationConstellationPKfields, IConstellation_neighbour.constellationConstellationFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -71,7 +73,7 @@ public class Constellation_neighboursearch extends Tablesearch implements IConst
     }
 
     /**
-     * set subsearch constellationNeighbour tablesearch
+     * set foreign key subsearch constellationNeighbour IConstellationsearch
      * @param constellationsearch: IConstellationsearch
      */
     public void constellationNeighbour(IConstellationsearch constellationsearch) {
@@ -79,7 +81,7 @@ public class Constellation_neighboursearch extends Tablesearch implements IConst
     }
     
     /**
-     * 
+     * get foreign key subsearch constellationNeighbour IConstellationsearch
      * @return Tablesearch for Constellation_neighbour
      */
     public IConstellationsearch getConstellationneighboursearch() {
@@ -100,7 +102,7 @@ public class Constellation_neighboursearch extends Tablesearch implements IConst
     }
 
     /**
-     * set subsearch constellationConstellation tablesearch
+     * set foreign key subsearch constellationConstellation IConstellationsearch
      * @param constellationsearch: IConstellationsearch
      */
     public void constellationConstellation(IConstellationsearch constellationsearch) {
@@ -108,7 +110,7 @@ public class Constellation_neighboursearch extends Tablesearch implements IConst
     }
     
     /**
-     * 
+     * get foreign key subsearch constellationConstellation IConstellationsearch
      * @return Tablesearch for Constellation_neighbour
      */
     public IConstellationsearch getConstellationconstellationsearch() {

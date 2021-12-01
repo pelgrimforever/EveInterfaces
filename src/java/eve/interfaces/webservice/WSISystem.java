@@ -2,7 +2,7 @@
  * WSISystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -51,6 +51,10 @@ public interface WSISystem {
     @WebMethod String getSystems4systemtradeSell_system(String json);
 
     @WebMethod String getSystems4systemtradeBuy_system(String json);
+
+    @WebMethod String getSystems4tradecombinedBuy_system(String json);
+
+    @WebMethod String getSystems4tradecombinedSell_system(String json);
 
 
 }

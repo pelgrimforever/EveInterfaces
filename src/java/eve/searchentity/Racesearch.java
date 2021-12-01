@@ -2,7 +2,7 @@
  * Racesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -28,7 +28,9 @@ public class Racesearch extends Tablesearch implements IRacesearch {
     Numbersearch id = new Numbersearch("race.id");
     Stringsearch name = new Stringsearch("race.name");
     Stringsearch description = new Stringsearch("race.description");
+//foreign keys
     Foreignkeysearch factionsearcher = new Foreignkeysearch("faction", IRace.factionPKfields, IRace.factionFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -135,7 +137,7 @@ public class Racesearch extends Tablesearch implements IRacesearch {
     }
     
     /**
-     * set subsearch faction tablesearch
+     * set foreign key subsearch faction IFactionsearch
      * @param factionsearch: IFactionsearch
      */
     public void faction(IFactionsearch factionsearch) {
@@ -143,7 +145,7 @@ public class Racesearch extends Tablesearch implements IRacesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch faction IFactionsearch
      * @return Tablesearch for Race
      */
     public IFactionsearch getFactionsearch() {

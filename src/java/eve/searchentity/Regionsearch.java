@@ -2,7 +2,7 @@
  * Regionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -30,9 +30,15 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     Booleansearch noaccess = new Booleansearch("region.noaccess");
     Numbersearch orderpages = new Numbersearch("region.orderpages");
     Numbersearch ordererrors = new Numbersearch("region.ordererrors");
+//foreign keys
+//external foreign keys
+    //foreign key
     Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
-    Relationalkeysearch evetypesearcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
+    //relational key
+    Relationalkeysearch relevetypesearcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
+    //foreign key
     Primarykeysearch region_neighbourRegionsearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
+    //foreign key
     Primarykeysearch region_neighbourNeighboursearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionNeighbourPKfields, IRegion_neighbour.regionNeighbourFKfields);
 
     /**
@@ -71,7 +77,7 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
         addFieldsearcher(orderpages);
         addFieldsearcher(ordererrors);
         addKeysearcher(order_historysearcher);
-        addKeysearcher(evetypesearcher);
+        addKeysearcher(relevetypesearcher);
         addKeysearcher(region_neighbourRegionsearcher);
         addKeysearcher(region_neighbourNeighboursearcher);
     }
@@ -173,7 +179,7 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
     
     /**
-     * set subsearch order_history tablesearch
+     * set external key - foreign key subsearch IOrder_historysearch
      * @param order_historysearch: IOrder_historysearch
      */
     public void order_history(IOrder_historysearch order_historysearch) {
@@ -181,8 +187,8 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Region
+     * get external key - foreign key subsearch IOrder_historysearch
+     * @return Tablesearch for IOrder_historysearch
      */
     public IOrder_historysearch getOrder_historysearch() {
         if(order_historysearcher.used()) {
@@ -193,27 +199,27 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
 
     /**
-     * set relational subsearch evetype tablesearch
+     * set external key - relational subsearch evetype tablesearch
      * @param evetypesearch: IEvetypesearch
      */
-    public void evetype(IEvetypesearch evetypesearch) {
-        evetypesearcher.setTablesearch(evetypesearch);
+    public void relevetype(IEvetypesearch evetypesearch) {
+        relevetypesearcher.setTablesearch(evetypesearch);
     }
     
     /**
-     * 
-     * @return Tablesearch for Region
+     * get external key - relational subsearch IEvetypesearch
+     * @return Tablesearch for IEvetypesearch
      */
-    public IEvetypesearch getEvetypesearch() {
-        if(evetypesearcher.used()) {
-            return (IEvetypesearch)evetypesearcher.getTablesearches().get(0);
+    public IEvetypesearch getRelEvetypesearch() {
+        if(relevetypesearcher.used()) {
+            return (IEvetypesearch)relevetypesearcher.getTablesearches().get(0);
         } else {
             return null;
         }
     }
 
     /**
-     * set subsearch region_neighbour tablesearch
+     * set external key - foreign key subsearch IRegion_neighboursearch
      * @param region_neighboursearch: IRegion_neighboursearch
      */
     public void region_neighbourRegion(IRegion_neighboursearch region_neighboursearch) {
@@ -221,8 +227,8 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Region
+     * get external key - foreign key subsearch IRegion_neighboursearch
+     * @return Tablesearch for IRegion_neighboursearch
      */
     public IRegion_neighboursearch getRegion_neighbourregionsearch() {
         if(region_neighbourRegionsearcher.used()) {
@@ -233,7 +239,7 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
 
     /**
-     * set subsearch region_neighbour tablesearch
+     * set external key - foreign key subsearch IRegion_neighboursearch
      * @param region_neighboursearch: IRegion_neighboursearch
      */
     public void region_neighbourNeighbour(IRegion_neighboursearch region_neighboursearch) {
@@ -241,8 +247,8 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Region
+     * get external key - foreign key subsearch IRegion_neighboursearch
+     * @return Tablesearch for IRegion_neighboursearch
      */
     public IRegion_neighboursearch getRegion_neighbourneighboursearch() {
         if(region_neighbourNeighboursearcher.used()) {

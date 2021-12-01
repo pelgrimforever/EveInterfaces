@@ -2,7 +2,7 @@
  * IOrder_historysearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -119,15 +119,17 @@ public interface IOrder_historysearch extends Tablesearcher {
 	public void order_count(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch evetype tablesearch
-	* @param evetypesearch: IEvetypesearch
-	*/
+   * foreign key
+	 * set subsearch evetype tablesearch
+	 * @param evetypesearch: IEvetypesearch
+	 */
 	public void evetype(IEvetypesearch evetypesearch);
 	
 	/**
-	* set subsearch region tablesearch
-	* @param regionsearch: IRegionsearch
-	*/
+   * foreign key
+	 * set subsearch region tablesearch
+	 * @param regionsearch: IRegionsearch
+	 */
 	public void region(IRegionsearch regionsearch);
 	
 }

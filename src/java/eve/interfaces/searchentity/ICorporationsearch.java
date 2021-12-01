@@ -2,7 +2,7 @@
  * ICorporationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -196,21 +196,24 @@ public interface ICorporationsearch extends Tablesearcher {
 	public void war_eligible(Boolean value);
 	
 	/**
-	* set subsearch station tablesearch
-	* @param stationsearch: IStationsearch
-	*/
+   * foreign key
+	 * set subsearch station tablesearch
+	 * @param stationsearch: IStationsearch
+	 */
 	public void station(IStationsearch stationsearch);
 	
 	/**
-	* set subsearch faction tablesearch
-	* @param factionsearch: IFactionsearch
-	*/
+   * foreign key
+	 * set subsearch faction tablesearch
+	 * @param factionsearch: IFactionsearch
+	 */
 	public void faction(IFactionsearch factionsearch);
 	
 	/**
-	* set subsearch alliance tablesearch
-	* @param alliancesearch: IAlliancesearch
-	*/
+   * foreign key
+	 * set subsearch alliance tablesearch
+	 * @param alliancesearch: IAlliancesearch
+	 */
 	public void alliance(IAlliancesearch alliancesearch);
 	
 }

@@ -2,7 +2,7 @@
  * Stargatesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -33,8 +33,10 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     Numbersearch z = new Numbersearch("stargate.z");
     Booleansearch isconstellationborder = new Booleansearch("stargate.isconstellationborder");
     Booleansearch isregionborder = new Booleansearch("stargate.isregionborder");
+//foreign keys
     Foreignkeysearch systemSystemsearcher = new Foreignkeysearch("system", IStargate.systemSystemPKfields, IStargate.systemSystemFKfields);
     Foreignkeysearch systemTo_systemsearcher = new Foreignkeysearch("system", IStargate.systemTo_systemPKfields, IStargate.systemTo_systemFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -223,7 +225,7 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     }
     
     /**
-     * set subsearch systemSystem tablesearch
+     * set foreign key subsearch systemSystem ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void systemSystem(ISystemsearch systemsearch) {
@@ -231,7 +233,7 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch systemSystem ISystemsearch
      * @return Tablesearch for Stargate
      */
     public ISystemsearch getSystemsystemsearch() {
@@ -252,7 +254,7 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     }
 
     /**
-     * set subsearch systemTo_system tablesearch
+     * set foreign key subsearch systemTo_system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void systemTo_system(ISystemsearch systemsearch) {
@@ -260,7 +262,7 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch systemTo_system ISystemsearch
      * @return Tablesearch for Stargate
      */
     public ISystemsearch getSystemto_systemsearch() {

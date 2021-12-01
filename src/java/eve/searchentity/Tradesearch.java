@@ -2,7 +2,7 @@
  * Tradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -35,8 +35,10 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     Numbersearch profit_per_jump = new Numbersearch("trade.profit_per_jump");
     Numbersearch singlerun_profit_per_jump = new Numbersearch("trade.singlerun_profit_per_jump");
     Numbersearch maxunits_per_run = new Numbersearch("trade.maxunits_per_run");
+//foreign keys
     Foreignkeysearch ordersSell_order_idsearcher = new Foreignkeysearch("orders", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
     Foreignkeysearch ordersBuy_order_idsearcher = new Foreignkeysearch("orders", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -291,7 +293,7 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     }
     
     /**
-     * set subsearch ordersSell_order_id tablesearch
+     * set foreign key subsearch ordersSell_order_id IOrderssearch
      * @param orderssearch: IOrderssearch
      */
     public void ordersSell_order_id(IOrderssearch orderssearch) {
@@ -299,7 +301,7 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch ordersSell_order_id IOrderssearch
      * @return Tablesearch for Trade
      */
     public IOrderssearch getOrderssell_order_idsearch() {
@@ -320,7 +322,7 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     }
 
     /**
-     * set subsearch ordersBuy_order_id tablesearch
+     * set foreign key subsearch ordersBuy_order_id IOrderssearch
      * @param orderssearch: IOrderssearch
      */
     public void ordersBuy_order_id(IOrderssearch orderssearch) {
@@ -328,7 +330,7 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch ordersBuy_order_id IOrderssearch
      * @return Tablesearch for Trade
      */
     public IOrderssearch getOrdersbuy_order_idsearch() {

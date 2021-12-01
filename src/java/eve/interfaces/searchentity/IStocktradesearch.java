@@ -2,7 +2,7 @@
  * IStocktradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -59,9 +59,10 @@ public interface IStocktradesearch extends Tablesearcher {
 	public void sellamount(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch stock tablesearch
-	* @param stocksearch: IStocksearch
-	*/
+   * foreign key
+	 * set subsearch stock tablesearch
+	 * @param stocksearch: IStocksearch
+	 */
 	public void stock(IStocksearch stocksearch);
 	
 }

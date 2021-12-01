@@ -2,7 +2,7 @@
  * IStationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -133,24 +133,28 @@ public interface IStationsearch extends Tablesearcher {
 	public void owner(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch race tablesearch
-	* @param racesearch: IRacesearch
-	*/
+   * foreign key
+	 * set subsearch race tablesearch
+	 * @param racesearch: IRacesearch
+	 */
 	public void race(IRacesearch racesearch);
 	
 	/**
-	* set subsearch evetype tablesearch
-	* @param evetypesearch: IEvetypesearch
-	*/
+   * foreign key
+	 * set subsearch evetype tablesearch
+	 * @param evetypesearch: IEvetypesearch
+	 */
 	public void evetype(IEvetypesearch evetypesearch);
 	
 	/**
-	* set subsearch system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void system(ISystemsearch systemsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch station_service tablesearch
      * @param station_servicesearch: IStation_servicesearch
      */

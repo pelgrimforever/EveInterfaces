@@ -2,7 +2,7 @@
  * IStation_servicesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -43,9 +43,10 @@ public interface IStation_servicesearch extends Tablesearcher {
 	public void service(String[] values, byte compare, byte andor);
 	
 	/**
-	* set subsearch station tablesearch
-	* @param stationsearch: IStationsearch
-	*/
+   * foreign key
+	 * set subsearch station tablesearch
+	 * @param stationsearch: IStationsearch
+	 */
 	public void station(IStationsearch stationsearch);
 	
 }

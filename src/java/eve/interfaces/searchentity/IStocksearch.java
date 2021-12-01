@@ -2,7 +2,7 @@
  * IStocksearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -58,12 +58,14 @@ public interface IStocksearch extends Tablesearcher {
 	public void amount(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch evetype tablesearch
-	* @param evetypesearch: IEvetypesearch
-	*/
+   * foreign key
+	 * set subsearch evetype tablesearch
+	 * @param evetypesearch: IEvetypesearch
+	 */
 	public void evetype(IEvetypesearch evetypesearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch stocktrade tablesearch
      * @param stocktradesearch: IStocktradesearch
      */

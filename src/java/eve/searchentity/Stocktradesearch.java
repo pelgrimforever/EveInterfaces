@@ -2,7 +2,7 @@
  * Stocktradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -27,7 +27,9 @@ public class Stocktradesearch extends Tablesearch implements IStocktradesearch {
 
     Numbersearch orderid = new Numbersearch("stocktrade.orderid");
     Numbersearch sellamount = new Numbersearch("stocktrade.sellamount");
+//foreign keys
     Foreignkeysearch stocksearcher = new Foreignkeysearch("stock", IStocktrade.stockPKfields, IStocktrade.stockFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -113,7 +115,7 @@ public class Stocktradesearch extends Tablesearch implements IStocktradesearch {
     }
     
     /**
-     * set subsearch stock tablesearch
+     * set foreign key subsearch stock IStocksearch
      * @param stocksearch: IStocksearch
      */
     public void stock(IStocksearch stocksearch) {
@@ -121,7 +123,7 @@ public class Stocktradesearch extends Tablesearch implements IStocktradesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch stock IStocksearch
      * @return Tablesearch for Stocktrade
      */
     public IStocksearch getStocksearch() {

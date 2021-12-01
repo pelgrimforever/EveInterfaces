@@ -2,7 +2,7 @@
  * eUsersettings.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -38,7 +38,7 @@ import db.SQLparameters;
 public class eUsersettings extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected UsersettingsPK usersettingsPK;
-    private double value;
+    private java.lang.String value;
 	  
     public static final String table = "usersettings";
 	  
@@ -157,7 +157,7 @@ public class eUsersettings extends AbstractEntity implements eveDatabaseproperti
      * 
      * @return value value
      */
-    public double getValue() {
+    public java.lang.String getValue() {
         return this.value;
     }
 
@@ -165,7 +165,7 @@ public class eUsersettings extends AbstractEntity implements eveDatabaseproperti
      * set value value
      * @param value: new value
      */
-    public void initValue(double value) {
+    public void initValue(java.lang.String value) {
         this.value = value;
     }
 
@@ -173,8 +173,10 @@ public class eUsersettings extends AbstractEntity implements eveDatabaseproperti
      * set value value
      * @param value: new value
      */
-    public void setValue(double value) {
-        updates.put(IUsersettings.VALUE, value);
+    public void setValue(java.lang.String value) {
+	if(value==null && value!=this.value || value!=null && !value.equals(this.value)) {
+            updates.put(IUsersettings.VALUE, value);
+        }
         this.value = value;
     }
 

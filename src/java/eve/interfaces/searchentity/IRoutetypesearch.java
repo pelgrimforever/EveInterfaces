@@ -2,7 +2,7 @@
  * IRoutetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -58,21 +58,24 @@ public interface IRoutetypesearch extends Tablesearcher {
 	public void name(String[] values, byte compare, byte andor);
 	
 	/**
-	* set subsearch security_island tablesearch
-	* @param security_islandsearch: ISecurity_islandsearch
-	*/
+   * foreign key
+	 * set subsearch security_island tablesearch
+	 * @param security_islandsearch: ISecurity_islandsearch
+	 */
 	public void security_island(ISecurity_islandsearch security_islandsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch route tablesearch
      * @param routesearch: IRoutesearch
      */
     public void route(IRoutesearch routesearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch system tablesearch
      * @param systemsearch: ISystemsearch
      */
-    public void system(ISystemsearch systemsearch);
+    public void relsystem(ISystemsearch systemsearch);
     
 }

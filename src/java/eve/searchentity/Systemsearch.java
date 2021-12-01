@@ -2,7 +2,7 @@
  * Systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -33,14 +33,30 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Booleansearch noaccess = new Booleansearch("system.noaccess");
     Booleansearch isconstellationborder = new Booleansearch("system.isconstellationborder");
     Booleansearch isregionborder = new Booleansearch("system.isregionborder");
+//foreign keys
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", ISystem.security_islandPKfields, ISystem.security_islandFKfields);
     Foreignkeysearch constellationsearcher = new Foreignkeysearch("constellation", ISystem.constellationPKfields, ISystem.constellationFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch systemjumpsSystem_endsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
+    //foreign key
     Primarykeysearch systemjumpsSystem_startsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
+    //foreign key
     Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields);
-    Relationalkeysearch routetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
+    //relational key
+    Relationalkeysearch relroutetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
+    //foreign key
     Primarykeysearch systemtradeSell_systemsearcher = new Primarykeysearch("systemtrade", ISystemtrade.systemSell_systemPKfields, ISystemtrade.systemSell_systemFKfields);
+    //foreign key
     Primarykeysearch systemtradeBuy_systemsearcher = new Primarykeysearch("systemtrade", ISystemtrade.systemBuy_systemPKfields, ISystemtrade.systemBuy_systemFKfields);
+    //foreign key
+    Primarykeysearch tradecombinedBuy_systemsearcher = new Primarykeysearch("tradecombined", ITradecombined.systemBuy_systemPKfields, ITradecombined.systemBuy_systemFKfields);
+    //relational key
+    Relationalkeysearch relevetype1searcher = new Relationalkeysearch("tradecombined", ITradecombined.systemBuy_systemPKfields, ITradecombined.systemBuy_systemFKfields, "evetype", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields);
+    //foreign key
+    Primarykeysearch tradecombinedSell_systemsearcher = new Primarykeysearch("tradecombined", ITradecombined.systemSell_systemPKfields, ITradecombined.systemSell_systemFKfields);
+    //relational key
+    Relationalkeysearch relevetype2searcher = new Relationalkeysearch("tradecombined", ITradecombined.systemSell_systemPKfields, ITradecombined.systemSell_systemFKfields, "evetype", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields);
 
     /**
      * @return tablename
@@ -85,9 +101,13 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
         addKeysearcher(systemjumpsSystem_endsearcher);
         addKeysearcher(systemjumpsSystem_startsearcher);
         addKeysearcher(routesearcher);
-        addKeysearcher(routetypesearcher);
+        addKeysearcher(relroutetypesearcher);
         addKeysearcher(systemtradeSell_systemsearcher);
         addKeysearcher(systemtradeBuy_systemsearcher);
+        addKeysearcher(tradecombinedBuy_systemsearcher);
+        addKeysearcher(relevetype1searcher);
+        addKeysearcher(tradecombinedSell_systemsearcher);
+        addKeysearcher(relevetype2searcher);
     }
 
     /**
@@ -223,7 +243,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * set subsearch security_island tablesearch
+     * set foreign key subsearch security_island ISecurity_islandsearch
      * @param security_islandsearch: ISecurity_islandsearch
      */
     public void security_island(ISecurity_islandsearch security_islandsearch) {
@@ -231,7 +251,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch security_island ISecurity_islandsearch
      * @return Tablesearch for System
      */
     public ISecurity_islandsearch getSecurity_islandsearch() {
@@ -252,7 +272,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
 
     /**
-     * set subsearch constellation tablesearch
+     * set foreign key subsearch constellation IConstellationsearch
      * @param constellationsearch: IConstellationsearch
      */
     public void constellation(IConstellationsearch constellationsearch) {
@@ -260,7 +280,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch constellation IConstellationsearch
      * @return Tablesearch for System
      */
     public IConstellationsearch getConstellationsearch() {
@@ -281,7 +301,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
 
     /**
-     * set subsearch systemjumps tablesearch
+     * set external key - foreign key subsearch ISystemjumpssearch
      * @param systemjumpssearch: ISystemjumpssearch
      */
     public void systemjumpsSystem_end(ISystemjumpssearch systemjumpssearch) {
@@ -289,8 +309,8 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for System
+     * get external key - foreign key subsearch ISystemjumpssearch
+     * @return Tablesearch for ISystemjumpssearch
      */
     public ISystemjumpssearch getSystemjumpssystem_endsearch() {
         if(systemjumpsSystem_endsearcher.used()) {
@@ -301,7 +321,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
 
     /**
-     * set subsearch systemjumps tablesearch
+     * set external key - foreign key subsearch ISystemjumpssearch
      * @param systemjumpssearch: ISystemjumpssearch
      */
     public void systemjumpsSystem_start(ISystemjumpssearch systemjumpssearch) {
@@ -309,8 +329,8 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for System
+     * get external key - foreign key subsearch ISystemjumpssearch
+     * @return Tablesearch for ISystemjumpssearch
      */
     public ISystemjumpssearch getSystemjumpssystem_startsearch() {
         if(systemjumpsSystem_startsearcher.used()) {
@@ -321,7 +341,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
 
     /**
-     * set subsearch route tablesearch
+     * set external key - foreign key subsearch IRoutesearch
      * @param routesearch: IRoutesearch
      */
     public void route(IRoutesearch routesearch) {
@@ -329,8 +349,8 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for System
+     * get external key - foreign key subsearch IRoutesearch
+     * @return Tablesearch for IRoutesearch
      */
     public IRoutesearch getRoutesearch() {
         if(routesearcher.used()) {
@@ -341,27 +361,27 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
 
     /**
-     * set relational subsearch routetype tablesearch
+     * set external key - relational subsearch routetype tablesearch
      * @param routetypesearch: IRoutetypesearch
      */
-    public void routetype(IRoutetypesearch routetypesearch) {
-        routetypesearcher.setTablesearch(routetypesearch);
+    public void relroutetype(IRoutetypesearch routetypesearch) {
+        relroutetypesearcher.setTablesearch(routetypesearch);
     }
     
     /**
-     * 
-     * @return Tablesearch for System
+     * get external key - relational subsearch IRoutetypesearch
+     * @return Tablesearch for IRoutetypesearch
      */
-    public IRoutetypesearch getRoutetypesearch() {
-        if(routetypesearcher.used()) {
-            return (IRoutetypesearch)routetypesearcher.getTablesearches().get(0);
+    public IRoutetypesearch getRelRoutetypesearch() {
+        if(relroutetypesearcher.used()) {
+            return (IRoutetypesearch)relroutetypesearcher.getTablesearches().get(0);
         } else {
             return null;
         }
     }
 
     /**
-     * set subsearch systemtrade tablesearch
+     * set external key - foreign key subsearch ISystemtradesearch
      * @param systemtradesearch: ISystemtradesearch
      */
     public void systemtradeSell_system(ISystemtradesearch systemtradesearch) {
@@ -369,8 +389,8 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for System
+     * get external key - foreign key subsearch ISystemtradesearch
+     * @return Tablesearch for ISystemtradesearch
      */
     public ISystemtradesearch getSystemtradesell_systemsearch() {
         if(systemtradeSell_systemsearcher.used()) {
@@ -381,7 +401,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
 
     /**
-     * set subsearch systemtrade tablesearch
+     * set external key - foreign key subsearch ISystemtradesearch
      * @param systemtradesearch: ISystemtradesearch
      */
     public void systemtradeBuy_system(ISystemtradesearch systemtradesearch) {
@@ -389,12 +409,92 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for System
+     * get external key - foreign key subsearch ISystemtradesearch
+     * @return Tablesearch for ISystemtradesearch
      */
     public ISystemtradesearch getSystemtradebuy_systemsearch() {
         if(systemtradeBuy_systemsearcher.used()) {
             return (ISystemtradesearch)systemtradeBuy_systemsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch ITradecombinedsearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void tradecombinedBuy_system(ITradecombinedsearch tradecombinedsearch) {
+        tradecombinedBuy_systemsearcher.setTablesearch(tradecombinedsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch ITradecombinedsearch
+     * @return Tablesearch for ITradecombinedsearch
+     */
+    public ITradecombinedsearch getTradecombinedbuy_systemsearch() {
+        if(tradecombinedBuy_systemsearcher.used()) {
+            return (ITradecombinedsearch)tradecombinedBuy_systemsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void relevetype1(IEvetypesearch evetypesearch) {
+        relevetype1searcher.setTablesearch(evetypesearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IEvetypesearch
+     * @return Tablesearch for IEvetypesearch
+     */
+    public IEvetypesearch getRelEvetype1search() {
+        if(relevetype1searcher.used()) {
+            return (IEvetypesearch)relevetype1searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch ITradecombinedsearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void tradecombinedSell_system(ITradecombinedsearch tradecombinedsearch) {
+        tradecombinedSell_systemsearcher.setTablesearch(tradecombinedsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch ITradecombinedsearch
+     * @return Tablesearch for ITradecombinedsearch
+     */
+    public ITradecombinedsearch getTradecombinedsell_systemsearch() {
+        if(tradecombinedSell_systemsearcher.used()) {
+            return (ITradecombinedsearch)tradecombinedSell_systemsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void relevetype2(IEvetypesearch evetypesearch) {
+        relevetype2searcher.setTablesearch(evetypesearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IEvetypesearch
+     * @return Tablesearch for IEvetypesearch
+     */
+    public IEvetypesearch getRelEvetype2search() {
+        if(relevetype2searcher.used()) {
+            return (IEvetypesearch)relevetype2searcher.getTablesearches().get(0);
         } else {
             return null;
         }

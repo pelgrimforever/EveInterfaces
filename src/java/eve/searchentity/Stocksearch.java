@@ -2,7 +2,7 @@
  * Stocksearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -27,7 +27,10 @@ public class Stocksearch extends Tablesearch implements IStocksearch {
 
     Stringsearch username = new Stringsearch("stock.username");
     Numbersearch amount = new Numbersearch("stock.amount");
+//foreign keys
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IStock.evetypePKfields, IStock.evetypeFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch stocktradesearcher = new Primarykeysearch("stocktrade", IStocktrade.stockPKfields, IStocktrade.stockFKfields);
 
     /**
@@ -115,7 +118,7 @@ public class Stocksearch extends Tablesearch implements IStocksearch {
     }
     
     /**
-     * set subsearch evetype tablesearch
+     * set foreign key subsearch evetype IEvetypesearch
      * @param evetypesearch: IEvetypesearch
      */
     public void evetype(IEvetypesearch evetypesearch) {
@@ -123,7 +126,7 @@ public class Stocksearch extends Tablesearch implements IStocksearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch evetype IEvetypesearch
      * @return Tablesearch for Stock
      */
     public IEvetypesearch getEvetypesearch() {
@@ -144,7 +147,7 @@ public class Stocksearch extends Tablesearch implements IStocksearch {
     }
 
     /**
-     * set subsearch stocktrade tablesearch
+     * set external key - foreign key subsearch IStocktradesearch
      * @param stocktradesearch: IStocktradesearch
      */
     public void stocktrade(IStocktradesearch stocktradesearch) {
@@ -152,8 +155,8 @@ public class Stocksearch extends Tablesearch implements IStocksearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Stock
+     * get external key - foreign key subsearch IStocktradesearch
+     * @return Tablesearch for IStocktradesearch
      */
     public IStocktradesearch getStocktradesearch() {
         if(stocktradesearcher.used()) {

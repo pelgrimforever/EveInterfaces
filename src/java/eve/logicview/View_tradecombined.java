@@ -1,0 +1,65 @@
+/*
+ * View_tradecombined.java
+ *
+ * Created on March 26, 2007, 5:44 PM
+ * Generated on 30.10.2021 10:3
+ *
+ */
+
+package eve.logicview;
+
+import data.gis.shape.*;
+import data.interfaces.db.LogicEntity;
+import eve.interfaces.logicview.IView_tradecombined;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
+
+/**
+ * View class View_tradecombined
+ *
+ * Attributes: Database independent SQL-construction strings adjusments
+ * extended attributes and methods possibility:
+ * table level programming is done here
+ *
+ * @author Franky Laseure
+ */
+public class View_tradecombined extends eve.view.eView_tradecombined implements IView_tradecombined {
+
+//Custom code, do not change this line
+    public long start_system;
+    public int start_system_jumps;
+//Custom code, do not change this line
+
+    /**
+     * Constructor
+     * Creates an empty View_tradecombined entity
+     */
+    public View_tradecombined() {
+    }
+    
+//Custom code, do not change this line
+    public long getStart_system() {
+        return start_system;
+    }
+
+    public void setStart_system(long start_system) {
+        this.start_system = start_system;
+    }
+
+    public int getStart_system_jumps() {
+        return start_system_jumps;
+    }
+
+    public void setStart_system_jumps(int start_system_jumps) {
+        this.start_system_jumps = start_system_jumps;
+    }
+//Custom code, do not change this line
+}

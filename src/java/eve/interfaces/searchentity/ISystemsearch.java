@@ -2,7 +2,7 @@
  * ISystemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -120,51 +120,87 @@ public interface ISystemsearch extends Tablesearcher {
 	public void isregionborder(Boolean value);
 	
 	/**
-	* set subsearch security_island tablesearch
-	* @param security_islandsearch: ISecurity_islandsearch
-	*/
+   * foreign key
+	 * set subsearch security_island tablesearch
+	 * @param security_islandsearch: ISecurity_islandsearch
+	 */
 	public void security_island(ISecurity_islandsearch security_islandsearch);
 	
 	/**
-	* set subsearch constellation tablesearch
-	* @param constellationsearch: IConstellationsearch
-	*/
+   * foreign key
+	 * set subsearch constellation tablesearch
+	 * @param constellationsearch: IConstellationsearch
+	 */
 	public void constellation(IConstellationsearch constellationsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch systemjumps tablesearch
      * @param systemjumpssearch: ISystemjumpssearch
      */
     public void systemjumpsSystem_end(ISystemjumpssearch systemjumpssearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch systemjumps tablesearch
      * @param systemjumpssearch: ISystemjumpssearch
      */
     public void systemjumpsSystem_start(ISystemjumpssearch systemjumpssearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch route tablesearch
      * @param routesearch: IRoutesearch
      */
     public void route(IRoutesearch routesearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch routetype tablesearch
      * @param routetypesearch: IRoutetypesearch
      */
-    public void routetype(IRoutetypesearch routetypesearch);
+    public void relroutetype(IRoutetypesearch routetypesearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch systemtrade tablesearch
      * @param systemtradesearch: ISystemtradesearch
      */
     public void systemtradeSell_system(ISystemtradesearch systemtradesearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch systemtrade tablesearch
      * @param systemtradesearch: ISystemtradesearch
      */
     public void systemtradeBuy_system(ISystemtradesearch systemtradesearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch tradecombined tablesearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void tradecombinedBuy_system(ITradecombinedsearch tradecombinedsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void relevetype1(IEvetypesearch evetypesearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch tradecombined tablesearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void tradecombinedSell_system(ITradecombinedsearch tradecombinedsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void relevetype2(IEvetypesearch evetypesearch);
     
 }

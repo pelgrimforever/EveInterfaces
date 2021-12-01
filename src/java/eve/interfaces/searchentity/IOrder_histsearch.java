@@ -2,7 +2,7 @@
  * IOrder_histsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -190,15 +190,17 @@ public interface IOrder_histsearch extends Tablesearcher {
 	public void duration(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch evetype tablesearch
-	* @param evetypesearch: IEvetypesearch
-	*/
+   * foreign key
+	 * set subsearch evetype tablesearch
+	 * @param evetypesearch: IEvetypesearch
+	 */
 	public void evetype(IEvetypesearch evetypesearch);
 	
 	/**
-	* set subsearch system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void system(ISystemsearch systemsearch);
 	
 }

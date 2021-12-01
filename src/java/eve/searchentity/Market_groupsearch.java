@@ -2,7 +2,7 @@
  * Market_groupsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -28,7 +28,9 @@ public class Market_groupsearch extends Tablesearch implements IMarket_groupsear
     Numbersearch id = new Numbersearch("market_group.id");
     Stringsearch name = new Stringsearch("market_group.name");
     Stringsearch description = new Stringsearch("market_group.description");
+//foreign keys
     Foreignkeysearch market_groupParent_idsearcher = new Foreignkeysearch("market_group", IMarket_group.market_groupParent_idPKfields, IMarket_group.market_groupParent_idFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -135,7 +137,7 @@ public class Market_groupsearch extends Tablesearch implements IMarket_groupsear
     }
     
     /**
-     * set subsearch market_groupParent_id tablesearch
+     * set foreign key subsearch market_groupParent_id IMarket_groupsearch
      * @param market_groupsearch: IMarket_groupsearch
      */
     public void market_groupParent_id(IMarket_groupsearch market_groupsearch) {
@@ -143,7 +145,7 @@ public class Market_groupsearch extends Tablesearch implements IMarket_groupsear
     }
     
     /**
-     * 
+     * get foreign key subsearch market_groupParent_id IMarket_groupsearch
      * @return Tablesearch for Market_group
      */
     public IMarket_groupsearch getMarket_groupparent_idsearch() {

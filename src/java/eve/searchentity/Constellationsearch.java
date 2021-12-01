@@ -2,7 +2,7 @@
  * Constellationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -28,8 +28,12 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     Numbersearch id = new Numbersearch("constellation.id");
     Stringsearch name = new Stringsearch("constellation.name");
     Booleansearch noaccess = new Booleansearch("constellation.noaccess");
+//foreign keys
     Foreignkeysearch regionsearcher = new Foreignkeysearch("region", IConstellation.regionPKfields, IConstellation.regionFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch constellation_neighbourNeighboursearcher = new Primarykeysearch("constellation_neighbour", IConstellation_neighbour.constellationNeighbourPKfields, IConstellation_neighbour.constellationNeighbourFKfields);
+    //foreign key
     Primarykeysearch constellation_neighbourConstellationsearcher = new Primarykeysearch("constellation_neighbour", IConstellation_neighbour.constellationConstellationPKfields, IConstellation_neighbour.constellationConstellationFKfields);
 
     /**
@@ -127,7 +131,7 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
     
     /**
-     * set subsearch region tablesearch
+     * set foreign key subsearch region IRegionsearch
      * @param regionsearch: IRegionsearch
      */
     public void region(IRegionsearch regionsearch) {
@@ -135,7 +139,7 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
     
     /**
-     * 
+     * get foreign key subsearch region IRegionsearch
      * @return Tablesearch for Constellation
      */
     public IRegionsearch getRegionsearch() {
@@ -156,7 +160,7 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
 
     /**
-     * set subsearch constellation_neighbour tablesearch
+     * set external key - foreign key subsearch IConstellation_neighboursearch
      * @param constellation_neighboursearch: IConstellation_neighboursearch
      */
     public void constellation_neighbourNeighbour(IConstellation_neighboursearch constellation_neighboursearch) {
@@ -164,8 +168,8 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
     
     /**
-     * 
-     * @return Tablesearch for Constellation
+     * get external key - foreign key subsearch IConstellation_neighboursearch
+     * @return Tablesearch for IConstellation_neighboursearch
      */
     public IConstellation_neighboursearch getConstellation_neighbourneighboursearch() {
         if(constellation_neighbourNeighboursearcher.used()) {
@@ -176,7 +180,7 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
 
     /**
-     * set subsearch constellation_neighbour tablesearch
+     * set external key - foreign key subsearch IConstellation_neighboursearch
      * @param constellation_neighboursearch: IConstellation_neighboursearch
      */
     public void constellation_neighbourConstellation(IConstellation_neighboursearch constellation_neighboursearch) {
@@ -184,8 +188,8 @@ public class Constellationsearch extends Tablesearch implements IConstellationse
     }
     
     /**
-     * 
-     * @return Tablesearch for Constellation
+     * get external key - foreign key subsearch IConstellation_neighboursearch
+     * @return Tablesearch for IConstellation_neighboursearch
      */
     public IConstellation_neighboursearch getConstellation_neighbourconstellationsearch() {
         if(constellation_neighbourConstellationsearcher.used()) {

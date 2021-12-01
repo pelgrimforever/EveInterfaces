@@ -2,7 +2,7 @@
  * Alliancesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -31,8 +31,10 @@ public class Alliancesearch extends Tablesearch implements IAlliancesearch {
     Timesearch date_founded = new Timesearch("alliance.date_founded");
     Stringsearch ticker = new Stringsearch("alliance.ticker");
     Numbersearch faction_id = new Numbersearch("alliance.faction_id");
+//foreign keys
     Foreignkeysearch corporationCreator_corporationsearcher = new Foreignkeysearch("corporation", IAlliance.corporationCreator_corporationPKfields, IAlliance.corporationCreator_corporationFKfields);
     Foreignkeysearch corporationExecutor_corporationsearcher = new Foreignkeysearch("corporation", IAlliance.corporationExecutor_corporationPKfields, IAlliance.corporationExecutor_corporationFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -203,7 +205,7 @@ public class Alliancesearch extends Tablesearch implements IAlliancesearch {
     }
     
     /**
-     * set subsearch corporationCreator_corporation tablesearch
+     * set foreign key subsearch corporationCreator_corporation ICorporationsearch
      * @param corporationsearch: ICorporationsearch
      */
     public void corporationCreator_corporation(ICorporationsearch corporationsearch) {
@@ -211,7 +213,7 @@ public class Alliancesearch extends Tablesearch implements IAlliancesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch corporationCreator_corporation ICorporationsearch
      * @return Tablesearch for Alliance
      */
     public ICorporationsearch getCorporationcreator_corporationsearch() {
@@ -232,7 +234,7 @@ public class Alliancesearch extends Tablesearch implements IAlliancesearch {
     }
 
     /**
-     * set subsearch corporationExecutor_corporation tablesearch
+     * set foreign key subsearch corporationExecutor_corporation ICorporationsearch
      * @param corporationsearch: ICorporationsearch
      */
     public void corporationExecutor_corporation(ICorporationsearch corporationsearch) {
@@ -240,7 +242,7 @@ public class Alliancesearch extends Tablesearch implements IAlliancesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch corporationExecutor_corporation ICorporationsearch
      * @return Tablesearch for Alliance
      */
     public ICorporationsearch getCorporationexecutor_corporationsearch() {

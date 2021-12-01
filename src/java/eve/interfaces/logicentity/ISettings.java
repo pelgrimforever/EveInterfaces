@@ -2,7 +2,7 @@
  * ISettings.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -37,17 +37,19 @@ public interface ISettings extends LogicEntity {
     public static short VALUE = 2;
 
     public static final int SIZE_NAME = 30;
-    public static final int SIZE_VALUE = 17;
+    public static final int SIZE_VALUE = 20;
     public static final String[] fieldnames = { "name", "value" };
-    public static final byte[] fieldtypes = { Datatypes.type_String, Datatypes.type_double };
+    public static final byte[] fieldtypes = { Datatypes.type_String, Datatypes.type_String };
 
 
 //Custom code, do not change this line
 //Put custom variables here
     public static final String BROKER_FEE = "broker fee";
+    public static final String STOCKSYSTEMID = "stocksystemid";
     
     public static final Object[][] DEFAULTS = {
-        { BROKER_FEE, 0.08d }
+        { BROKER_FEE, "0.08" },
+        { STOCKSYSTEMID, null }
     };
 //Custom code, do not change this line
 
@@ -55,13 +57,13 @@ public interface ISettings extends LogicEntity {
      * 
      * @return value value
      */
-    public double getValue();
+    public java.lang.String getValue();
 
     /**
      * set value value
      * @param value: new value
      */
-    public void setValue(double value);
+    public void setValue(java.lang.String value);
 
     
 //Custom code, do not change this line

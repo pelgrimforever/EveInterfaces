@@ -2,7 +2,7 @@
  * Order_historysearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -31,8 +31,10 @@ public class Order_historysearch extends Tablesearch implements IOrder_historyse
     Numbersearch lowest = new Numbersearch("order_history.lowest");
     Numbersearch volume = new Numbersearch("order_history.volume");
     Numbersearch order_count = new Numbersearch("order_history.order_count");
+//foreign keys
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     Foreignkeysearch regionsearcher = new Foreignkeysearch("region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -203,7 +205,7 @@ public class Order_historysearch extends Tablesearch implements IOrder_historyse
     }
     
     /**
-     * set subsearch evetype tablesearch
+     * set foreign key subsearch evetype IEvetypesearch
      * @param evetypesearch: IEvetypesearch
      */
     public void evetype(IEvetypesearch evetypesearch) {
@@ -211,7 +213,7 @@ public class Order_historysearch extends Tablesearch implements IOrder_historyse
     }
     
     /**
-     * 
+     * get foreign key subsearch evetype IEvetypesearch
      * @return Tablesearch for Order_history
      */
     public IEvetypesearch getEvetypesearch() {
@@ -232,7 +234,7 @@ public class Order_historysearch extends Tablesearch implements IOrder_historyse
     }
 
     /**
-     * set subsearch region tablesearch
+     * set foreign key subsearch region IRegionsearch
      * @param regionsearch: IRegionsearch
      */
     public void region(IRegionsearch regionsearch) {
@@ -240,7 +242,7 @@ public class Order_historysearch extends Tablesearch implements IOrder_historyse
     }
     
     /**
-     * 
+     * get foreign key subsearch region IRegionsearch
      * @return Tablesearch for Order_history
      */
     public IRegionsearch getRegionsearch() {

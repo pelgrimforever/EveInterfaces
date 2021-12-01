@@ -2,7 +2,7 @@
  * Settingssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -26,7 +26,10 @@ import java.sql.Timestamp;
 public class Settingssearch extends Tablesearch implements ISettingssearch {
 
     Stringsearch name = new Stringsearch("settings.name");
-    Numbersearch value = new Numbersearch("settings.value");
+    Stringsearch value = new Stringsearch("settings.value");
+//foreign keys
+//external foreign keys
+    //foreign key
     Primarykeysearch usersettingssearcher = new Primarykeysearch("usersettings", IUsersettings.settingsPKfields, IUsersettings.settingsFKfields);
 
     /**
@@ -93,27 +96,27 @@ public class Settingssearch extends Tablesearch implements ISettingssearch {
     }
     
     /**
-     * add Numeric search values for field value, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * add String search values for field value, default OR and LIKE operators are used
+     * @param values: Array of String search values
      */
-    public void value(Double[] values, byte[] operators) {
-        addNumbervalues(value, values, operators);
+    public void value(String[] values) {
+        addStringvalues(value, values);
     }
     
     /**
-     * add Numeric search values for field value
+     * add String search values for field value
      * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
      * @param andor; AND/OR constant
+     * @param compare: EQUAL/LIKE constant
      */
-    public void value(Double[] values, byte[] operators, byte andor) {
-        addNumbervalues(value, values, operators);
+    public void value(String[] values, byte compare, byte andor) {
+        addStringvalues(value, values);
+        value.setCompareoperator(compare);
         value.setAndoroperator(andor);
     }
     
     /**
-     * set subsearch usersettings tablesearch
+     * set external key - foreign key subsearch IUsersettingssearch
      * @param usersettingssearch: IUsersettingssearch
      */
     public void usersettings(IUsersettingssearch usersettingssearch) {
@@ -121,8 +124,8 @@ public class Settingssearch extends Tablesearch implements ISettingssearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Settings
+     * get external key - foreign key subsearch IUsersettingssearch
+     * @return Tablesearch for IUsersettingssearch
      */
     public IUsersettingssearch getUsersettingssearch() {
         if(usersettingssearcher.used()) {

@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -273,39 +273,66 @@ public interface IEvetypesearch extends Tablesearcher {
 	public void max_selorder(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch market_group tablesearch
-	* @param market_groupsearch: IMarket_groupsearch
-	*/
+   * foreign key
+	 * set subsearch market_group tablesearch
+	 * @param market_groupsearch: IMarket_groupsearch
+	 */
 	public void market_group(IMarket_groupsearch market_groupsearch);
 	
 	/**
-	* set subsearch typegroup tablesearch
-	* @param typegroupsearch: ITypegroupsearch
-	*/
+   * foreign key
+	 * set subsearch typegroup tablesearch
+	 * @param typegroupsearch: ITypegroupsearch
+	 */
 	public void typegroup(ITypegroupsearch typegroupsearch);
 	
 	/**
-	* set subsearch graphic tablesearch
-	* @param graphicsearch: IGraphicsearch
-	*/
+   * foreign key
+	 * set subsearch graphic tablesearch
+	 * @param graphicsearch: IGraphicsearch
+	 */
 	public void graphic(IGraphicsearch graphicsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch stock tablesearch
      * @param stocksearch: IStocksearch
      */
     public void stock(IStocksearch stocksearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch order_history tablesearch
      * @param order_historysearch: IOrder_historysearch
      */
     public void order_history(IOrder_historysearch order_historysearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch region tablesearch
      * @param regionsearch: IRegionsearch
      */
-    public void region(IRegionsearch regionsearch);
+    public void relregion(IRegionsearch regionsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch tradecombined tablesearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void tradecombined(ITradecombinedsearch tradecombinedsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch system tablesearch
+     * @param systemsearch: ISystemsearch
+     */
+    public void relsystem1(ISystemsearch systemsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch system tablesearch
+     * @param systemsearch: ISystemsearch
+     */
+    public void relsystem2(ISystemsearch systemsearch);
     
 }

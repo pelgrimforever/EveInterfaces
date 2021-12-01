@@ -2,7 +2,7 @@
  * Factionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -34,7 +34,9 @@ public class Factionsearch extends Tablesearch implements IFactionsearch {
     Numbersearch station_system_count = new Numbersearch("faction.station_system_count");
     Numbersearch corporation = new Numbersearch("faction.corporation");
     Numbersearch militia_corporation = new Numbersearch("faction.militia_corporation");
+//foreign keys
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IFaction.systemPKfields, IFaction.systemFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -255,7 +257,7 @@ public class Factionsearch extends Tablesearch implements IFactionsearch {
     }
     
     /**
-     * set subsearch system tablesearch
+     * set foreign key subsearch system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void system(ISystemsearch systemsearch) {
@@ -263,7 +265,7 @@ public class Factionsearch extends Tablesearch implements IFactionsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch system ISystemsearch
      * @return Tablesearch for Faction
      */
     public ISystemsearch getSystemsearch() {

@@ -2,7 +2,7 @@
  * IMarket_groupsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -72,9 +72,10 @@ public interface IMarket_groupsearch extends Tablesearcher {
 	public void description(String[] values, byte compare, byte andor);
 	
 	/**
-	* set subsearch market_groupParent_id tablesearch
-	* @param market_groupsearch: IMarket_groupsearch
-	*/
+   * foreign key
+	 * set subsearch market_groupParent_id tablesearch
+	 * @param market_groupsearch: IMarket_groupsearch
+	 */
 	public void market_groupParent_id(IMarket_groupsearch market_groupsearch);
 	
 }

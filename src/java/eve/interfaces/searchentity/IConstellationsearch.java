@@ -2,7 +2,7 @@
  * IConstellationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -64,18 +64,21 @@ public interface IConstellationsearch extends Tablesearcher {
 	public void noaccess(Boolean value);
 	
 	/**
-	* set subsearch region tablesearch
-	* @param regionsearch: IRegionsearch
-	*/
+   * foreign key
+	 * set subsearch region tablesearch
+	 * @param regionsearch: IRegionsearch
+	 */
 	public void region(IRegionsearch regionsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch constellation_neighbour tablesearch
      * @param constellation_neighboursearch: IConstellation_neighboursearch
      */
     public void constellation_neighbourNeighbour(IConstellation_neighboursearch constellation_neighboursearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch constellation_neighbour tablesearch
      * @param constellation_neighboursearch: IConstellation_neighboursearch
      */

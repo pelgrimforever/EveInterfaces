@@ -2,7 +2,7 @@
  * Graphicsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -33,6 +33,8 @@ public class Graphicsearch extends Tablesearch implements IGraphicsearch {
     Stringsearch sof_fation_name = new Stringsearch("graphic.sof_fation_name");
     Stringsearch sof_hull_name = new Stringsearch("graphic.sof_hull_name");
     Stringsearch sof_race_name = new Stringsearch("graphic.sof_race_name");
+//foreign keys
+//external foreign keys
 
     /**
      * @return tablename

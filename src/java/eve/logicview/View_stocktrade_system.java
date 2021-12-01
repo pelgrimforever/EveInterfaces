@@ -2,7 +2,7 @@
  * View_stocktrade_system.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -34,6 +34,8 @@ import javax.imageio.stream.ImageInputStream;
 public class View_stocktrade_system extends eve.view.eView_stocktrade_system implements IView_stocktrade_system {
 
 //Custom code, do not change this line
+    public long start_system;
+    public int start_system_jumps;
 //Custom code, do not change this line
 
     /**
@@ -44,5 +46,20 @@ public class View_stocktrade_system extends eve.view.eView_stocktrade_system imp
     }
     
 //Custom code, do not change this line
+    public long getStart_system() {
+        return start_system;
+    }
+
+    public void setStart_system(long start_system) {
+        this.start_system = start_system;
+    }
+
+    public int getStart_system_jumps() {
+        return start_system_jumps;
+    }
+
+    public void setStart_system_jumps(int start_system_jumps) {
+        this.start_system_jumps = start_system_jumps;
+    }
 //Custom code, do not change this line
 }

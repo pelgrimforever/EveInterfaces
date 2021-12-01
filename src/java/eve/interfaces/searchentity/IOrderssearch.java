@@ -2,7 +2,7 @@
  * IOrderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -205,48 +205,84 @@ public interface IOrderssearch extends Tablesearcher {
 	public void page(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch evetype tablesearch
-	* @param evetypesearch: IEvetypesearch
-	*/
+   * foreign key
+	 * set subsearch evetype tablesearch
+	 * @param evetypesearch: IEvetypesearch
+	 */
 	public void evetype(IEvetypesearch evetypesearch);
 	
 	/**
-	* set subsearch system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void system(ISystemsearch systemsearch);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch systemtrade_order tablesearch
      * @param systemtrade_ordersearch: ISystemtrade_ordersearch
      */
     public void systemtrade_orderBuy_order(ISystemtrade_ordersearch systemtrade_ordersearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch systemtrade tablesearch
      * @param systemtradesearch: ISystemtradesearch
      */
-    public void systemtrade1(ISystemtradesearch systemtradesearch);
+    public void relsystemtrade1(ISystemtradesearch systemtradesearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch systemtrade_order tablesearch
      * @param systemtrade_ordersearch: ISystemtrade_ordersearch
      */
     public void systemtrade_orderSell_order(ISystemtrade_ordersearch systemtrade_ordersearch);
     
     /**
+     * external foreign key - relational key
      * set relational subsearch systemtrade tablesearch
      * @param systemtradesearch: ISystemtradesearch
      */
-    public void systemtrade2(ISystemtradesearch systemtradesearch);
+    public void relsystemtrade2(ISystemtradesearch systemtradesearch);
     
     /**
+     * external foreign key - foreign key
+     * set subsearch tradecombined_sell tablesearch
+     * @param tradecombined_sellsearch: ITradecombined_sellsearch
+     */
+    public void tradecombined_sellBuy_order_id(ITradecombined_sellsearch tradecombined_sellsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch tradecombined tablesearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void reltradecombined1(ITradecombinedsearch tradecombinedsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch tradecombined_sell tablesearch
+     * @param tradecombined_sellsearch: ITradecombined_sellsearch
+     */
+    public void tradecombined_sellSell_order_id(ITradecombined_sellsearch tradecombined_sellsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch tradecombined tablesearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void reltradecombined2(ITradecombinedsearch tradecombinedsearch);
+    
+    /**
+     * external foreign key - foreign key
      * set subsearch trade tablesearch
      * @param tradesearch: ITradesearch
      */
     public void tradeSell_order_id(ITradesearch tradesearch);
     
     /**
+     * external foreign key - foreign key
      * set subsearch trade tablesearch
      * @param tradesearch: ITradesearch
      */

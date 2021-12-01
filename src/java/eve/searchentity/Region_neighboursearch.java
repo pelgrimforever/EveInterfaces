@@ -2,7 +2,7 @@
  * Region_neighboursearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -25,8 +25,10 @@ import java.sql.Timestamp;
  */
 public class Region_neighboursearch extends Tablesearch implements IRegion_neighboursearch {
 
+//foreign keys
     Foreignkeysearch regionRegionsearcher = new Foreignkeysearch("region", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
     Foreignkeysearch regionNeighboursearcher = new Foreignkeysearch("region", IRegion_neighbour.regionNeighbourPKfields, IRegion_neighbour.regionNeighbourFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -71,7 +73,7 @@ public class Region_neighboursearch extends Tablesearch implements IRegion_neigh
     }
 
     /**
-     * set subsearch regionRegion tablesearch
+     * set foreign key subsearch regionRegion IRegionsearch
      * @param regionsearch: IRegionsearch
      */
     public void regionRegion(IRegionsearch regionsearch) {
@@ -79,7 +81,7 @@ public class Region_neighboursearch extends Tablesearch implements IRegion_neigh
     }
     
     /**
-     * 
+     * get foreign key subsearch regionRegion IRegionsearch
      * @return Tablesearch for Region_neighbour
      */
     public IRegionsearch getRegionregionsearch() {
@@ -100,7 +102,7 @@ public class Region_neighboursearch extends Tablesearch implements IRegion_neigh
     }
 
     /**
-     * set subsearch regionNeighbour tablesearch
+     * set foreign key subsearch regionNeighbour IRegionsearch
      * @param regionsearch: IRegionsearch
      */
     public void regionNeighbour(IRegionsearch regionsearch) {
@@ -108,7 +110,7 @@ public class Region_neighboursearch extends Tablesearch implements IRegion_neigh
     }
     
     /**
-     * 
+     * get foreign key subsearch regionNeighbour IRegionsearch
      * @return Tablesearch for Region_neighbour
      */
     public IRegionsearch getRegionneighboursearch() {

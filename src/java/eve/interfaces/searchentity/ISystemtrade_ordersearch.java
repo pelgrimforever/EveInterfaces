@@ -2,7 +2,7 @@
  * ISystemtrade_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -104,21 +104,24 @@ public interface ISystemtrade_ordersearch extends Tablesearcher {
 	public void cargovolume(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch ordersBuy_order tablesearch
-	* @param orderssearch: IOrderssearch
-	*/
+   * foreign key
+	 * set subsearch ordersBuy_order tablesearch
+	 * @param orderssearch: IOrderssearch
+	 */
 	public void ordersBuy_order(IOrderssearch orderssearch);
 	
 	/**
-	* set subsearch ordersSell_order tablesearch
-	* @param orderssearch: IOrderssearch
-	*/
+   * foreign key
+	 * set subsearch ordersSell_order tablesearch
+	 * @param orderssearch: IOrderssearch
+	 */
 	public void ordersSell_order(IOrderssearch orderssearch);
 	
 	/**
-	* set subsearch systemtrade tablesearch
-	* @param systemtradesearch: ISystemtradesearch
-	*/
+   * foreign key
+	 * set subsearch systemtrade tablesearch
+	 * @param systemtradesearch: ISystemtradesearch
+	 */
 	public void systemtrade(ISystemtradesearch systemtradesearch);
 	
 }

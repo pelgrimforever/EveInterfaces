@@ -2,7 +2,7 @@
  * Routesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -26,8 +26,10 @@ import java.sql.Timestamp;
 public class Routesearch extends Tablesearch implements IRoutesearch {
 
     Stringsearch jsonroutes = new Stringsearch("route.jsonroutes");
+//foreign keys
     Foreignkeysearch routetypesearcher = new Foreignkeysearch("routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IRoute.systemPKfields, IRoute.systemFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -93,7 +95,7 @@ public class Routesearch extends Tablesearch implements IRoutesearch {
     }
     
     /**
-     * set subsearch routetype tablesearch
+     * set foreign key subsearch routetype IRoutetypesearch
      * @param routetypesearch: IRoutetypesearch
      */
     public void routetype(IRoutetypesearch routetypesearch) {
@@ -101,7 +103,7 @@ public class Routesearch extends Tablesearch implements IRoutesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch routetype IRoutetypesearch
      * @return Tablesearch for Route
      */
     public IRoutetypesearch getRoutetypesearch() {
@@ -122,7 +124,7 @@ public class Routesearch extends Tablesearch implements IRoutesearch {
     }
 
     /**
-     * set subsearch system tablesearch
+     * set foreign key subsearch system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void system(ISystemsearch systemsearch) {
@@ -130,7 +132,7 @@ public class Routesearch extends Tablesearch implements IRoutesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch system ISystemsearch
      * @return Tablesearch for Route
      */
     public ISystemsearch getSystemsearch() {

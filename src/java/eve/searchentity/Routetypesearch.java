@@ -2,7 +2,7 @@
  * Routetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -27,9 +27,13 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
 
     Numbersearch id = new Numbersearch("routetype.id");
     Stringsearch name = new Stringsearch("routetype.name");
+//foreign keys
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", IRoutetype.security_islandPKfields, IRoutetype.security_islandFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields);
-    Relationalkeysearch systemsearcher = new Relationalkeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields, "system", IRoute.systemPKfields, IRoute.systemFKfields);
+    //relational key
+    Relationalkeysearch relsystemsearcher = new Relationalkeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields, "system", IRoute.systemPKfields, IRoute.systemFKfields);
 
     /**
      * @return tablename
@@ -65,7 +69,7 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
         addFieldsearcher(name);
         addKeysearcher(security_islandsearcher);
         addKeysearcher(routesearcher);
-        addKeysearcher(systemsearcher);
+        addKeysearcher(relsystemsearcher);
     }
 
     /**
@@ -117,7 +121,7 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     }
     
     /**
-     * set subsearch security_island tablesearch
+     * set foreign key subsearch security_island ISecurity_islandsearch
      * @param security_islandsearch: ISecurity_islandsearch
      */
     public void security_island(ISecurity_islandsearch security_islandsearch) {
@@ -125,7 +129,7 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch security_island ISecurity_islandsearch
      * @return Tablesearch for Routetype
      */
     public ISecurity_islandsearch getSecurity_islandsearch() {
@@ -146,7 +150,7 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     }
 
     /**
-     * set subsearch route tablesearch
+     * set external key - foreign key subsearch IRoutesearch
      * @param routesearch: IRoutesearch
      */
     public void route(IRoutesearch routesearch) {
@@ -154,8 +158,8 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Routetype
+     * get external key - foreign key subsearch IRoutesearch
+     * @return Tablesearch for IRoutesearch
      */
     public IRoutesearch getRoutesearch() {
         if(routesearcher.used()) {
@@ -166,20 +170,20 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
     }
 
     /**
-     * set relational subsearch system tablesearch
+     * set external key - relational subsearch system tablesearch
      * @param systemsearch: ISystemsearch
      */
-    public void system(ISystemsearch systemsearch) {
-        systemsearcher.setTablesearch(systemsearch);
+    public void relsystem(ISystemsearch systemsearch) {
+        relsystemsearcher.setTablesearch(systemsearch);
     }
     
     /**
-     * 
-     * @return Tablesearch for Routetype
+     * get external key - relational subsearch ISystemsearch
+     * @return Tablesearch for ISystemsearch
      */
-    public ISystemsearch getSystemsearch() {
-        if(systemsearcher.used()) {
-            return (ISystemsearch)systemsearcher.getTablesearches().get(0);
+    public ISystemsearch getRelSystemsearch() {
+        if(relsystemsearcher.used()) {
+            return (ISystemsearch)relsystemsearcher.getTablesearches().get(0);
         } else {
             return null;
         }

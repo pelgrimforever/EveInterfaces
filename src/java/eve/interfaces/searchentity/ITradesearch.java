@@ -2,7 +2,7 @@
  * ITradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -179,15 +179,17 @@ public interface ITradesearch extends Tablesearcher {
 	public void maxunits_per_run(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch ordersSell_order_id tablesearch
-	* @param orderssearch: IOrderssearch
-	*/
+   * foreign key
+	 * set subsearch ordersSell_order_id tablesearch
+	 * @param orderssearch: IOrderssearch
+	 */
 	public void ordersSell_order_id(IOrderssearch orderssearch);
 	
 	/**
-	* set subsearch ordersBuy_order_id tablesearch
-	* @param orderssearch: IOrderssearch
-	*/
+   * foreign key
+	 * set subsearch ordersBuy_order_id tablesearch
+	 * @param orderssearch: IOrderssearch
+	 */
 	public void ordersBuy_order_id(IOrderssearch orderssearch);
 	
 }

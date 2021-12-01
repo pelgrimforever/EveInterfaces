@@ -2,7 +2,7 @@
  * Corporationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -37,9 +37,11 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     Numbersearch shares = new Numbersearch("corporation.shares");
     Stringsearch url = new Stringsearch("corporation.url");
     Booleansearch war_eligible = new Booleansearch("corporation.war_eligible");
+//foreign keys
     Foreignkeysearch stationsearcher = new Foreignkeysearch("station", ICorporation.stationPKfields, ICorporation.stationFKfields);
     Foreignkeysearch factionsearcher = new Foreignkeysearch("faction", ICorporation.factionPKfields, ICorporation.factionFKfields);
     Foreignkeysearch alliancesearcher = new Foreignkeysearch("alliance", ICorporation.alliancePKfields, ICorporation.allianceFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -325,7 +327,7 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     }
     
     /**
-     * set subsearch station tablesearch
+     * set foreign key subsearch station IStationsearch
      * @param stationsearch: IStationsearch
      */
     public void station(IStationsearch stationsearch) {
@@ -333,7 +335,7 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     }
     
     /**
-     * 
+     * get foreign key subsearch station IStationsearch
      * @return Tablesearch for Corporation
      */
     public IStationsearch getStationsearch() {
@@ -354,7 +356,7 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     }
 
     /**
-     * set subsearch faction tablesearch
+     * set foreign key subsearch faction IFactionsearch
      * @param factionsearch: IFactionsearch
      */
     public void faction(IFactionsearch factionsearch) {
@@ -362,7 +364,7 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     }
     
     /**
-     * 
+     * get foreign key subsearch faction IFactionsearch
      * @return Tablesearch for Corporation
      */
     public IFactionsearch getFactionsearch() {
@@ -383,7 +385,7 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     }
 
     /**
-     * set subsearch alliance tablesearch
+     * set foreign key subsearch alliance IAlliancesearch
      * @param alliancesearch: IAlliancesearch
      */
     public void alliance(IAlliancesearch alliancesearch) {
@@ -391,7 +393,7 @@ public class Corporationsearch extends Tablesearch implements ICorporationsearch
     }
     
     /**
-     * 
+     * get foreign key subsearch alliance IAlliancesearch
      * @return Tablesearch for Corporation
      */
     public IAlliancesearch getAlliancesearch() {

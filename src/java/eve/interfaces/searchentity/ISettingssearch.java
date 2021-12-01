@@ -2,7 +2,7 @@
  * ISettingssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -43,21 +43,21 @@ public interface ISettingssearch extends Tablesearcher {
 	public void name(String[] values, byte compare, byte andor);
 	
 	/**
-	 * add Numeric search values for field value, default OR operator is used
-	 * @param values: Array of numeric search values
-	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * add String search values for field value, default OR and LIKE operators are used
+	 * @param values: Array of String search values
 	 */
-	public void value(Double[] values, byte[] operators);
+	public void value(String[] values);
 	
 	/**
-	 * add Numeric search values for field value
+	 * add String search values for field value
 	 * @param values: Array of String search values
-	 * @param operators: Array of byte contants for comparison (= < <= > >=)
 	 * @param andor; AND/OR constant
+	 * @param compare: EQUAL/LIKE constant
 	 */
-	public void value(Double[] values, byte[] operators, byte andor);
+	public void value(String[] values, byte compare, byte andor);
 	
     /**
+     * external foreign key - foreign key
      * set subsearch usersettings tablesearch
      * @param usersettingssearch: IUsersettingssearch
      */

@@ -2,7 +2,7 @@
  * Stationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -32,9 +32,12 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     Numbersearch reprocessing_stations_take = new Numbersearch("station.reprocessing_stations_take");
     Numbersearch max_dockable_ship_volume = new Numbersearch("station.max_dockable_ship_volume");
     Numbersearch owner = new Numbersearch("station.owner");
+//foreign keys
     Foreignkeysearch racesearcher = new Foreignkeysearch("race", IStation.racePKfields, IStation.raceFKfields);
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IStation.evetypePKfields, IStation.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IStation.systemPKfields, IStation.systemFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch station_servicesearcher = new Primarykeysearch("station_service", IStation_service.stationPKfields, IStation_service.stationFKfields);
 
     /**
@@ -229,7 +232,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
     
     /**
-     * set subsearch race tablesearch
+     * set foreign key subsearch race IRacesearch
      * @param racesearch: IRacesearch
      */
     public void race(IRacesearch racesearch) {
@@ -237,7 +240,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch race IRacesearch
      * @return Tablesearch for Station
      */
     public IRacesearch getRacesearch() {
@@ -258,7 +261,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
 
     /**
-     * set subsearch evetype tablesearch
+     * set foreign key subsearch evetype IEvetypesearch
      * @param evetypesearch: IEvetypesearch
      */
     public void evetype(IEvetypesearch evetypesearch) {
@@ -266,7 +269,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch evetype IEvetypesearch
      * @return Tablesearch for Station
      */
     public IEvetypesearch getEvetypesearch() {
@@ -287,7 +290,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
 
     /**
-     * set subsearch system tablesearch
+     * set foreign key subsearch system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void system(ISystemsearch systemsearch) {
@@ -295,7 +298,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch system ISystemsearch
      * @return Tablesearch for Station
      */
     public ISystemsearch getSystemsearch() {
@@ -316,7 +319,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
 
     /**
-     * set subsearch station_service tablesearch
+     * set external key - foreign key subsearch IStation_servicesearch
      * @param station_servicesearch: IStation_servicesearch
      */
     public void station_service(IStation_servicesearch station_servicesearch) {
@@ -324,8 +327,8 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Station
+     * get external key - foreign key subsearch IStation_servicesearch
+     * @return Tablesearch for IStation_servicesearch
      */
     public IStation_servicesearch getStation_servicesearch() {
         if(station_servicesearcher.used()) {

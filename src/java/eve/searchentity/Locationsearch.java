@@ -2,7 +2,7 @@
  * Locationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -29,7 +29,9 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
     Stringsearch name = new Stringsearch("location.name");
     Booleansearch visited = new Booleansearch("location.visited");
     Booleansearch access = new Booleansearch("location.access");
+//foreign keys
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", ILocation.systemPKfields, ILocation.systemFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -133,7 +135,7 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
     }
     
     /**
-     * set subsearch system tablesearch
+     * set foreign key subsearch system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void system(ISystemsearch systemsearch) {
@@ -141,7 +143,7 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch system ISystemsearch
      * @return Tablesearch for Location
      */
     public ISystemsearch getSystemsearch() {

@@ -2,7 +2,7 @@
  * IFactionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -153,9 +153,10 @@ public interface IFactionsearch extends Tablesearcher {
 	public void militia_corporation(Double[] values, byte[] operators, byte andor);
 	
 	/**
-	* set subsearch system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void system(ISystemsearch systemsearch);
 	
 }

@@ -2,7 +2,7 @@
  * IView_stocktrade_system.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -78,6 +78,12 @@ public interface IView_stocktrade_system extends View {
     
 //Custom code, do not change this line
 //Put custom functions here
+    public long getStart_system();
 
+    public void setStart_system(long start_system);
+
+    public int getStart_system_jumps();
+
+    public void setStart_system_jumps(int start_system_jumps);
 //Custom code, do not change this line
 }

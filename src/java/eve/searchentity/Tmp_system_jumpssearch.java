@@ -2,7 +2,7 @@
  * Tmp_system_jumpssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -29,6 +29,8 @@ public class Tmp_system_jumpssearch extends Tablesearch implements ITmp_system_j
     Numbersearch jump = new Numbersearch("tmp_system_jumps.jump");
     Numbersearch maxjumps = new Numbersearch("tmp_system_jumps.maxjumps");
     Numbersearch previoussystem = new Numbersearch("tmp_system_jumps.previoussystem");
+//foreign keys
+//external foreign keys
 
     /**
      * @return tablename

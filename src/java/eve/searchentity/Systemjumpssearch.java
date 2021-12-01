@@ -2,7 +2,7 @@
  * Systemjumpssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -26,8 +26,10 @@ import java.sql.Timestamp;
 public class Systemjumpssearch extends Tablesearch implements ISystemjumpssearch {
 
     Numbersearch jumps = new Numbersearch("systemjumps.jumps");
+//foreign keys
     Foreignkeysearch systemSystem_endsearcher = new Foreignkeysearch("system", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
     Foreignkeysearch systemSystem_startsearcher = new Foreignkeysearch("system", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -93,7 +95,7 @@ public class Systemjumpssearch extends Tablesearch implements ISystemjumpssearch
     }
     
     /**
-     * set subsearch systemSystem_end tablesearch
+     * set foreign key subsearch systemSystem_end ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void systemSystem_end(ISystemsearch systemsearch) {
@@ -101,7 +103,7 @@ public class Systemjumpssearch extends Tablesearch implements ISystemjumpssearch
     }
     
     /**
-     * 
+     * get foreign key subsearch systemSystem_end ISystemsearch
      * @return Tablesearch for Systemjumps
      */
     public ISystemsearch getSystemsystem_endsearch() {
@@ -122,7 +124,7 @@ public class Systemjumpssearch extends Tablesearch implements ISystemjumpssearch
     }
 
     /**
-     * set subsearch systemSystem_start tablesearch
+     * set foreign key subsearch systemSystem_start ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void systemSystem_start(ISystemsearch systemsearch) {
@@ -130,7 +132,7 @@ public class Systemjumpssearch extends Tablesearch implements ISystemjumpssearch
     }
     
     /**
-     * 
+     * get foreign key subsearch systemSystem_start ISystemsearch
      * @return Tablesearch for Systemjumps
      */
     public ISystemsearch getSystemsystem_startsearch() {

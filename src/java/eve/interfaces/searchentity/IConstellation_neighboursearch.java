@@ -2,7 +2,7 @@
  * IConstellation_neighboursearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -29,15 +29,17 @@ public interface IConstellation_neighboursearch extends Tablesearcher {
     public void addPrimarykey(IConstellation_neighbourPK constellation_neighbourPK);
 
 	/**
-	* set subsearch constellationNeighbour tablesearch
-	* @param constellationsearch: IConstellationsearch
-	*/
+   * foreign key
+	 * set subsearch constellationNeighbour tablesearch
+	 * @param constellationsearch: IConstellationsearch
+	 */
 	public void constellationNeighbour(IConstellationsearch constellationsearch);
 	
 	/**
-	* set subsearch constellationConstellation tablesearch
-	* @param constellationsearch: IConstellationsearch
-	*/
+   * foreign key
+	 * set subsearch constellationConstellation tablesearch
+	 * @param constellationsearch: IConstellationsearch
+	 */
 	public void constellationConstellation(IConstellationsearch constellationsearch);
 	
 }

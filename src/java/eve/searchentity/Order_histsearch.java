@@ -2,7 +2,7 @@
  * Order_histsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -37,8 +37,10 @@ public class Order_histsearch extends Tablesearch implements IOrder_histsearch {
     Booleansearch is_buy_order = new Booleansearch("order_hist.is_buy_order");
     Timesearch issued = new Timesearch("order_hist.issued");
     Numbersearch duration = new Numbersearch("order_hist.duration");
+//foreign keys
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IOrder_hist.evetypePKfields, IOrder_hist.evetypeFKfields);
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", IOrder_hist.systemPKfields, IOrder_hist.systemFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -311,7 +313,7 @@ public class Order_histsearch extends Tablesearch implements IOrder_histsearch {
     }
     
     /**
-     * set subsearch evetype tablesearch
+     * set foreign key subsearch evetype IEvetypesearch
      * @param evetypesearch: IEvetypesearch
      */
     public void evetype(IEvetypesearch evetypesearch) {
@@ -319,7 +321,7 @@ public class Order_histsearch extends Tablesearch implements IOrder_histsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch evetype IEvetypesearch
      * @return Tablesearch for Order_hist
      */
     public IEvetypesearch getEvetypesearch() {
@@ -340,7 +342,7 @@ public class Order_histsearch extends Tablesearch implements IOrder_histsearch {
     }
 
     /**
-     * set subsearch system tablesearch
+     * set foreign key subsearch system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void system(ISystemsearch systemsearch) {
@@ -348,7 +350,7 @@ public class Order_histsearch extends Tablesearch implements IOrder_histsearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch system ISystemsearch
      * @return Tablesearch for Order_hist
      */
     public ISystemsearch getSystemsearch() {

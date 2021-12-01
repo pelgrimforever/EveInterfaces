@@ -2,7 +2,7 @@
  * Systemtrade_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -30,9 +30,11 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     Numbersearch buyprice = new Numbersearch("systemtrade_order.buyprice");
     Numbersearch profit = new Numbersearch("systemtrade_order.profit");
     Numbersearch cargovolume = new Numbersearch("systemtrade_order.cargovolume");
+//foreign keys
     Foreignkeysearch ordersBuy_ordersearcher = new Foreignkeysearch("orders", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields);
     Foreignkeysearch ordersSell_ordersearcher = new Foreignkeysearch("orders", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields);
     Foreignkeysearch systemtradesearcher = new Foreignkeysearch("systemtrade", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -183,7 +185,7 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     }
     
     /**
-     * set subsearch ordersBuy_order tablesearch
+     * set foreign key subsearch ordersBuy_order IOrderssearch
      * @param orderssearch: IOrderssearch
      */
     public void ordersBuy_order(IOrderssearch orderssearch) {
@@ -191,7 +193,7 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     }
     
     /**
-     * 
+     * get foreign key subsearch ordersBuy_order IOrderssearch
      * @return Tablesearch for Systemtrade_order
      */
     public IOrderssearch getOrdersbuy_ordersearch() {
@@ -212,7 +214,7 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     }
 
     /**
-     * set subsearch ordersSell_order tablesearch
+     * set foreign key subsearch ordersSell_order IOrderssearch
      * @param orderssearch: IOrderssearch
      */
     public void ordersSell_order(IOrderssearch orderssearch) {
@@ -220,7 +222,7 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     }
     
     /**
-     * 
+     * get foreign key subsearch ordersSell_order IOrderssearch
      * @return Tablesearch for Systemtrade_order
      */
     public IOrderssearch getOrderssell_ordersearch() {
@@ -241,7 +243,7 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     }
 
     /**
-     * set subsearch systemtrade tablesearch
+     * set foreign key subsearch systemtrade ISystemtradesearch
      * @param systemtradesearch: ISystemtradesearch
      */
     public void systemtrade(ISystemtradesearch systemtradesearch) {
@@ -249,7 +251,7 @@ public class Systemtrade_ordersearch extends Tablesearch implements ISystemtrade
     }
     
     /**
-     * 
+     * get foreign key subsearch systemtrade ISystemtradesearch
      * @return Tablesearch for Systemtrade_order
      */
     public ISystemtradesearch getSystemtradesearch() {

@@ -2,7 +2,7 @@
  * WSIOrders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -45,6 +45,10 @@ public interface WSIOrders {
     @WebMethod String getOrderss4systemtrade_orderBuy_order(String json);
 
     @WebMethod String getOrderss4systemtrade_orderSell_order(String json);
+
+    @WebMethod String getOrderss4tradecombined_sellBuy_order_id(String json);
+
+    @WebMethod String getOrderss4tradecombined_sellSell_order_id(String json);
 
     @WebMethod String getOrderss4tradeSell_order_id(String json);
 

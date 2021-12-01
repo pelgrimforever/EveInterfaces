@@ -2,7 +2,7 @@
  * IRegion_neighboursearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -29,15 +29,17 @@ public interface IRegion_neighboursearch extends Tablesearcher {
     public void addPrimarykey(IRegion_neighbourPK region_neighbourPK);
 
 	/**
-	* set subsearch regionRegion tablesearch
-	* @param regionsearch: IRegionsearch
-	*/
+   * foreign key
+	 * set subsearch regionRegion tablesearch
+	 * @param regionsearch: IRegionsearch
+	 */
 	public void regionRegion(IRegionsearch regionsearch);
 	
 	/**
-	* set subsearch regionNeighbour tablesearch
-	* @param regionsearch: IRegionsearch
-	*/
+   * foreign key
+	 * set subsearch regionNeighbour tablesearch
+	 * @param regionsearch: IRegionsearch
+	 */
 	public void regionNeighbour(IRegionsearch regionsearch);
 	
 }

@@ -2,7 +2,7 @@
  * ITypegroupsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -64,9 +64,10 @@ public interface ITypegroupsearch extends Tablesearcher {
 	public void published(Boolean value);
 	
 	/**
-	* set subsearch category tablesearch
-	* @param categorysearch: ICategorysearch
-	*/
+   * foreign key
+	 * set subsearch category tablesearch
+	 * @param categorysearch: ICategorysearch
+	 */
 	public void category(ICategorysearch categorysearch);
 	
 }

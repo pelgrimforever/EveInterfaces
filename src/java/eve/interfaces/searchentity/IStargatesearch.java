@@ -2,7 +2,7 @@
  * IStargatesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -130,15 +130,17 @@ public interface IStargatesearch extends Tablesearcher {
 	public void isregionborder(Boolean value);
 	
 	/**
-	* set subsearch systemSystem tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch systemSystem tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void systemSystem(ISystemsearch systemsearch);
 	
 	/**
-	* set subsearch systemTo_system tablesearch
-	* @param systemsearch: ISystemsearch
-	*/
+   * foreign key
+	 * set subsearch systemTo_system tablesearch
+	 * @param systemsearch: ISystemsearch
+	 */
 	public void systemTo_system(ISystemsearch systemsearch);
 	
 }

@@ -2,7 +2,7 @@
  * IRacesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -72,9 +72,10 @@ public interface IRacesearch extends Tablesearcher {
 	public void description(String[] values, byte compare, byte andor);
 	
 	/**
-	* set subsearch faction tablesearch
-	* @param factionsearch: IFactionsearch
-	*/
+   * foreign key
+	 * set subsearch faction tablesearch
+	 * @param factionsearch: IFactionsearch
+	 */
 	public void faction(IFactionsearch factionsearch);
 	
 }

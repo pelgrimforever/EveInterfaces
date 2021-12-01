@@ -2,7 +2,7 @@
  * Systemtradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -28,11 +28,16 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     Numbersearch profit = new Numbersearch("systemtrade.profit");
     Numbersearch total_cargo_volume = new Numbersearch("systemtrade.total_cargo_volume");
     Numbersearch jumps = new Numbersearch("systemtrade.jumps");
+//foreign keys
     Foreignkeysearch systemSell_systemsearcher = new Foreignkeysearch("system", ISystemtrade.systemSell_systemPKfields, ISystemtrade.systemSell_systemFKfields);
     Foreignkeysearch systemBuy_systemsearcher = new Foreignkeysearch("system", ISystemtrade.systemBuy_systemPKfields, ISystemtrade.systemBuy_systemFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch systemtrade_ordersearcher = new Primarykeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields);
-    Relationalkeysearch orders1searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields, "orders", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields);
-    Relationalkeysearch orders2searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields, "orders", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields);
+    //relational key
+    Relationalkeysearch relorders1searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields, "orders", ISystemtrade_order.ordersBuy_orderPKfields, ISystemtrade_order.ordersBuy_orderFKfields);
+    //relational key
+    Relationalkeysearch relorders2searcher = new Relationalkeysearch("systemtrade_order", ISystemtrade_order.systemtradePKfields, ISystemtrade_order.systemtradeFKfields, "orders", ISystemtrade_order.ordersSell_orderPKfields, ISystemtrade_order.ordersSell_orderFKfields);
 
     /**
      * @return tablename
@@ -70,8 +75,8 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
         addKeysearcher(systemSell_systemsearcher);
         addKeysearcher(systemBuy_systemsearcher);
         addKeysearcher(systemtrade_ordersearcher);
-        addKeysearcher(orders1searcher);
-        addKeysearcher(orders2searcher);
+        addKeysearcher(relorders1searcher);
+        addKeysearcher(relorders2searcher);
     }
 
     /**
@@ -143,7 +148,7 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
     
     /**
-     * set subsearch systemSell_system tablesearch
+     * set foreign key subsearch systemSell_system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void systemSell_system(ISystemsearch systemsearch) {
@@ -151,7 +156,7 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
     
     /**
-     * 
+     * get foreign key subsearch systemSell_system ISystemsearch
      * @return Tablesearch for Systemtrade
      */
     public ISystemsearch getSystemsell_systemsearch() {
@@ -172,7 +177,7 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
 
     /**
-     * set subsearch systemBuy_system tablesearch
+     * set foreign key subsearch systemBuy_system ISystemsearch
      * @param systemsearch: ISystemsearch
      */
     public void systemBuy_system(ISystemsearch systemsearch) {
@@ -180,7 +185,7 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
     
     /**
-     * 
+     * get foreign key subsearch systemBuy_system ISystemsearch
      * @return Tablesearch for Systemtrade
      */
     public ISystemsearch getSystembuy_systemsearch() {
@@ -201,7 +206,7 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
 
     /**
-     * set subsearch systemtrade_order tablesearch
+     * set external key - foreign key subsearch ISystemtrade_ordersearch
      * @param systemtrade_ordersearch: ISystemtrade_ordersearch
      */
     public void systemtrade_order(ISystemtrade_ordersearch systemtrade_ordersearch) {
@@ -209,8 +214,8 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
     
     /**
-     * 
-     * @return Tablesearch for Systemtrade
+     * get external key - foreign key subsearch ISystemtrade_ordersearch
+     * @return Tablesearch for ISystemtrade_ordersearch
      */
     public ISystemtrade_ordersearch getSystemtrade_ordersearch() {
         if(systemtrade_ordersearcher.used()) {
@@ -221,40 +226,40 @@ public class Systemtradesearch extends Tablesearch implements ISystemtradesearch
     }
 
     /**
-     * set relational subsearch orders tablesearch
+     * set external key - relational subsearch orders tablesearch
      * @param orderssearch: IOrderssearch
      */
-    public void orders1(IOrderssearch orderssearch) {
-        orders1searcher.setTablesearch(orderssearch);
+    public void relorders1(IOrderssearch orderssearch) {
+        relorders1searcher.setTablesearch(orderssearch);
     }
     
     /**
-     * 
-     * @return Tablesearch for Systemtrade
+     * get external key - relational subsearch IOrderssearch
+     * @return Tablesearch for IOrderssearch
      */
-    public IOrderssearch getOrders1search() {
-        if(orders1searcher.used()) {
-            return (IOrderssearch)orders1searcher.getTablesearches().get(0);
+    public IOrderssearch getRelOrders1search() {
+        if(relorders1searcher.used()) {
+            return (IOrderssearch)relorders1searcher.getTablesearches().get(0);
         } else {
             return null;
         }
     }
 
     /**
-     * set relational subsearch orders tablesearch
+     * set external key - relational subsearch orders tablesearch
      * @param orderssearch: IOrderssearch
      */
-    public void orders2(IOrderssearch orderssearch) {
-        orders2searcher.setTablesearch(orderssearch);
+    public void relorders2(IOrderssearch orderssearch) {
+        relorders2searcher.setTablesearch(orderssearch);
     }
     
     /**
-     * 
-     * @return Tablesearch for Systemtrade
+     * get external key - relational subsearch IOrderssearch
+     * @return Tablesearch for IOrderssearch
      */
-    public IOrderssearch getOrders2search() {
-        if(orders2searcher.used()) {
-            return (IOrderssearch)orders2searcher.getTablesearches().get(0);
+    public IOrderssearch getRelOrders2search() {
+        if(relorders2searcher.used()) {
+            return (IOrderssearch)relorders2searcher.getTablesearches().get(0);
         } else {
             return null;
         }

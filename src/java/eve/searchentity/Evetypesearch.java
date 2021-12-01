@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -42,12 +42,23 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Numbersearch max_buyorder = new Numbersearch("evetype.max_buyorder");
     Numbersearch min_selorder = new Numbersearch("evetype.min_selorder");
     Numbersearch max_selorder = new Numbersearch("evetype.max_selorder");
+//foreign keys
     Foreignkeysearch market_groupsearcher = new Foreignkeysearch("market_group", IEvetype.market_groupPKfields, IEvetype.market_groupFKfields);
     Foreignkeysearch typegroupsearcher = new Foreignkeysearch("typegroup", IEvetype.typegroupPKfields, IEvetype.typegroupFKfields);
     Foreignkeysearch graphicsearcher = new Foreignkeysearch("graphic", IEvetype.graphicPKfields, IEvetype.graphicFKfields);
+//external foreign keys
+    //foreign key
     Primarykeysearch stocksearcher = new Primarykeysearch("stock", IStock.evetypePKfields, IStock.evetypeFKfields);
+    //foreign key
     Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
-    Relationalkeysearch regionsearcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+    //relational key
+    Relationalkeysearch relregionsearcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+    //foreign key
+    Primarykeysearch tradecombinedsearcher = new Primarykeysearch("tradecombined", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields);
+    //relational key
+    Relationalkeysearch relsystem1searcher = new Relationalkeysearch("tradecombined", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields, "system", ITradecombined.systemBuy_systemPKfields, ITradecombined.systemBuy_systemFKfields);
+    //relational key
+    Relationalkeysearch relsystem2searcher = new Relationalkeysearch("tradecombined", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields, "system", ITradecombined.systemSell_systemPKfields, ITradecombined.systemSell_systemFKfields);
 
     /**
      * @return tablename
@@ -101,7 +112,10 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addKeysearcher(graphicsearcher);
         addKeysearcher(stocksearcher);
         addKeysearcher(order_historysearcher);
-        addKeysearcher(regionsearcher);
+        addKeysearcher(relregionsearcher);
+        addKeysearcher(tradecombinedsearcher);
+        addKeysearcher(relsystem1searcher);
+        addKeysearcher(relsystem2searcher);
     }
 
     /**
@@ -441,7 +455,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
-     * set subsearch market_group tablesearch
+     * set foreign key subsearch market_group IMarket_groupsearch
      * @param market_groupsearch: IMarket_groupsearch
      */
     public void market_group(IMarket_groupsearch market_groupsearch) {
@@ -449,7 +463,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch market_group IMarket_groupsearch
      * @return Tablesearch for Evetype
      */
     public IMarket_groupsearch getMarket_groupsearch() {
@@ -470,7 +484,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
 
     /**
-     * set subsearch typegroup tablesearch
+     * set foreign key subsearch typegroup ITypegroupsearch
      * @param typegroupsearch: ITypegroupsearch
      */
     public void typegroup(ITypegroupsearch typegroupsearch) {
@@ -478,7 +492,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch typegroup ITypegroupsearch
      * @return Tablesearch for Evetype
      */
     public ITypegroupsearch getTypegroupsearch() {
@@ -499,7 +513,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
 
     /**
-     * set subsearch graphic tablesearch
+     * set foreign key subsearch graphic IGraphicsearch
      * @param graphicsearch: IGraphicsearch
      */
     public void graphic(IGraphicsearch graphicsearch) {
@@ -507,7 +521,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
-     * 
+     * get foreign key subsearch graphic IGraphicsearch
      * @return Tablesearch for Evetype
      */
     public IGraphicsearch getGraphicsearch() {
@@ -528,7 +542,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
 
     /**
-     * set subsearch stock tablesearch
+     * set external key - foreign key subsearch IStocksearch
      * @param stocksearch: IStocksearch
      */
     public void stock(IStocksearch stocksearch) {
@@ -536,8 +550,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Evetype
+     * get external key - foreign key subsearch IStocksearch
+     * @return Tablesearch for IStocksearch
      */
     public IStocksearch getStocksearch() {
         if(stocksearcher.used()) {
@@ -548,7 +562,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
 
     /**
-     * set subsearch order_history tablesearch
+     * set external key - foreign key subsearch IOrder_historysearch
      * @param order_historysearch: IOrder_historysearch
      */
     public void order_history(IOrder_historysearch order_historysearch) {
@@ -556,8 +570,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
     
     /**
-     * 
-     * @return Tablesearch for Evetype
+     * get external key - foreign key subsearch IOrder_historysearch
+     * @return Tablesearch for IOrder_historysearch
      */
     public IOrder_historysearch getOrder_historysearch() {
         if(order_historysearcher.used()) {
@@ -568,20 +582,80 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
 
     /**
-     * set relational subsearch region tablesearch
+     * set external key - relational subsearch region tablesearch
      * @param regionsearch: IRegionsearch
      */
-    public void region(IRegionsearch regionsearch) {
-        regionsearcher.setTablesearch(regionsearch);
+    public void relregion(IRegionsearch regionsearch) {
+        relregionsearcher.setTablesearch(regionsearch);
     }
     
     /**
-     * 
-     * @return Tablesearch for Evetype
+     * get external key - relational subsearch IRegionsearch
+     * @return Tablesearch for IRegionsearch
      */
-    public IRegionsearch getRegionsearch() {
-        if(regionsearcher.used()) {
-            return (IRegionsearch)regionsearcher.getTablesearches().get(0);
+    public IRegionsearch getRelRegionsearch() {
+        if(relregionsearcher.used()) {
+            return (IRegionsearch)relregionsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch ITradecombinedsearch
+     * @param tradecombinedsearch: ITradecombinedsearch
+     */
+    public void tradecombined(ITradecombinedsearch tradecombinedsearch) {
+        tradecombinedsearcher.setTablesearch(tradecombinedsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch ITradecombinedsearch
+     * @return Tablesearch for ITradecombinedsearch
+     */
+    public ITradecombinedsearch getTradecombinedsearch() {
+        if(tradecombinedsearcher.used()) {
+            return (ITradecombinedsearch)tradecombinedsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch system tablesearch
+     * @param systemsearch: ISystemsearch
+     */
+    public void relsystem1(ISystemsearch systemsearch) {
+        relsystem1searcher.setTablesearch(systemsearch);
+    }
+    
+    /**
+     * get external key - relational subsearch ISystemsearch
+     * @return Tablesearch for ISystemsearch
+     */
+    public ISystemsearch getRelSystem1search() {
+        if(relsystem1searcher.used()) {
+            return (ISystemsearch)relsystem1searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch system tablesearch
+     * @param systemsearch: ISystemsearch
+     */
+    public void relsystem2(ISystemsearch systemsearch) {
+        relsystem2searcher.setTablesearch(systemsearch);
+    }
+    
+    /**
+     * get external key - relational subsearch ISystemsearch
+     * @return Tablesearch for ISystemsearch
+     */
+    public ISystemsearch getRelSystem2search() {
+        if(relsystem2searcher.used()) {
+            return (ISystemsearch)relsystem2searcher.getTablesearches().get(0);
         } else {
             return null;
         }

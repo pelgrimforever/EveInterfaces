@@ -2,7 +2,7 @@
  * Station_servicesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 8.10.2021 7:21
+ * Generated on 30.10.2021 10:3
  *
  */
 
@@ -26,7 +26,9 @@ import java.sql.Timestamp;
 public class Station_servicesearch extends Tablesearch implements IStation_servicesearch {
 
     Stringsearch service = new Stringsearch("station_service.service");
+//foreign keys
     Foreignkeysearch stationsearcher = new Foreignkeysearch("station", IStation_service.stationPKfields, IStation_service.stationFKfields);
+//external foreign keys
 
     /**
      * @return tablename
@@ -91,7 +93,7 @@ public class Station_servicesearch extends Tablesearch implements IStation_servi
     }
     
     /**
-     * set subsearch station tablesearch
+     * set foreign key subsearch station IStationsearch
      * @param stationsearch: IStationsearch
      */
     public void station(IStationsearch stationsearch) {
@@ -99,7 +101,7 @@ public class Station_servicesearch extends Tablesearch implements IStation_servi
     }
     
     /**
-     * 
+     * get foreign key subsearch station IStationsearch
      * @return Tablesearch for Station_service
      */
     public IStationsearch getStationsearch() {
