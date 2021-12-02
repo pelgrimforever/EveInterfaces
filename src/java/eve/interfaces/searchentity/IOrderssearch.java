@@ -2,7 +2,7 @@
  * IOrderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 30.10.2021 10:3
+ * Generated on 2.11.2021 18:45
  *
  */
 
@@ -218,34 +218,6 @@ public interface IOrderssearch extends Tablesearcher {
 	 */
 	public void system(ISystemsearch systemsearch);
 	
-    /**
-     * external foreign key - foreign key
-     * set subsearch systemtrade_order tablesearch
-     * @param systemtrade_ordersearch: ISystemtrade_ordersearch
-     */
-    public void systemtrade_orderBuy_order(ISystemtrade_ordersearch systemtrade_ordersearch);
-    
-    /**
-     * external foreign key - relational key
-     * set relational subsearch systemtrade tablesearch
-     * @param systemtradesearch: ISystemtradesearch
-     */
-    public void relsystemtrade1(ISystemtradesearch systemtradesearch);
-    
-    /**
-     * external foreign key - foreign key
-     * set subsearch systemtrade_order tablesearch
-     * @param systemtrade_ordersearch: ISystemtrade_ordersearch
-     */
-    public void systemtrade_orderSell_order(ISystemtrade_ordersearch systemtrade_ordersearch);
-    
-    /**
-     * external foreign key - relational key
-     * set relational subsearch systemtrade tablesearch
-     * @param systemtradesearch: ISystemtradesearch
-     */
-    public void relsystemtrade2(ISystemtradesearch systemtradesearch);
-    
     /**
      * external foreign key - foreign key
      * set subsearch tradecombined_sell tablesearch

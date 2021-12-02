@@ -2,7 +2,7 @@
  * ISystemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 30.10.2021 10:3
+ * Generated on 2.11.2021 18:45
  *
  */
 
@@ -160,20 +160,6 @@ public interface ISystemsearch extends Tablesearcher {
      * @param routetypesearch: IRoutetypesearch
      */
     public void relroutetype(IRoutetypesearch routetypesearch);
-    
-    /**
-     * external foreign key - foreign key
-     * set subsearch systemtrade tablesearch
-     * @param systemtradesearch: ISystemtradesearch
-     */
-    public void systemtradeSell_system(ISystemtradesearch systemtradesearch);
-    
-    /**
-     * external foreign key - foreign key
-     * set subsearch systemtrade tablesearch
-     * @param systemtradesearch: ISystemtradesearch
-     */
-    public void systemtradeBuy_system(ISystemtradesearch systemtradesearch);
     
     /**
      * external foreign key - foreign key
