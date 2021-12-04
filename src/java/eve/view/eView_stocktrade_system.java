@@ -2,7 +2,7 @@
  * eView_stocktrade_system.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 30.10.2021 10:3
+ * Generated on 4.11.2021 14:51
  *
  */
 
@@ -33,6 +33,7 @@ public class eView_stocktrade_system implements eveDatabaseproperties, EntityVie
     private java.lang.String username;
     private long id;
     private java.lang.String name;
+    private java.lang.String region;
     private double sellprice;
     private double totalvolume;
 	  
@@ -124,6 +125,22 @@ public class eView_stocktrade_system implements eveDatabaseproperties, EntityVie
      */
     public void setName(java.lang.String name) {
         this.name = name;
+    }
+
+    /**
+     * 
+     * @return region value
+     */
+    public java.lang.String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * set region value
+     * @param region: new value
+     */
+    public void setRegion(java.lang.String region) {
+        this.region = region;
     }
 
     /**

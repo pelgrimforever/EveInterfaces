@@ -2,7 +2,7 @@
  * IView_stocktrade_system.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 30.10.2021 10:3
+ * Generated on 4.11.2021 14:51
  *
  */
 
@@ -31,15 +31,17 @@ public interface IView_stocktrade_system extends View {
     public static byte USERNAME = 1;
     public static byte ID = 2;
     public static byte NAME = 3;
-    public static byte SELLPRICE = 4;
-    public static byte TOTALVOLUME = 5;
+    public static byte REGION = 4;
+    public static byte SELLPRICE = 5;
+    public static byte TOTALVOLUME = 6;
 
     public static final int SIZE_USERNAME = 20;
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 30;
+    public static final int SIZE_REGION = 30;
     public static final int SIZE_SELLPRICE = 17;
     public static final int SIZE_TOTALVOLUME = 17;
-    public static final String[] fieldnames = { "username", "id", "name", "sellprice", "totalvolume" };
+    public static final String[] fieldnames = { "username", "id", "name", "region", "sellprice", "totalvolume" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -62,6 +64,12 @@ public interface IView_stocktrade_system extends View {
      * @return name value
      */
     public java.lang.String getName();
+
+    /**
+     * 
+     * @return region value
+     */
+    public java.lang.String getRegion();
 
     /**
      * 

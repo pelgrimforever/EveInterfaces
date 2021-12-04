@@ -2,7 +2,7 @@
  * IView_stocktrade_systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 30.10.2021 10:3
+ * Generated on 4.11.2021 14:51
  *
  */
 
@@ -63,6 +63,20 @@ public interface IView_stocktrade_systemsearch extends Tablesearcher {
 	 * @param compare: EQUAL/LIKE constant
 	 */
 	public void name(String[] values, byte compare, byte andor);
+	
+	/**
+	 * add String search values for field region, default OR and LIKE operators are used
+	 * @param values: Array of String search values
+	 */
+	public void region(String[] values);
+	
+	/**
+	 * add String search values for field region
+	 * @param values: Array of String search values
+	 * @param andor; AND/OR constant
+	 * @param compare: EQUAL/LIKE constant
+	 */
+	public void region(String[] values, byte compare, byte andor);
 	
 	/**
 	 * add Numeric search values for field sellprice, default OR operator is used

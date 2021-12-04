@@ -2,7 +2,7 @@
  * View_stocktrade_systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 30.10.2021 10:3
+ * Generated on 4.11.2021 14:51
  *
  */
 
@@ -27,6 +27,7 @@ public class View_stocktrade_systemsearch extends Tablesearch implements IView_s
     Stringsearch username = new Stringsearch("view_stocktrade_system.username");
     Numbersearch id = new Numbersearch("view_stocktrade_system.id");
     Stringsearch name = new Stringsearch("view_stocktrade_system.name");
+    Stringsearch region = new Stringsearch("view_stocktrade_system.region");
     Numbersearch sellprice = new Numbersearch("view_stocktrade_system.sellprice");
     Numbersearch totalvolume = new Numbersearch("view_stocktrade_system.totalvolume");
 
@@ -63,6 +64,7 @@ public class View_stocktrade_systemsearch extends Tablesearch implements IView_s
         addFieldsearcher(username);
         addFieldsearcher(id);
         addFieldsearcher(name);
+        addFieldsearcher(region);
         addFieldsearcher(sellprice);
         addFieldsearcher(totalvolume);
     }
@@ -125,6 +127,26 @@ public class View_stocktrade_systemsearch extends Tablesearch implements IView_s
         addStringvalues(name, values);
         name.setCompareoperator(compare);
         name.setAndoroperator(andor);
+    }
+    
+    /**
+     * add String search values for field region, default OR and LIKE operators are used
+     * @param values: Array of String search values
+     */
+    public void region(String[] values) {
+        addStringvalues(region, values);
+    }
+    
+    /**
+     * add String search values for field region
+     * @param values: Array of String search values
+     * @param andor; AND/OR constant
+     * @param compare: EQUAL/LIKE constant
+     */
+    public void region(String[] values, byte compare, byte andor) {
+        addStringvalues(region, values);
+        region.setCompareoperator(compare);
+        region.setAndoroperator(andor);
     }
     
     /**
