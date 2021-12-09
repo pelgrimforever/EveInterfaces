@@ -2,7 +2,7 @@
  * IView_tradeorders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -46,6 +46,8 @@ public interface IView_tradeorders extends View {
     public static byte BUY_VOLUME_REMAIN = 16;
     public static byte BUY_PRICE = 17;
     public static byte JUMPS = 18;
+    public static byte JUMPSLOWSEC = 19;
+    public static byte JUMPSNULLSEC = 20;
 
     public static final int SIZE_TRADEVOLUME = 19;
     public static final int SIZE_BUY_TOTALPRICE = 17;
@@ -65,7 +67,9 @@ public interface IView_tradeorders extends View {
     public static final int SIZE_BUY_VOLUME_REMAIN = 19;
     public static final int SIZE_BUY_PRICE = 17;
     public static final int SIZE_JUMPS = 10;
-    public static final String[] fieldnames = { "tradevolume", "buy_totalprice", "sell_totalprice", "cargo_volume", "sell_id", "sell_system", "sell_location", "sell_evetype", "sell_packaged_volume", "sell_volume_remain", "sell_price", "security_island", "buy_id", "buy_system", "buy_location", "buy_volume_remain", "buy_price", "jumps" };
+    public static final int SIZE_JUMPSLOWSEC = 10;
+    public static final int SIZE_JUMPSNULLSEC = 10;
+    public static final String[] fieldnames = { "tradevolume", "buy_totalprice", "sell_totalprice", "cargo_volume", "sell_id", "sell_system", "sell_location", "sell_evetype", "sell_packaged_volume", "sell_volume_remain", "sell_price", "security_island", "buy_id", "buy_system", "buy_location", "buy_volume_remain", "buy_price", "jumps", "jumpslowsec", "jumpsnullsec" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -178,6 +182,18 @@ public interface IView_tradeorders extends View {
      * @return jumps value
      */
     public int getJumps();
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec();
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec();
 
     
 //Custom code, do not change this line

@@ -2,7 +2,7 @@
  * ISystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -43,6 +43,7 @@ public interface ISystem extends LogicEntity {
     public static short ISCONSTELLATIONBORDER = 8;
     public static short ISREGIONBORDER = 9;
     public static short SECURITY_ISLAND = 10;
+    public static short DOWNLOADDATE = 11;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 30;
@@ -54,8 +55,9 @@ public interface ISystem extends LogicEntity {
     public static final int SIZE_ISCONSTELLATIONBORDER = 1;
     public static final int SIZE_ISREGIONBORDER = 1;
     public static final int SIZE_SECURITY_ISLAND = 19;
-    public static final String[] fieldnames = { "id", "name", "constellation", "security_class", "security_status", "star_id", "noaccess", "isconstellationborder", "isregionborder", "security_island" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_long, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_boolean, Datatypes.type_boolean, Datatypes.type_long };
+    public static final int SIZE_DOWNLOADDATE = 13;
+    public static final String[] fieldnames = { "id", "name", "constellation", "security_class", "security_status", "star_id", "noaccess", "isconstellationborder", "isregionborder", "security_island", "downloaddate" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_long, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_boolean, Datatypes.type_boolean, Datatypes.type_long, Datatypes.type_Date };
 
     public static final String[] security_islandPKfields = { "security_island.id" };
     public static final String[] security_islandFKfields = { "system.security_island" };
@@ -149,6 +151,18 @@ public interface ISystem extends LogicEntity {
      * @param isregionborder: new value
      */
     public void setIsregionborder(boolean isregionborder);
+
+    /**
+     * 
+     * @return downloaddate value
+     */
+    public java.sql.Date getDownloaddate();
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void setDownloaddate(java.sql.Date downloaddate);
 
     /**
      * 

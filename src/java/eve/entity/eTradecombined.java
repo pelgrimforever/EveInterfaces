@@ -2,7 +2,7 @@
  * eTradecombined.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -39,6 +39,8 @@ public class eTradecombined extends AbstractEntity implements eveDatabasepropert
 
     protected TradecombinedPK tradecombinedPK;
     private int jumps;
+    private int jumpslowsec;
+    private int jumpsnullsec;
 	  
     public static final String table = "tradecombined";
 	  
@@ -134,6 +136,8 @@ public class eTradecombined extends AbstractEntity implements eveDatabasepropert
     @Override
     public Entityvalues getAll() {
         updates.put(ITradecombined.JUMPS, jumps);
+        updates.put(ITradecombined.JUMPSLOWSEC, jumpslowsec);
+        updates.put(ITradecombined.JUMPSNULLSEC, jumpsnullsec);
         return getAllFields();
     }
 	
@@ -176,6 +180,56 @@ public class eTradecombined extends AbstractEntity implements eveDatabasepropert
     public void setJumps(int jumps) {
         updates.put(ITradecombined.JUMPS, jumps);
         this.jumps = jumps;
+    }
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec() {
+        return this.jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void initJumpslowsec(int jumpslowsec) {
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void setJumpslowsec(int jumpslowsec) {
+        updates.put(ITradecombined.JUMPSLOWSEC, jumpslowsec);
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec() {
+        return this.jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void initJumpsnullsec(int jumpsnullsec) {
+        this.jumpsnullsec = jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void setJumpsnullsec(int jumpsnullsec) {
+        updates.put(ITradecombined.JUMPSNULLSEC, jumpsnullsec);
+        this.jumpsnullsec = jumpsnullsec;
     }
 
     /**

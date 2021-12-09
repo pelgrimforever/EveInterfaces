@@ -2,7 +2,7 @@
  * ITradecombinedsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -42,6 +42,36 @@ public interface ITradecombinedsearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void jumps(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field jumpslowsec, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void jumpslowsec(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field jumpslowsec
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void jumpslowsec(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field jumpsnullsec, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void jumpsnullsec(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field jumpsnullsec
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void jumpsnullsec(Double[] values, byte[] operators, byte andor);
 	
 	/**
    * foreign key

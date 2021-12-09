@@ -2,7 +2,7 @@
  * IView_tradecombined.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -43,6 +43,8 @@ public interface IView_tradecombined extends View {
     public static byte BUY_SYSTEMID = 13;
     public static byte BUY_SYSTEMNAME = 14;
     public static byte TRADE_JUMPS = 15;
+    public static byte TRADE_JUMPSLOWSEC = 16;
+    public static byte TRADE_JUMPSNULLSEC = 17;
 
     public static final int SIZE_SELL_REGIONID = 19;
     public static final int SIZE_SELL_REGIONNAME = 30;
@@ -59,7 +61,9 @@ public interface IView_tradecombined extends View {
     public static final int SIZE_BUY_SYSTEMID = 19;
     public static final int SIZE_BUY_SYSTEMNAME = 30;
     public static final int SIZE_TRADE_JUMPS = 10;
-    public static final String[] fieldnames = { "sell_regionid", "sell_regionname", "sell_systemid", "sell_systemname", "evetype_id", "evetype_name", "packaged_volume", "orders", "totalamount", "buy_order_total", "sell_order_total", "totalprofit", "buy_systemid", "buy_systemname", "trade_jumps" };
+    public static final int SIZE_TRADE_JUMPSLOWSEC = 10;
+    public static final int SIZE_TRADE_JUMPSNULLSEC = 10;
+    public static final String[] fieldnames = { "sell_regionid", "sell_regionname", "sell_systemid", "sell_systemname", "evetype_id", "evetype_name", "packaged_volume", "orders", "totalamount", "buy_order_total", "sell_order_total", "totalprofit", "buy_systemid", "buy_systemname", "trade_jumps", "trade_jumpslowsec", "trade_jumpsnullsec" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -154,6 +158,18 @@ public interface IView_tradecombined extends View {
      * @return trade_jumps value
      */
     public int getTrade_jumps();
+
+    /**
+     * 
+     * @return trade_jumpslowsec value
+     */
+    public int getTrade_jumpslowsec();
+
+    /**
+     * 
+     * @return trade_jumpsnullsec value
+     */
+    public int getTrade_jumpsnullsec();
 
     
 //Custom code, do not change this line

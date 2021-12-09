@@ -2,7 +2,7 @@
  * IStation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -43,6 +43,7 @@ public interface IStation extends LogicEntity {
     public static short TYPE_ID = 8;
     public static short MAX_DOCKABLE_SHIP_VOLUME = 9;
     public static short OWNER = 10;
+    public static short DOWNLOADDATE = 11;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 100;
@@ -54,8 +55,9 @@ public interface IStation extends LogicEntity {
     public static final int SIZE_TYPE_ID = 19;
     public static final int SIZE_MAX_DOCKABLE_SHIP_VOLUME = 17;
     public static final int SIZE_OWNER = 19;
-    public static final String[] fieldnames = { "id", "name", "office_rental_cost", "race_id", "reprocessing_efficiency", "reprocessing_stations_take", "system_id", "type_id", "max_dockable_ship_volume", "owner" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_double, Datatypes.type_double, Datatypes.type_long, Datatypes.type_long, Datatypes.type_double, Datatypes.type_long };
+    public static final int SIZE_DOWNLOADDATE = 13;
+    public static final String[] fieldnames = { "id", "name", "office_rental_cost", "race_id", "reprocessing_efficiency", "reprocessing_stations_take", "system_id", "type_id", "max_dockable_ship_volume", "owner", "downloaddate" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_double, Datatypes.type_double, Datatypes.type_long, Datatypes.type_long, Datatypes.type_double, Datatypes.type_long, Datatypes.type_Date };
 
     public static final String[] racePKfields = { "race.id" };
     public static final String[] raceFKfields = { "station.race_id" };
@@ -139,6 +141,18 @@ public interface IStation extends LogicEntity {
      * @param owner: new value
      */
     public void setOwner(long owner);
+
+    /**
+     * 
+     * @return downloaddate value
+     */
+    public java.sql.Date getDownloaddate();
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void setDownloaddate(java.sql.Date downloaddate);
 
     /**
      * 

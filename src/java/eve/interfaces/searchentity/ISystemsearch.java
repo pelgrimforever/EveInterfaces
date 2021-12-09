@@ -2,7 +2,7 @@
  * ISystemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -120,6 +120,21 @@ public interface ISystemsearch extends Tablesearcher {
 	public void isregionborder(Boolean value);
 	
 	/**
+	 * add Date search values for field downloaddate, default OR operator is used
+	 * @param values: Array of date search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void downloaddate(Date[] values, byte[] operators);
+	
+	/**
+	 * add Date search values for field downloaddate
+	 * @param values: Array of date search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void downloaddate(Date[] values, byte[] operators, byte andor);
+	
+	/**
    * foreign key
 	 * set subsearch security_island tablesearch
 	 * @param security_islandsearch: ISecurity_islandsearch
@@ -146,20 +161,6 @@ public interface ISystemsearch extends Tablesearcher {
      * @param systemjumpssearch: ISystemjumpssearch
      */
     public void systemjumpsSystem_start(ISystemjumpssearch systemjumpssearch);
-    
-    /**
-     * external foreign key - foreign key
-     * set subsearch route tablesearch
-     * @param routesearch: IRoutesearch
-     */
-    public void route(IRoutesearch routesearch);
-    
-    /**
-     * external foreign key - relational key
-     * set relational subsearch routetype tablesearch
-     * @param routetypesearch: IRoutetypesearch
-     */
-    public void relroutetype(IRoutetypesearch routetypesearch);
     
     /**
      * external foreign key - foreign key

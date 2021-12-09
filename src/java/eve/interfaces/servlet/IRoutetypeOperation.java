@@ -2,7 +2,7 @@
  * IRoutetypeOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -26,7 +26,6 @@ public interface IRoutetypeOperation extends IDataServlet {
     public static final byte SELECT_SEARCH = 3;
     public static final byte SELECT_SEARCHCOUNT = 4;
     public static final byte SELECT_Security_island = 100 + 0;
-    public static final byte SELECT_Route = 100 + 1;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
@@ -45,7 +44,7 @@ public interface IRoutetypeOperation extends IDataServlet {
 
     //DELETE OPERATIONS
     public static final byte DELETE_ROUTETYPE = 30;
-    public static final byte DELETE_Security_island = 100 + 2;
+    public static final byte DELETE_Security_island = 100 + 1;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   

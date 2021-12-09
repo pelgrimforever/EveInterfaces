@@ -2,7 +2,7 @@
  * eTrade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -48,6 +48,8 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
     private double profit_per_jump;
     private double singlerun_profit_per_jump;
     private int maxunits_per_run;
+    private int jumpslowsec;
+    private int jumpsnullsec;
 	  
     public static final String table = "trade";
 	  
@@ -152,6 +154,8 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
         updates.put(ITrade.PROFIT_PER_JUMP, profit_per_jump);
         updates.put(ITrade.SINGLERUN_PROFIT_PER_JUMP, singlerun_profit_per_jump);
         updates.put(ITrade.MAXUNITS_PER_RUN, maxunits_per_run);
+        updates.put(ITrade.JUMPSLOWSEC, jumpslowsec);
+        updates.put(ITrade.JUMPSNULLSEC, jumpsnullsec);
         return getAllFields();
     }
 	
@@ -419,6 +423,56 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
     public void setMaxunits_per_run(int maxunits_per_run) {
         updates.put(ITrade.MAXUNITS_PER_RUN, maxunits_per_run);
         this.maxunits_per_run = maxunits_per_run;
+    }
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec() {
+        return this.jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void initJumpslowsec(int jumpslowsec) {
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void setJumpslowsec(int jumpslowsec) {
+        updates.put(ITrade.JUMPSLOWSEC, jumpslowsec);
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec() {
+        return this.jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void initJumpsnullsec(int jumpsnullsec) {
+        this.jumpsnullsec = jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void setJumpsnullsec(int jumpsnullsec) {
+        updates.put(ITrade.JUMPSNULLSEC, jumpsnullsec);
+        this.jumpsnullsec = jumpsnullsec;
     }
 
     /**

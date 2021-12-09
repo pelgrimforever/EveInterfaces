@@ -2,7 +2,7 @@
  * Stationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -32,6 +32,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     Numbersearch reprocessing_stations_take = new Numbersearch("station.reprocessing_stations_take");
     Numbersearch max_dockable_ship_volume = new Numbersearch("station.max_dockable_ship_volume");
     Numbersearch owner = new Numbersearch("station.owner");
+    Datesearch downloaddate = new Datesearch("station.downloaddate");
 //foreign keys
     Foreignkeysearch racesearcher = new Foreignkeysearch("race", IStation.racePKfields, IStation.raceFKfields);
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IStation.evetypePKfields, IStation.evetypeFKfields);
@@ -77,6 +78,7 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
         addFieldsearcher(reprocessing_stations_take);
         addFieldsearcher(max_dockable_ship_volume);
         addFieldsearcher(owner);
+        addFieldsearcher(downloaddate);
         addKeysearcher(racesearcher);
         addKeysearcher(evetypesearcher);
         addKeysearcher(systemsearcher);
@@ -229,6 +231,26 @@ public class Stationsearch extends Tablesearch implements IStationsearch {
     public void owner(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(owner, values, operators);
         owner.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Date search values for field downloaddate, default OR operator is used
+     * @param values: Array of date search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void downloaddate(Date[] values, byte[] operators) {
+        addDatevalues(downloaddate, values, operators);
+    }
+    
+    /**
+     * add Date search values for field downloaddate
+     * @param values: Array of date search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void downloaddate(Date[] values, byte[] operators, byte andor) {
+        addDatevalues(downloaddate, values, operators);
+        downloaddate.setAndoroperator(andor);
     }
     
     /**

@@ -2,7 +2,7 @@
  * eView_trade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -54,6 +54,8 @@ public class eView_trade implements eveDatabaseproperties, EntityView {
     private double buy_total;
     private double trade_profit;
     private int trade_jumps;
+    private int trade_jumpslowsec;
+    private int trade_jumpsnullsec;
     private double trade_profit_per_jump;
     private int trade_runs;
     private int trade_total_jumps;
@@ -484,6 +486,38 @@ public class eView_trade implements eveDatabaseproperties, EntityView {
      */
     public void setTrade_jumps(int trade_jumps) {
         this.trade_jumps = trade_jumps;
+    }
+
+    /**
+     * 
+     * @return trade_jumpslowsec value
+     */
+    public int getTrade_jumpslowsec() {
+        return this.trade_jumpslowsec;
+    }
+
+    /**
+     * set trade_jumpslowsec value
+     * @param trade_jumpslowsec: new value
+     */
+    public void setTrade_jumpslowsec(int trade_jumpslowsec) {
+        this.trade_jumpslowsec = trade_jumpslowsec;
+    }
+
+    /**
+     * 
+     * @return trade_jumpsnullsec value
+     */
+    public int getTrade_jumpsnullsec() {
+        return this.trade_jumpsnullsec;
+    }
+
+    /**
+     * set trade_jumpsnullsec value
+     * @param trade_jumpsnullsec: new value
+     */
+    public void setTrade_jumpsnullsec(int trade_jumpsnullsec) {
+        this.trade_jumpsnullsec = trade_jumpsnullsec;
     }
 
     /**

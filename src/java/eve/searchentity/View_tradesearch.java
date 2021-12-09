@@ -2,7 +2,7 @@
  * View_tradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -48,6 +48,8 @@ public class View_tradesearch extends Tablesearch implements IView_tradesearch {
     Numbersearch buy_total = new Numbersearch("view_trade.buy_total");
     Numbersearch trade_profit = new Numbersearch("view_trade.trade_profit");
     Numbersearch trade_jumps = new Numbersearch("view_trade.trade_jumps");
+    Numbersearch trade_jumpslowsec = new Numbersearch("view_trade.trade_jumpslowsec");
+    Numbersearch trade_jumpsnullsec = new Numbersearch("view_trade.trade_jumpsnullsec");
     Numbersearch trade_profit_per_jump = new Numbersearch("view_trade.trade_profit_per_jump");
     Numbersearch trade_runs = new Numbersearch("view_trade.trade_runs");
     Numbersearch trade_total_jumps = new Numbersearch("view_trade.trade_total_jumps");
@@ -108,6 +110,8 @@ public class View_tradesearch extends Tablesearch implements IView_tradesearch {
         addFieldsearcher(buy_total);
         addFieldsearcher(trade_profit);
         addFieldsearcher(trade_jumps);
+        addFieldsearcher(trade_jumpslowsec);
+        addFieldsearcher(trade_jumpsnullsec);
         addFieldsearcher(trade_profit_per_jump);
         addFieldsearcher(trade_runs);
         addFieldsearcher(trade_total_jumps);
@@ -593,6 +597,46 @@ public class View_tradesearch extends Tablesearch implements IView_tradesearch {
     public void trade_jumps(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(trade_jumps, values, operators);
         trade_jumps.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field trade_jumpslowsec, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void trade_jumpslowsec(Double[] values, byte[] operators) {
+        addNumbervalues(trade_jumpslowsec, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field trade_jumpslowsec
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void trade_jumpslowsec(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(trade_jumpslowsec, values, operators);
+        trade_jumpslowsec.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field trade_jumpsnullsec, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void trade_jumpsnullsec(Double[] values, byte[] operators) {
+        addNumbervalues(trade_jumpsnullsec, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field trade_jumpsnullsec
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void trade_jumpsnullsec(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(trade_jumpsnullsec, values, operators);
+        trade_jumpsnullsec.setAndoroperator(andor);
     }
     
     /**

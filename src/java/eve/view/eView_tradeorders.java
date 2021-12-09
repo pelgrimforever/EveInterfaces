@@ -2,7 +2,7 @@
  * eView_tradeorders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -48,6 +48,8 @@ public class eView_tradeorders implements eveDatabaseproperties, EntityView {
     private long buy_volume_remain;
     private double buy_price;
     private int jumps;
+    private int jumpslowsec;
+    private int jumpsnullsec;
 	  
     /**
      * @return database tool name
@@ -377,6 +379,38 @@ public class eView_tradeorders implements eveDatabaseproperties, EntityView {
      */
     public void setJumps(int jumps) {
         this.jumps = jumps;
+    }
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec() {
+        return this.jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void setJumpslowsec(int jumpslowsec) {
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec() {
+        return this.jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void setJumpsnullsec(int jumpsnullsec) {
+        this.jumpsnullsec = jumpsnullsec;
     }
 
 }

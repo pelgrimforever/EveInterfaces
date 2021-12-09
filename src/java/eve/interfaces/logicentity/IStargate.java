@@ -2,7 +2,7 @@
  * IStargate.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -43,6 +43,7 @@ public interface IStargate extends LogicEntity {
     public static short Z = 8;
     public static short ISCONSTELLATIONBORDER = 9;
     public static short ISREGIONBORDER = 10;
+    public static short DOWNLOADDATE = 11;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_TO_STARGATE = 19;
@@ -54,8 +55,9 @@ public interface IStargate extends LogicEntity {
     public static final int SIZE_Z = 17;
     public static final int SIZE_ISCONSTELLATIONBORDER = 1;
     public static final int SIZE_ISREGIONBORDER = 1;
-    public static final String[] fieldnames = { "id", "to_stargate", "system", "to_system", "name", "x", "y", "z", "isconstellationborder", "isregionborder" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_String, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_boolean, Datatypes.type_boolean };
+    public static final int SIZE_DOWNLOADDATE = 13;
+    public static final String[] fieldnames = { "id", "to_stargate", "system", "to_system", "name", "x", "y", "z", "isconstellationborder", "isregionborder", "downloaddate" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_String, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_boolean, Datatypes.type_boolean, Datatypes.type_Date };
 
     public static final String[] systemSystemPKfields = { "system.id" };
     public static final String[] systemSystemFKfields = { "stargate.system" };
@@ -149,6 +151,18 @@ public interface IStargate extends LogicEntity {
      * @param isregionborder: new value
      */
     public void setIsregionborder(boolean isregionborder);
+
+    /**
+     * 
+     * @return downloaddate value
+     */
+    public java.sql.Date getDownloaddate();
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void setDownloaddate(java.sql.Date downloaddate);
 
     /**
      * 

@@ -2,7 +2,7 @@
  * IView_tradecombinedsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -241,5 +241,35 @@ public interface IView_tradecombinedsearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void trade_jumps(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field trade_jumpslowsec, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void trade_jumpslowsec(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field trade_jumpslowsec
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void trade_jumpslowsec(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field trade_jumpsnullsec, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void trade_jumpsnullsec(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field trade_jumpsnullsec
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void trade_jumpsnullsec(Double[] values, byte[] operators, byte andor);
 	
 }

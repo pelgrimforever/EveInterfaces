@@ -2,7 +2,7 @@
  * Systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -33,6 +33,7 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Booleansearch noaccess = new Booleansearch("system.noaccess");
     Booleansearch isconstellationborder = new Booleansearch("system.isconstellationborder");
     Booleansearch isregionborder = new Booleansearch("system.isregionborder");
+    Datesearch downloaddate = new Datesearch("system.downloaddate");
 //foreign keys
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", ISystem.security_islandPKfields, ISystem.security_islandFKfields);
     Foreignkeysearch constellationsearcher = new Foreignkeysearch("constellation", ISystem.constellationPKfields, ISystem.constellationFKfields);
@@ -41,10 +42,6 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     Primarykeysearch systemjumpsSystem_endsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_endPKfields, ISystemjumps.systemSystem_endFKfields);
     //foreign key
     Primarykeysearch systemjumpsSystem_startsearcher = new Primarykeysearch("systemjumps", ISystemjumps.systemSystem_startPKfields, ISystemjumps.systemSystem_startFKfields);
-    //foreign key
-    Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields);
-    //relational key
-    Relationalkeysearch relroutetypesearcher = new Relationalkeysearch("route", IRoute.systemPKfields, IRoute.systemFKfields, "routetype", IRoute.routetypePKfields, IRoute.routetypeFKfields);
     //foreign key
     Primarykeysearch tradecombinedBuy_systemsearcher = new Primarykeysearch("tradecombined", ITradecombined.systemBuy_systemPKfields, ITradecombined.systemBuy_systemFKfields);
     //relational key
@@ -92,12 +89,11 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
         addFieldsearcher(noaccess);
         addFieldsearcher(isconstellationborder);
         addFieldsearcher(isregionborder);
+        addFieldsearcher(downloaddate);
         addKeysearcher(security_islandsearcher);
         addKeysearcher(constellationsearcher);
         addKeysearcher(systemjumpsSystem_endsearcher);
         addKeysearcher(systemjumpsSystem_startsearcher);
-        addKeysearcher(routesearcher);
-        addKeysearcher(relroutetypesearcher);
         addKeysearcher(tradecombinedBuy_systemsearcher);
         addKeysearcher(relevetype1searcher);
         addKeysearcher(tradecombinedSell_systemsearcher);
@@ -237,6 +233,26 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     }
     
     /**
+     * add Date search values for field downloaddate, default OR operator is used
+     * @param values: Array of date search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void downloaddate(Date[] values, byte[] operators) {
+        addDatevalues(downloaddate, values, operators);
+    }
+    
+    /**
+     * add Date search values for field downloaddate
+     * @param values: Array of date search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void downloaddate(Date[] values, byte[] operators, byte andor) {
+        addDatevalues(downloaddate, values, operators);
+        downloaddate.setAndoroperator(andor);
+    }
+    
+    /**
      * set foreign key subsearch security_island ISecurity_islandsearch
      * @param security_islandsearch: ISecurity_islandsearch
      */
@@ -329,46 +345,6 @@ public class Systemsearch extends Tablesearch implements ISystemsearch {
     public ISystemjumpssearch getSystemjumpssystem_startsearch() {
         if(systemjumpsSystem_startsearcher.used()) {
             return (ISystemjumpssearch)systemjumpsSystem_startsearcher.getTablesearches().get(0);
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * set external key - foreign key subsearch IRoutesearch
-     * @param routesearch: IRoutesearch
-     */
-    public void route(IRoutesearch routesearch) {
-        routesearcher.setTablesearch(routesearch);
-    }
-    
-    /**
-     * get external key - foreign key subsearch IRoutesearch
-     * @return Tablesearch for IRoutesearch
-     */
-    public IRoutesearch getRoutesearch() {
-        if(routesearcher.used()) {
-            return (IRoutesearch)routesearcher.getTablesearches().get(0);
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * set external key - relational subsearch routetype tablesearch
-     * @param routetypesearch: IRoutetypesearch
-     */
-    public void relroutetype(IRoutetypesearch routetypesearch) {
-        relroutetypesearcher.setTablesearch(routetypesearch);
-    }
-    
-    /**
-     * get external key - relational subsearch IRoutetypesearch
-     * @return Tablesearch for IRoutetypesearch
-     */
-    public IRoutetypesearch getRelRoutetypesearch() {
-        if(relroutetypesearcher.used()) {
-            return (IRoutetypesearch)relroutetypesearcher.getTablesearches().get(0);
         } else {
             return null;
         }

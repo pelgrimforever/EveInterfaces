@@ -2,7 +2,7 @@
  * eSystemjumps.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -39,6 +39,11 @@ public class eSystemjumps extends AbstractEntity implements eveDatabasepropertie
 
     protected SystemjumpsPK systemjumpsPK;
     private int jumps;
+    private int jumpslowsec;
+    private int jumpsnullsec;
+    private int jumpssafe;
+    private int jumpssafelowsec;
+    private int jumpssafenullsec;
 	  
     public static final String table = "systemjumps";
 	  
@@ -134,6 +139,11 @@ public class eSystemjumps extends AbstractEntity implements eveDatabasepropertie
     @Override
     public Entityvalues getAll() {
         updates.put(ISystemjumps.JUMPS, jumps);
+        updates.put(ISystemjumps.JUMPSLOWSEC, jumpslowsec);
+        updates.put(ISystemjumps.JUMPSNULLSEC, jumpsnullsec);
+        updates.put(ISystemjumps.JUMPSSAFE, jumpssafe);
+        updates.put(ISystemjumps.JUMPSSAFELOWSEC, jumpssafelowsec);
+        updates.put(ISystemjumps.JUMPSSAFENULLSEC, jumpssafenullsec);
         return getAllFields();
     }
 	
@@ -176,6 +186,131 @@ public class eSystemjumps extends AbstractEntity implements eveDatabasepropertie
     public void setJumps(int jumps) {
         updates.put(ISystemjumps.JUMPS, jumps);
         this.jumps = jumps;
+    }
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec() {
+        return this.jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void initJumpslowsec(int jumpslowsec) {
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void setJumpslowsec(int jumpslowsec) {
+        updates.put(ISystemjumps.JUMPSLOWSEC, jumpslowsec);
+        this.jumpslowsec = jumpslowsec;
+    }
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec() {
+        return this.jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void initJumpsnullsec(int jumpsnullsec) {
+        this.jumpsnullsec = jumpsnullsec;
+    }
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void setJumpsnullsec(int jumpsnullsec) {
+        updates.put(ISystemjumps.JUMPSNULLSEC, jumpsnullsec);
+        this.jumpsnullsec = jumpsnullsec;
+    }
+
+    /**
+     * 
+     * @return jumpssafe value
+     */
+    public int getJumpssafe() {
+        return this.jumpssafe;
+    }
+
+    /**
+     * set jumpssafe value
+     * @param jumpssafe: new value
+     */
+    public void initJumpssafe(int jumpssafe) {
+        this.jumpssafe = jumpssafe;
+    }
+
+    /**
+     * set jumpssafe value
+     * @param jumpssafe: new value
+     */
+    public void setJumpssafe(int jumpssafe) {
+        updates.put(ISystemjumps.JUMPSSAFE, jumpssafe);
+        this.jumpssafe = jumpssafe;
+    }
+
+    /**
+     * 
+     * @return jumpssafelowsec value
+     */
+    public int getJumpssafelowsec() {
+        return this.jumpssafelowsec;
+    }
+
+    /**
+     * set jumpssafelowsec value
+     * @param jumpssafelowsec: new value
+     */
+    public void initJumpssafelowsec(int jumpssafelowsec) {
+        this.jumpssafelowsec = jumpssafelowsec;
+    }
+
+    /**
+     * set jumpssafelowsec value
+     * @param jumpssafelowsec: new value
+     */
+    public void setJumpssafelowsec(int jumpssafelowsec) {
+        updates.put(ISystemjumps.JUMPSSAFELOWSEC, jumpssafelowsec);
+        this.jumpssafelowsec = jumpssafelowsec;
+    }
+
+    /**
+     * 
+     * @return jumpssafenullsec value
+     */
+    public int getJumpssafenullsec() {
+        return this.jumpssafenullsec;
+    }
+
+    /**
+     * set jumpssafenullsec value
+     * @param jumpssafenullsec: new value
+     */
+    public void initJumpssafenullsec(int jumpssafenullsec) {
+        this.jumpssafenullsec = jumpssafenullsec;
+    }
+
+    /**
+     * set jumpssafenullsec value
+     * @param jumpssafenullsec: new value
+     */
+    public void setJumpssafenullsec(int jumpssafenullsec) {
+        updates.put(ISystemjumps.JUMPSSAFENULLSEC, jumpssafenullsec);
+        this.jumpssafenullsec = jumpssafenullsec;
     }
 
     /**

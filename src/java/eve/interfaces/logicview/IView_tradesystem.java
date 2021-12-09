@@ -2,7 +2,7 @@
  * IView_tradesystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -40,6 +40,8 @@ public interface IView_tradesystem extends View {
     public static byte BUY_SYSTEMID = 10;
     public static byte BUY_SYSTEMNAME = 11;
     public static byte TRADE_JUMPS = 12;
+    public static byte TRADE_JUMPSLOWSEC = 13;
+    public static byte TRADE_JUMPSNULLSEC = 14;
 
     public static final int SIZE_SELL_REGIONID = 19;
     public static final int SIZE_SELL_REGIONNAME = 30;
@@ -53,7 +55,9 @@ public interface IView_tradesystem extends View {
     public static final int SIZE_BUY_SYSTEMID = 19;
     public static final int SIZE_BUY_SYSTEMNAME = 30;
     public static final int SIZE_TRADE_JUMPS = 10;
-    public static final String[] fieldnames = { "sell_regionid", "sell_regionname", "sell_systemid", "sell_systemname", "orders", "buy_total", "sell_total", "totalprofit", "totalvolume", "buy_systemid", "buy_systemname", "trade_jumps" };
+    public static final int SIZE_TRADE_JUMPSLOWSEC = 10;
+    public static final int SIZE_TRADE_JUMPSNULLSEC = 10;
+    public static final String[] fieldnames = { "sell_regionid", "sell_regionname", "sell_systemid", "sell_systemname", "orders", "buy_total", "sell_total", "totalprofit", "totalvolume", "buy_systemid", "buy_systemname", "trade_jumps", "trade_jumpslowsec", "trade_jumpsnullsec" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -130,6 +134,18 @@ public interface IView_tradesystem extends View {
      * @return trade_jumps value
      */
     public int getTrade_jumps();
+
+    /**
+     * 
+     * @return trade_jumpslowsec value
+     */
+    public int getTrade_jumpslowsec();
+
+    /**
+     * 
+     * @return trade_jumpsnullsec value
+     */
+    public int getTrade_jumpsnullsec();
 
     
 //Custom code, do not change this line

@@ -2,7 +2,7 @@
  * Routetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -30,10 +30,6 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
 //foreign keys
     Foreignkeysearch security_islandsearcher = new Foreignkeysearch("security_island", IRoutetype.security_islandPKfields, IRoutetype.security_islandFKfields);
 //external foreign keys
-    //foreign key
-    Primarykeysearch routesearcher = new Primarykeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields);
-    //relational key
-    Relationalkeysearch relsystemsearcher = new Relationalkeysearch("route", IRoute.routetypePKfields, IRoute.routetypeFKfields, "system", IRoute.systemPKfields, IRoute.systemFKfields);
 
     /**
      * @return tablename
@@ -68,8 +64,6 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
         addFieldsearcher(id);
         addFieldsearcher(name);
         addKeysearcher(security_islandsearcher);
-        addKeysearcher(routesearcher);
-        addKeysearcher(relsystemsearcher);
     }
 
     /**
@@ -147,46 +141,6 @@ public class Routetypesearch extends Tablesearch implements IRoutetypesearch {
      */
     public String getSecurity_islandInnerjoin() {
         return security_islandsearcher.getInnerjoin();
-    }
-
-    /**
-     * set external key - foreign key subsearch IRoutesearch
-     * @param routesearch: IRoutesearch
-     */
-    public void route(IRoutesearch routesearch) {
-        routesearcher.setTablesearch(routesearch);
-    }
-    
-    /**
-     * get external key - foreign key subsearch IRoutesearch
-     * @return Tablesearch for IRoutesearch
-     */
-    public IRoutesearch getRoutesearch() {
-        if(routesearcher.used()) {
-            return (IRoutesearch)routesearcher.getTablesearches().get(0);
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * set external key - relational subsearch system tablesearch
-     * @param systemsearch: ISystemsearch
-     */
-    public void relsystem(ISystemsearch systemsearch) {
-        relsystemsearcher.setTablesearch(systemsearch);
-    }
-    
-    /**
-     * get external key - relational subsearch ISystemsearch
-     * @return Tablesearch for ISystemsearch
-     */
-    public ISystemsearch getRelSystemsearch() {
-        if(relsystemsearcher.used()) {
-            return (ISystemsearch)relsystemsearcher.getTablesearches().get(0);
-        } else {
-            return null;
-        }
     }
 
 }

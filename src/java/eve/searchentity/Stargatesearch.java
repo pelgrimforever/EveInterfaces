@@ -2,7 +2,7 @@
  * Stargatesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -33,6 +33,7 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     Numbersearch z = new Numbersearch("stargate.z");
     Booleansearch isconstellationborder = new Booleansearch("stargate.isconstellationborder");
     Booleansearch isregionborder = new Booleansearch("stargate.isregionborder");
+    Datesearch downloaddate = new Datesearch("stargate.downloaddate");
 //foreign keys
     Foreignkeysearch systemSystemsearcher = new Foreignkeysearch("system", IStargate.systemSystemPKfields, IStargate.systemSystemFKfields);
     Foreignkeysearch systemTo_systemsearcher = new Foreignkeysearch("system", IStargate.systemTo_systemPKfields, IStargate.systemTo_systemFKfields);
@@ -76,6 +77,7 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
         addFieldsearcher(z);
         addFieldsearcher(isconstellationborder);
         addFieldsearcher(isregionborder);
+        addFieldsearcher(downloaddate);
         addKeysearcher(systemSystemsearcher);
         addKeysearcher(systemTo_systemsearcher);
     }
@@ -222,6 +224,26 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
      */
     public void isregionborder(Boolean value) {
         addBooleanvalue(isregionborder, value);
+    }
+    
+    /**
+     * add Date search values for field downloaddate, default OR operator is used
+     * @param values: Array of date search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void downloaddate(Date[] values, byte[] operators) {
+        addDatevalues(downloaddate, values, operators);
+    }
+    
+    /**
+     * add Date search values for field downloaddate
+     * @param values: Array of date search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void downloaddate(Date[] values, byte[] operators, byte andor) {
+        addDatevalues(downloaddate, values, operators);
+        downloaddate.setAndoroperator(andor);
     }
     
     /**

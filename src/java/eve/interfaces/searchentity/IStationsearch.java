@@ -2,7 +2,7 @@
  * IStationsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -131,6 +131,21 @@ public interface IStationsearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void owner(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Date search values for field downloaddate, default OR operator is used
+	 * @param values: Array of date search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void downloaddate(Date[] values, byte[] operators);
+	
+	/**
+	 * add Date search values for field downloaddate
+	 * @param values: Array of date search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void downloaddate(Date[] values, byte[] operators, byte andor);
 	
 	/**
    * foreign key

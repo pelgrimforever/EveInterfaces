@@ -2,7 +2,7 @@
  * IView_trade.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -52,11 +52,13 @@ public interface IView_trade extends View {
     public static byte BUY_TOTAL = 22;
     public static byte TRADE_PROFIT = 23;
     public static byte TRADE_JUMPS = 24;
-    public static byte TRADE_PROFIT_PER_JUMP = 25;
-    public static byte TRADE_RUNS = 26;
-    public static byte TRADE_TOTAL_JUMPS = 27;
-    public static byte TRADE_SINGLERUNPROFIT = 28;
-    public static byte TRADE_MAXUNITS_PER_RUN = 29;
+    public static byte TRADE_JUMPSLOWSEC = 25;
+    public static byte TRADE_JUMPSNULLSEC = 26;
+    public static byte TRADE_PROFIT_PER_JUMP = 27;
+    public static byte TRADE_RUNS = 28;
+    public static byte TRADE_TOTAL_JUMPS = 29;
+    public static byte TRADE_SINGLERUNPROFIT = 30;
+    public static byte TRADE_MAXUNITS_PER_RUN = 31;
 
     public static final int SIZE_SELL_REGIONID = 19;
     public static final int SIZE_SELL_REGIONNAME = 30;
@@ -82,12 +84,14 @@ public interface IView_trade extends View {
     public static final int SIZE_BUY_TOTAL = 17;
     public static final int SIZE_TRADE_PROFIT = 17;
     public static final int SIZE_TRADE_JUMPS = 10;
+    public static final int SIZE_TRADE_JUMPSLOWSEC = 10;
+    public static final int SIZE_TRADE_JUMPSNULLSEC = 10;
     public static final int SIZE_TRADE_PROFIT_PER_JUMP = 17;
     public static final int SIZE_TRADE_RUNS = 10;
     public static final int SIZE_TRADE_TOTAL_JUMPS = 10;
     public static final int SIZE_TRADE_SINGLERUNPROFIT = 17;
     public static final int SIZE_TRADE_MAXUNITS_PER_RUN = 10;
-    public static final String[] fieldnames = { "sell_regionid", "sell_regionname", "sell_systemid", "sell_systemname", "sell_locationid", "sell_stationname", "evetype_id", "evetype_name", "packaged_volume", "sell_id", "buy_id", "sell_volume_remain", "sell_price", "buy_price", "buy_systemid", "buy_systemname", "buy_locationid", "buy_stationname", "buy_volume_remain", "total_volume", "sell_total", "buy_total", "trade_profit", "trade_jumps", "trade_profit_per_jump", "trade_runs", "trade_total_jumps", "trade_singlerunprofit", "trade_maxunits_per_run" };
+    public static final String[] fieldnames = { "sell_regionid", "sell_regionname", "sell_systemid", "sell_systemname", "sell_locationid", "sell_stationname", "evetype_id", "evetype_name", "packaged_volume", "sell_id", "buy_id", "sell_volume_remain", "sell_price", "buy_price", "buy_systemid", "buy_systemname", "buy_locationid", "buy_stationname", "buy_volume_remain", "total_volume", "sell_total", "buy_total", "trade_profit", "trade_jumps", "trade_jumpslowsec", "trade_jumpsnullsec", "trade_profit_per_jump", "trade_runs", "trade_total_jumps", "trade_singlerunprofit", "trade_maxunits_per_run" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -236,6 +240,18 @@ public interface IView_trade extends View {
      * @return trade_jumps value
      */
     public int getTrade_jumps();
+
+    /**
+     * 
+     * @return trade_jumpslowsec value
+     */
+    public int getTrade_jumpslowsec();
+
+    /**
+     * 
+     * @return trade_jumpsnullsec value
+     */
+    public int getTrade_jumpsnullsec();
 
     /**
      * 

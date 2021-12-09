@@ -2,7 +2,7 @@
  * WSISystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -45,8 +45,6 @@ public interface WSISystem {
     @WebMethod String getSystems4systemjumpsSystem_end(String json);
 
     @WebMethod String getSystems4systemjumpsSystem_start(String json);
-
-    @WebMethod String getSystems4route(String json);
 
     @WebMethod String getSystems4tradecombinedBuy_system(String json);
 

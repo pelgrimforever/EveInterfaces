@@ -2,7 +2,7 @@
  * IView_trade_systemsevetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -32,12 +32,16 @@ public interface IView_trade_systemsevetype extends View {
     public static byte SYSTEMBUY = 2;
     public static byte EVETYPE = 3;
     public static byte JUMPS = 4;
+    public static byte JUMPSLOWSEC = 5;
+    public static byte JUMPSNULLSEC = 6;
 
     public static final int SIZE_SYSTEMSELL = 19;
     public static final int SIZE_SYSTEMBUY = 19;
     public static final int SIZE_EVETYPE = 19;
     public static final int SIZE_JUMPS = 10;
-    public static final String[] fieldnames = { "systemsell", "systembuy", "evetype", "jumps" };
+    public static final int SIZE_JUMPSLOWSEC = 10;
+    public static final int SIZE_JUMPSNULLSEC = 10;
+    public static final String[] fieldnames = { "systemsell", "systembuy", "evetype", "jumps", "jumpslowsec", "jumpsnullsec" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -66,6 +70,18 @@ public interface IView_trade_systemsevetype extends View {
      * @return jumps value
      */
     public int getJumps();
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec();
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec();
 
     
 //Custom code, do not change this line

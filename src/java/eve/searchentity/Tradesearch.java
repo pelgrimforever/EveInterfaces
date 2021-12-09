@@ -2,7 +2,7 @@
  * Tradesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -35,6 +35,8 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     Numbersearch profit_per_jump = new Numbersearch("trade.profit_per_jump");
     Numbersearch singlerun_profit_per_jump = new Numbersearch("trade.singlerun_profit_per_jump");
     Numbersearch maxunits_per_run = new Numbersearch("trade.maxunits_per_run");
+    Numbersearch jumpslowsec = new Numbersearch("trade.jumpslowsec");
+    Numbersearch jumpsnullsec = new Numbersearch("trade.jumpsnullsec");
 //foreign keys
     Foreignkeysearch ordersSell_order_idsearcher = new Foreignkeysearch("orders", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
     Foreignkeysearch ordersBuy_order_idsearcher = new Foreignkeysearch("orders", ITrade.ordersBuy_order_idPKfields, ITrade.ordersBuy_order_idFKfields);
@@ -80,6 +82,8 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
         addFieldsearcher(profit_per_jump);
         addFieldsearcher(singlerun_profit_per_jump);
         addFieldsearcher(maxunits_per_run);
+        addFieldsearcher(jumpslowsec);
+        addFieldsearcher(jumpsnullsec);
         addKeysearcher(ordersSell_order_idsearcher);
         addKeysearcher(ordersBuy_order_idsearcher);
     }
@@ -290,6 +294,46 @@ public class Tradesearch extends Tablesearch implements ITradesearch {
     public void maxunits_per_run(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(maxunits_per_run, values, operators);
         maxunits_per_run.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field jumpslowsec, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void jumpslowsec(Double[] values, byte[] operators) {
+        addNumbervalues(jumpslowsec, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field jumpslowsec
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void jumpslowsec(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(jumpslowsec, values, operators);
+        jumpslowsec.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field jumpsnullsec, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void jumpsnullsec(Double[] values, byte[] operators) {
+        addNumbervalues(jumpsnullsec, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field jumpsnullsec
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void jumpsnullsec(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(jumpsnullsec, values, operators);
+        jumpsnullsec.setAndoroperator(andor);
     }
     
     /**

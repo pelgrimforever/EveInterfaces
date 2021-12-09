@@ -2,7 +2,7 @@
  * Tradecombinedsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -26,6 +26,8 @@ import java.sql.Timestamp;
 public class Tradecombinedsearch extends Tablesearch implements ITradecombinedsearch {
 
     Numbersearch jumps = new Numbersearch("tradecombined.jumps");
+    Numbersearch jumpslowsec = new Numbersearch("tradecombined.jumpslowsec");
+    Numbersearch jumpsnullsec = new Numbersearch("tradecombined.jumpsnullsec");
 //foreign keys
     Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields);
     Foreignkeysearch systemBuy_systemsearcher = new Foreignkeysearch("system", ITradecombined.systemBuy_systemPKfields, ITradecombined.systemBuy_systemFKfields);
@@ -69,6 +71,8 @@ public class Tradecombinedsearch extends Tablesearch implements ITradecombinedse
      */
     private void setFieldsearchers() {
         addFieldsearcher(jumps);
+        addFieldsearcher(jumpslowsec);
+        addFieldsearcher(jumpsnullsec);
         addKeysearcher(evetypesearcher);
         addKeysearcher(systemBuy_systemsearcher);
         addKeysearcher(systemSell_systemsearcher);
@@ -103,6 +107,46 @@ public class Tradecombinedsearch extends Tablesearch implements ITradecombinedse
     public void jumps(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(jumps, values, operators);
         jumps.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field jumpslowsec, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void jumpslowsec(Double[] values, byte[] operators) {
+        addNumbervalues(jumpslowsec, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field jumpslowsec
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void jumpslowsec(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(jumpslowsec, values, operators);
+        jumpslowsec.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field jumpsnullsec, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void jumpsnullsec(Double[] values, byte[] operators) {
+        addNumbervalues(jumpsnullsec, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field jumpsnullsec
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void jumpsnullsec(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(jumpsnullsec, values, operators);
+        jumpsnullsec.setAndoroperator(andor);
     }
     
     /**

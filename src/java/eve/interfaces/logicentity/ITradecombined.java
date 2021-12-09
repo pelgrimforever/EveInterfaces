@@ -2,7 +2,7 @@
  * ITradecombined.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -37,13 +37,17 @@ public interface ITradecombined extends LogicEntity {
     public static short BUY_SYSTEM = 2;
     public static short EVETYPE = 3;
     public static short JUMPS = 4;
+    public static short JUMPSLOWSEC = 5;
+    public static short JUMPSNULLSEC = 6;
 
     public static final int SIZE_SELL_SYSTEM = 19;
     public static final int SIZE_BUY_SYSTEM = 19;
     public static final int SIZE_EVETYPE = 19;
     public static final int SIZE_JUMPS = 10;
-    public static final String[] fieldnames = { "sell_system", "buy_system", "evetype", "jumps" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_int };
+    public static final int SIZE_JUMPSLOWSEC = 10;
+    public static final int SIZE_JUMPSNULLSEC = 10;
+    public static final String[] fieldnames = { "sell_system", "buy_system", "evetype", "jumps", "jumpslowsec", "jumpsnullsec" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_int, Datatypes.type_int, Datatypes.type_int };
 
     public static final String[] evetypePKfields = { "evetype.id" };
     public static final String[] evetypeFKfields = { "tradecombined.evetype" };
@@ -67,6 +71,30 @@ public interface ITradecombined extends LogicEntity {
      * @param jumps: new value
      */
     public void setJumps(int jumps);
+
+    /**
+     * 
+     * @return jumpslowsec value
+     */
+    public int getJumpslowsec();
+
+    /**
+     * set jumpslowsec value
+     * @param jumpslowsec: new value
+     */
+    public void setJumpslowsec(int jumpslowsec);
+
+    /**
+     * 
+     * @return jumpsnullsec value
+     */
+    public int getJumpsnullsec();
+
+    /**
+     * set jumpsnullsec value
+     * @param jumpsnullsec: new value
+     */
+    public void setJumpsnullsec(int jumpsnullsec);
 
     
 //Custom code, do not change this line

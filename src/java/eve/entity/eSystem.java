@@ -2,7 +2,7 @@
  * eSystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -47,6 +47,7 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
     private boolean noaccess;
     private boolean isconstellationborder;
     private boolean isregionborder;
+    private java.sql.Date downloaddate;
 	  
     public static final String table = "system";
 	  
@@ -152,6 +153,7 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         updates.put(ISystem.NOACCESS, noaccess);
         updates.put(ISystem.ISCONSTELLATIONBORDER, isconstellationborder);
         updates.put(ISystem.ISREGIONBORDER, isregionborder);
+        updates.put(ISystem.DOWNLOADDATE, downloaddate);
         return getAllFields();
     }
 	
@@ -348,6 +350,33 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
     public void setIsregionborder(boolean isregionborder) {
         updates.put(ISystem.ISREGIONBORDER, isregionborder);
         this.isregionborder = isregionborder;
+    }
+
+    /**
+     * 
+     * @return downloaddate value
+     */
+    public java.sql.Date getDownloaddate() {
+        return this.downloaddate;
+    }
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void initDownloaddate(java.sql.Date downloaddate) {
+        this.downloaddate = downloaddate;
+    }
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void setDownloaddate(java.sql.Date downloaddate) {
+	if(downloaddate==null && downloaddate!=this.downloaddate || downloaddate!=null && !downloaddate.equals(this.downloaddate)) {
+            updates.put(ISystem.DOWNLOADDATE, downloaddate);
+        }
+        this.downloaddate = downloaddate;
     }
 
     /**

@@ -2,7 +2,7 @@
  * eStation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 4.11.2021 14:51
+ * Generated on 9.11.2021 14:30
  *
  */
 
@@ -47,6 +47,7 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
     private double reprocessing_stations_take;
     private double max_dockable_ship_volume;
     private long owner;
+    private java.sql.Date downloaddate;
 	  
     public static final String table = "station";
 	  
@@ -153,6 +154,7 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
         updates.put(IStation.REPROCESSING_STATIONS_TAKE, reprocessing_stations_take);
         updates.put(IStation.MAX_DOCKABLE_SHIP_VOLUME, max_dockable_ship_volume);
         updates.put(IStation.OWNER, owner);
+        updates.put(IStation.DOWNLOADDATE, downloaddate);
         return getAllFields();
     }
 	
@@ -322,6 +324,33 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
     public void setOwner(long owner) {
         updates.put(IStation.OWNER, owner);
         this.owner = owner;
+    }
+
+    /**
+     * 
+     * @return downloaddate value
+     */
+    public java.sql.Date getDownloaddate() {
+        return this.downloaddate;
+    }
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void initDownloaddate(java.sql.Date downloaddate) {
+        this.downloaddate = downloaddate;
+    }
+
+    /**
+     * set downloaddate value
+     * @param downloaddate: new value
+     */
+    public void setDownloaddate(java.sql.Date downloaddate) {
+	if(downloaddate==null && downloaddate!=this.downloaddate || downloaddate!=null && !downloaddate.equals(this.downloaddate)) {
+            updates.put(IStation.DOWNLOADDATE, downloaddate);
+        }
+        this.downloaddate = downloaddate;
     }
 
     /**
