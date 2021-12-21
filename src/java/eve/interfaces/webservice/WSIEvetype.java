@@ -2,7 +2,7 @@
  * WSIEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 19.11.2021 16:16
  *
  */
 
@@ -46,9 +46,17 @@ public interface WSIEvetype {
 
     @WebMethod void delete4graphic(String json);
 
+    @WebMethod String getEvetypes4wishlist(String json);
+
+    @WebMethod String getEvetypes4order_history_month(String json);
+
     @WebMethod String getEvetypes4stock(String json);
 
     @WebMethod String getEvetypes4order_history(String json);
+
+    @WebMethod String getEvetypes4shipfitmodule(String json);
+
+    @WebMethod String getEvetypes4shipfitorder(String json);
 
     @WebMethod String getEvetypes4tradecombined(String json);
 

@@ -2,7 +2,7 @@
  * View_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -51,6 +51,8 @@ public class View_ordersearch extends Tablesearch implements IView_ordersearch {
     Stringsearch regionname = new Stringsearch("view_order.regionname");
     Stringsearch evetypename = new Stringsearch("view_order.evetypename");
     Numbersearch packaged_volume = new Numbersearch("view_order.packaged_volume");
+    Numbersearch avg_buyorder = new Numbersearch("view_order.avg_buyorder");
+    Numbersearch avg_sellorder = new Numbersearch("view_order.avg_sellorder");
 
     /**
      * @return viewname
@@ -109,6 +111,8 @@ public class View_ordersearch extends Tablesearch implements IView_ordersearch {
         addFieldsearcher(regionname);
         addFieldsearcher(evetypename);
         addFieldsearcher(packaged_volume);
+        addFieldsearcher(avg_buyorder);
+        addFieldsearcher(avg_sellorder);
     }
 
     /**
@@ -625,6 +629,46 @@ public class View_ordersearch extends Tablesearch implements IView_ordersearch {
     public void packaged_volume(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(packaged_volume, values, operators);
         packaged_volume.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field avg_buyorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void avg_buyorder(Double[] values, byte[] operators) {
+        addNumbervalues(avg_buyorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field avg_buyorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void avg_buyorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(avg_buyorder, values, operators);
+        avg_buyorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field avg_sellorder, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void avg_sellorder(Double[] values, byte[] operators) {
+        addNumbervalues(avg_sellorder, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field avg_sellorder
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void avg_sellorder(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(avg_sellorder, values, operators);
+        avg_sellorder.setAndoroperator(andor);
     }
     
 }

@@ -2,7 +2,7 @@
  * View_stocktrade_systemsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 

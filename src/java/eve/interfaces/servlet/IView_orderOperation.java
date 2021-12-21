@@ -2,7 +2,7 @@
  * IView_orderOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -27,6 +27,9 @@ public interface IView_orderOperation extends IDataServlet {
     public static final byte SELECT_ONE = 2;
     public static final byte SELECT_EVETYPE_SELL = 3;
     public static final byte SELECT_EVETYPE_BUY = 4;
+    public static final byte SELECT_LOWPRICE_SELL = 5;
+    public static final byte SELECT_LOWPRICE_BUY = 6;
+    public static final byte SELECT_Wishlistorders = 7;
 //Custom code, do not change this line
 }
 

@@ -2,7 +2,7 @@
  * Orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 20.11.2021 17:22
  *
  */
 
@@ -50,6 +50,10 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     Primarykeysearch tradecombined_sellSell_order_idsearcher = new Primarykeysearch("tradecombined_sell", ITradecombined_sell.ordersSell_order_idPKfields, ITradecombined_sell.ordersSell_order_idFKfields);
     //relational key
     Relationalkeysearch reltradecombined2searcher = new Relationalkeysearch("tradecombined_sell", ITradecombined_sell.ordersSell_order_idPKfields, ITradecombined_sell.ordersSell_order_idFKfields, "tradecombined", ITradecombined_sell.tradecombinedPKfields, ITradecombined_sell.tradecombinedFKfields);
+    //foreign key
+    Primarykeysearch shipfitorderselectedsearcher = new Primarykeysearch("shipfitorderselected", IShipfitorderselected.ordersPKfields, IShipfitorderselected.ordersFKfields);
+    //relational key
+    Relationalkeysearch relshipfitordersearcher = new Relationalkeysearch("shipfitorderselected", IShipfitorderselected.ordersPKfields, IShipfitorderselected.ordersFKfields, "shipfitorder", IShipfitorderselected.shipfitorderPKfields, IShipfitorderselected.shipfitorderFKfields);
     //foreign key
     Primarykeysearch tradeSell_order_idsearcher = new Primarykeysearch("trade", ITrade.ordersSell_order_idPKfields, ITrade.ordersSell_order_idFKfields);
     //foreign key
@@ -104,6 +108,8 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
         addKeysearcher(reltradecombined1searcher);
         addKeysearcher(tradecombined_sellSell_order_idsearcher);
         addKeysearcher(reltradecombined2searcher);
+        addKeysearcher(shipfitorderselectedsearcher);
+        addKeysearcher(relshipfitordersearcher);
         addKeysearcher(tradeSell_order_idsearcher);
         addKeysearcher(tradeBuy_order_idsearcher);
     }
@@ -485,6 +491,46 @@ public class Orderssearch extends Tablesearch implements IOrderssearch {
     public ITradecombinedsearch getRelTradecombined2search() {
         if(reltradecombined2searcher.used()) {
             return (ITradecombinedsearch)reltradecombined2searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IShipfitorderselectedsearch
+     * @param shipfitorderselectedsearch: IShipfitorderselectedsearch
+     */
+    public void shipfitorderselected(IShipfitorderselectedsearch shipfitorderselectedsearch) {
+        shipfitorderselectedsearcher.setTablesearch(shipfitorderselectedsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IShipfitorderselectedsearch
+     * @return Tablesearch for IShipfitorderselectedsearch
+     */
+    public IShipfitorderselectedsearch getShipfitorderselectedsearch() {
+        if(shipfitorderselectedsearcher.used()) {
+            return (IShipfitorderselectedsearch)shipfitorderselectedsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch shipfitorder tablesearch
+     * @param shipfitordersearch: IShipfitordersearch
+     */
+    public void relshipfitorder(IShipfitordersearch shipfitordersearch) {
+        relshipfitordersearcher.setTablesearch(shipfitordersearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IShipfitordersearch
+     * @return Tablesearch for IShipfitordersearch
+     */
+    public IShipfitordersearch getRelShipfitordersearch() {
+        if(relshipfitordersearcher.used()) {
+            return (IShipfitordersearch)relshipfitordersearcher.getTablesearches().get(0);
         } else {
             return null;
         }

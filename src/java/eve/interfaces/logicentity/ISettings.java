@@ -2,7 +2,7 @@
  * ISettings.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -44,11 +44,9 @@ public interface ISettings extends LogicEntity {
 
 //Custom code, do not change this line
 //Put custom variables here
-    public static final String BROKER_FEE = "broker fee";
     public static final String STOCKSYSTEMID = "stocksystemid";
     
     public static final Object[][] DEFAULTS = {
-        { BROKER_FEE, "0.08" },
         { STOCKSYSTEMID, null }
     };
 //Custom code, do not change this line

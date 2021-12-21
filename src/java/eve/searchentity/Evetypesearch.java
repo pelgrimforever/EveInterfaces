@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 19.11.2021 16:16
  *
  */
 
@@ -48,11 +48,25 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Foreignkeysearch graphicsearcher = new Foreignkeysearch("graphic", IEvetype.graphicPKfields, IEvetype.graphicFKfields);
 //external foreign keys
     //foreign key
+    Primarykeysearch wishlistsearcher = new Primarykeysearch("wishlist", IWishlist.evetypePKfields, IWishlist.evetypeFKfields);
+    //foreign key
+    Primarykeysearch order_history_monthsearcher = new Primarykeysearch("order_history_month", IOrder_history_month.evetypePKfields, IOrder_history_month.evetypeFKfields);
+    //relational key
+    Relationalkeysearch relregion1searcher = new Relationalkeysearch("order_history_month", IOrder_history_month.evetypePKfields, IOrder_history_month.evetypeFKfields, "region", IOrder_history_month.regionPKfields, IOrder_history_month.regionFKfields);
+    //foreign key
     Primarykeysearch stocksearcher = new Primarykeysearch("stock", IStock.evetypePKfields, IStock.evetypeFKfields);
     //foreign key
     Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     //relational key
-    Relationalkeysearch relregionsearcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+    Relationalkeysearch relregion2searcher = new Relationalkeysearch("order_history", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields, "region", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
+    //foreign key
+    Primarykeysearch shipfitmodulesearcher = new Primarykeysearch("shipfitmodule", IShipfitmodule.evetypePKfields, IShipfitmodule.evetypeFKfields);
+    //relational key
+    Relationalkeysearch relshipfit1searcher = new Relationalkeysearch("shipfitmodule", IShipfitmodule.evetypePKfields, IShipfitmodule.evetypeFKfields, "shipfit", IShipfitmodule.shipfitPKfields, IShipfitmodule.shipfitFKfields);
+    //foreign key
+    Primarykeysearch shipfitordersearcher = new Primarykeysearch("shipfitorder", IShipfitorder.evetypePKfields, IShipfitorder.evetypeFKfields);
+    //relational key
+    Relationalkeysearch relshipfit2searcher = new Relationalkeysearch("shipfitorder", IShipfitorder.evetypePKfields, IShipfitorder.evetypeFKfields, "shipfit", IShipfitorder.shipfitPKfields, IShipfitorder.shipfitFKfields);
     //foreign key
     Primarykeysearch tradecombinedsearcher = new Primarykeysearch("tradecombined", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields);
     //relational key
@@ -110,9 +124,16 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addKeysearcher(market_groupsearcher);
         addKeysearcher(typegroupsearcher);
         addKeysearcher(graphicsearcher);
+        addKeysearcher(wishlistsearcher);
+        addKeysearcher(order_history_monthsearcher);
+        addKeysearcher(relregion1searcher);
         addKeysearcher(stocksearcher);
         addKeysearcher(order_historysearcher);
-        addKeysearcher(relregionsearcher);
+        addKeysearcher(relregion2searcher);
+        addKeysearcher(shipfitmodulesearcher);
+        addKeysearcher(relshipfit1searcher);
+        addKeysearcher(shipfitordersearcher);
+        addKeysearcher(relshipfit2searcher);
         addKeysearcher(tradecombinedsearcher);
         addKeysearcher(relsystem1searcher);
         addKeysearcher(relsystem2searcher);
@@ -542,6 +563,66 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     }
 
     /**
+     * set external key - foreign key subsearch IWishlistsearch
+     * @param wishlistsearch: IWishlistsearch
+     */
+    public void wishlist(IWishlistsearch wishlistsearch) {
+        wishlistsearcher.setTablesearch(wishlistsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IWishlistsearch
+     * @return Tablesearch for IWishlistsearch
+     */
+    public IWishlistsearch getWishlistsearch() {
+        if(wishlistsearcher.used()) {
+            return (IWishlistsearch)wishlistsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IOrder_history_monthsearch
+     * @param order_history_monthsearch: IOrder_history_monthsearch
+     */
+    public void order_history_month(IOrder_history_monthsearch order_history_monthsearch) {
+        order_history_monthsearcher.setTablesearch(order_history_monthsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IOrder_history_monthsearch
+     * @return Tablesearch for IOrder_history_monthsearch
+     */
+    public IOrder_history_monthsearch getOrder_history_monthsearch() {
+        if(order_history_monthsearcher.used()) {
+            return (IOrder_history_monthsearch)order_history_monthsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch region tablesearch
+     * @param regionsearch: IRegionsearch
+     */
+    public void relregion1(IRegionsearch regionsearch) {
+        relregion1searcher.setTablesearch(regionsearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IRegionsearch
+     * @return Tablesearch for IRegionsearch
+     */
+    public IRegionsearch getRelRegion1search() {
+        if(relregion1searcher.used()) {
+            return (IRegionsearch)relregion1searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * set external key - foreign key subsearch IStocksearch
      * @param stocksearch: IStocksearch
      */
@@ -585,17 +666,97 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
      * set external key - relational subsearch region tablesearch
      * @param regionsearch: IRegionsearch
      */
-    public void relregion(IRegionsearch regionsearch) {
-        relregionsearcher.setTablesearch(regionsearch);
+    public void relregion2(IRegionsearch regionsearch) {
+        relregion2searcher.setTablesearch(regionsearch);
     }
     
     /**
      * get external key - relational subsearch IRegionsearch
      * @return Tablesearch for IRegionsearch
      */
-    public IRegionsearch getRelRegionsearch() {
-        if(relregionsearcher.used()) {
-            return (IRegionsearch)relregionsearcher.getTablesearches().get(0);
+    public IRegionsearch getRelRegion2search() {
+        if(relregion2searcher.used()) {
+            return (IRegionsearch)relregion2searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IShipfitmodulesearch
+     * @param shipfitmodulesearch: IShipfitmodulesearch
+     */
+    public void shipfitmodule(IShipfitmodulesearch shipfitmodulesearch) {
+        shipfitmodulesearcher.setTablesearch(shipfitmodulesearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IShipfitmodulesearch
+     * @return Tablesearch for IShipfitmodulesearch
+     */
+    public IShipfitmodulesearch getShipfitmodulesearch() {
+        if(shipfitmodulesearcher.used()) {
+            return (IShipfitmodulesearch)shipfitmodulesearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch shipfit tablesearch
+     * @param shipfitsearch: IShipfitsearch
+     */
+    public void relshipfit1(IShipfitsearch shipfitsearch) {
+        relshipfit1searcher.setTablesearch(shipfitsearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IShipfitsearch
+     * @return Tablesearch for IShipfitsearch
+     */
+    public IShipfitsearch getRelShipfit1search() {
+        if(relshipfit1searcher.used()) {
+            return (IShipfitsearch)relshipfit1searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IShipfitordersearch
+     * @param shipfitordersearch: IShipfitordersearch
+     */
+    public void shipfitorder(IShipfitordersearch shipfitordersearch) {
+        shipfitordersearcher.setTablesearch(shipfitordersearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IShipfitordersearch
+     * @return Tablesearch for IShipfitordersearch
+     */
+    public IShipfitordersearch getShipfitordersearch() {
+        if(shipfitordersearcher.used()) {
+            return (IShipfitordersearch)shipfitordersearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch shipfit tablesearch
+     * @param shipfitsearch: IShipfitsearch
+     */
+    public void relshipfit2(IShipfitsearch shipfitsearch) {
+        relshipfit2searcher.setTablesearch(shipfitsearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IShipfitsearch
+     * @return Tablesearch for IShipfitsearch
+     */
+    public IShipfitsearch getRelShipfit2search() {
+        if(relshipfit2searcher.used()) {
+            return (IShipfitsearch)relshipfit2searcher.getTablesearches().get(0);
         } else {
             return null;
         }

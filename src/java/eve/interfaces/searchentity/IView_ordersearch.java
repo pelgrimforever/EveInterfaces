@@ -2,7 +2,7 @@
  * IView_ordersearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -400,5 +400,35 @@ public interface IView_ordersearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void packaged_volume(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field avg_buyorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void avg_buyorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field avg_buyorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void avg_buyorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field avg_sellorder, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void avg_sellorder(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field avg_sellorder
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void avg_sellorder(Double[] values, byte[] operators, byte andor);
 	
 }

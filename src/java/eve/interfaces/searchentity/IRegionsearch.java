@@ -2,7 +2,7 @@
  * IRegionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -95,6 +95,20 @@ public interface IRegionsearch extends Tablesearcher {
 	
     /**
      * external foreign key - foreign key
+     * set subsearch order_history_month tablesearch
+     * @param order_history_monthsearch: IOrder_history_monthsearch
+     */
+    public void order_history_month(IOrder_history_monthsearch order_history_monthsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void relevetype1(IEvetypesearch evetypesearch);
+    
+    /**
+     * external foreign key - foreign key
      * set subsearch order_history tablesearch
      * @param order_historysearch: IOrder_historysearch
      */
@@ -105,7 +119,7 @@ public interface IRegionsearch extends Tablesearcher {
      * set relational subsearch evetype tablesearch
      * @param evetypesearch: IEvetypesearch
      */
-    public void relevetype(IEvetypesearch evetypesearch);
+    public void relevetype2(IEvetypesearch evetypesearch);
     
     /**
      * external foreign key - foreign key

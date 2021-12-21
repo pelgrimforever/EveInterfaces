@@ -2,7 +2,7 @@
  * Regionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -33,9 +33,13 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
 //foreign keys
 //external foreign keys
     //foreign key
+    Primarykeysearch order_history_monthsearcher = new Primarykeysearch("order_history_month", IOrder_history_month.regionPKfields, IOrder_history_month.regionFKfields);
+    //relational key
+    Relationalkeysearch relevetype1searcher = new Relationalkeysearch("order_history_month", IOrder_history_month.regionPKfields, IOrder_history_month.regionFKfields, "evetype", IOrder_history_month.evetypePKfields, IOrder_history_month.evetypeFKfields);
+    //foreign key
     Primarykeysearch order_historysearcher = new Primarykeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields);
     //relational key
-    Relationalkeysearch relevetypesearcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
+    Relationalkeysearch relevetype2searcher = new Relationalkeysearch("order_history", IOrder_history.regionPKfields, IOrder_history.regionFKfields, "evetype", IOrder_history.evetypePKfields, IOrder_history.evetypeFKfields);
     //foreign key
     Primarykeysearch region_neighbourRegionsearcher = new Primarykeysearch("region_neighbour", IRegion_neighbour.regionRegionPKfields, IRegion_neighbour.regionRegionFKfields);
     //foreign key
@@ -76,8 +80,10 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
         addFieldsearcher(noaccess);
         addFieldsearcher(orderpages);
         addFieldsearcher(ordererrors);
+        addKeysearcher(order_history_monthsearcher);
+        addKeysearcher(relevetype1searcher);
         addKeysearcher(order_historysearcher);
-        addKeysearcher(relevetypesearcher);
+        addKeysearcher(relevetype2searcher);
         addKeysearcher(region_neighbourRegionsearcher);
         addKeysearcher(region_neighbourNeighboursearcher);
     }
@@ -179,6 +185,46 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     }
     
     /**
+     * set external key - foreign key subsearch IOrder_history_monthsearch
+     * @param order_history_monthsearch: IOrder_history_monthsearch
+     */
+    public void order_history_month(IOrder_history_monthsearch order_history_monthsearch) {
+        order_history_monthsearcher.setTablesearch(order_history_monthsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IOrder_history_monthsearch
+     * @return Tablesearch for IOrder_history_monthsearch
+     */
+    public IOrder_history_monthsearch getOrder_history_monthsearch() {
+        if(order_history_monthsearcher.used()) {
+            return (IOrder_history_monthsearch)order_history_monthsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - relational subsearch evetype tablesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void relevetype1(IEvetypesearch evetypesearch) {
+        relevetype1searcher.setTablesearch(evetypesearch);
+    }
+    
+    /**
+     * get external key - relational subsearch IEvetypesearch
+     * @return Tablesearch for IEvetypesearch
+     */
+    public IEvetypesearch getRelEvetype1search() {
+        if(relevetype1searcher.used()) {
+            return (IEvetypesearch)relevetype1searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * set external key - foreign key subsearch IOrder_historysearch
      * @param order_historysearch: IOrder_historysearch
      */
@@ -202,17 +248,17 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
      * set external key - relational subsearch evetype tablesearch
      * @param evetypesearch: IEvetypesearch
      */
-    public void relevetype(IEvetypesearch evetypesearch) {
-        relevetypesearcher.setTablesearch(evetypesearch);
+    public void relevetype2(IEvetypesearch evetypesearch) {
+        relevetype2searcher.setTablesearch(evetypesearch);
     }
     
     /**
      * get external key - relational subsearch IEvetypesearch
      * @return Tablesearch for IEvetypesearch
      */
-    public IEvetypesearch getRelEvetypesearch() {
-        if(relevetypesearcher.used()) {
-            return (IEvetypesearch)relevetypesearcher.getTablesearches().get(0);
+    public IEvetypesearch getRelEvetype2search() {
+        if(relevetype2searcher.used()) {
+            return (IEvetypesearch)relevetype2searcher.getTablesearches().get(0);
         } else {
             return null;
         }

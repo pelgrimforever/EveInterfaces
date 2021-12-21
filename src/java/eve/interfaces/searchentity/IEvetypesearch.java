@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 19.11.2021 16:16
  *
  */
 
@@ -295,6 +295,27 @@ public interface IEvetypesearch extends Tablesearcher {
 	
     /**
      * external foreign key - foreign key
+     * set subsearch wishlist tablesearch
+     * @param wishlistsearch: IWishlistsearch
+     */
+    public void wishlist(IWishlistsearch wishlistsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch order_history_month tablesearch
+     * @param order_history_monthsearch: IOrder_history_monthsearch
+     */
+    public void order_history_month(IOrder_history_monthsearch order_history_monthsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch region tablesearch
+     * @param regionsearch: IRegionsearch
+     */
+    public void relregion1(IRegionsearch regionsearch);
+    
+    /**
+     * external foreign key - foreign key
      * set subsearch stock tablesearch
      * @param stocksearch: IStocksearch
      */
@@ -312,7 +333,35 @@ public interface IEvetypesearch extends Tablesearcher {
      * set relational subsearch region tablesearch
      * @param regionsearch: IRegionsearch
      */
-    public void relregion(IRegionsearch regionsearch);
+    public void relregion2(IRegionsearch regionsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch shipfitmodule tablesearch
+     * @param shipfitmodulesearch: IShipfitmodulesearch
+     */
+    public void shipfitmodule(IShipfitmodulesearch shipfitmodulesearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch shipfit tablesearch
+     * @param shipfitsearch: IShipfitsearch
+     */
+    public void relshipfit1(IShipfitsearch shipfitsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch shipfitorder tablesearch
+     * @param shipfitordersearch: IShipfitordersearch
+     */
+    public void shipfitorder(IShipfitordersearch shipfitordersearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch shipfit tablesearch
+     * @param shipfitsearch: IShipfitsearch
+     */
+    public void relshipfit2(IShipfitsearch shipfitsearch);
     
     /**
      * external foreign key - foreign key

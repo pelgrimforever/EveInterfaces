@@ -2,7 +2,7 @@
  * IOrderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 20.11.2021 17:22
  *
  */
 
@@ -245,6 +245,20 @@ public interface IOrderssearch extends Tablesearcher {
      * @param tradecombinedsearch: ITradecombinedsearch
      */
     public void reltradecombined2(ITradecombinedsearch tradecombinedsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch shipfitorderselected tablesearch
+     * @param shipfitorderselectedsearch: IShipfitorderselectedsearch
+     */
+    public void shipfitorderselected(IShipfitorderselectedsearch shipfitorderselectedsearch);
+    
+    /**
+     * external foreign key - relational key
+     * set relational subsearch shipfitorder tablesearch
+     * @param shipfitordersearch: IShipfitordersearch
+     */
+    public void relshipfitorder(IShipfitordersearch shipfitordersearch);
     
     /**
      * external foreign key - foreign key

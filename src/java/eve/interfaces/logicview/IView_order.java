@@ -2,7 +2,7 @@
  * IView_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -55,6 +55,8 @@ public interface IView_order extends View {
     public static byte REGIONNAME = 25;
     public static byte EVETYPENAME = 26;
     public static byte PACKAGED_VOLUME = 27;
+    public static byte AVG_BUYORDER = 28;
+    public static byte AVG_SELLORDER = 29;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_ISOPEN = 1;
@@ -83,7 +85,9 @@ public interface IView_order extends View {
     public static final int SIZE_REGIONNAME = 30;
     public static final int SIZE_EVETYPENAME = 100;
     public static final int SIZE_PACKAGED_VOLUME = 17;
-    public static final String[] fieldnames = { "id", "isopen", "system", "evetype", "volume_total", "volume_remain", "range", "range_number", "price", "min_volume", "location", "is_buy_order", "issued", "duration", "page", "stationid", "stationname", "locationid", "locationname", "systemname", "security_status", "constellation", "constellationname", "region", "regionname", "evetypename", "packaged_volume" };
+    public static final int SIZE_AVG_BUYORDER = 17;
+    public static final int SIZE_AVG_SELLORDER = 17;
+    public static final String[] fieldnames = { "id", "isopen", "system", "evetype", "volume_total", "volume_remain", "range", "range_number", "price", "min_volume", "location", "is_buy_order", "issued", "duration", "page", "stationid", "stationname", "locationid", "locationname", "systemname", "security_status", "constellation", "constellationname", "region", "regionname", "evetypename", "packaged_volume", "avg_buyorder", "avg_sellorder" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -251,9 +255,31 @@ public interface IView_order extends View {
      */
     public double getPackaged_volume();
 
+    /**
+     * 
+     * @return avg_buyorder value
+     */
+    public double getAvg_buyorder();
+
+    /**
+     * 
+     * @return avg_sellorder value
+     */
+    public double getAvg_sellorder();
+
     
 //Custom code, do not change this line
 //Put custom functions here
+    public int getStart_system_jumps();
 
+    public void setStart_system_jumps(int start_system_jumps);
+
+    public int getStart_system_jumpslowsec();
+
+    public void setStart_system_jumpslowsec(int start_system_jumpslowsec);
+
+    public int getStart_system_jumpsnullsec();
+
+    public void setStart_system_jumpsnullsec(int start_system_jumpsnullsec);
 //Custom code, do not change this line
 }

@@ -2,7 +2,7 @@
  * WSIRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -33,6 +33,8 @@ public interface WSIRegion {
     @WebMethod void updateRegion(String json);
 
     @WebMethod void deleteRegion(String json);
+
+    @WebMethod String getRegions4order_history_month(String json);
 
     @WebMethod String getRegions4order_history(String json);
 

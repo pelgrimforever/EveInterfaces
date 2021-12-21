@@ -2,7 +2,7 @@
  * eView_order.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.11.2021 14:30
+ * Generated on 16.11.2021 15:45
  *
  */
 
@@ -57,6 +57,8 @@ public class eView_order implements eveDatabaseproperties, EntityView {
     private java.lang.String regionname;
     private java.lang.String evetypename;
     private double packaged_volume;
+    private double avg_buyorder;
+    private double avg_sellorder;
 	  
     /**
      * @return database tool name
@@ -530,6 +532,38 @@ public class eView_order implements eveDatabaseproperties, EntityView {
      */
     public void setPackaged_volume(double packaged_volume) {
         this.packaged_volume = packaged_volume;
+    }
+
+    /**
+     * 
+     * @return avg_buyorder value
+     */
+    public double getAvg_buyorder() {
+        return this.avg_buyorder;
+    }
+
+    /**
+     * set avg_buyorder value
+     * @param avg_buyorder: new value
+     */
+    public void setAvg_buyorder(double avg_buyorder) {
+        this.avg_buyorder = avg_buyorder;
+    }
+
+    /**
+     * 
+     * @return avg_sellorder value
+     */
+    public double getAvg_sellorder() {
+        return this.avg_sellorder;
+    }
+
+    /**
+     * set avg_sellorder value
+     * @param avg_sellorder: new value
+     */
+    public void setAvg_sellorder(double avg_sellorder) {
+        this.avg_sellorder = avg_sellorder;
     }
 
 }
