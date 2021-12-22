@@ -33,6 +33,7 @@ public interface IShipfitorderselectedOperation extends IDataServlet {
 
     //UPDATE OPERATIONS
     public static final byte UPDATE_SHIPFITORDERSELECTED = 10;
+    public static final byte UPDATE_CONFIRMORDER = 11;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
