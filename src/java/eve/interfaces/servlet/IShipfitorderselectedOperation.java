@@ -2,7 +2,7 @@
  * IShipfitorderselectedOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 20.11.2021 17:22
+ * Generated on 30.11.2021 19:35
  *
  */
 
@@ -33,9 +33,9 @@ public interface IShipfitorderselectedOperation extends IDataServlet {
 
     //UPDATE OPERATIONS
     public static final byte UPDATE_SHIPFITORDERSELECTED = 10;
-    public static final byte UPDATE_CONFIRMORDER = 11;
 //Custom code, do not change this line
 //add here custom operations
+    public static final byte UPDATE_CONFIRMORDER = 11;
 //Custom code, do not change this line   
 
     //INSERT OPERATIONS

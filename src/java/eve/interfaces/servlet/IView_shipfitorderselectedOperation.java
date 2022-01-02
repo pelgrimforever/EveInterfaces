@@ -25,6 +25,7 @@ public interface IView_shipfitorderselectedOperation extends IDataServlet {
 //Custom code, do not change this line
 //add here custom operations
     public static final byte SELECT_4USER = 2;
+    public static final byte SELECT_4USERSYSTEM = 3;
 //Custom code, do not change this line
 }
 
