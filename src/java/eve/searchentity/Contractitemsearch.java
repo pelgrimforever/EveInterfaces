@@ -1,0 +1,263 @@
+/*
+ * Contractitemsearch.java
+ *
+ * Created on Feb 29, 2012, 18:15 PM
+ * Generated on 14.0.2022 16:56
+ *
+ */
+
+package eve.searchentity;
+
+import eve.interfaces.searchentity.IContractitemsearch;
+import eve.interfaces.entity.pk.*;
+import data.interfaces.db.*;
+import eve.interfaces.logicentity.*;
+import eve.interfaces.searchentity.*;
+import eve.logicentity.Contractitem;
+import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
+
+/**
+ * Search class for Contractitem table
+ * construct sql where part and parameter array from search parameters
+ * @author Franky Laseure
+ */
+public class Contractitemsearch extends Tablesearch implements IContractitemsearch {
+
+    Numbersearch id = new Numbersearch("contractitem.id");
+    Booleansearch blueprint_copy = new Booleansearch("contractitem.blueprint_copy");
+    Booleansearch included = new Booleansearch("contractitem.included");
+    Numbersearch quantity = new Numbersearch("contractitem.quantity");
+    Numbersearch material_efficiency = new Numbersearch("contractitem.material_efficiency");
+    Numbersearch runs = new Numbersearch("contractitem.runs");
+    Numbersearch time_efficiency = new Numbersearch("contractitem.time_efficiency");
+//foreign keys
+    Foreignkeysearch evetypesearcher = new Foreignkeysearch("evetype", IContractitem.evetypePKfields, IContractitem.evetypeFKfields);
+    Foreignkeysearch contractsearcher = new Foreignkeysearch("contract", IContractitem.contractPKfields, IContractitem.contractFKfields);
+//external foreign keys
+
+    /**
+     * @return tablename
+     */
+    public String getTable() {
+        return Contractitem.table;
+    }
+
+    /**
+     * Constructor
+     * add IFieldsearcher classes for all relevant fields
+     */
+    public Contractitemsearch() {
+        setFieldsearchers();
+    }
+
+    /**
+     * Constructor
+     * add IFieldsearcher classes for all relevant fields
+     * set andor parameter
+     * @param andor: containts AND or OR contant, indicates all conditions must apply or only one
+     */
+    public Contractitemsearch(byte andor) {
+        super(andor);
+        setFieldsearchers();
+    }
+
+    /**
+     * add IFieldsearcher classes for all relevant fields
+     */
+    private void setFieldsearchers() {
+        addFieldsearcher(id);
+        addFieldsearcher(blueprint_copy);
+        addFieldsearcher(included);
+        addFieldsearcher(quantity);
+        addFieldsearcher(material_efficiency);
+        addFieldsearcher(runs);
+        addFieldsearcher(time_efficiency);
+        addKeysearcher(evetypesearcher);
+        addKeysearcher(contractsearcher);
+    }
+
+    /**
+     * add a primary key instance to search for
+     * @param contractitemPK: Contractitem primery key
+     */
+    public void addPrimarykey(IContractitemPK contractitemPK) {
+        super.addPrimarykey(contractitemPK);
+    }
+
+    /**
+     * add Numeric search values for field id, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void id(long[] values, byte[] operators) {
+        addNumbervalues(id, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field id
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void id(long[] values, byte[] operators, byte andor) {
+        addNumbervalues(id, values, operators);
+        id.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Boolean search values for field blueprint_copy
+     * @param value: true or false
+     */
+    public void blueprint_copy(Boolean value) {
+        addBooleanvalue(blueprint_copy, value);
+    }
+    
+    /**
+     * add Boolean search values for field included
+     * @param value: true or false
+     */
+    public void included(Boolean value) {
+        addBooleanvalue(included, value);
+    }
+    
+    /**
+     * add Numeric search values for field quantity, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void quantity(Double[] values, byte[] operators) {
+        addNumbervalues(quantity, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field quantity
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void quantity(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(quantity, values, operators);
+        quantity.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field material_efficiency, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void material_efficiency(Double[] values, byte[] operators) {
+        addNumbervalues(material_efficiency, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field material_efficiency
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void material_efficiency(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(material_efficiency, values, operators);
+        material_efficiency.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field runs, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void runs(Double[] values, byte[] operators) {
+        addNumbervalues(runs, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field runs
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void runs(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(runs, values, operators);
+        runs.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field time_efficiency, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void time_efficiency(Double[] values, byte[] operators) {
+        addNumbervalues(time_efficiency, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field time_efficiency
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void time_efficiency(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(time_efficiency, values, operators);
+        time_efficiency.setAndoroperator(andor);
+    }
+    
+    /**
+     * set foreign key subsearch evetype IEvetypesearch
+     * @param evetypesearch: IEvetypesearch
+     */
+    public void evetype(IEvetypesearch evetypesearch) {
+        evetypesearcher.setTablesearch(evetypesearch);
+    }
+    
+    /**
+     * get foreign key subsearch evetype IEvetypesearch
+     * @return Tablesearch for Contractitem
+     */
+    public IEvetypesearch getEvetypesearch() {
+        if(evetypesearcher.used()) {
+            return (IEvetypesearch)evetypesearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * force to return inner join statement
+     * ignore if evetypesearcher is not used
+     * @return inner join statement
+     */
+    public String getEvetypeInnerjoin() {
+        return evetypesearcher.getInnerjoin();
+    }
+
+    /**
+     * set foreign key subsearch contract IContractsearch
+     * @param contractsearch: IContractsearch
+     */
+    public void contract(IContractsearch contractsearch) {
+        contractsearcher.setTablesearch(contractsearch);
+    }
+    
+    /**
+     * get foreign key subsearch contract IContractsearch
+     * @return Tablesearch for Contractitem
+     */
+    public IContractsearch getContractsearch() {
+        if(contractsearcher.used()) {
+            return (IContractsearch)contractsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * force to return inner join statement
+     * ignore if contractsearcher is not used
+     * @return inner join statement
+     */
+    public String getContractInnerjoin() {
+        return contractsearcher.getInnerjoin();
+    }
+
+}

@@ -2,7 +2,7 @@
  * eRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 16.11.2021 15:46
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -42,6 +42,8 @@ public class eRegion extends AbstractEntity implements eveDatabaseproperties, En
     private boolean noaccess;
     private int orderpages;
     private int ordererrors;
+    private int contractpages;
+    private int contracterrors;
 	  
     public static final String table = "region";
 	  
@@ -140,6 +142,8 @@ public class eRegion extends AbstractEntity implements eveDatabaseproperties, En
         updates.put(IRegion.NOACCESS, noaccess);
         updates.put(IRegion.ORDERPAGES, orderpages);
         updates.put(IRegion.ORDERERRORS, ordererrors);
+        updates.put(IRegion.CONTRACTPAGES, contractpages);
+        updates.put(IRegion.CONTRACTERRORS, contracterrors);
         return getAllFields();
     }
 	
@@ -259,6 +263,56 @@ public class eRegion extends AbstractEntity implements eveDatabaseproperties, En
     public void setOrdererrors(int ordererrors) {
         updates.put(IRegion.ORDERERRORS, ordererrors);
         this.ordererrors = ordererrors;
+    }
+
+    /**
+     * 
+     * @return contractpages value
+     */
+    public int getContractpages() {
+        return this.contractpages;
+    }
+
+    /**
+     * set contractpages value
+     * @param contractpages: new value
+     */
+    public void initContractpages(int contractpages) {
+        this.contractpages = contractpages;
+    }
+
+    /**
+     * set contractpages value
+     * @param contractpages: new value
+     */
+    public void setContractpages(int contractpages) {
+        updates.put(IRegion.CONTRACTPAGES, contractpages);
+        this.contractpages = contractpages;
+    }
+
+    /**
+     * 
+     * @return contracterrors value
+     */
+    public int getContracterrors() {
+        return this.contracterrors;
+    }
+
+    /**
+     * set contracterrors value
+     * @param contracterrors: new value
+     */
+    public void initContracterrors(int contracterrors) {
+        this.contracterrors = contracterrors;
+    }
+
+    /**
+     * set contracterrors value
+     * @param contracterrors: new value
+     */
+    public void setContracterrors(int contracterrors) {
+        updates.put(IRegion.CONTRACTERRORS, contracterrors);
+        this.contracterrors = contracterrors;
     }
 
     /**

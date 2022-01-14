@@ -2,7 +2,7 @@
  * eEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 16.11.2021 15:46
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -57,6 +57,10 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
     private double max_buyorder;
     private double min_selorder;
     private double max_selorder;
+    private double average;
+    private double highest;
+    private double lowest;
+    private long order_count;
 	  
     public static final String table = "evetype";
 	  
@@ -173,6 +177,10 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         updates.put(IEvetype.MAX_BUYORDER, max_buyorder);
         updates.put(IEvetype.MIN_SELORDER, min_selorder);
         updates.put(IEvetype.MAX_SELORDER, max_selorder);
+        updates.put(IEvetype.AVERAGE, average);
+        updates.put(IEvetype.HIGHEST, highest);
+        updates.put(IEvetype.LOWEST, lowest);
+        updates.put(IEvetype.ORDER_COUNT, order_count);
         return getAllFields();
     }
 	
@@ -594,6 +602,106 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
     public void setMax_selorder(double max_selorder) {
         updates.put(IEvetype.MAX_SELORDER, max_selorder);
         this.max_selorder = max_selorder;
+    }
+
+    /**
+     * 
+     * @return average value
+     */
+    public double getAverage() {
+        return this.average;
+    }
+
+    /**
+     * set average value
+     * @param average: new value
+     */
+    public void initAverage(double average) {
+        this.average = average;
+    }
+
+    /**
+     * set average value
+     * @param average: new value
+     */
+    public void setAverage(double average) {
+        updates.put(IEvetype.AVERAGE, average);
+        this.average = average;
+    }
+
+    /**
+     * 
+     * @return highest value
+     */
+    public double getHighest() {
+        return this.highest;
+    }
+
+    /**
+     * set highest value
+     * @param highest: new value
+     */
+    public void initHighest(double highest) {
+        this.highest = highest;
+    }
+
+    /**
+     * set highest value
+     * @param highest: new value
+     */
+    public void setHighest(double highest) {
+        updates.put(IEvetype.HIGHEST, highest);
+        this.highest = highest;
+    }
+
+    /**
+     * 
+     * @return lowest value
+     */
+    public double getLowest() {
+        return this.lowest;
+    }
+
+    /**
+     * set lowest value
+     * @param lowest: new value
+     */
+    public void initLowest(double lowest) {
+        this.lowest = lowest;
+    }
+
+    /**
+     * set lowest value
+     * @param lowest: new value
+     */
+    public void setLowest(double lowest) {
+        updates.put(IEvetype.LOWEST, lowest);
+        this.lowest = lowest;
+    }
+
+    /**
+     * 
+     * @return order_count value
+     */
+    public long getOrder_count() {
+        return this.order_count;
+    }
+
+    /**
+     * set order_count value
+     * @param order_count: new value
+     */
+    public void initOrder_count(long order_count) {
+        this.order_count = order_count;
+    }
+
+    /**
+     * set order_count value
+     * @param order_count: new value
+     */
+    public void setOrder_count(long order_count) {
+        updates.put(IEvetype.ORDER_COUNT, order_count);
+        this.order_count = order_count;
     }
 
     /**

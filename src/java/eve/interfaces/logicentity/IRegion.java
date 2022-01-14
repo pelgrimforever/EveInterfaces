@@ -2,7 +2,7 @@
  * IRegion.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -38,14 +38,18 @@ public interface IRegion extends LogicEntity {
     public static short NOACCESS = 3;
     public static short ORDERPAGES = 4;
     public static short ORDERERRORS = 5;
+    public static short CONTRACTPAGES = 6;
+    public static short CONTRACTERRORS = 7;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 30;
     public static final int SIZE_NOACCESS = 1;
     public static final int SIZE_ORDERPAGES = 10;
     public static final int SIZE_ORDERERRORS = 10;
-    public static final String[] fieldnames = { "id", "name", "noaccess", "orderpages", "ordererrors" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_boolean, Datatypes.type_int, Datatypes.type_int };
+    public static final int SIZE_CONTRACTPAGES = 10;
+    public static final int SIZE_CONTRACTERRORS = 10;
+    public static final String[] fieldnames = { "id", "name", "noaccess", "orderpages", "ordererrors", "contractpages", "contracterrors" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_boolean, Datatypes.type_int, Datatypes.type_int, Datatypes.type_int, Datatypes.type_int };
 
 
 //Custom code, do not change this line
@@ -99,6 +103,30 @@ public interface IRegion extends LogicEntity {
      * @param ordererrors: new value
      */
     public void setOrdererrors(int ordererrors);
+
+    /**
+     * 
+     * @return contractpages value
+     */
+    public int getContractpages();
+
+    /**
+     * set contractpages value
+     * @param contractpages: new value
+     */
+    public void setContractpages(int contractpages);
+
+    /**
+     * 
+     * @return contracterrors value
+     */
+    public int getContracterrors();
+
+    /**
+     * set contracterrors value
+     * @param contracterrors: new value
+     */
+    public void setContracterrors(int contracterrors);
 
     
 //Custom code, do not change this line

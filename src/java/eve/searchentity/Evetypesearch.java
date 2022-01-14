@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 19.11.2021 16:16
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -42,6 +42,10 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Numbersearch max_buyorder = new Numbersearch("evetype.max_buyorder");
     Numbersearch min_selorder = new Numbersearch("evetype.min_selorder");
     Numbersearch max_selorder = new Numbersearch("evetype.max_selorder");
+    Numbersearch average = new Numbersearch("evetype.average");
+    Numbersearch highest = new Numbersearch("evetype.highest");
+    Numbersearch lowest = new Numbersearch("evetype.lowest");
+    Numbersearch order_count = new Numbersearch("evetype.order_count");
 //foreign keys
     Foreignkeysearch market_groupsearcher = new Foreignkeysearch("market_group", IEvetype.market_groupPKfields, IEvetype.market_groupFKfields);
     Foreignkeysearch typegroupsearcher = new Foreignkeysearch("typegroup", IEvetype.typegroupPKfields, IEvetype.typegroupFKfields);
@@ -121,6 +125,10 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addFieldsearcher(max_buyorder);
         addFieldsearcher(min_selorder);
         addFieldsearcher(max_selorder);
+        addFieldsearcher(average);
+        addFieldsearcher(highest);
+        addFieldsearcher(lowest);
+        addFieldsearcher(order_count);
         addKeysearcher(market_groupsearcher);
         addKeysearcher(typegroupsearcher);
         addKeysearcher(graphicsearcher);
@@ -473,6 +481,86 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     public void max_selorder(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(max_selorder, values, operators);
         max_selorder.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field average, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void average(Double[] values, byte[] operators) {
+        addNumbervalues(average, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field average
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void average(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(average, values, operators);
+        average.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field highest, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void highest(Double[] values, byte[] operators) {
+        addNumbervalues(highest, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field highest
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void highest(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(highest, values, operators);
+        highest.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field lowest, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void lowest(Double[] values, byte[] operators) {
+        addNumbervalues(lowest, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field lowest
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void lowest(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(lowest, values, operators);
+        lowest.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field order_count, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void order_count(Double[] values, byte[] operators) {
+        addNumbervalues(order_count, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field order_count
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void order_count(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(order_count, values, operators);
+        order_count.setAndoroperator(andor);
     }
     
     /**

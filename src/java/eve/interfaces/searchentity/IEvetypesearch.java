@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 19.11.2021 16:16
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -271,6 +271,66 @@ public interface IEvetypesearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void max_selorder(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field average, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void average(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field average
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void average(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field highest, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void highest(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field highest
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void highest(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field lowest, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void lowest(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field lowest
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void lowest(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field order_count, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void order_count(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field order_count
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void order_count(Double[] values, byte[] operators, byte andor);
 	
 	/**
    * foreign key

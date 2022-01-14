@@ -2,7 +2,7 @@
  * IRegionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -92,6 +92,36 @@ public interface IRegionsearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void ordererrors(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field contractpages, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void contractpages(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field contractpages
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void contractpages(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field contracterrors, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void contracterrors(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field contracterrors
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void contracterrors(Double[] values, byte[] operators, byte andor);
 	
     /**
      * external foreign key - foreign key

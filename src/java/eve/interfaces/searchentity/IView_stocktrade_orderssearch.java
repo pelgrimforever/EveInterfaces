@@ -2,7 +2,7 @@
  * IView_stocktrade_orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -151,6 +151,21 @@ public interface IView_stocktrade_orderssearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void min_volume(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field orderid, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void orderid(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field orderid
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void orderid(Double[] values, byte[] operators, byte andor);
 	
 	/**
 	 * add Numeric search values for field sellamount, default OR operator is used

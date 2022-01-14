@@ -2,7 +2,7 @@
  * IView_stocktrade_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -37,7 +37,8 @@ public interface IView_stocktrade_orders extends View {
     public static byte EVETYPENAME = 7;
     public static byte PACKAGED_VOLUME = 8;
     public static byte MIN_VOLUME = 9;
-    public static byte SELLAMOUNT = 10;
+    public static byte ORDERID = 10;
+    public static byte SELLAMOUNT = 11;
 
     public static final int SIZE_USERNAME = 20;
     public static final int SIZE_SYSTEM = 19;
@@ -48,8 +49,9 @@ public interface IView_stocktrade_orders extends View {
     public static final int SIZE_EVETYPENAME = 100;
     public static final int SIZE_PACKAGED_VOLUME = 17;
     public static final int SIZE_MIN_VOLUME = 10;
+    public static final int SIZE_ORDERID = 19;
     public static final int SIZE_SELLAMOUNT = 19;
-    public static final String[] fieldnames = { "username", "system", "locationid", "stationname", "locationname", "evetypeid", "evetypename", "packaged_volume", "min_volume", "sellamount" };
+    public static final String[] fieldnames = { "username", "system", "locationid", "stationname", "locationname", "evetypeid", "evetypename", "packaged_volume", "min_volume", "orderid", "sellamount" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -108,6 +110,12 @@ public interface IView_stocktrade_orders extends View {
      * @return min_volume value
      */
     public int getMin_volume();
+
+    /**
+     * 
+     * @return orderid value
+     */
+    public long getOrderid();
 
     /**
      * 

@@ -2,7 +2,7 @@
  * IStockOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -37,6 +37,8 @@ public interface IStockOperation extends IDataServlet {
 //add here custom operations
     public static final byte UPDATE_ADDSTOCK = 11;
     public static final byte UPDATE_REMOVESTOCK = 12;
+    public static final byte UPDATE_SELLALL4SYSTEM = 13;
+    public static final byte UPDATE_SELLSTOCKTRADE = 14;
 //Custom code, do not change this line   
 
     //INSERT OPERATIONS

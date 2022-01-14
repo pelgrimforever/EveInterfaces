@@ -2,7 +2,7 @@
  * Regionsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -30,6 +30,8 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     Booleansearch noaccess = new Booleansearch("region.noaccess");
     Numbersearch orderpages = new Numbersearch("region.orderpages");
     Numbersearch ordererrors = new Numbersearch("region.ordererrors");
+    Numbersearch contractpages = new Numbersearch("region.contractpages");
+    Numbersearch contracterrors = new Numbersearch("region.contracterrors");
 //foreign keys
 //external foreign keys
     //foreign key
@@ -80,6 +82,8 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
         addFieldsearcher(noaccess);
         addFieldsearcher(orderpages);
         addFieldsearcher(ordererrors);
+        addFieldsearcher(contractpages);
+        addFieldsearcher(contracterrors);
         addKeysearcher(order_history_monthsearcher);
         addKeysearcher(relevetype1searcher);
         addKeysearcher(order_historysearcher);
@@ -182,6 +186,46 @@ public class Regionsearch extends Tablesearch implements IRegionsearch {
     public void ordererrors(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(ordererrors, values, operators);
         ordererrors.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field contractpages, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void contractpages(Double[] values, byte[] operators) {
+        addNumbervalues(contractpages, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field contractpages
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void contractpages(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(contractpages, values, operators);
+        contractpages.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field contracterrors, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void contracterrors(Double[] values, byte[] operators) {
+        addNumbervalues(contracterrors, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field contracterrors
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void contracterrors(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(contracterrors, values, operators);
+        contracterrors.setAndoroperator(andor);
     }
     
     /**

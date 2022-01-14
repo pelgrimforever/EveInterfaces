@@ -2,7 +2,7 @@
  * IEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -53,6 +53,10 @@ public interface IEvetype extends LogicEntity {
     public static short MAX_BUYORDER = 18;
     public static short MIN_SELORDER = 19;
     public static short MAX_SELORDER = 20;
+    public static short AVERAGE = 21;
+    public static short HIGHEST = 22;
+    public static short LOWEST = 23;
+    public static short ORDER_COUNT = 24;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 100;
@@ -74,8 +78,12 @@ public interface IEvetype extends LogicEntity {
     public static final int SIZE_MAX_BUYORDER = 17;
     public static final int SIZE_MIN_SELORDER = 17;
     public static final int SIZE_MAX_SELORDER = 17;
-    public static final String[] fieldnames = { "id", "name", "typegroup", "published", "description", "capacity", "graphic", "icon", "market_group", "mass", "packaged_volume", "portion_size", "radius", "volume", "avg_buyorder", "avg_sellorder", "min_buyorder", "max_buyorder", "min_selorder", "max_selorder" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_double, Datatypes.type_double, Datatypes.type_int, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double };
+    public static final int SIZE_AVERAGE = 17;
+    public static final int SIZE_HIGHEST = 17;
+    public static final int SIZE_LOWEST = 17;
+    public static final int SIZE_ORDER_COUNT = 19;
+    public static final String[] fieldnames = { "id", "name", "typegroup", "published", "description", "capacity", "graphic", "icon", "market_group", "mass", "packaged_volume", "portion_size", "radius", "volume", "avg_buyorder", "avg_sellorder", "min_buyorder", "max_buyorder", "min_selorder", "max_selorder", "average", "highest", "lowest", "order_count" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_double, Datatypes.type_double, Datatypes.type_int, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_long };
 
     public static final String[] market_groupPKfields = { "market_group.id" };
     public static final String[] market_groupFKfields = { "evetype.market_group" };
@@ -279,6 +287,54 @@ public interface IEvetype extends LogicEntity {
      * @param max_selorder: new value
      */
     public void setMax_selorder(double max_selorder);
+
+    /**
+     * 
+     * @return average value
+     */
+    public double getAverage();
+
+    /**
+     * set average value
+     * @param average: new value
+     */
+    public void setAverage(double average);
+
+    /**
+     * 
+     * @return highest value
+     */
+    public double getHighest();
+
+    /**
+     * set highest value
+     * @param highest: new value
+     */
+    public void setHighest(double highest);
+
+    /**
+     * 
+     * @return lowest value
+     */
+    public double getLowest();
+
+    /**
+     * set lowest value
+     * @param lowest: new value
+     */
+    public void setLowest(double lowest);
+
+    /**
+     * 
+     * @return order_count value
+     */
+    public long getOrder_count();
+
+    /**
+     * set order_count value
+     * @param order_count: new value
+     */
+    public void setOrder_count(long order_count);
 
     /**
      * 

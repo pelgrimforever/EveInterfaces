@@ -2,7 +2,7 @@
  * eView_stocktrade_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -39,6 +39,7 @@ public class eView_stocktrade_orders implements eveDatabaseproperties, EntityVie
     private java.lang.String evetypename;
     private double packaged_volume;
     private int min_volume;
+    private long orderid;
     private long sellamount;
 	  
     /**
@@ -225,6 +226,22 @@ public class eView_stocktrade_orders implements eveDatabaseproperties, EntityVie
      */
     public void setMin_volume(int min_volume) {
         this.min_volume = min_volume;
+    }
+
+    /**
+     * 
+     * @return orderid value
+     */
+    public long getOrderid() {
+        return this.orderid;
+    }
+
+    /**
+     * set orderid value
+     * @param orderid: new value
+     */
+    public void setOrderid(long orderid) {
+        this.orderid = orderid;
     }
 
     /**

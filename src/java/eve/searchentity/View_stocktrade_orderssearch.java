@@ -2,7 +2,7 @@
  * View_stocktrade_orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 16.11.2021 15:45
+ * Generated on 14.0.2022 16:56
  *
  */
 
@@ -33,6 +33,7 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
     Stringsearch evetypename = new Stringsearch("view_stocktrade_orders.evetypename");
     Numbersearch packaged_volume = new Numbersearch("view_stocktrade_orders.packaged_volume");
     Numbersearch min_volume = new Numbersearch("view_stocktrade_orders.min_volume");
+    Numbersearch orderid = new Numbersearch("view_stocktrade_orders.orderid");
     Numbersearch sellamount = new Numbersearch("view_stocktrade_orders.sellamount");
 
     /**
@@ -74,6 +75,7 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
         addFieldsearcher(evetypename);
         addFieldsearcher(packaged_volume);
         addFieldsearcher(min_volume);
+        addFieldsearcher(orderid);
         addFieldsearcher(sellamount);
     }
 
@@ -255,6 +257,26 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
     public void min_volume(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(min_volume, values, operators);
         min_volume.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field orderid, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void orderid(Double[] values, byte[] operators) {
+        addNumbervalues(orderid, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field orderid
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void orderid(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(orderid, values, operators);
+        orderid.setAndoroperator(andor);
     }
     
     /**
