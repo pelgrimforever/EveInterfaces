@@ -29,6 +29,8 @@ public interface IView_evetypesOperation extends IDataServlet {
     public static final byte SELECT_CHARGES = 4;
     public static final byte SELECT_DRONES = 5;
     public static final byte SELECT_DEPLOYABLES = 6;
+    public static final byte SELECT_MINERALS = 7;
+    public static final byte SELECT_SALVAGED = 8;
 //Custom code, do not change this line
 }
 

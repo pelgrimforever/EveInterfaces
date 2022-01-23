@@ -1,5 +1,5 @@
 /*
- * IEvetypeOperation.java
+ * IMaterialinputOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
  * Generated on 17.0.2022 13:37
@@ -11,52 +11,40 @@ package eve.interfaces.servlet;
 import base.interfaces.servlet.IDataServlet;
 
 /**
- * Interface IEvetypeOperation
+ * Interface IMaterialinputOperation
  * 
  * Attributes: Defines the possible operations for the specified table
  * Methods: 
  * @author Franky Laseure
  */
-public interface IEvetypeOperation extends IDataServlet {
+public interface IMaterialinputOperation extends IDataServlet {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;
     public static final byte SELECT_ALL = 1;
-    public static final byte SELECT_EVETYPE = 2;
+    public static final byte SELECT_MATERIALINPUT = 2;
     public static final byte SELECT_SEARCH = 3;
     public static final byte SELECT_SEARCHCOUNT = 4;
-    public static final byte SELECT_Market_group = 100 + 0;
-    public static final byte SELECT_Typegroup = 100 + 1;
-    public static final byte SELECT_Graphic = 100 + 2;
-    public static final byte SELECT_Wishlist = 100 + 3;
-    public static final byte SELECT_Materialinput = 100 + 4;
-    public static final byte SELECT_Order_history_month = 100 + 5;
-    public static final byte SELECT_Stock = 100 + 6;
-    public static final byte SELECT_Order_history = 100 + 7;
-    public static final byte SELECT_Shipfitmodule = 100 + 8;
-    public static final byte SELECT_Shipfitorder = 100 + 9;
-    public static final byte SELECT_Tradecombined = 100 + 10;
+    public static final byte SELECT_Evetype = 100 + 0;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
 
     //UPDATE OPERATIONS
-    public static final byte UPDATE_EVETYPE = 10;
+    public static final byte UPDATE_MATERIALINPUT = 10;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
 
     //INSERT OPERATIONS
-    public static final byte INSERT_EVETYPE = 20;
+    public static final byte INSERT_MATERIALINPUT = 20;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
 
     //DELETE OPERATIONS
-    public static final byte DELETE_EVETYPE = 30;
-    public static final byte DELETE_Market_group = 100 + 11;
-    public static final byte DELETE_Typegroup = 100 + 12;
-    public static final byte DELETE_Graphic = 100 + 13;
+    public static final byte DELETE_MATERIALINPUT = 30;
+    public static final byte DELETE_Evetype = 100 + 1;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   

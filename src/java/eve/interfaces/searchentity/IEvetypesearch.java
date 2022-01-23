@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 17.0.2022 13:37
  *
  */
 
@@ -359,6 +359,13 @@ public interface IEvetypesearch extends Tablesearcher {
      * @param wishlistsearch: IWishlistsearch
      */
     public void wishlist(IWishlistsearch wishlistsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch materialinput tablesearch
+     * @param materialinputsearch: IMaterialinputsearch
+     */
+    public void materialinput(IMaterialinputsearch materialinputsearch);
     
     /**
      * external foreign key - foreign key

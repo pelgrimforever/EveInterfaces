@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 17.0.2022 13:37
  *
  */
 
@@ -53,6 +53,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
 //external foreign keys
     //foreign key
     Primarykeysearch wishlistsearcher = new Primarykeysearch("wishlist", IWishlist.evetypePKfields, IWishlist.evetypeFKfields);
+    //foreign key
+    Primarykeysearch materialinputsearcher = new Primarykeysearch("materialinput", IMaterialinput.evetypePKfields, IMaterialinput.evetypeFKfields);
     //foreign key
     Primarykeysearch order_history_monthsearcher = new Primarykeysearch("order_history_month", IOrder_history_month.evetypePKfields, IOrder_history_month.evetypeFKfields);
     //relational key
@@ -133,6 +135,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addKeysearcher(typegroupsearcher);
         addKeysearcher(graphicsearcher);
         addKeysearcher(wishlistsearcher);
+        addKeysearcher(materialinputsearcher);
         addKeysearcher(order_history_monthsearcher);
         addKeysearcher(relregion1searcher);
         addKeysearcher(stocksearcher);
@@ -665,6 +668,26 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     public IWishlistsearch getWishlistsearch() {
         if(wishlistsearcher.used()) {
             return (IWishlistsearch)wishlistsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IMaterialinputsearch
+     * @param materialinputsearch: IMaterialinputsearch
+     */
+    public void materialinput(IMaterialinputsearch materialinputsearch) {
+        materialinputsearcher.setTablesearch(materialinputsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IMaterialinputsearch
+     * @return Tablesearch for IMaterialinputsearch
+     */
+    public IMaterialinputsearch getMaterialinputsearch() {
+        if(materialinputsearcher.used()) {
+            return (IMaterialinputsearch)materialinputsearcher.getTablesearches().get(0);
         } else {
             return null;
         }
