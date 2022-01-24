@@ -2,7 +2,7 @@
  * WSIEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 17.0.2022 13:37
+ * Generated on 24.0.2022 16:47
  *
  */
 
@@ -49,6 +49,10 @@ public interface WSIEvetype {
     @WebMethod String getEvetypes4wishlist(String json);
 
     @WebMethod String getEvetypes4materialinput(String json);
+
+    @WebMethod String getEvetypes4bpmaterialBp(String json);
+
+    @WebMethod String getEvetypes4bpmaterialMaterial(String json);
 
     @WebMethod String getEvetypes4order_history_month(String json);
 

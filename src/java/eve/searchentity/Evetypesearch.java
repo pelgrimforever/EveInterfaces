@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 17.0.2022 13:37
+ * Generated on 24.0.2022 16:47
  *
  */
 
@@ -55,6 +55,10 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Primarykeysearch wishlistsearcher = new Primarykeysearch("wishlist", IWishlist.evetypePKfields, IWishlist.evetypeFKfields);
     //foreign key
     Primarykeysearch materialinputsearcher = new Primarykeysearch("materialinput", IMaterialinput.evetypePKfields, IMaterialinput.evetypeFKfields);
+    //foreign key
+    Primarykeysearch bpmaterialBpsearcher = new Primarykeysearch("bpmaterial", IBpmaterial.evetypeBpPKfields, IBpmaterial.evetypeBpFKfields);
+    //foreign key
+    Primarykeysearch bpmaterialMaterialsearcher = new Primarykeysearch("bpmaterial", IBpmaterial.evetypeMaterialPKfields, IBpmaterial.evetypeMaterialFKfields);
     //foreign key
     Primarykeysearch order_history_monthsearcher = new Primarykeysearch("order_history_month", IOrder_history_month.evetypePKfields, IOrder_history_month.evetypeFKfields);
     //relational key
@@ -136,6 +140,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addKeysearcher(graphicsearcher);
         addKeysearcher(wishlistsearcher);
         addKeysearcher(materialinputsearcher);
+        addKeysearcher(bpmaterialBpsearcher);
+        addKeysearcher(bpmaterialMaterialsearcher);
         addKeysearcher(order_history_monthsearcher);
         addKeysearcher(relregion1searcher);
         addKeysearcher(stocksearcher);
@@ -688,6 +694,46 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     public IMaterialinputsearch getMaterialinputsearch() {
         if(materialinputsearcher.used()) {
             return (IMaterialinputsearch)materialinputsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IBpmaterialsearch
+     * @param bpmaterialsearch: IBpmaterialsearch
+     */
+    public void bpmaterialBp(IBpmaterialsearch bpmaterialsearch) {
+        bpmaterialBpsearcher.setTablesearch(bpmaterialsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IBpmaterialsearch
+     * @return Tablesearch for IBpmaterialsearch
+     */
+    public IBpmaterialsearch getBpmaterialbpsearch() {
+        if(bpmaterialBpsearcher.used()) {
+            return (IBpmaterialsearch)bpmaterialBpsearcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IBpmaterialsearch
+     * @param bpmaterialsearch: IBpmaterialsearch
+     */
+    public void bpmaterialMaterial(IBpmaterialsearch bpmaterialsearch) {
+        bpmaterialMaterialsearcher.setTablesearch(bpmaterialsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IBpmaterialsearch
+     * @return Tablesearch for IBpmaterialsearch
+     */
+    public IBpmaterialsearch getBpmaterialmaterialsearch() {
+        if(bpmaterialMaterialsearcher.used()) {
+            return (IBpmaterialsearch)bpmaterialMaterialsearcher.getTablesearches().get(0);
         } else {
             return null;
         }
