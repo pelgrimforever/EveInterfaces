@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 24.0.2022 16:47
+ * Generated on 28.0.2022 15:59
  *
  */
 
@@ -464,5 +464,12 @@ public interface IEvetypesearch extends Tablesearcher {
      * @param systemsearch: ISystemsearch
      */
     public void relsystem2(ISystemsearch systemsearch);
+    
+    /**
+     * external foreign key - foreign key
+     * set subsearch userbp tablesearch
+     * @param userbpsearch: IUserbpsearch
+     */
+    public void userbp(IUserbpsearch userbpsearch);
     
 }

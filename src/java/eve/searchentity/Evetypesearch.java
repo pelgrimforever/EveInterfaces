@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 24.0.2022 16:47
+ * Generated on 28.0.2022 15:59
  *
  */
 
@@ -83,6 +83,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Relationalkeysearch relsystem1searcher = new Relationalkeysearch("tradecombined", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields, "system", ITradecombined.systemBuy_systemPKfields, ITradecombined.systemBuy_systemFKfields);
     //relational key
     Relationalkeysearch relsystem2searcher = new Relationalkeysearch("tradecombined", ITradecombined.evetypePKfields, ITradecombined.evetypeFKfields, "system", ITradecombined.systemSell_systemPKfields, ITradecombined.systemSell_systemFKfields);
+    //foreign key
+    Primarykeysearch userbpsearcher = new Primarykeysearch("userbp", IUserbp.evetypePKfields, IUserbp.evetypeFKfields);
 
     /**
      * @return tablename
@@ -154,6 +156,7 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addKeysearcher(tradecombinedsearcher);
         addKeysearcher(relsystem1searcher);
         addKeysearcher(relsystem2searcher);
+        addKeysearcher(userbpsearcher);
     }
 
     /**
@@ -974,6 +977,26 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     public ISystemsearch getRelSystem2search() {
         if(relsystem2searcher.used()) {
             return (ISystemsearch)relsystem2searcher.getTablesearches().get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * set external key - foreign key subsearch IUserbpsearch
+     * @param userbpsearch: IUserbpsearch
+     */
+    public void userbp(IUserbpsearch userbpsearch) {
+        userbpsearcher.setTablesearch(userbpsearch);
+    }
+    
+    /**
+     * get external key - foreign key subsearch IUserbpsearch
+     * @return Tablesearch for IUserbpsearch
+     */
+    public IUserbpsearch getUserbpsearch() {
+        if(userbpsearcher.used()) {
+            return (IUserbpsearch)userbpsearcher.getTablesearches().get(0);
         } else {
             return null;
         }

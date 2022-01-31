@@ -1,50 +1,52 @@
 /*
- * View_bpmaterialsearch.java
+ * View_userbpmaterialsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 26.0.2022 16:51
+ * Generated on 31.0.2022 17:49
  *
  */
 
 package eve.searchentity;
 
-import eve.interfaces.searchentity.IView_bpmaterialsearch;
+import eve.interfaces.searchentity.IView_userbpmaterialsearch;
 import data.interfaces.db.*;
 import eve.interfaces.logicview.*;
 import eve.interfaces.searchentity.*;
-import eve.logicview.View_bpmaterial;
+import eve.logicview.View_userbpmaterial;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
 /**
- * Search class for View_bpmaterial table
+ * Search class for View_userbpmaterial table
  * construct sql where part and parameter array from search parameters
  * @author Franky Laseure
  */
-public class View_bpmaterialsearch extends Tablesearch implements IView_bpmaterialsearch {
+public class View_userbpmaterialsearch extends Tablesearch implements IView_userbpmaterialsearch {
 
-    Numbersearch bp = new Numbersearch("view_bpmaterial.bp");
-    Numbersearch material = new Numbersearch("view_bpmaterial.material");
-    Numbersearch amount = new Numbersearch("view_bpmaterial.amount");
-    Numbersearch category = new Numbersearch("view_bpmaterial.category");
-    Numbersearch typegroupid = new Numbersearch("view_bpmaterial.typegroupid");
-    Stringsearch typegroupname = new Stringsearch("view_bpmaterial.typegroupname");
-    Stringsearch name = new Stringsearch("view_bpmaterial.name");
-    Numbersearch average = new Numbersearch("view_bpmaterial.average");
+    Numbersearch bp = new Numbersearch("view_userbpmaterial.bp");
+    Numbersearch material = new Numbersearch("view_userbpmaterial.material");
+    Numbersearch amount = new Numbersearch("view_userbpmaterial.amount");
+    Numbersearch category = new Numbersearch("view_userbpmaterial.category");
+    Numbersearch typegroupid = new Numbersearch("view_userbpmaterial.typegroupid");
+    Stringsearch typegroupname = new Stringsearch("view_userbpmaterial.typegroupname");
+    Stringsearch name = new Stringsearch("view_userbpmaterial.name");
+    Numbersearch marketaverage = new Numbersearch("view_userbpmaterial.marketaverage");
+    Stringsearch username = new Stringsearch("view_userbpmaterial.username");
+    Numbersearch materialinputaverage = new Numbersearch("view_userbpmaterial.materialinputaverage");
 
     /**
      * @return viewname
      */
     public String getTable() {
-        return View_bpmaterial.table;
+        return View_userbpmaterial.table;
     }
 
     /**
      * Constructor
      * add IFieldsearcher classes for all relevant fields
      */
-    public View_bpmaterialsearch() {
+    public View_userbpmaterialsearch() {
         setFieldsearchers();
     }
 
@@ -54,7 +56,7 @@ public class View_bpmaterialsearch extends Tablesearch implements IView_bpmateri
      * set andor parameter
      * @param andor: containts AND or OR contant, indicates all conditions must apply or only one
      */
-    public View_bpmaterialsearch(byte andor) {
+    public View_userbpmaterialsearch(byte andor) {
         super(andor);
         setFieldsearchers();
     }
@@ -70,7 +72,9 @@ public class View_bpmaterialsearch extends Tablesearch implements IView_bpmateri
         addFieldsearcher(typegroupid);
         addFieldsearcher(typegroupname);
         addFieldsearcher(name);
-        addFieldsearcher(average);
+        addFieldsearcher(marketaverage);
+        addFieldsearcher(username);
+        addFieldsearcher(materialinputaverage);
     }
 
     /**
@@ -214,23 +218,63 @@ public class View_bpmaterialsearch extends Tablesearch implements IView_bpmateri
     }
     
     /**
-     * add Numeric search values for field average, default OR operator is used
+     * add Numeric search values for field marketaverage, default OR operator is used
      * @param values: Array of numeric search values
      * @param operators: Array of byte contants for comparison (= < <= > >=)
      */
-    public void average(Double[] values, byte[] operators) {
-        addNumbervalues(average, values, operators);
+    public void marketaverage(Double[] values, byte[] operators) {
+        addNumbervalues(marketaverage, values, operators);
     }
     
     /**
-     * add Numeric search values for field average
+     * add Numeric search values for field marketaverage
      * @param values: Array of String search values
      * @param operators: Array of byte contants for comparison (= < <= > >=)
      * @param andor; AND/OR constant
      */
-    public void average(Double[] values, byte[] operators, byte andor) {
-        addNumbervalues(average, values, operators);
-        average.setAndoroperator(andor);
+    public void marketaverage(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(marketaverage, values, operators);
+        marketaverage.setAndoroperator(andor);
+    }
+    
+    /**
+     * add String search values for field username, default OR and LIKE operators are used
+     * @param values: Array of String search values
+     */
+    public void username(String[] values) {
+        addStringvalues(username, values);
+    }
+    
+    /**
+     * add String search values for field username
+     * @param values: Array of String search values
+     * @param andor; AND/OR constant
+     * @param compare: EQUAL/LIKE constant
+     */
+    public void username(String[] values, byte compare, byte andor) {
+        addStringvalues(username, values);
+        username.setCompareoperator(compare);
+        username.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field materialinputaverage, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void materialinputaverage(Double[] values, byte[] operators) {
+        addNumbervalues(materialinputaverage, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field materialinputaverage
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void materialinputaverage(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(materialinputaverage, values, operators);
+        materialinputaverage.setAndoroperator(andor);
     }
     
 }

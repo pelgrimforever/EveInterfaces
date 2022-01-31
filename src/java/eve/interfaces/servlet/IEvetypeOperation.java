@@ -2,7 +2,7 @@
  * IEvetypeOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 24.0.2022 16:47
+ * Generated on 28.0.2022 15:59
  *
  */
 
@@ -38,6 +38,7 @@ public interface IEvetypeOperation extends IDataServlet {
     public static final byte SELECT_Shipfitmodule = 100 + 10;
     public static final byte SELECT_Shipfitorder = 100 + 11;
     public static final byte SELECT_Tradecombined = 100 + 12;
+    public static final byte SELECT_Userbp = 100 + 13;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   
@@ -56,9 +57,9 @@ public interface IEvetypeOperation extends IDataServlet {
 
     //DELETE OPERATIONS
     public static final byte DELETE_EVETYPE = 30;
-    public static final byte DELETE_Market_group = 100 + 13;
-    public static final byte DELETE_Typegroup = 100 + 14;
-    public static final byte DELETE_Graphic = 100 + 15;
+    public static final byte DELETE_Market_group = 100 + 14;
+    public static final byte DELETE_Typegroup = 100 + 15;
+    public static final byte DELETE_Graphic = 100 + 16;
 //Custom code, do not change this line
 //add here custom operations
 //Custom code, do not change this line   

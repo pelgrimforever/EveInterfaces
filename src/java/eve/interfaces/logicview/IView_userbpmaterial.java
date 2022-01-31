@@ -1,8 +1,8 @@
 /*
- * IView_bpmaterial.java
+ * IView_userbpmaterial.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 26.0.2022 16:51
+ * Generated on 31.0.2022 17:49
  *
  */
 
@@ -19,14 +19,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * View Interface IView_bpmaterial
+ * View Interface IView_userbpmaterial
  *
  * extended attributes and methods possibility:
  * view level programming is done here
  *
  * @author Franky Laseure
  */
-public interface IView_bpmaterial extends View {
+public interface IView_userbpmaterial extends View {
 
     public static byte BP = 1;
     public static byte MATERIAL = 2;
@@ -35,7 +35,9 @@ public interface IView_bpmaterial extends View {
     public static byte TYPEGROUPID = 5;
     public static byte TYPEGROUPNAME = 6;
     public static byte NAME = 7;
-    public static byte AVERAGE = 8;
+    public static byte MARKETAVERAGE = 8;
+    public static byte USERNAME = 9;
+    public static byte MATERIALINPUTAVERAGE = 10;
 
     public static final int SIZE_BP = 19;
     public static final int SIZE_MATERIAL = 19;
@@ -44,8 +46,10 @@ public interface IView_bpmaterial extends View {
     public static final int SIZE_TYPEGROUPID = 19;
     public static final int SIZE_TYPEGROUPNAME = 100;
     public static final int SIZE_NAME = 100;
-    public static final int SIZE_AVERAGE = 17;
-    public static final String[] fieldnames = { "bp", "material", "amount", "category", "typegroupid", "typegroupname", "name", "average" };
+    public static final int SIZE_MARKETAVERAGE = 17;
+    public static final int SIZE_USERNAME = 20;
+    public static final int SIZE_MATERIALINPUTAVERAGE = 17;
+    public static final String[] fieldnames = { "bp", "material", "amount", "category", "typegroupid", "typegroupname", "name", "marketaverage", "username", "materialinputaverage" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -95,9 +99,21 @@ public interface IView_bpmaterial extends View {
 
     /**
      * 
-     * @return average value
+     * @return marketaverage value
      */
-    public double getAverage();
+    public double getMarketaverage();
+
+    /**
+     * 
+     * @return username value
+     */
+    public java.lang.String getUsername();
+
+    /**
+     * 
+     * @return materialinputaverage value
+     */
+    public double getMaterialinputaverage();
 
     
 //Custom code, do not change this line

@@ -1,8 +1,8 @@
 /*
- * eView_bpmaterial.java
+ * eView_userbpmaterial.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 26.0.2022 16:51
+ * Generated on 31.0.2022 17:49
  *
  */
 
@@ -19,17 +19,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /**
- * View class View_bpmaterial
+ * View class View_userbpmaterial
  * 
  * Attributes: fields
  * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> View_bpmaterial Entity
+ * Conversion methods for java.sql.ResultSet ==> View_userbpmaterial Entity
  * 
  * @author Franky Laseure
  */
-public class eView_bpmaterial implements eveDatabaseproperties, EntityView {
+public class eView_userbpmaterial implements eveDatabaseproperties, EntityView {
 
-    public static final String table = "view_bpmaterial";
+    public static final String table = "view_userbpmaterial";
     private long bp;
     private long material;
     private long amount;
@@ -37,14 +37,16 @@ public class eView_bpmaterial implements eveDatabaseproperties, EntityView {
     private long typegroupid;
     private java.lang.String typegroupname;
     private java.lang.String name;
-    private double average;
+    private double marketaverage;
+    private java.lang.String username;
+    private double materialinputaverage;
 	  
     /**
      * @return database tool name
      */
     @Override
     public String getDbtool() {
-        return eView_bpmaterial.databasetool;
+        return eView_userbpmaterial.databasetool;
     }
     
     /**
@@ -52,30 +54,30 @@ public class eView_bpmaterial implements eveDatabaseproperties, EntityView {
      */
     @Override
     public String getConnectionpool() {
-        return eView_bpmaterial.connectionpool;
+        return eView_userbpmaterial.connectionpool;
     }
     
     /**
      * 
-     * @return view name for View_bpmaterial
+     * @return view name for View_userbpmaterial
      */
     public String getTable() { return table; }
 
     /**
      * 
-     * @return View_bpmaterial class name
+     * @return View_userbpmaterial class name
      */
     public String getClassName() { return this.getClass().getName(); };
 	  
     /** 
      * Constructor
-     * Creates an empty View_bpmaterial entity
+     * Creates an empty View_userbpmaterial entity
      */
-    public eView_bpmaterial() {
+    public eView_userbpmaterial() {
     }
 
     /**
-     * @return is View_bpmaterial Empty ?
+     * @return is View_userbpmaterial Empty ?
      */
     public boolean isEmpty() {
         return false;
@@ -195,18 +197,50 @@ public class eView_bpmaterial implements eveDatabaseproperties, EntityView {
 
     /**
      * 
-     * @return average value
+     * @return marketaverage value
      */
-    public double getAverage() {
-        return this.average;
+    public double getMarketaverage() {
+        return this.marketaverage;
     }
 
     /**
-     * set average value
-     * @param average: new value
+     * set marketaverage value
+     * @param marketaverage: new value
      */
-    public void setAverage(double average) {
-        this.average = average;
+    public void setMarketaverage(double marketaverage) {
+        this.marketaverage = marketaverage;
+    }
+
+    /**
+     * 
+     * @return username value
+     */
+    public java.lang.String getUsername() {
+        return this.username;
+    }
+
+    /**
+     * set username value
+     * @param username: new value
+     */
+    public void setUsername(java.lang.String username) {
+        this.username = username;
+    }
+
+    /**
+     * 
+     * @return materialinputaverage value
+     */
+    public double getMaterialinputaverage() {
+        return this.materialinputaverage;
+    }
+
+    /**
+     * set materialinputaverage value
+     * @param materialinputaverage: new value
+     */
+    public void setMaterialinputaverage(double materialinputaverage) {
+        this.materialinputaverage = materialinputaverage;
     }
 
 }
