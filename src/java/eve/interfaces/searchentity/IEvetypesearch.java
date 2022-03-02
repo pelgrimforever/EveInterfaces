@@ -2,7 +2,7 @@
  * IEvetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 28.0.2022 15:59
+ * Generated on 21.1.2022 18:41
  *
  */
 
@@ -331,6 +331,27 @@ public interface IEvetypesearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void order_count(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Boolean search values for field configuredbp
+	 * @param value: true or false
+	 */
+	public void configuredbp(Boolean value);
+	
+	/**
+	 * add Numeric search values for field estimatedproductioncost, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void estimatedproductioncost(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field estimatedproductioncost
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void estimatedproductioncost(Double[] values, byte[] operators, byte andor);
 	
 	/**
    * foreign key

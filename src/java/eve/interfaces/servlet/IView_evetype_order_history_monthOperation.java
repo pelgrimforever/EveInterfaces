@@ -25,6 +25,7 @@ public interface IView_evetype_order_history_monthOperation extends IDataServlet
 //Custom code, do not change this line
 //add here custom operations
     public static final byte SELECT_EVETYPE = 2;
+    public static final byte SELECT_EVETYPEYM = 3;
 //Custom code, do not change this line
 }
 

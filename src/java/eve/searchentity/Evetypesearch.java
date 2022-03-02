@@ -2,7 +2,7 @@
  * Evetypesearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 28.0.2022 15:59
+ * Generated on 21.1.2022 18:41
  *
  */
 
@@ -46,6 +46,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     Numbersearch highest = new Numbersearch("evetype.highest");
     Numbersearch lowest = new Numbersearch("evetype.lowest");
     Numbersearch order_count = new Numbersearch("evetype.order_count");
+    Booleansearch configuredbp = new Booleansearch("evetype.configuredbp");
+    Numbersearch estimatedproductioncost = new Numbersearch("evetype.estimatedproductioncost");
 //foreign keys
     Foreignkeysearch market_groupsearcher = new Foreignkeysearch("market_group", IEvetype.market_groupPKfields, IEvetype.market_groupFKfields);
     Foreignkeysearch typegroupsearcher = new Foreignkeysearch("typegroup", IEvetype.typegroupPKfields, IEvetype.typegroupFKfields);
@@ -137,6 +139,8 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
         addFieldsearcher(highest);
         addFieldsearcher(lowest);
         addFieldsearcher(order_count);
+        addFieldsearcher(configuredbp);
+        addFieldsearcher(estimatedproductioncost);
         addKeysearcher(market_groupsearcher);
         addKeysearcher(typegroupsearcher);
         addKeysearcher(graphicsearcher);
@@ -573,6 +577,34 @@ public class Evetypesearch extends Tablesearch implements IEvetypesearch {
     public void order_count(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(order_count, values, operators);
         order_count.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Boolean search values for field configuredbp
+     * @param value: true or false
+     */
+    public void configuredbp(Boolean value) {
+        addBooleanvalue(configuredbp, value);
+    }
+    
+    /**
+     * add Numeric search values for field estimatedproductioncost, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void estimatedproductioncost(Double[] values, byte[] operators) {
+        addNumbervalues(estimatedproductioncost, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field estimatedproductioncost
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void estimatedproductioncost(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(estimatedproductioncost, values, operators);
+        estimatedproductioncost.setAndoroperator(andor);
     }
     
     /**

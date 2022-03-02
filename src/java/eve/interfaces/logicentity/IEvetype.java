@@ -2,7 +2,7 @@
  * IEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 21.1.2022 18:41
  *
  */
 
@@ -57,6 +57,8 @@ public interface IEvetype extends LogicEntity {
     public static short HIGHEST = 22;
     public static short LOWEST = 23;
     public static short ORDER_COUNT = 24;
+    public static short CONFIGUREDBP = 25;
+    public static short ESTIMATEDPRODUCTIONCOST = 26;
 
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 100;
@@ -82,8 +84,10 @@ public interface IEvetype extends LogicEntity {
     public static final int SIZE_HIGHEST = 17;
     public static final int SIZE_LOWEST = 17;
     public static final int SIZE_ORDER_COUNT = 19;
-    public static final String[] fieldnames = { "id", "name", "typegroup", "published", "description", "capacity", "graphic", "icon", "market_group", "mass", "packaged_volume", "portion_size", "radius", "volume", "avg_buyorder", "avg_sellorder", "min_buyorder", "max_buyorder", "min_selorder", "max_selorder", "average", "highest", "lowest", "order_count" };
-    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_double, Datatypes.type_double, Datatypes.type_int, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_long };
+    public static final int SIZE_CONFIGUREDBP = 1;
+    public static final int SIZE_ESTIMATEDPRODUCTIONCOST = 17;
+    public static final String[] fieldnames = { "id", "name", "typegroup", "published", "description", "capacity", "graphic", "icon", "market_group", "mass", "packaged_volume", "portion_size", "radius", "volume", "avg_buyorder", "avg_sellorder", "min_buyorder", "max_buyorder", "min_selorder", "max_selorder", "average", "highest", "lowest", "order_count", "configuredbp", "estimatedproductioncost" };
+    public static final byte[] fieldtypes = { Datatypes.type_long, Datatypes.type_String, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_String, Datatypes.type_double, Datatypes.type_long, Datatypes.type_long, Datatypes.type_long, Datatypes.type_double, Datatypes.type_double, Datatypes.type_int, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_double, Datatypes.type_long, Datatypes.type_boolean, Datatypes.type_double };
 
     public static final String[] market_groupPKfields = { "market_group.id" };
     public static final String[] market_groupFKfields = { "evetype.market_group" };
@@ -335,6 +339,30 @@ public interface IEvetype extends LogicEntity {
      * @param order_count: new value
      */
     public void setOrder_count(long order_count);
+
+    /**
+     * 
+     * @return configuredbp value
+     */
+    public boolean getConfiguredbp();
+
+    /**
+     * set configuredbp value
+     * @param configuredbp: new value
+     */
+    public void setConfiguredbp(boolean configuredbp);
+
+    /**
+     * 
+     * @return estimatedproductioncost value
+     */
+    public double getEstimatedproductioncost();
+
+    /**
+     * set estimatedproductioncost value
+     * @param estimatedproductioncost: new value
+     */
+    public void setEstimatedproductioncost(double estimatedproductioncost);
 
     /**
      * 

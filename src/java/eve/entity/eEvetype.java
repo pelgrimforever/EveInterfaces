@@ -2,7 +2,7 @@
  * eEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 21.1.2022 18:41
  *
  */
 
@@ -61,6 +61,8 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
     private double highest;
     private double lowest;
     private long order_count;
+    private boolean configuredbp;
+    private double estimatedproductioncost;
 	  
     public static final String table = "evetype";
 	  
@@ -181,6 +183,8 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         updates.put(IEvetype.HIGHEST, highest);
         updates.put(IEvetype.LOWEST, lowest);
         updates.put(IEvetype.ORDER_COUNT, order_count);
+        updates.put(IEvetype.CONFIGUREDBP, configuredbp);
+        updates.put(IEvetype.ESTIMATEDPRODUCTIONCOST, estimatedproductioncost);
         return getAllFields();
     }
 	
@@ -702,6 +706,56 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
     public void setOrder_count(long order_count) {
         updates.put(IEvetype.ORDER_COUNT, order_count);
         this.order_count = order_count;
+    }
+
+    /**
+     * 
+     * @return configuredbp value
+     */
+    public boolean getConfiguredbp() {
+        return this.configuredbp;
+    }
+
+    /**
+     * set configuredbp value
+     * @param configuredbp: new value
+     */
+    public void initConfiguredbp(boolean configuredbp) {
+        this.configuredbp = configuredbp;
+    }
+
+    /**
+     * set configuredbp value
+     * @param configuredbp: new value
+     */
+    public void setConfiguredbp(boolean configuredbp) {
+        updates.put(IEvetype.CONFIGUREDBP, configuredbp);
+        this.configuredbp = configuredbp;
+    }
+
+    /**
+     * 
+     * @return estimatedproductioncost value
+     */
+    public double getEstimatedproductioncost() {
+        return this.estimatedproductioncost;
+    }
+
+    /**
+     * set estimatedproductioncost value
+     * @param estimatedproductioncost: new value
+     */
+    public void initEstimatedproductioncost(double estimatedproductioncost) {
+        this.estimatedproductioncost = estimatedproductioncost;
+    }
+
+    /**
+     * set estimatedproductioncost value
+     * @param estimatedproductioncost: new value
+     */
+    public void setEstimatedproductioncost(double estimatedproductioncost) {
+        updates.put(IEvetype.ESTIMATEDPRODUCTIONCOST, estimatedproductioncost);
+        this.estimatedproductioncost = estimatedproductioncost;
     }
 
     /**

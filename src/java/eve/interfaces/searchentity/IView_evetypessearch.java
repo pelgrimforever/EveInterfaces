@@ -2,7 +2,7 @@
  * IView_evetypessearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 21.1.2022 12:4
  *
  */
 
@@ -93,5 +93,11 @@ public interface IView_evetypessearch extends Tablesearcher {
 	 * @param compare: EQUAL/LIKE constant
 	 */
 	public void name(String[] values, byte compare, byte andor);
+	
+	/**
+	 * add Boolean search values for field configuredbp
+	 * @param value: true or false
+	 */
+	public void configuredbp(Boolean value);
 	
 }

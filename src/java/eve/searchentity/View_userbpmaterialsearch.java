@@ -2,7 +2,7 @@
  * View_userbpmaterialsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 31.0.2022 17:49
+ * Generated on 11.1.2022 21:46
  *
  */
 
@@ -24,6 +24,8 @@ import java.sql.Timestamp;
  */
 public class View_userbpmaterialsearch extends Tablesearch implements IView_userbpmaterialsearch {
 
+    Stringsearch username = new Stringsearch("view_userbpmaterial.username");
+    Numbersearch serialnumber = new Numbersearch("view_userbpmaterial.serialnumber");
     Numbersearch bp = new Numbersearch("view_userbpmaterial.bp");
     Numbersearch material = new Numbersearch("view_userbpmaterial.material");
     Numbersearch amount = new Numbersearch("view_userbpmaterial.amount");
@@ -32,7 +34,6 @@ public class View_userbpmaterialsearch extends Tablesearch implements IView_user
     Stringsearch typegroupname = new Stringsearch("view_userbpmaterial.typegroupname");
     Stringsearch name = new Stringsearch("view_userbpmaterial.name");
     Numbersearch marketaverage = new Numbersearch("view_userbpmaterial.marketaverage");
-    Stringsearch username = new Stringsearch("view_userbpmaterial.username");
     Numbersearch materialinputaverage = new Numbersearch("view_userbpmaterial.materialinputaverage");
 
     /**
@@ -65,6 +66,8 @@ public class View_userbpmaterialsearch extends Tablesearch implements IView_user
      * add IFieldsearcher classes for all relevant fields
      */
     private void setFieldsearchers() {
+        addFieldsearcher(username);
+        addFieldsearcher(serialnumber);
         addFieldsearcher(bp);
         addFieldsearcher(material);
         addFieldsearcher(amount);
@@ -73,10 +76,49 @@ public class View_userbpmaterialsearch extends Tablesearch implements IView_user
         addFieldsearcher(typegroupname);
         addFieldsearcher(name);
         addFieldsearcher(marketaverage);
-        addFieldsearcher(username);
         addFieldsearcher(materialinputaverage);
     }
 
+    /**
+     * add String search values for field username, default OR and LIKE operators are used
+     * @param values: Array of String search values
+     */
+    public void username(String[] values) {
+        addStringvalues(username, values);
+    }
+    
+    /**
+     * add String search values for field username
+     * @param values: Array of String search values
+     * @param andor; AND/OR constant
+     * @param compare: EQUAL/LIKE constant
+     */
+    public void username(String[] values, byte compare, byte andor) {
+        addStringvalues(username, values);
+        username.setCompareoperator(compare);
+        username.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field serialnumber, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void serialnumber(Double[] values, byte[] operators) {
+        addNumbervalues(serialnumber, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field serialnumber
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void serialnumber(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(serialnumber, values, operators);
+        serialnumber.setAndoroperator(andor);
+    }
+    
     /**
      * add Numeric search values for field bp, default OR operator is used
      * @param values: Array of numeric search values
@@ -235,26 +277,6 @@ public class View_userbpmaterialsearch extends Tablesearch implements IView_user
     public void marketaverage(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(marketaverage, values, operators);
         marketaverage.setAndoroperator(andor);
-    }
-    
-    /**
-     * add String search values for field username, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
-    public void username(String[] values) {
-        addStringvalues(username, values);
-    }
-    
-    /**
-     * add String search values for field username
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
-    public void username(String[] values, byte compare, byte andor) {
-        addStringvalues(username, values);
-        username.setCompareoperator(compare);
-        username.setAndoroperator(andor);
     }
     
     /**

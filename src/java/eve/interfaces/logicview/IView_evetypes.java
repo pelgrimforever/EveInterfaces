@@ -2,7 +2,7 @@
  * IView_evetypes.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 21.1.2022 12:5
  *
  */
 
@@ -33,13 +33,15 @@ public interface IView_evetypes extends View {
     public static byte TYPEGROUPNAME = 3;
     public static byte ID = 4;
     public static byte NAME = 5;
+    public static byte CONFIGUREDBP = 6;
 
     public static final int SIZE_CATEGORY = 19;
     public static final int SIZE_TYPEGROUPID = 19;
     public static final int SIZE_TYPEGROUPNAME = 100;
     public static final int SIZE_ID = 19;
     public static final int SIZE_NAME = 100;
-    public static final String[] fieldnames = { "category", "typegroupid", "typegroupname", "id", "name" };
+    public static final int SIZE_CONFIGUREDBP = 1;
+    public static final String[] fieldnames = { "category", "typegroupid", "typegroupname", "id", "name", "configuredbp" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -74,6 +76,12 @@ public interface IView_evetypes extends View {
      * @return name value
      */
     public java.lang.String getName();
+
+    /**
+     * 
+     * @return configuredbp value
+     */
+    public boolean getConfiguredbp();
 
     
 //Custom code, do not change this line

@@ -2,7 +2,7 @@
  * IView_userbpmaterialsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 31.0.2022 17:49
+ * Generated on 11.1.2022 21:46
  *
  */
 
@@ -21,6 +21,35 @@ import eve.interfaces.searchentity.*;
  */
 public interface IView_userbpmaterialsearch extends Tablesearcher {
 
+	/**
+	 * add String search values for field username, default OR and LIKE operators are used
+	 * @param values: Array of String search values
+	 */
+	public void username(String[] values);
+	
+	/**
+	 * add String search values for field username
+	 * @param values: Array of String search values
+	 * @param andor; AND/OR constant
+	 * @param compare: EQUAL/LIKE constant
+	 */
+	public void username(String[] values, byte compare, byte andor);
+	
+	/**
+	 * add Numeric search values for field serialnumber, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void serialnumber(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field serialnumber
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void serialnumber(Double[] values, byte[] operators, byte andor);
+	
 	/**
 	 * add Numeric search values for field bp, default OR operator is used
 	 * @param values: Array of numeric search values
@@ -138,20 +167,6 @@ public interface IView_userbpmaterialsearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void marketaverage(Double[] values, byte[] operators, byte andor);
-	
-	/**
-	 * add String search values for field username, default OR and LIKE operators are used
-	 * @param values: Array of String search values
-	 */
-	public void username(String[] values);
-	
-	/**
-	 * add String search values for field username
-	 * @param values: Array of String search values
-	 * @param andor; AND/OR constant
-	 * @param compare: EQUAL/LIKE constant
-	 */
-	public void username(String[] values, byte compare, byte andor);
 	
 	/**
 	 * add Numeric search values for field materialinputaverage, default OR operator is used

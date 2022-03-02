@@ -2,7 +2,7 @@
  * eView_evetypes.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 21.1.2022 12:4
  *
  */
 
@@ -35,6 +35,7 @@ public class eView_evetypes implements eveDatabaseproperties, EntityView {
     private java.lang.String typegroupname;
     private long id;
     private java.lang.String name;
+    private boolean configuredbp;
 	  
     /**
      * @return database tool name
@@ -156,6 +157,22 @@ public class eView_evetypes implements eveDatabaseproperties, EntityView {
      */
     public void setName(java.lang.String name) {
         this.name = name;
+    }
+
+    /**
+     * 
+     * @return configuredbp value
+     */
+    public boolean getConfiguredbp() {
+        return this.configuredbp;
+    }
+
+    /**
+     * set configuredbp value
+     * @param configuredbp: new value
+     */
+    public void setConfiguredbp(boolean configuredbp) {
+        this.configuredbp = configuredbp;
     }
 
 }

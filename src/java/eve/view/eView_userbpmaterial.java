@@ -2,7 +2,7 @@
  * eView_userbpmaterial.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 31.0.2022 17:49
+ * Generated on 11.1.2022 21:46
  *
  */
 
@@ -30,6 +30,8 @@ import java.util.Iterator;
 public class eView_userbpmaterial implements eveDatabaseproperties, EntityView {
 
     public static final String table = "view_userbpmaterial";
+    private java.lang.String username;
+    private int serialnumber;
     private long bp;
     private long material;
     private long amount;
@@ -38,7 +40,6 @@ public class eView_userbpmaterial implements eveDatabaseproperties, EntityView {
     private java.lang.String typegroupname;
     private java.lang.String name;
     private double marketaverage;
-    private java.lang.String username;
     private double materialinputaverage;
 	  
     /**
@@ -81,6 +82,38 @@ public class eView_userbpmaterial implements eveDatabaseproperties, EntityView {
      */
     public boolean isEmpty() {
         return false;
+    }
+
+    /**
+     * 
+     * @return username value
+     */
+    public java.lang.String getUsername() {
+        return this.username;
+    }
+
+    /**
+     * set username value
+     * @param username: new value
+     */
+    public void setUsername(java.lang.String username) {
+        this.username = username;
+    }
+
+    /**
+     * 
+     * @return serialnumber value
+     */
+    public int getSerialnumber() {
+        return this.serialnumber;
+    }
+
+    /**
+     * set serialnumber value
+     * @param serialnumber: new value
+     */
+    public void setSerialnumber(int serialnumber) {
+        this.serialnumber = serialnumber;
     }
 
     /**
@@ -209,22 +242,6 @@ public class eView_userbpmaterial implements eveDatabaseproperties, EntityView {
      */
     public void setMarketaverage(double marketaverage) {
         this.marketaverage = marketaverage;
-    }
-
-    /**
-     * 
-     * @return username value
-     */
-    public java.lang.String getUsername() {
-        return this.username;
-    }
-
-    /**
-     * set username value
-     * @param username: new value
-     */
-    public void setUsername(java.lang.String username) {
-        this.username = username;
     }
 
     /**

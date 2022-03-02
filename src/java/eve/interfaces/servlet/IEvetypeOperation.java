@@ -47,6 +47,8 @@ public interface IEvetypeOperation extends IDataServlet {
     public static final byte UPDATE_EVETYPE = 10;
 //Custom code, do not change this line
 //add here custom operations
+    public static final byte UPDATE_TOGGLE_CONFIGUREDBP = 11;
+    public static final byte CALCULATE_ESTIMATEDPRODUCTIONCOSTS = 12;
 //Custom code, do not change this line   
 
     //INSERT OPERATIONS

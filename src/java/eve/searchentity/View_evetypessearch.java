@@ -2,7 +2,7 @@
  * View_evetypessearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 21.1.2022 12:4
  *
  */
 
@@ -29,6 +29,7 @@ public class View_evetypessearch extends Tablesearch implements IView_evetypesse
     Stringsearch typegroupname = new Stringsearch("view_evetypes.typegroupname");
     Numbersearch id = new Numbersearch("view_evetypes.id");
     Stringsearch name = new Stringsearch("view_evetypes.name");
+    Booleansearch configuredbp = new Booleansearch("view_evetypes.configuredbp");
 
     /**
      * @return viewname
@@ -65,6 +66,7 @@ public class View_evetypessearch extends Tablesearch implements IView_evetypesse
         addFieldsearcher(typegroupname);
         addFieldsearcher(id);
         addFieldsearcher(name);
+        addFieldsearcher(configuredbp);
     }
 
     /**
@@ -165,6 +167,14 @@ public class View_evetypessearch extends Tablesearch implements IView_evetypesse
         addStringvalues(name, values);
         name.setCompareoperator(compare);
         name.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Boolean search values for field configuredbp
+     * @param value: true or false
+     */
+    public void configuredbp(Boolean value) {
+        addBooleanvalue(configuredbp, value);
     }
     
 }

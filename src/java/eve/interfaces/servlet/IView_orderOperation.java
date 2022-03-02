@@ -30,6 +30,7 @@ public interface IView_orderOperation extends IDataServlet {
     public static final byte SELECT_LOWPRICE_SELL = 5;
     public static final byte SELECT_LOWPRICE_BUY = 6;
     public static final byte SELECT_Wishlistorders = 7;
+    public static final byte SELECT_EVETYPE_REGION_SELL = 8;
 //Custom code, do not change this line
 }
 
