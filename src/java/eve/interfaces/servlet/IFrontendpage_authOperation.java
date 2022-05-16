@@ -2,13 +2,13 @@
  * IFrontendpage_authOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 16.1.2022 20:53
+ * Generated on 11.4.2022 9:13
  *
  */
 
 package eve.interfaces.servlet;
 
-import base.interfaces.servlet.IDataServlet;
+import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IFrontendpage_authOperation
@@ -17,7 +17,7 @@ import base.interfaces.servlet.IDataServlet;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IFrontendpage_authOperation extends IDataServlet {
+public interface IFrontendpage_authOperation extends HTTPOperationtypes {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;

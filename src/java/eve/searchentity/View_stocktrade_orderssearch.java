@@ -2,7 +2,7 @@
  * View_stocktrade_orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 11.4.2022 9:13
  *
  */
 
@@ -35,6 +35,8 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
     Numbersearch min_volume = new Numbersearch("view_stocktrade_orders.min_volume");
     Numbersearch orderid = new Numbersearch("view_stocktrade_orders.orderid");
     Numbersearch sellamount = new Numbersearch("view_stocktrade_orders.sellamount");
+    Numbersearch price = new Numbersearch("view_stocktrade_orders.price");
+    Numbersearch totalprice = new Numbersearch("view_stocktrade_orders.totalprice");
 
     /**
      * @return viewname
@@ -77,6 +79,8 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
         addFieldsearcher(min_volume);
         addFieldsearcher(orderid);
         addFieldsearcher(sellamount);
+        addFieldsearcher(price);
+        addFieldsearcher(totalprice);
     }
 
     /**
@@ -297,6 +301,46 @@ public class View_stocktrade_orderssearch extends Tablesearch implements IView_s
     public void sellamount(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(sellamount, values, operators);
         sellamount.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field price, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void price(Double[] values, byte[] operators) {
+        addNumbervalues(price, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field price
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void price(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(price, values, operators);
+        price.setAndoroperator(andor);
+    }
+    
+    /**
+     * add Numeric search values for field totalprice, default OR operator is used
+     * @param values: Array of numeric search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     */
+    public void totalprice(Double[] values, byte[] operators) {
+        addNumbervalues(totalprice, values, operators);
+    }
+    
+    /**
+     * add Numeric search values for field totalprice
+     * @param values: Array of String search values
+     * @param operators: Array of byte contants for comparison (= < <= > >=)
+     * @param andor; AND/OR constant
+     */
+    public void totalprice(Double[] values, byte[] operators, byte andor) {
+        addNumbervalues(totalprice, values, operators);
+        totalprice.setAndoroperator(andor);
     }
     
 }

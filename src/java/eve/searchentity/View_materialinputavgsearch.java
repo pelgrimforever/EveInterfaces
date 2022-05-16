@@ -2,7 +2,7 @@
  * View_materialinputavgsearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 23.0.2022 17:52
+ * Generated on 11.4.2022 9:13
  *
  */
 

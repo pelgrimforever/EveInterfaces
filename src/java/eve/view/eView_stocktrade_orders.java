@@ -2,7 +2,7 @@
  * eView_stocktrade_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 11.4.2022 9:13
  *
  */
 
@@ -41,6 +41,8 @@ public class eView_stocktrade_orders implements eveDatabaseproperties, EntityVie
     private int min_volume;
     private long orderid;
     private long sellamount;
+    private double price;
+    private double totalprice;
 	  
     /**
      * @return database tool name
@@ -258,6 +260,38 @@ public class eView_stocktrade_orders implements eveDatabaseproperties, EntityVie
      */
     public void setSellamount(long sellamount) {
         this.sellamount = sellamount;
+    }
+
+    /**
+     * 
+     * @return price value
+     */
+    public double getPrice() {
+        return this.price;
+    }
+
+    /**
+     * set price value
+     * @param price: new value
+     */
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    /**
+     * 
+     * @return totalprice value
+     */
+    public double getTotalprice() {
+        return this.totalprice;
+    }
+
+    /**
+     * set totalprice value
+     * @param totalprice: new value
+     */
+    public void setTotalprice(double totalprice) {
+        this.totalprice = totalprice;
     }
 
 }

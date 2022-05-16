@@ -2,13 +2,13 @@
  * IEvetypeOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 28.0.2022 15:59
+ * Generated on 11.4.2022 9:13
  *
  */
 
 package eve.interfaces.servlet;
 
-import base.interfaces.servlet.IDataServlet;
+import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IEvetypeOperation
@@ -17,7 +17,7 @@ import base.interfaces.servlet.IDataServlet;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IEvetypeOperation extends IDataServlet {
+public interface IEvetypeOperation extends HTTPOperationtypes {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;

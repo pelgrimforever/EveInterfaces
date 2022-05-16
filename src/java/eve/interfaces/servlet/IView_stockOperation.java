@@ -2,13 +2,13 @@
  * IView_stockOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 11.4.2022 9:13
  *
  */
 
 package eve.interfaces.servlet;
 
-import base.interfaces.servlet.IDataServlet;
+import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IView_stockOperation
@@ -17,7 +17,7 @@ import base.interfaces.servlet.IDataServlet;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IView_stockOperation extends IDataServlet {
+public interface IView_stockOperation extends HTTPOperationtypes {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;

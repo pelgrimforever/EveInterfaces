@@ -2,7 +2,7 @@
  * IView_stocktrade_orderssearch.java
  *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 11.4.2022 9:13
  *
  */
 
@@ -181,5 +181,35 @@ public interface IView_stocktrade_orderssearch extends Tablesearcher {
 	 * @param andor; AND/OR constant
 	 */
 	public void sellamount(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field price, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void price(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field price
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void price(Double[] values, byte[] operators, byte andor);
+	
+	/**
+	 * add Numeric search values for field totalprice, default OR operator is used
+	 * @param values: Array of numeric search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 */
+	public void totalprice(Double[] values, byte[] operators);
+	
+	/**
+	 * add Numeric search values for field totalprice
+	 * @param values: Array of String search values
+	 * @param operators: Array of byte contants for comparison (= < <= > >=)
+	 * @param andor; AND/OR constant
+	 */
+	public void totalprice(Double[] values, byte[] operators, byte andor);
 	
 }

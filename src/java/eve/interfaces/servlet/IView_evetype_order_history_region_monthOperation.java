@@ -2,13 +2,13 @@
  * IView_evetype_order_history_region_monthOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 11.1.2022 21:46
+ * Generated on 11.4.2022 9:13
  *
  */
 
 package eve.interfaces.servlet;
 
-import base.interfaces.servlet.IDataServlet;
+import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IView_evetype_order_history_region_monthOperation
@@ -17,7 +17,7 @@ import base.interfaces.servlet.IDataServlet;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IView_evetype_order_history_region_monthOperation extends IDataServlet {
+public interface IView_evetype_order_history_region_monthOperation extends HTTPOperationtypes {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;

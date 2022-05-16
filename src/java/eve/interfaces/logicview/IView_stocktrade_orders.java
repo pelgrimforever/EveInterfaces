@@ -2,7 +2,7 @@
  * IView_stocktrade_orders.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 11.4.2022 9:13
  *
  */
 
@@ -39,6 +39,8 @@ public interface IView_stocktrade_orders extends View {
     public static byte MIN_VOLUME = 9;
     public static byte ORDERID = 10;
     public static byte SELLAMOUNT = 11;
+    public static byte PRICE = 12;
+    public static byte TOTALPRICE = 13;
 
     public static final int SIZE_USERNAME = 20;
     public static final int SIZE_SYSTEM = 19;
@@ -51,7 +53,9 @@ public interface IView_stocktrade_orders extends View {
     public static final int SIZE_MIN_VOLUME = 10;
     public static final int SIZE_ORDERID = 19;
     public static final int SIZE_SELLAMOUNT = 19;
-    public static final String[] fieldnames = { "username", "system", "locationid", "stationname", "locationname", "evetypeid", "evetypename", "packaged_volume", "min_volume", "orderid", "sellamount" };
+    public static final int SIZE_PRICE = 17;
+    public static final int SIZE_TOTALPRICE = 17;
+    public static final String[] fieldnames = { "username", "system", "locationid", "stationname", "locationname", "evetypeid", "evetypename", "packaged_volume", "min_volume", "orderid", "sellamount", "price", "totalprice" };
 
 //Custom code, do not change this line
 //Put custom variables here
@@ -122,6 +126,18 @@ public interface IView_stocktrade_orders extends View {
      * @return sellamount value
      */
     public long getSellamount();
+
+    /**
+     * 
+     * @return price value
+     */
+    public double getPrice();
+
+    /**
+     * 
+     * @return totalprice value
+     */
+    public double getTotalprice();
 
     
 //Custom code, do not change this line

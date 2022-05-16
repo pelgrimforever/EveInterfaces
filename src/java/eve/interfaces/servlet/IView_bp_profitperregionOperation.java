@@ -2,13 +2,13 @@
  * IView_bp_profitperregionOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 22.1.2022 8:34
+ * Generated on 11.4.2022 9:13
  *
  */
 
 package eve.interfaces.servlet;
 
-import base.interfaces.servlet.IDataServlet;
+import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IView_bp_profitperregionOperation
@@ -17,7 +17,7 @@ import base.interfaces.servlet.IDataServlet;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IView_bp_profitperregionOperation extends IDataServlet {
+public interface IView_bp_profitperregionOperation extends HTTPOperationtypes {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;

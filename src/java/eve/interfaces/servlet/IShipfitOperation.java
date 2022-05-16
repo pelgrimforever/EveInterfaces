@@ -2,13 +2,13 @@
  * IShipfitOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 14.0.2022 16:56
+ * Generated on 11.4.2022 9:13
  *
  */
 
 package eve.interfaces.servlet;
 
-import base.interfaces.servlet.IDataServlet;
+import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IShipfitOperation
@@ -17,7 +17,7 @@ import base.interfaces.servlet.IDataServlet;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IShipfitOperation extends IDataServlet {
+public interface IShipfitOperation extends HTTPOperationtypes {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;
@@ -30,7 +30,6 @@ public interface IShipfitOperation extends IDataServlet {
     public static final byte SELECT_Shipfitorder = 100 + 2;
 //Custom code, do not change this line
 //add here custom operations
-    public static final byte SELECT_ADDORDERShipfit = 50;
 //Custom code, do not change this line   
 
     //UPDATE OPERATIONS
@@ -43,6 +42,7 @@ public interface IShipfitOperation extends IDataServlet {
     public static final byte INSERT_SHIPFIT = 20;
 //Custom code, do not change this line
 //add here custom operations
+    public static final byte INSERT_ADDORDERShipfit = 21;
 //Custom code, do not change this line   
 
     //DELETE OPERATIONS
