@@ -2,13 +2,11 @@
  * IView_materialinputavgOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 1.5.2022 20:21
  *
  */
 
 package eve.interfaces.servlet;
-
-import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface IView_materialinputavgOperation
@@ -17,7 +15,7 @@ import base.interfaces.servlet.HTTPOperationtypes;
  * Methods: 
  * @author Franky Laseure
  */
-public interface IView_materialinputavgOperation extends HTTPOperationtypes {
+public interface IView_materialinputavgOperation {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;

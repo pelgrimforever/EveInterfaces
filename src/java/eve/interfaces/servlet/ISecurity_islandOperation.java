@@ -2,13 +2,11 @@
  * ISecurity_islandOperation.java
  *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 1.5.2022 20:21
  *
  */
 
 package eve.interfaces.servlet;
-
-import base.interfaces.servlet.HTTPOperationtypes;
 
 /**
  * Interface ISecurity_islandOperation
@@ -17,7 +15,7 @@ import base.interfaces.servlet.HTTPOperationtypes;
  * Methods: 
  * @author Franky Laseure
  */
-public interface ISecurity_islandOperation extends HTTPOperationtypes {
+public interface ISecurity_islandOperation {
 
     //SELECT OPERATIONS
     public static final byte SELECT_COUNT = 0;
