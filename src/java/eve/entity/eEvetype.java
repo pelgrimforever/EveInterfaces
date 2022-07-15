@@ -2,13 +2,12 @@
  * eEvetype.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IEvetype;
 import eve.interfaces.entity.pk.*;
@@ -64,8 +64,24 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
     private boolean configuredbp;
     private double estimatedproductioncost;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "evetype";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return IEvetype.fieldnames[fieldconstant-1];
     }
@@ -74,87 +90,32 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         return IEvetype.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eEvetype.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eEvetype.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for Evetype
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return Evetype class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty Evetype entity
-     */
     public eEvetype() {
     }
 
-    /**
-     * Constructor
-     * build an empty Evetype entity with initialized field values
-     */
     public eEvetype(long id) {
         this.evetypePK = new EvetypePK(id);
     }
   
-    /**
-     * Constructor
-     * build an empty Evetype entity with initialized Primarykey parameter
-     * @param evetypePK: Evetype Primarykey
-     */
     public eEvetype(EvetypePK evetypePK) {
         this.evetypePK = evetypePK;
     }
 
-    /**
-     * @return is Evetype Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.evetypePK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.evetypePK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.evetypePK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         updates.put(IEvetype.MARKET_GROUP, this.market_groupPK.getId());
@@ -188,9 +149,6 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         return getAllFields();
     }
 	
-    /**
-     * @return EvetypePK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -204,26 +162,14 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         return this.evetypePK;
     }
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName() {
         return this.name;
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void initName(java.lang.String name) {
         this.name = name;
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name) {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IEvetype.NAME, name);
@@ -231,51 +177,27 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         this.name = name;
     }
 
-    /**
-     * 
-     * @return published value
-     */
     public boolean getPublished() {
         return this.published;
     }
 
-    /**
-     * set published value
-     * @param published: new value
-     */
     public void initPublished(boolean published) {
         this.published = published;
     }
 
-    /**
-     * set published value
-     * @param published: new value
-     */
     public void setPublished(boolean published) {
         updates.put(IEvetype.PUBLISHED, published);
         this.published = published;
     }
 
-    /**
-     * 
-     * @return description value
-     */
     public java.lang.String getDescription() {
         return this.description;
     }
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void initDescription(java.lang.String description) {
         this.description = description;
     }
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void setDescription(java.lang.String description) {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(IEvetype.DESCRIPTION, description);
@@ -283,501 +205,261 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         this.description = description;
     }
 
-    /**
-     * 
-     * @return capacity value
-     */
     public double getCapacity() {
         return this.capacity;
     }
 
-    /**
-     * set capacity value
-     * @param capacity: new value
-     */
     public void initCapacity(double capacity) {
         this.capacity = capacity;
     }
 
-    /**
-     * set capacity value
-     * @param capacity: new value
-     */
     public void setCapacity(double capacity) {
         updates.put(IEvetype.CAPACITY, capacity);
         this.capacity = capacity;
     }
 
-    /**
-     * 
-     * @return icon value
-     */
     public long getIcon() {
         return this.icon;
     }
 
-    /**
-     * set icon value
-     * @param icon: new value
-     */
     public void initIcon(long icon) {
         this.icon = icon;
     }
 
-    /**
-     * set icon value
-     * @param icon: new value
-     */
     public void setIcon(long icon) {
         updates.put(IEvetype.ICON, icon);
         this.icon = icon;
     }
 
-    /**
-     * 
-     * @return mass value
-     */
     public double getMass() {
         return this.mass;
     }
 
-    /**
-     * set mass value
-     * @param mass: new value
-     */
     public void initMass(double mass) {
         this.mass = mass;
     }
 
-    /**
-     * set mass value
-     * @param mass: new value
-     */
     public void setMass(double mass) {
         updates.put(IEvetype.MASS, mass);
         this.mass = mass;
     }
 
-    /**
-     * 
-     * @return packaged_volume value
-     */
     public double getPackaged_volume() {
         return this.packaged_volume;
     }
 
-    /**
-     * set packaged_volume value
-     * @param packaged_volume: new value
-     */
     public void initPackaged_volume(double packaged_volume) {
         this.packaged_volume = packaged_volume;
     }
 
-    /**
-     * set packaged_volume value
-     * @param packaged_volume: new value
-     */
     public void setPackaged_volume(double packaged_volume) {
         updates.put(IEvetype.PACKAGED_VOLUME, packaged_volume);
         this.packaged_volume = packaged_volume;
     }
 
-    /**
-     * 
-     * @return portion_size value
-     */
     public int getPortion_size() {
         return this.portion_size;
     }
 
-    /**
-     * set portion_size value
-     * @param portion_size: new value
-     */
     public void initPortion_size(int portion_size) {
         this.portion_size = portion_size;
     }
 
-    /**
-     * set portion_size value
-     * @param portion_size: new value
-     */
     public void setPortion_size(int portion_size) {
         updates.put(IEvetype.PORTION_SIZE, portion_size);
         this.portion_size = portion_size;
     }
 
-    /**
-     * 
-     * @return radius value
-     */
     public double getRadius() {
         return this.radius;
     }
 
-    /**
-     * set radius value
-     * @param radius: new value
-     */
     public void initRadius(double radius) {
         this.radius = radius;
     }
 
-    /**
-     * set radius value
-     * @param radius: new value
-     */
     public void setRadius(double radius) {
         updates.put(IEvetype.RADIUS, radius);
         this.radius = radius;
     }
 
-    /**
-     * 
-     * @return volume value
-     */
     public double getVolume() {
         return this.volume;
     }
 
-    /**
-     * set volume value
-     * @param volume: new value
-     */
     public void initVolume(double volume) {
         this.volume = volume;
     }
 
-    /**
-     * set volume value
-     * @param volume: new value
-     */
     public void setVolume(double volume) {
         updates.put(IEvetype.VOLUME, volume);
         this.volume = volume;
     }
 
-    /**
-     * 
-     * @return avg_buyorder value
-     */
     public double getAvg_buyorder() {
         return this.avg_buyorder;
     }
 
-    /**
-     * set avg_buyorder value
-     * @param avg_buyorder: new value
-     */
     public void initAvg_buyorder(double avg_buyorder) {
         this.avg_buyorder = avg_buyorder;
     }
 
-    /**
-     * set avg_buyorder value
-     * @param avg_buyorder: new value
-     */
     public void setAvg_buyorder(double avg_buyorder) {
         updates.put(IEvetype.AVG_BUYORDER, avg_buyorder);
         this.avg_buyorder = avg_buyorder;
     }
 
-    /**
-     * 
-     * @return avg_sellorder value
-     */
     public double getAvg_sellorder() {
         return this.avg_sellorder;
     }
 
-    /**
-     * set avg_sellorder value
-     * @param avg_sellorder: new value
-     */
     public void initAvg_sellorder(double avg_sellorder) {
         this.avg_sellorder = avg_sellorder;
     }
 
-    /**
-     * set avg_sellorder value
-     * @param avg_sellorder: new value
-     */
     public void setAvg_sellorder(double avg_sellorder) {
         updates.put(IEvetype.AVG_SELLORDER, avg_sellorder);
         this.avg_sellorder = avg_sellorder;
     }
 
-    /**
-     * 
-     * @return min_buyorder value
-     */
     public double getMin_buyorder() {
         return this.min_buyorder;
     }
 
-    /**
-     * set min_buyorder value
-     * @param min_buyorder: new value
-     */
     public void initMin_buyorder(double min_buyorder) {
         this.min_buyorder = min_buyorder;
     }
 
-    /**
-     * set min_buyorder value
-     * @param min_buyorder: new value
-     */
     public void setMin_buyorder(double min_buyorder) {
         updates.put(IEvetype.MIN_BUYORDER, min_buyorder);
         this.min_buyorder = min_buyorder;
     }
 
-    /**
-     * 
-     * @return max_buyorder value
-     */
     public double getMax_buyorder() {
         return this.max_buyorder;
     }
 
-    /**
-     * set max_buyorder value
-     * @param max_buyorder: new value
-     */
     public void initMax_buyorder(double max_buyorder) {
         this.max_buyorder = max_buyorder;
     }
 
-    /**
-     * set max_buyorder value
-     * @param max_buyorder: new value
-     */
     public void setMax_buyorder(double max_buyorder) {
         updates.put(IEvetype.MAX_BUYORDER, max_buyorder);
         this.max_buyorder = max_buyorder;
     }
 
-    /**
-     * 
-     * @return min_selorder value
-     */
     public double getMin_selorder() {
         return this.min_selorder;
     }
 
-    /**
-     * set min_selorder value
-     * @param min_selorder: new value
-     */
     public void initMin_selorder(double min_selorder) {
         this.min_selorder = min_selorder;
     }
 
-    /**
-     * set min_selorder value
-     * @param min_selorder: new value
-     */
     public void setMin_selorder(double min_selorder) {
         updates.put(IEvetype.MIN_SELORDER, min_selorder);
         this.min_selorder = min_selorder;
     }
 
-    /**
-     * 
-     * @return max_selorder value
-     */
     public double getMax_selorder() {
         return this.max_selorder;
     }
 
-    /**
-     * set max_selorder value
-     * @param max_selorder: new value
-     */
     public void initMax_selorder(double max_selorder) {
         this.max_selorder = max_selorder;
     }
 
-    /**
-     * set max_selorder value
-     * @param max_selorder: new value
-     */
     public void setMax_selorder(double max_selorder) {
         updates.put(IEvetype.MAX_SELORDER, max_selorder);
         this.max_selorder = max_selorder;
     }
 
-    /**
-     * 
-     * @return average value
-     */
     public double getAverage() {
         return this.average;
     }
 
-    /**
-     * set average value
-     * @param average: new value
-     */
     public void initAverage(double average) {
         this.average = average;
     }
 
-    /**
-     * set average value
-     * @param average: new value
-     */
     public void setAverage(double average) {
         updates.put(IEvetype.AVERAGE, average);
         this.average = average;
     }
 
-    /**
-     * 
-     * @return highest value
-     */
     public double getHighest() {
         return this.highest;
     }
 
-    /**
-     * set highest value
-     * @param highest: new value
-     */
     public void initHighest(double highest) {
         this.highest = highest;
     }
 
-    /**
-     * set highest value
-     * @param highest: new value
-     */
     public void setHighest(double highest) {
         updates.put(IEvetype.HIGHEST, highest);
         this.highest = highest;
     }
 
-    /**
-     * 
-     * @return lowest value
-     */
     public double getLowest() {
         return this.lowest;
     }
 
-    /**
-     * set lowest value
-     * @param lowest: new value
-     */
     public void initLowest(double lowest) {
         this.lowest = lowest;
     }
 
-    /**
-     * set lowest value
-     * @param lowest: new value
-     */
     public void setLowest(double lowest) {
         updates.put(IEvetype.LOWEST, lowest);
         this.lowest = lowest;
     }
 
-    /**
-     * 
-     * @return order_count value
-     */
     public long getOrder_count() {
         return this.order_count;
     }
 
-    /**
-     * set order_count value
-     * @param order_count: new value
-     */
     public void initOrder_count(long order_count) {
         this.order_count = order_count;
     }
 
-    /**
-     * set order_count value
-     * @param order_count: new value
-     */
     public void setOrder_count(long order_count) {
         updates.put(IEvetype.ORDER_COUNT, order_count);
         this.order_count = order_count;
     }
 
-    /**
-     * 
-     * @return configuredbp value
-     */
     public boolean getConfiguredbp() {
         return this.configuredbp;
     }
 
-    /**
-     * set configuredbp value
-     * @param configuredbp: new value
-     */
     public void initConfiguredbp(boolean configuredbp) {
         this.configuredbp = configuredbp;
     }
 
-    /**
-     * set configuredbp value
-     * @param configuredbp: new value
-     */
     public void setConfiguredbp(boolean configuredbp) {
         updates.put(IEvetype.CONFIGUREDBP, configuredbp);
         this.configuredbp = configuredbp;
     }
 
-    /**
-     * 
-     * @return estimatedproductioncost value
-     */
     public double getEstimatedproductioncost() {
         return this.estimatedproductioncost;
     }
 
-    /**
-     * set estimatedproductioncost value
-     * @param estimatedproductioncost: new value
-     */
     public void initEstimatedproductioncost(double estimatedproductioncost) {
         this.estimatedproductioncost = estimatedproductioncost;
     }
 
-    /**
-     * set estimatedproductioncost value
-     * @param estimatedproductioncost: new value
-     */
     public void setEstimatedproductioncost(double estimatedproductioncost) {
         updates.put(IEvetype.ESTIMATEDPRODUCTIONCOST, estimatedproductioncost);
         this.estimatedproductioncost = estimatedproductioncost;
     }
 
-    /**
-     * 
-     * @return foreign key market_groupPK, instance of Market_groupPK
-     */
     public Market_groupPK getMarket_groupPK() {
         return this.market_groupPK;
     }
 
-    /**
-     * set foreign key market_group
-     * @param market_groupPK: instance of Market_groupPK
-     */
     public void initMarket_groupPK(IMarket_groupPK market_groupPK) {
         this.market_groupPK = (Market_groupPK)market_groupPK;
     }
 
-    /**
-     * set foreign key market_group
-     * @param market_groupPK: instance of Market_groupPK
-     */
     public void setMarket_groupPK(IMarket_groupPK market_groupPK) {
 	if(market_groupPK==null && market_groupPK!=this.market_groupPK || market_groupPK!=null) {
             if(market_groupPK==null) {
@@ -789,26 +471,14 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         this.market_groupPK = (Market_groupPK)market_groupPK;
     }
 
-    /**
-     * 
-     * @return foreign key typegroupPK, instance of TypegroupPK
-     */
     public TypegroupPK getTypegroupPK() {
         return this.typegroupPK;
     }
 
-    /**
-     * set foreign key typegroup
-     * @param typegroupPK: instance of TypegroupPK
-     */
     public void initTypegroupPK(ITypegroupPK typegroupPK) {
         this.typegroupPK = (TypegroupPK)typegroupPK;
     }
 
-    /**
-     * set foreign key typegroup
-     * @param typegroupPK: instance of TypegroupPK
-     */
     public void setTypegroupPK(ITypegroupPK typegroupPK) {
 	if(typegroupPK==null && typegroupPK!=this.typegroupPK || typegroupPK!=null) {
             if(typegroupPK==null) {
@@ -820,26 +490,14 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         this.typegroupPK = (TypegroupPK)typegroupPK;
     }
 
-    /**
-     * 
-     * @return foreign key graphicPK, instance of GraphicPK
-     */
     public GraphicPK getGraphicPK() {
         return this.graphicPK;
     }
 
-    /**
-     * set foreign key graphic
-     * @param graphicPK: instance of GraphicPK
-     */
     public void initGraphicPK(IGraphicPK graphicPK) {
         this.graphicPK = (GraphicPK)graphicPK;
     }
 
-    /**
-     * set foreign key graphic
-     * @param graphicPK: instance of GraphicPK
-     */
     public void setGraphicPK(IGraphicPK graphicPK) {
 	if(graphicPK==null && graphicPK!=this.graphicPK || graphicPK!=null) {
             if(graphicPK==null) {
@@ -851,10 +509,6 @@ public class eEvetype extends AbstractEntity implements eveDatabaseproperties, E
         this.graphicPK = (GraphicPK)graphicPK;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();

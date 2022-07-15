@@ -2,13 +2,12 @@
  * eContractitem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IContractitem;
 import eve.interfaces.entity.pk.*;
@@ -47,8 +47,24 @@ public class eContractitem extends AbstractEntity implements eveDatabaseproperti
     private int runs;
     private int time_efficiency;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "contractitem";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return IContractitem.fieldnames[fieldconstant-1];
     }
@@ -57,87 +73,32 @@ public class eContractitem extends AbstractEntity implements eveDatabaseproperti
         return IContractitem.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eContractitem.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eContractitem.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for Contractitem
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return Contractitem class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty Contractitem entity
-     */
     public eContractitem() {
     }
 
-    /**
-     * Constructor
-     * build an empty Contractitem entity with initialized field values
-     */
     public eContractitem(long id) {
         this.contractitemPK = new ContractitemPK(id);
     }
   
-    /**
-     * Constructor
-     * build an empty Contractitem entity with initialized Primarykey parameter
-     * @param contractitemPK: Contractitem Primarykey
-     */
     public eContractitem(ContractitemPK contractitemPK) {
         this.contractitemPK = contractitemPK;
     }
 
-    /**
-     * @return is Contractitem Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.contractitemPK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.contractitemPK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.contractitemPK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         updates.put(IContractitem.EVETYPE, this.evetypePK.getId());
@@ -153,9 +114,6 @@ public class eContractitem extends AbstractEntity implements eveDatabaseproperti
         return getAllFields();
     }
 	
-    /**
-     * @return ContractitemPK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -169,176 +127,92 @@ public class eContractitem extends AbstractEntity implements eveDatabaseproperti
         return this.contractitemPK;
     }
 
-    /**
-     * 
-     * @return blueprint_copy value
-     */
     public boolean getBlueprint_copy() {
         return this.blueprint_copy;
     }
 
-    /**
-     * set blueprint_copy value
-     * @param blueprint_copy: new value
-     */
     public void initBlueprint_copy(boolean blueprint_copy) {
         this.blueprint_copy = blueprint_copy;
     }
 
-    /**
-     * set blueprint_copy value
-     * @param blueprint_copy: new value
-     */
     public void setBlueprint_copy(boolean blueprint_copy) {
         updates.put(IContractitem.BLUEPRINT_COPY, blueprint_copy);
         this.blueprint_copy = blueprint_copy;
     }
 
-    /**
-     * 
-     * @return included value
-     */
     public boolean getIncluded() {
         return this.included;
     }
 
-    /**
-     * set included value
-     * @param included: new value
-     */
     public void initIncluded(boolean included) {
         this.included = included;
     }
 
-    /**
-     * set included value
-     * @param included: new value
-     */
     public void setIncluded(boolean included) {
         updates.put(IContractitem.INCLUDED, included);
         this.included = included;
     }
 
-    /**
-     * 
-     * @return quantity value
-     */
     public long getQuantity() {
         return this.quantity;
     }
 
-    /**
-     * set quantity value
-     * @param quantity: new value
-     */
     public void initQuantity(long quantity) {
         this.quantity = quantity;
     }
 
-    /**
-     * set quantity value
-     * @param quantity: new value
-     */
     public void setQuantity(long quantity) {
         updates.put(IContractitem.QUANTITY, quantity);
         this.quantity = quantity;
     }
 
-    /**
-     * 
-     * @return material_efficiency value
-     */
     public int getMaterial_efficiency() {
         return this.material_efficiency;
     }
 
-    /**
-     * set material_efficiency value
-     * @param material_efficiency: new value
-     */
     public void initMaterial_efficiency(int material_efficiency) {
         this.material_efficiency = material_efficiency;
     }
 
-    /**
-     * set material_efficiency value
-     * @param material_efficiency: new value
-     */
     public void setMaterial_efficiency(int material_efficiency) {
         updates.put(IContractitem.MATERIAL_EFFICIENCY, material_efficiency);
         this.material_efficiency = material_efficiency;
     }
 
-    /**
-     * 
-     * @return runs value
-     */
     public int getRuns() {
         return this.runs;
     }
 
-    /**
-     * set runs value
-     * @param runs: new value
-     */
     public void initRuns(int runs) {
         this.runs = runs;
     }
 
-    /**
-     * set runs value
-     * @param runs: new value
-     */
     public void setRuns(int runs) {
         updates.put(IContractitem.RUNS, runs);
         this.runs = runs;
     }
 
-    /**
-     * 
-     * @return time_efficiency value
-     */
     public int getTime_efficiency() {
         return this.time_efficiency;
     }
 
-    /**
-     * set time_efficiency value
-     * @param time_efficiency: new value
-     */
     public void initTime_efficiency(int time_efficiency) {
         this.time_efficiency = time_efficiency;
     }
 
-    /**
-     * set time_efficiency value
-     * @param time_efficiency: new value
-     */
     public void setTime_efficiency(int time_efficiency) {
         updates.put(IContractitem.TIME_EFFICIENCY, time_efficiency);
         this.time_efficiency = time_efficiency;
     }
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of EvetypePK
-     */
     public EvetypePK getEvetypePK() {
         return this.evetypePK;
     }
 
-    /**
-     * set foreign key evetype
-     * @param evetypePK: instance of EvetypePK
-     */
     public void initEvetypePK(IEvetypePK evetypePK) {
         this.evetypePK = (EvetypePK)evetypePK;
     }
 
-    /**
-     * set foreign key evetype
-     * @param evetypePK: instance of EvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK) {
 	if(evetypePK==null && evetypePK!=this.evetypePK || evetypePK!=null) {
             if(evetypePK==null) {
@@ -350,26 +224,14 @@ public class eContractitem extends AbstractEntity implements eveDatabaseproperti
         this.evetypePK = (EvetypePK)evetypePK;
     }
 
-    /**
-     * 
-     * @return foreign key contractPK, instance of ContractPK
-     */
     public ContractPK getContractPK() {
         return this.contractPK;
     }
 
-    /**
-     * set foreign key contract
-     * @param contractPK: instance of ContractPK
-     */
     public void initContractPK(IContractPK contractPK) {
         this.contractPK = (ContractPK)contractPK;
     }
 
-    /**
-     * set foreign key contract
-     * @param contractPK: instance of ContractPK
-     */
     public void setContractPK(IContractPK contractPK) {
 	if(contractPK==null && contractPK!=this.contractPK || contractPK!=null) {
             if(contractPK==null) {
@@ -381,10 +243,6 @@ public class eContractitem extends AbstractEntity implements eveDatabaseproperti
         this.contractPK = (ContractPK)contractPK;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();

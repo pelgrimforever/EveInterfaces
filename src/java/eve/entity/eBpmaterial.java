@@ -2,13 +2,12 @@
  * eBpmaterial.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IBpmaterial;
 import eve.interfaces.entity.pk.*;
@@ -40,8 +40,24 @@ public class eBpmaterial extends AbstractEntity implements eveDatabaseproperties
     protected BpmaterialPK bpmaterialPK;
     private long amount;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "bpmaterial";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return IBpmaterial.fieldnames[fieldconstant-1];
     }
@@ -50,96 +66,38 @@ public class eBpmaterial extends AbstractEntity implements eveDatabaseproperties
         return IBpmaterial.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eBpmaterial.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eBpmaterial.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for Bpmaterial
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return Bpmaterial class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty Bpmaterial entity
-     */
     public eBpmaterial() {
     }
 
-    /**
-     * Constructor
-     * build an empty Bpmaterial entity with initialized field values
-     */
     public eBpmaterial(long bp, long material) {
         this.bpmaterialPK = new BpmaterialPK(bp, material);
     }
   
-    /**
-     * Constructor
-     * build an empty Bpmaterial entity with initialized Primarykey parameter
-     * @param bpmaterialPK: Bpmaterial Primarykey
-     */
     public eBpmaterial(BpmaterialPK bpmaterialPK) {
         this.bpmaterialPK = bpmaterialPK;
     }
 
-    /**
-     * @return is Bpmaterial Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.bpmaterialPK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.bpmaterialPK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.bpmaterialPK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         updates.put(IBpmaterial.AMOUNT, amount);
         return getAllFields();
     }
 	
-    /**
-     * @return BpmaterialPK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -153,35 +111,19 @@ public class eBpmaterial extends AbstractEntity implements eveDatabaseproperties
         return this.bpmaterialPK;
     }
 
-    /**
-     * 
-     * @return amount value
-     */
     public long getAmount() {
         return this.amount;
     }
 
-    /**
-     * set amount value
-     * @param amount: new value
-     */
     public void initAmount(long amount) {
         this.amount = amount;
     }
 
-    /**
-     * set amount value
-     * @param amount: new value
-     */
     public void setAmount(long amount) {
         updates.put(IBpmaterial.AMOUNT, amount);
         this.amount = amount;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();

@@ -25,6 +25,7 @@ import eve.interfaces.logicentity.ISystemactivity;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
+import static eve.entity.eAlliance.table;
 
 /**
  * Entity class Systemactivity
@@ -53,27 +54,15 @@ public class eSystemactivity extends AbstractEntity implements eveDatabaseproper
         return ISystemactivity.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
     @Override
     public String getDbtool() {
-        return eSystemactivity.databasetool;
+        return databasetool;
     }
     
-    /**
-     * @return connection pool name
-     */
     @Override
     public String getConnectionpool() {
-        return eSystemactivity.connectionpool;
+        return connectionpool;
     }
-    
-    /**
-     * 
-     * @return table name for Systemactivity
-     */
-    public String getTable() { return table; }
 
     /**
      * 
@@ -81,6 +70,9 @@ public class eSystemactivity extends AbstractEntity implements eveDatabaseproper
      */
     public String getClassName() { return this.getClass().getName(); };
 	  
+    @Override
+    public String getTable() { return table; }
+    
     /** 
      * Constructor
      * Creates an empty Systemactivity entity

@@ -2,13 +2,12 @@
  * eRegion_neighbour.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IRegion_neighbour;
 import eve.interfaces.entity.pk.*;
@@ -39,8 +39,24 @@ public class eRegion_neighbour extends AbstractEntity implements eveDatabaseprop
 
     protected Region_neighbourPK region_neighbourPK;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "region_neighbour";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return IRegion_neighbour.fieldnames[fieldconstant-1];
     }
@@ -49,95 +65,37 @@ public class eRegion_neighbour extends AbstractEntity implements eveDatabaseprop
         return IRegion_neighbour.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eRegion_neighbour.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eRegion_neighbour.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for Region_neighbour
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return Region_neighbour class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty Region_neighbour entity
-     */
     public eRegion_neighbour() {
     }
 
-    /**
-     * Constructor
-     * build an empty Region_neighbour entity with initialized field values
-     */
     public eRegion_neighbour(long region, long neighbour) {
         this.region_neighbourPK = new Region_neighbourPK(region, neighbour);
     }
   
-    /**
-     * Constructor
-     * build an empty Region_neighbour entity with initialized Primarykey parameter
-     * @param region_neighbourPK: Region_neighbour Primarykey
-     */
     public eRegion_neighbour(Region_neighbourPK region_neighbourPK) {
         this.region_neighbourPK = region_neighbourPK;
     }
 
-    /**
-     * @return is Region_neighbour Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.region_neighbourPK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.region_neighbourPK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.region_neighbourPK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         return getAllFields();
     }
 	
-    /**
-     * @return Region_neighbourPK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -151,10 +109,6 @@ public class eRegion_neighbour extends AbstractEntity implements eveDatabaseprop
         return this.region_neighbourPK;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();

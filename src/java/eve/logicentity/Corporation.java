@@ -2,7 +2,7 @@
  * Corporation.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 9.5.2022 11:11
  *
  */
 
@@ -77,7 +77,9 @@ public class Corporation extends eve.entity.eCorporation implements ICorporation
      * @param url: new value
      */
     public void setUrl(java.lang.String url) {
-        String urlcrop = url.substring(0, Math.min(url.length(), SIZE_URL));
+        String urlcrop = url;
+        if(urlcrop!=null)
+            urlcrop = urlcrop.substring(0, Math.min(urlcrop.length(), SIZE_URL));
         super.setUrl(urlcrop);
     }
 //Custom code, do not change this line

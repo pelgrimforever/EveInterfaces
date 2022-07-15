@@ -2,13 +2,12 @@
  * eRace.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IRace;
 import eve.interfaces.entity.pk.*;
@@ -42,8 +42,24 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
     private java.lang.String name;
     private java.lang.String description;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "race";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return IRace.fieldnames[fieldconstant-1];
     }
@@ -52,87 +68,32 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
         return IRace.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eRace.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eRace.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for Race
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return Race class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty Race entity
-     */
     public eRace() {
     }
 
-    /**
-     * Constructor
-     * build an empty Race entity with initialized field values
-     */
     public eRace(long id) {
         this.racePK = new RacePK(id);
     }
   
-    /**
-     * Constructor
-     * build an empty Race entity with initialized Primarykey parameter
-     * @param racePK: Race Primarykey
-     */
     public eRace(RacePK racePK) {
         this.racePK = racePK;
     }
 
-    /**
-     * @return is Race Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.racePK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.racePK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.racePK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         updates.put(IRace.FACTION, this.factionPK.getId());
@@ -142,9 +103,6 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
         return getAllFields();
     }
 	
-    /**
-     * @return RacePK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -158,26 +116,14 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
         return this.racePK;
     }
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName() {
         return this.name;
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void initName(java.lang.String name) {
         this.name = name;
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name) {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(IRace.NAME, name);
@@ -185,26 +131,14 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
         this.name = name;
     }
 
-    /**
-     * 
-     * @return description value
-     */
     public java.lang.String getDescription() {
         return this.description;
     }
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void initDescription(java.lang.String description) {
         this.description = description;
     }
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void setDescription(java.lang.String description) {
 	if(description==null && description!=this.description || description!=null && !description.equals(this.description)) {
             updates.put(IRace.DESCRIPTION, description);
@@ -212,26 +146,14 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
         this.description = description;
     }
 
-    /**
-     * 
-     * @return foreign key factionPK, instance of FactionPK
-     */
     public FactionPK getFactionPK() {
         return this.factionPK;
     }
 
-    /**
-     * set foreign key faction
-     * @param factionPK: instance of FactionPK
-     */
     public void initFactionPK(IFactionPK factionPK) {
         this.factionPK = (FactionPK)factionPK;
     }
 
-    /**
-     * set foreign key faction
-     * @param factionPK: instance of FactionPK
-     */
     public void setFactionPK(IFactionPK factionPK) {
 	if(factionPK==null && factionPK!=this.factionPK || factionPK!=null) {
             if(factionPK==null) {
@@ -243,10 +165,6 @@ public class eRace extends AbstractEntity implements eveDatabaseproperties, Enti
         this.factionPK = (FactionPK)factionPK;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();

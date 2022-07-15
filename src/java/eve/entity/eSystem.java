@@ -2,13 +2,12 @@
  * eSystem.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ISystem;
 import eve.interfaces.entity.pk.*;
@@ -49,8 +49,24 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
     private boolean isregionborder;
     private java.sql.Date downloaddate;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "system";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return ISystem.fieldnames[fieldconstant-1];
     }
@@ -59,87 +75,32 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         return ISystem.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eSystem.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eSystem.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for System
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return System class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty System entity
-     */
     public eSystem() {
     }
 
-    /**
-     * Constructor
-     * build an empty System entity with initialized field values
-     */
     public eSystem(long id) {
         this.systemPK = new SystemPK(id);
     }
   
-    /**
-     * Constructor
-     * build an empty System entity with initialized Primarykey parameter
-     * @param systemPK: System Primarykey
-     */
     public eSystem(SystemPK systemPK) {
         this.systemPK = systemPK;
     }
 
-    /**
-     * @return is System Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.systemPK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.systemPK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.systemPK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         updates.put(ISystem.SECURITY_ISLAND, this.security_islandPK.getId());
@@ -157,9 +118,6 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         return getAllFields();
     }
 	
-    /**
-     * @return SystemPK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -173,26 +131,14 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         return this.systemPK;
     }
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName() {
         return this.name;
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void initName(java.lang.String name) {
         this.name = name;
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name) {
 	if(name==null && name!=this.name || name!=null && !name.equals(this.name)) {
             updates.put(ISystem.NAME, name);
@@ -200,26 +146,14 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         this.name = name;
     }
 
-    /**
-     * 
-     * @return security_class value
-     */
     public java.lang.String getSecurity_class() {
         return this.security_class;
     }
 
-    /**
-     * set security_class value
-     * @param security_class: new value
-     */
     public void initSecurity_class(java.lang.String security_class) {
         this.security_class = security_class;
     }
 
-    /**
-     * set security_class value
-     * @param security_class: new value
-     */
     public void setSecurity_class(java.lang.String security_class) {
 	if(security_class==null && security_class!=this.security_class || security_class!=null && !security_class.equals(this.security_class)) {
             updates.put(ISystem.SECURITY_CLASS, security_class);
@@ -227,151 +161,79 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         this.security_class = security_class;
     }
 
-    /**
-     * 
-     * @return security_status value
-     */
     public double getSecurity_status() {
         return this.security_status;
     }
 
-    /**
-     * set security_status value
-     * @param security_status: new value
-     */
     public void initSecurity_status(double security_status) {
         this.security_status = security_status;
     }
 
-    /**
-     * set security_status value
-     * @param security_status: new value
-     */
     public void setSecurity_status(double security_status) {
         updates.put(ISystem.SECURITY_STATUS, security_status);
         this.security_status = security_status;
     }
 
-    /**
-     * 
-     * @return star_id value
-     */
     public long getStar_id() {
         return this.star_id;
     }
 
-    /**
-     * set star_id value
-     * @param star_id: new value
-     */
     public void initStar_id(long star_id) {
         this.star_id = star_id;
     }
 
-    /**
-     * set star_id value
-     * @param star_id: new value
-     */
     public void setStar_id(long star_id) {
         updates.put(ISystem.STAR_ID, star_id);
         this.star_id = star_id;
     }
 
-    /**
-     * 
-     * @return noaccess value
-     */
     public boolean getNoaccess() {
         return this.noaccess;
     }
 
-    /**
-     * set noaccess value
-     * @param noaccess: new value
-     */
     public void initNoaccess(boolean noaccess) {
         this.noaccess = noaccess;
     }
 
-    /**
-     * set noaccess value
-     * @param noaccess: new value
-     */
     public void setNoaccess(boolean noaccess) {
         updates.put(ISystem.NOACCESS, noaccess);
         this.noaccess = noaccess;
     }
 
-    /**
-     * 
-     * @return isconstellationborder value
-     */
     public boolean getIsconstellationborder() {
         return this.isconstellationborder;
     }
 
-    /**
-     * set isconstellationborder value
-     * @param isconstellationborder: new value
-     */
     public void initIsconstellationborder(boolean isconstellationborder) {
         this.isconstellationborder = isconstellationborder;
     }
 
-    /**
-     * set isconstellationborder value
-     * @param isconstellationborder: new value
-     */
     public void setIsconstellationborder(boolean isconstellationborder) {
         updates.put(ISystem.ISCONSTELLATIONBORDER, isconstellationborder);
         this.isconstellationborder = isconstellationborder;
     }
 
-    /**
-     * 
-     * @return isregionborder value
-     */
     public boolean getIsregionborder() {
         return this.isregionborder;
     }
 
-    /**
-     * set isregionborder value
-     * @param isregionborder: new value
-     */
     public void initIsregionborder(boolean isregionborder) {
         this.isregionborder = isregionborder;
     }
 
-    /**
-     * set isregionborder value
-     * @param isregionborder: new value
-     */
     public void setIsregionborder(boolean isregionborder) {
         updates.put(ISystem.ISREGIONBORDER, isregionborder);
         this.isregionborder = isregionborder;
     }
 
-    /**
-     * 
-     * @return downloaddate value
-     */
     public java.sql.Date getDownloaddate() {
         return this.downloaddate;
     }
 
-    /**
-     * set downloaddate value
-     * @param downloaddate: new value
-     */
     public void initDownloaddate(java.sql.Date downloaddate) {
         this.downloaddate = downloaddate;
     }
 
-    /**
-     * set downloaddate value
-     * @param downloaddate: new value
-     */
     public void setDownloaddate(java.sql.Date downloaddate) {
 	if(downloaddate==null && downloaddate!=this.downloaddate || downloaddate!=null && !downloaddate.equals(this.downloaddate)) {
             updates.put(ISystem.DOWNLOADDATE, downloaddate);
@@ -379,26 +241,14 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         this.downloaddate = downloaddate;
     }
 
-    /**
-     * 
-     * @return foreign key security_islandPK, instance of Security_islandPK
-     */
     public Security_islandPK getSecurity_islandPK() {
         return this.security_islandPK;
     }
 
-    /**
-     * set foreign key security_island
-     * @param security_islandPK: instance of Security_islandPK
-     */
     public void initSecurity_islandPK(ISecurity_islandPK security_islandPK) {
         this.security_islandPK = (Security_islandPK)security_islandPK;
     }
 
-    /**
-     * set foreign key security_island
-     * @param security_islandPK: instance of Security_islandPK
-     */
     public void setSecurity_islandPK(ISecurity_islandPK security_islandPK) {
 	if(security_islandPK==null && security_islandPK!=this.security_islandPK || security_islandPK!=null) {
             if(security_islandPK==null) {
@@ -410,26 +260,14 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         this.security_islandPK = (Security_islandPK)security_islandPK;
     }
 
-    /**
-     * 
-     * @return foreign key constellationPK, instance of ConstellationPK
-     */
     public ConstellationPK getConstellationPK() {
         return this.constellationPK;
     }
 
-    /**
-     * set foreign key constellation
-     * @param constellationPK: instance of ConstellationPK
-     */
     public void initConstellationPK(IConstellationPK constellationPK) {
         this.constellationPK = (ConstellationPK)constellationPK;
     }
 
-    /**
-     * set foreign key constellation
-     * @param constellationPK: instance of ConstellationPK
-     */
     public void setConstellationPK(IConstellationPK constellationPK) {
 	if(constellationPK==null && constellationPK!=this.constellationPK || constellationPK!=null) {
             if(constellationPK==null) {
@@ -441,10 +279,6 @@ public class eSystem extends AbstractEntity implements eveDatabaseproperties, En
         this.constellationPK = (ConstellationPK)constellationPK;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();

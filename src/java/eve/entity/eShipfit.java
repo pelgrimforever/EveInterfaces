@@ -2,13 +2,12 @@
  * eShipfit.java
  *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 11.4.2022 9:13
+ * Generated on 14.5.2022 11:24
  *
  */
 
 package eve.entity;
 
-import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -20,6 +19,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
+import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IShipfit;
 import eve.interfaces.entity.pk.*;
@@ -40,8 +40,24 @@ public class eShipfit extends AbstractEntity implements eveDatabaseproperties, E
     protected ShipfitPK shipfitPK;
     private EvetypePK evetypePK;
 	  
+    @Override
+    public String getDbtool() {
+        return databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return connectionpool;
+    }
+
     public static final String table = "shipfit";
 	  
+    @Override
+    public String getTable() { return table; }
+
+    @Override
+    public String getClassName() { return this.getClass().getName(); };
+
     public String getFieldname(short fieldconstant) {
         return IShipfit.fieldnames[fieldconstant-1];
     }
@@ -50,87 +66,32 @@ public class eShipfit extends AbstractEntity implements eveDatabaseproperties, E
         return IShipfit.fieldtypes[fieldconstant-1];
     }
         
-    /**
-     * @return database tool name
-     */
-    @Override
-    public String getDbtool() {
-        return eShipfit.databasetool;
-    }
-    
-    /**
-     * @return connection pool name
-     */
-    @Override
-    public String getConnectionpool() {
-        return eShipfit.connectionpool;
-    }
-    
-    /**
-     * 
-     * @return table name for Shipfit
-     */
-    public String getTable() { return table; }
-
-    /**
-     * 
-     * @return Shipfit class name
-     */
-    public String getClassName() { return this.getClass().getName(); };
-	  
-    /** 
-     * Constructor
-     * Creates an empty Shipfit entity
-     */
     public eShipfit() {
     }
 
-    /**
-     * Constructor
-     * build an empty Shipfit entity with initialized field values
-     */
     public eShipfit(java.lang.String username, java.lang.String shipname) {
         this.shipfitPK = new ShipfitPK(username, shipname);
     }
   
-    /**
-     * Constructor
-     * build an empty Shipfit entity with initialized Primarykey parameter
-     * @param shipfitPK: Shipfit Primarykey
-     */
     public eShipfit(ShipfitPK shipfitPK) {
         this.shipfitPK = shipfitPK;
     }
 
-    /**
-     * @return is Shipfit Empty ?
-     */
+    @Override
     public boolean isEmpty() {
         return this.shipfitPK == null;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     @Override
     public SQLparameters getSQLprimarykey() {
         return this.shipfitPK.getSQLprimarykey();	  
     }
   
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     @Override
     public Entityvalues getPrimarykeyvalues() {
         return this.shipfitPK.getPrimarykeyvalues();	  
     }
   
-    /**
-     * 
-     * @return all fields (fieldname, value)
-     */
     @Override
     public Entityvalues getAll() {
         updates.put(IShipfit.EVETYPE, this.evetypePK.getId());
@@ -138,9 +99,6 @@ public class eShipfit extends AbstractEntity implements eveDatabaseproperties, E
         return getAllFields();
     }
 	
-    /**
-     * @return ShipfitPK
-     */
     @Override
     public Object getKey() {
         return this.getPrimaryKey();
@@ -154,26 +112,14 @@ public class eShipfit extends AbstractEntity implements eveDatabaseproperties, E
         return this.shipfitPK;
     }
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of EvetypePK
-     */
     public EvetypePK getEvetypePK() {
         return this.evetypePK;
     }
 
-    /**
-     * set foreign key evetype
-     * @param evetypePK: instance of EvetypePK
-     */
     public void initEvetypePK(IEvetypePK evetypePK) {
         this.evetypePK = (EvetypePK)evetypePK;
     }
 
-    /**
-     * set foreign key evetype
-     * @param evetypePK: instance of EvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK) {
 	if(evetypePK==null && evetypePK!=this.evetypePK || evetypePK!=null) {
             if(evetypePK==null) {
@@ -185,10 +131,6 @@ public class eShipfit extends AbstractEntity implements eveDatabaseproperties, E
         this.evetypePK = (EvetypePK)evetypePK;
     }
 
-    /**
-     * 
-     * @return Primarykey string value
-     */
     @Override
     public String toString() {
         return this.getPrimaryKey().getKeystring();
