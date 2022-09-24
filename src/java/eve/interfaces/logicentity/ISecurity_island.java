@@ -1,9 +1,7 @@
 /*
- * ISecurity_island.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ISecurity_island
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ISecurity_island extends LogicEntity {
 
     public ISecurity_islandPK getPrimaryKey();
@@ -48,28 +38,12 @@ public interface ISecurity_island extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return security_status value
-     */
     public double getSecurity_status();
 
-    /**
-     * set security_status value
-     * @param security_status: new value
-     */
     public void setSecurity_status(double security_status);
 
     

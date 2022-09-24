@@ -1,9 +1,7 @@
 /*
- * IMarket_group.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IMarket_group
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IMarket_group extends LogicEntity {
 
     public IMarket_groupPK getPrimaryKey();
@@ -52,40 +42,16 @@ public interface IMarket_group extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return description value
-     */
     public java.lang.String getDescription();
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void setDescription(java.lang.String description);
 
-    /**
-     * 
-     * @return foreign key market_groupParent_idPK, instance of Market_groupPK
-     */
     public IMarket_groupPK getMarket_groupparent_idPK();
 
-    /**
-     * set foreign key market_group
-     * @param market_groupParent_idPK: instance of Market_groupPK
-     */
     public void setMarket_groupparent_idPK(IMarket_groupPK market_groupParent_idPK);
 
     

@@ -1,9 +1,7 @@
 /*
- * IOrders.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IOrders
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IOrders extends LogicEntity {
 
     public IOrdersPK getPrimaryKey();
@@ -76,172 +66,60 @@ public interface IOrders extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return isopen value
-     */
     public boolean getIsopen();
 
-    /**
-     * set isopen value
-     * @param isopen: new value
-     */
     public void setIsopen(boolean isopen);
 
-    /**
-     * 
-     * @return volume_total value
-     */
     public long getVolume_total();
 
-    /**
-     * set volume_total value
-     * @param volume_total: new value
-     */
     public void setVolume_total(long volume_total);
 
-    /**
-     * 
-     * @return volume_remain value
-     */
     public long getVolume_remain();
 
-    /**
-     * set volume_remain value
-     * @param volume_remain: new value
-     */
     public void setVolume_remain(long volume_remain);
 
-    /**
-     * 
-     * @return range value
-     */
     public java.lang.String getRange();
 
-    /**
-     * set range value
-     * @param range: new value
-     */
     public void setRange(java.lang.String range);
 
-    /**
-     * 
-     * @return range_number value
-     */
     public int getRange_number();
 
-    /**
-     * set range_number value
-     * @param range_number: new value
-     */
     public void setRange_number(int range_number);
 
-    /**
-     * 
-     * @return price value
-     */
     public double getPrice();
 
-    /**
-     * set price value
-     * @param price: new value
-     */
     public void setPrice(double price);
 
-    /**
-     * 
-     * @return min_volume value
-     */
     public int getMin_volume();
 
-    /**
-     * set min_volume value
-     * @param min_volume: new value
-     */
     public void setMin_volume(int min_volume);
 
-    /**
-     * 
-     * @return location value
-     */
     public long getLocation();
 
-    /**
-     * set location value
-     * @param location: new value
-     */
     public void setLocation(long location);
 
-    /**
-     * 
-     * @return is_buy_order value
-     */
     public boolean getIs_buy_order();
 
-    /**
-     * set is_buy_order value
-     * @param is_buy_order: new value
-     */
     public void setIs_buy_order(boolean is_buy_order);
 
-    /**
-     * 
-     * @return issued value
-     */
     public java.sql.Timestamp getIssued();
 
-    /**
-     * set issued value
-     * @param issued: new value
-     */
     public void setIssued(java.sql.Timestamp issued);
 
-    /**
-     * 
-     * @return duration value
-     */
     public int getDuration();
 
-    /**
-     * set duration value
-     * @param duration: new value
-     */
     public void setDuration(int duration);
 
-    /**
-     * 
-     * @return page value
-     */
     public int getPage();
 
-    /**
-     * set page value
-     * @param page: new value
-     */
     public void setPage(int page);
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of EvetypePK
-     */
     public IEvetypePK getEvetypePK();
 
-    /**
-     * set foreign key evetype
-     * @param evetypePK: instance of EvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK);
 
-    /**
-     * 
-     * @return foreign key systemPK, instance of SystemPK
-     */
     public ISystemPK getSystemPK();
 
-    /**
-     * set foreign key system
-     * @param systemPK: instance of SystemPK
-     */
     public void setSystemPK(ISystemPK systemPK);
 
     

@@ -1,9 +1,7 @@
 /*
- * View_contractswithprofitsearch.java
- *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.searchentity;
@@ -17,11 +15,6 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-/**
- * Search class for View_contractswithprofit table
- * construct sql where part and parameter array from search parameters
- * @author Franky Laseure
- */
 public class View_contractswithprofitsearch extends Tablesearch implements IView_contractswithprofitsearch {
 
     Numbersearch id = new Numbersearch("view_contractswithprofit.id");
@@ -40,35 +33,19 @@ public class View_contractswithprofitsearch extends Tablesearch implements IView
     Numbersearch sellprice = new Numbersearch("view_contractswithprofit.sellprice");
     Numbersearch buyprice = new Numbersearch("view_contractswithprofit.buyprice");
 
-    /**
-     * @return viewname
-     */
     public String getTable() {
         return View_contractswithprofit.table;
     }
 
-    /**
-     * Constructor
-     * add IFieldsearcher classes for all relevant fields
-     */
     public View_contractswithprofitsearch() {
         setFieldsearchers();
     }
 
-    /**
-     * Constructor
-     * add IFieldsearcher classes for all relevant fields
-     * set andor parameter
-     * @param andor: containts AND or OR contant, indicates all conditions must apply or only one
-     */
     public View_contractswithprofitsearch(byte andor) {
         super(andor);
         setFieldsearchers();
     }
 
-    /**
-     * add IFieldsearcher classes for all relevant fields
-     */
     private void setFieldsearchers() {
         addFieldsearcher(id);
         addFieldsearcher(date_expired);
@@ -87,301 +64,140 @@ public class View_contractswithprofitsearch extends Tablesearch implements IView
         addFieldsearcher(buyprice);
     }
 
-    /**
-     * add Numeric search values for field id, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void id(Double[] values, byte[] operators) {
         addNumbervalues(id, values, operators);
     }
     
-    /**
-     * add Numeric search values for field id
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void id(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(id, values, operators);
         id.setAndoroperator(andor);
     }
     
-    /**
-     * add Timestamp search values for field date_expired, default OR operator is used
-     * @param values: Array of timestamp search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void date_expired(Timestamp[] values, byte[] operators) {
         addTimevalues(date_expired, values, operators);
     }
     
-    /**
-     * add Timestamp search values for field date_expired
-     * @param values: Array of timestamp search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void date_expired(Timestamp[] values, byte[] operators, byte andor) {
         addTimevalues(date_expired, values, operators);
         date_expired.setAndoroperator(andor);
     }
     
-    /**
-     * add Timestamp search values for field date_issued, default OR operator is used
-     * @param values: Array of timestamp search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void date_issued(Timestamp[] values, byte[] operators) {
         addTimevalues(date_issued, values, operators);
     }
     
-    /**
-     * add Timestamp search values for field date_issued
-     * @param values: Array of timestamp search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void date_issued(Timestamp[] values, byte[] operators, byte andor) {
         addTimevalues(date_issued, values, operators);
         date_issued.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field days_to_complete, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void days_to_complete(Double[] values, byte[] operators) {
         addNumbervalues(days_to_complete, values, operators);
     }
     
-    /**
-     * add Numeric search values for field days_to_complete
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void days_to_complete(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(days_to_complete, values, operators);
         days_to_complete.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field end_location_id, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void end_location_id(Double[] values, byte[] operators) {
         addNumbervalues(end_location_id, values, operators);
     }
     
-    /**
-     * add Numeric search values for field end_location_id
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void end_location_id(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(end_location_id, values, operators);
         end_location_id.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field price, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void price(Double[] values, byte[] operators) {
         addNumbervalues(price, values, operators);
     }
     
-    /**
-     * add Numeric search values for field price
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void price(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(price, values, operators);
         price.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field reward, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void reward(Double[] values, byte[] operators) {
         addNumbervalues(reward, values, operators);
     }
     
-    /**
-     * add Numeric search values for field reward
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void reward(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(reward, values, operators);
         reward.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field start_location_id, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void start_location_id(Double[] values, byte[] operators) {
         addNumbervalues(start_location_id, values, operators);
     }
     
-    /**
-     * add Numeric search values for field start_location_id
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void start_location_id(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(start_location_id, values, operators);
         start_location_id.setAndoroperator(andor);
     }
     
-    /**
-     * add String search values for field name, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
     public void name(String[] values) {
         addStringvalues(name, values);
     }
     
-    /**
-     * add String search values for field name
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
     public void name(String[] values, byte compare, byte andor) {
         addStringvalues(name, values);
         name.setCompareoperator(compare);
         name.setAndoroperator(andor);
     }
     
-    /**
-     * add String search values for field systemname, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
     public void systemname(String[] values) {
         addStringvalues(systemname, values);
     }
     
-    /**
-     * add String search values for field systemname
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
     public void systemname(String[] values, byte compare, byte andor) {
         addStringvalues(systemname, values);
         systemname.setCompareoperator(compare);
         systemname.setAndoroperator(andor);
     }
     
-    /**
-     * add String search values for field regionname, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
     public void regionname(String[] values) {
         addStringvalues(regionname, values);
     }
     
-    /**
-     * add String search values for field regionname
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
     public void regionname(String[] values, byte compare, byte andor) {
         addStringvalues(regionname, values);
         regionname.setCompareoperator(compare);
         regionname.setAndoroperator(andor);
     }
     
-    /**
-     * add String search values for field title, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
     public void title(String[] values) {
         addStringvalues(title, values);
     }
     
-    /**
-     * add String search values for field title
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
     public void title(String[] values, byte compare, byte andor) {
         addStringvalues(title, values);
         title.setCompareoperator(compare);
         title.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field volume, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void volume(Double[] values, byte[] operators) {
         addNumbervalues(volume, values, operators);
     }
     
-    /**
-     * add Numeric search values for field volume
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void volume(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(volume, values, operators);
         volume.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field sellprice, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void sellprice(Double[] values, byte[] operators) {
         addNumbervalues(sellprice, values, operators);
     }
     
-    /**
-     * add Numeric search values for field sellprice
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void sellprice(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(sellprice, values, operators);
         sellprice.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field buyprice, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void buyprice(Double[] values, byte[] operators) {
         addNumbervalues(buyprice, values, operators);
     }
     
-    /**
-     * add Numeric search values for field buyprice
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void buyprice(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(buyprice, values, operators);
         buyprice.setAndoroperator(andor);

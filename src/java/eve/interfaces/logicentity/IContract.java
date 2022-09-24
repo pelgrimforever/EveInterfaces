@@ -1,9 +1,7 @@
 /*
- * IContract.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IContract
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IContract extends LogicEntity {
 
     public IContractPK getPrimaryKey();
@@ -72,172 +62,60 @@ public interface IContract extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return collateral value
-     */
     public double getCollateral();
 
-    /**
-     * set collateral value
-     * @param collateral: new value
-     */
     public void setCollateral(double collateral);
 
-    /**
-     * 
-     * @return date_expired value
-     */
     public java.sql.Timestamp getDate_expired();
 
-    /**
-     * set date_expired value
-     * @param date_expired: new value
-     */
     public void setDate_expired(java.sql.Timestamp date_expired);
 
-    /**
-     * 
-     * @return date_issued value
-     */
     public java.sql.Timestamp getDate_issued();
 
-    /**
-     * set date_issued value
-     * @param date_issued: new value
-     */
     public void setDate_issued(java.sql.Timestamp date_issued);
 
-    /**
-     * 
-     * @return days_to_complete value
-     */
     public int getDays_to_complete();
 
-    /**
-     * set days_to_complete value
-     * @param days_to_complete: new value
-     */
     public void setDays_to_complete(int days_to_complete);
 
-    /**
-     * 
-     * @return end_location_id value
-     */
     public long getEnd_location_id();
 
-    /**
-     * set end_location_id value
-     * @param end_location_id: new value
-     */
     public void setEnd_location_id(long end_location_id);
 
-    /**
-     * 
-     * @return for_corporation value
-     */
     public boolean getFor_corporation();
 
-    /**
-     * set for_corporation value
-     * @param for_corporation: new value
-     */
     public void setFor_corporation(boolean for_corporation);
 
-    /**
-     * 
-     * @return price value
-     */
     public double getPrice();
 
-    /**
-     * set price value
-     * @param price: new value
-     */
     public void setPrice(double price);
 
-    /**
-     * 
-     * @return reward value
-     */
     public double getReward();
 
-    /**
-     * set reward value
-     * @param reward: new value
-     */
     public void setReward(double reward);
 
-    /**
-     * 
-     * @return start_location_id value
-     */
     public long getStart_location_id();
 
-    /**
-     * set start_location_id value
-     * @param start_location_id: new value
-     */
     public void setStart_location_id(long start_location_id);
 
-    /**
-     * 
-     * @return title value
-     */
     public java.lang.String getTitle();
 
-    /**
-     * set title value
-     * @param title: new value
-     */
     public void setTitle(java.lang.String title);
 
-    /**
-     * 
-     * @return type value
-     */
     public java.lang.String getType();
 
-    /**
-     * set type value
-     * @param type: new value
-     */
     public void setType(java.lang.String type);
 
-    /**
-     * 
-     * @return volume value
-     */
     public double getVolume();
 
-    /**
-     * set volume value
-     * @param volume: new value
-     */
     public void setVolume(double volume);
 
-    /**
-     * 
-     * @return page value
-     */
     public int getPage();
 
-    /**
-     * set page value
-     * @param page: new value
-     */
     public void setPage(int page);
 
-    /**
-     * 
-     * @return active value
-     */
     public boolean getActive();
 
-    /**
-     * set active value
-     * @param active: new value
-     */
     public void setActive(boolean active);
 
     

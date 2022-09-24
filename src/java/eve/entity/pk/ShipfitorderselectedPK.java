@@ -1,9 +1,7 @@
 /*
- * ShipfitorderselectedPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,38 +15,19 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class ShipfitorderselectedPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class ShipfitorderselectedPK implements IShipfitorderselectedPK {
 
     private IOrdersPK ordersPK = new OrdersPK();
     private IShipfitorderPK shipfitorderPK = new ShipfitorderPK();
   
-    /** 
-     * Constructor
-     * Creates an empty ShipfitorderselectedPK
-     */
     public ShipfitorderselectedPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty ShipfitorderselectedPK with initialized field values
-     */
     public ShipfitorderselectedPK(java.lang.String username, java.lang.String shipname, long evetype, long orderid) {
         this.ordersPK = new OrdersPK(orderid);
         this.shipfitorderPK = new ShipfitorderPK(username, shipname, evetype);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"shipfitorderselected.username", shipfitorderPK.getUsername()}, 
@@ -59,10 +38,6 @@ public class ShipfitorderselectedPK implements IShipfitorderselectedPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IShipfitorderselected.USERNAME, shipfitorderPK.getUsername()}, 
@@ -73,106 +48,54 @@ public class ShipfitorderselectedPK implements IShipfitorderselectedPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key ordersPK, instance of IOrdersPK
-     */
     public IOrdersPK getOrdersPK() {
         return this.ordersPK;
     }
 
-    /**
-     * set foreign key ordersPK
-     * @param ordersPK: instance of IOrdersPK
-     */
     public void setOrdersPK(IOrdersPK ordersPK) {
         this.ordersPK = ordersPK;
     }
 
-    /**
-     * 
-     * @return foreign key shipfitorderPK, instance of IShipfitorderPK
-     */
     public IShipfitorderPK getShipfitorderPK() {
         return this.shipfitorderPK;
     }
 
-    /**
-     * set foreign key shipfitorderPK
-     * @param shipfitorderPK: instance of IShipfitorderPK
-     */
     public void setShipfitorderPK(IShipfitorderPK shipfitorderPK) {
         this.shipfitorderPK = shipfitorderPK;
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.shipfitorderPK.getUsername();
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.shipfitorderPK.setUsername(username);
     }
 
-    /**
-     * 
-     * @return shipname value
-     */
     public java.lang.String getShipname() {
         return this.shipfitorderPK.getShipname();
     }
 
-    /**
-     * set shipname value
-     * @param shipname: new value
-     */
     public void setShipname(java.lang.String shipname) {
         this.shipfitorderPK.setShipname(shipname);
     }
 
-    /**
-     * 
-     * @return evetype value
-     */
     public long getEvetype() {
         return this.shipfitorderPK.getEvetype();
     }
 
-    /**
-     * set evetype value
-     * @param evetype: new value
-     */
     public void setEvetype(long evetype) {
         this.shipfitorderPK.setEvetype(evetype);
     }
 
-    /**
-     * 
-     * @return orderid value
-     */
     public long getOrderid() {
         return this.ordersPK.getId();
     }
 
-    /**
-     * set orderid value
-     * @param orderid: new value
-     */
     public void setOrderid(long orderid) {
         this.ordersPK.setId(orderid);
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
@@ -188,11 +111,6 @@ public class ShipfitorderselectedPK implements IShipfitorderselectedPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return ShipfitorderselectedPK constructed from keystring
-     */
     public static ShipfitorderselectedPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -226,11 +144,6 @@ public class ShipfitorderselectedPK implements IShipfitorderselectedPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param shipfitorderselectedPK2: ShipfitorderselectedPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IShipfitorderselectedPK shipfitorderselectedPK2) {
         boolean isequal = shipfitorderselectedPK2!=null;
         if(isequal) {

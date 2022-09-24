@@ -1,13 +1,12 @@
 /*
- * eCorporation.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ICorporation;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Corporation
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Corporation Entity
- * 
- * @author Franky Laseure
- */
 public class eCorporation extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected CorporationPK corporationPK;
@@ -53,24 +42,8 @@ public class eCorporation extends AbstractEntity implements eveDatabasepropertie
     private java.lang.String url;
     private boolean war_eligible;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "corporation";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return ICorporation.fieldnames[fieldconstant-1];
     }
@@ -79,6 +52,20 @@ public class eCorporation extends AbstractEntity implements eveDatabasepropertie
         return ICorporation.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eCorporation.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eCorporation.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eCorporation() {
     }
 
@@ -90,7 +77,6 @@ public class eCorporation extends AbstractEntity implements eveDatabasepropertie
         this.corporationPK = corporationPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.corporationPK == null;
     }
@@ -132,9 +118,6 @@ public class eCorporation extends AbstractEntity implements eveDatabasepropertie
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return CorporationPK
-     */
     @Override
     public CorporationPK getPrimaryKey() {
         return this.corporationPK;

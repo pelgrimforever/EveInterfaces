@@ -1,9 +1,7 @@
 /*
- * Json_ordersPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,36 +15,17 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class Json_ordersPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class Json_ordersPK implements IJson_ordersPK {
 
     private int id;
   
-    /** 
-     * Constructor
-     * Creates an empty Json_ordersPK
-     */
     public Json_ordersPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty Json_ordersPK with initialized field values
-     */
     public Json_ordersPK(int id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"json_orders.id", id}
@@ -54,10 +33,6 @@ public class Json_ordersPK implements IJson_ordersPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IJson_orders.ID, id}
@@ -65,37 +40,20 @@ public class Json_ordersPK implements IJson_ordersPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return id value
-     */
     public int getId() {
         return this.id;
     }
 
-    /**
-     * set id value
-     * @param id: new value
-     */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getId();
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return Json_ordersPK constructed from keystring
-     */
     public static Json_ordersPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -111,11 +69,6 @@ public class Json_ordersPK implements IJson_ordersPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param json_ordersPK2: Json_ordersPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IJson_ordersPK json_ordersPK2) {
         boolean isequal = json_ordersPK2!=null;
         if(isequal) {

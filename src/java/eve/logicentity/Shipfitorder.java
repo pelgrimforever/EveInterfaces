@@ -1,9 +1,7 @@
 /*
- * Shipfitorder.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Shipfitorder
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Shipfitorder extends eve.entity.eShipfitorder implements IShipfitorder {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Shipfitorder entity
-     */
     public Shipfitorder() {
     }
     
-    /**
-     * Constructor
-     * build an empty Shipfitorder entity with initialized field values
-     */
     public Shipfitorder(java.lang.String username, java.lang.String shipname, long evetype) {
         super(username, shipname, evetype);
     }
 
-    /**
-     * Constructor
-     * build an empty Shipfitorder entity with initialized Primarykey parameter
-     * @param shipfitorderPK: Shipfitorder Primarykey
-     */
     public Shipfitorder(ShipfitorderPK shipfitorderPK) {
         super(shipfitorderPK);
     }

@@ -1,13 +1,12 @@
 /*
- * eJson_orders.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,45 +18,19 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IJson_orders;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Json_orders
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Json_orders Entity
- * 
- * @author Franky Laseure
- */
 public class eJson_orders extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Json_ordersPK json_ordersPK;
     private piJson json;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "json_orders";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IJson_orders.fieldnames[fieldconstant-1];
     }
@@ -66,6 +39,20 @@ public class eJson_orders extends AbstractEntity implements eveDatabasepropertie
         return IJson_orders.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eJson_orders.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eJson_orders.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eJson_orders() {
     }
 
@@ -77,7 +64,6 @@ public class eJson_orders extends AbstractEntity implements eveDatabasepropertie
         this.json_ordersPK = json_ordersPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.json_ordersPK == null;
     }
@@ -103,9 +89,6 @@ public class eJson_orders extends AbstractEntity implements eveDatabasepropertie
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Json_ordersPK
-     */
     @Override
     public Json_ordersPK getPrimaryKey() {
         return this.json_ordersPK;

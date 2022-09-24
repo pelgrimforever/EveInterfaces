@@ -1,9 +1,7 @@
 /*
- * IFaction.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IFaction
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IFaction extends LogicEntity {
 
     public IFactionPK getPrimaryKey();
@@ -64,112 +54,40 @@ public interface IFaction extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return description value
-     */
     public java.lang.String getDescription();
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void setDescription(java.lang.String description);
 
-    /**
-     * 
-     * @return is_unique value
-     */
     public boolean getIs_unique();
 
-    /**
-     * set is_unique value
-     * @param is_unique: new value
-     */
     public void setIs_unique(boolean is_unique);
 
-    /**
-     * 
-     * @return size_factor value
-     */
     public double getSize_factor();
 
-    /**
-     * set size_factor value
-     * @param size_factor: new value
-     */
     public void setSize_factor(double size_factor);
 
-    /**
-     * 
-     * @return station_count value
-     */
     public int getStation_count();
 
-    /**
-     * set station_count value
-     * @param station_count: new value
-     */
     public void setStation_count(int station_count);
 
-    /**
-     * 
-     * @return station_system_count value
-     */
     public int getStation_system_count();
 
-    /**
-     * set station_system_count value
-     * @param station_system_count: new value
-     */
     public void setStation_system_count(int station_system_count);
 
-    /**
-     * 
-     * @return corporation value
-     */
     public long getCorporation();
 
-    /**
-     * set corporation value
-     * @param corporation: new value
-     */
     public void setCorporation(long corporation);
 
-    /**
-     * 
-     * @return militia_corporation value
-     */
     public long getMilitia_corporation();
 
-    /**
-     * set militia_corporation value
-     * @param militia_corporation: new value
-     */
     public void setMilitia_corporation(long militia_corporation);
 
-    /**
-     * 
-     * @return foreign key systemPK, instance of SystemPK
-     */
     public ISystemPK getSystemPK();
 
-    /**
-     * set foreign key system
-     * @param systemPK: instance of SystemPK
-     */
     public void setSystemPK(ISystemPK systemPK);
 
     

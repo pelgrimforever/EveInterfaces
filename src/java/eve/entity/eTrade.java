@@ -1,13 +1,12 @@
 /*
- * eTrade.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ITrade;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Trade
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Trade Entity
- * 
- * @author Franky Laseure
- */
 public class eTrade extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected TradePK tradePK;
@@ -51,24 +40,8 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
     private int jumpslowsec;
     private int jumpsnullsec;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "trade";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return ITrade.fieldnames[fieldconstant-1];
     }
@@ -77,6 +50,20 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
         return ITrade.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eTrade.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eTrade.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eTrade() {
     }
 
@@ -88,7 +75,6 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
         this.tradePK = tradePK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.tradePK == null;
     }
@@ -125,9 +111,6 @@ public class eTrade extends AbstractEntity implements eveDatabaseproperties, Ent
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return TradePK
-     */
     @Override
     public TradePK getPrimaryKey() {
         return this.tradePK;

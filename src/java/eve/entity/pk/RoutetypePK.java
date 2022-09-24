@@ -1,9 +1,7 @@
 /*
- * RoutetypePK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,36 +15,17 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class RoutetypePK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class RoutetypePK implements IRoutetypePK {
 
     private long id;
   
-    /** 
-     * Constructor
-     * Creates an empty RoutetypePK
-     */
     public RoutetypePK() {
     }
 
-    /**
-     * Constructor
-     * build an empty RoutetypePK with initialized field values
-     */
     public RoutetypePK(long id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"routetype.id", id}
@@ -54,10 +33,6 @@ public class RoutetypePK implements IRoutetypePK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IRoutetype.ID, id}
@@ -65,37 +40,20 @@ public class RoutetypePK implements IRoutetypePK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return id value
-     */
     public long getId() {
         return this.id;
     }
 
-    /**
-     * set id value
-     * @param id: new value
-     */
     public void setId(long id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getId();
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return RoutetypePK constructed from keystring
-     */
     public static RoutetypePK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -111,11 +69,6 @@ public class RoutetypePK implements IRoutetypePK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param routetypePK2: RoutetypePK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IRoutetypePK routetypePK2) {
         boolean isequal = routetypePK2!=null;
         if(isequal) {

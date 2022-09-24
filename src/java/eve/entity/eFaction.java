@@ -1,13 +1,12 @@
 /*
- * eFaction.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IFaction;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Faction
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Faction Entity
- * 
- * @author Franky Laseure
- */
 public class eFaction extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected FactionPK factionPK;
@@ -48,24 +37,8 @@ public class eFaction extends AbstractEntity implements eveDatabaseproperties, E
     private long corporation;
     private long militia_corporation;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "faction";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IFaction.fieldnames[fieldconstant-1];
     }
@@ -74,6 +47,20 @@ public class eFaction extends AbstractEntity implements eveDatabaseproperties, E
         return IFaction.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eFaction.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eFaction.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eFaction() {
     }
 
@@ -85,7 +72,6 @@ public class eFaction extends AbstractEntity implements eveDatabaseproperties, E
         this.factionPK = factionPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.factionPK == null;
     }
@@ -120,9 +106,6 @@ public class eFaction extends AbstractEntity implements eveDatabaseproperties, E
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return FactionPK
-     */
     @Override
     public FactionPK getPrimaryKey() {
         return this.factionPK;

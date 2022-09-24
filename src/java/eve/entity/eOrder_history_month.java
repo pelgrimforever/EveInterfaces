@@ -1,13 +1,12 @@
 /*
- * eOrder_history_month.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IOrder_history_month;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Order_history_month
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Order_history_month Entity
- * 
- * @author Franky Laseure
- */
 public class eOrder_history_month extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Order_history_monthPK order_history_monthPK;
@@ -44,24 +33,8 @@ public class eOrder_history_month extends AbstractEntity implements eveDatabasep
     private long volume;
     private long order_count;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "order_history_month";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IOrder_history_month.fieldnames[fieldconstant-1];
     }
@@ -70,6 +43,20 @@ public class eOrder_history_month extends AbstractEntity implements eveDatabasep
         return IOrder_history_month.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eOrder_history_month.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eOrder_history_month.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eOrder_history_month() {
     }
 
@@ -81,7 +68,6 @@ public class eOrder_history_month extends AbstractEntity implements eveDatabasep
         this.order_history_monthPK = order_history_monthPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.order_history_monthPK == null;
     }
@@ -111,9 +97,6 @@ public class eOrder_history_month extends AbstractEntity implements eveDatabasep
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Order_history_monthPK
-     */
     @Override
     public Order_history_monthPK getPrimaryKey() {
         return this.order_history_monthPK;

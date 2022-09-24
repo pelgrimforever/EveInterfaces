@@ -1,13 +1,12 @@
 /*
- * eStock.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,45 +18,19 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IStock;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Stock
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Stock Entity
- * 
- * @author Franky Laseure
- */
 public class eStock extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected StockPK stockPK;
     private long amount;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "stock";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IStock.fieldnames[fieldconstant-1];
     }
@@ -66,6 +39,20 @@ public class eStock extends AbstractEntity implements eveDatabaseproperties, Ent
         return IStock.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eStock.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eStock.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eStock() {
     }
 
@@ -77,7 +64,6 @@ public class eStock extends AbstractEntity implements eveDatabaseproperties, Ent
         this.stockPK = stockPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.stockPK == null;
     }
@@ -103,9 +89,6 @@ public class eStock extends AbstractEntity implements eveDatabaseproperties, Ent
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return StockPK
-     */
     @Override
     public StockPK getPrimaryKey() {
         return this.stockPK;

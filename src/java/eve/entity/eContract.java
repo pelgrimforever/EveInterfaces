@@ -1,13 +1,12 @@
 /*
- * eContract.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IContract;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Contract
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Contract Entity
- * 
- * @author Franky Laseure
- */
 public class eContract extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected ContractPK contractPK;
@@ -53,24 +42,8 @@ public class eContract extends AbstractEntity implements eveDatabaseproperties, 
     private int page;
     private boolean active;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "contract";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IContract.fieldnames[fieldconstant-1];
     }
@@ -79,6 +52,20 @@ public class eContract extends AbstractEntity implements eveDatabaseproperties, 
         return IContract.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eContract.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eContract.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eContract() {
     }
 
@@ -90,7 +77,6 @@ public class eContract extends AbstractEntity implements eveDatabaseproperties, 
         this.contractPK = contractPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.contractPK == null;
     }
@@ -129,9 +115,6 @@ public class eContract extends AbstractEntity implements eveDatabaseproperties, 
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return ContractPK
-     */
     @Override
     public ContractPK getPrimaryKey() {
         return this.contractPK;

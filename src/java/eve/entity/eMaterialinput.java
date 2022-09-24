@@ -1,13 +1,12 @@
 /*
- * eMaterialinput.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IMaterialinput;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Materialinput
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Materialinput Entity
- * 
- * @author Franky Laseure
- */
 public class eMaterialinput extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected MaterialinputPK materialinputPK;
@@ -42,24 +31,8 @@ public class eMaterialinput extends AbstractEntity implements eveDatabasepropert
     private double unitprice;
     private long usedamount;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "materialinput";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IMaterialinput.fieldnames[fieldconstant-1];
     }
@@ -68,6 +41,20 @@ public class eMaterialinput extends AbstractEntity implements eveDatabasepropert
         return IMaterialinput.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eMaterialinput.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eMaterialinput.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eMaterialinput() {
     }
 
@@ -79,7 +66,6 @@ public class eMaterialinput extends AbstractEntity implements eveDatabasepropert
         this.materialinputPK = materialinputPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.materialinputPK == null;
     }
@@ -107,9 +93,6 @@ public class eMaterialinput extends AbstractEntity implements eveDatabasepropert
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return MaterialinputPK
-     */
     @Override
     public MaterialinputPK getPrimaryKey() {
         return this.materialinputPK;

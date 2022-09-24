@@ -1,13 +1,12 @@
 /*
- * eMarket_group.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IMarket_group;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Market_group
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Market_group Entity
- * 
- * @author Franky Laseure
- */
 public class eMarket_group extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Market_groupPK market_groupPK;
@@ -42,24 +31,8 @@ public class eMarket_group extends AbstractEntity implements eveDatabaseproperti
     private java.lang.String name;
     private java.lang.String description;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "market_group";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IMarket_group.fieldnames[fieldconstant-1];
     }
@@ -68,6 +41,20 @@ public class eMarket_group extends AbstractEntity implements eveDatabaseproperti
         return IMarket_group.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eMarket_group.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eMarket_group.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eMarket_group() {
     }
 
@@ -79,7 +66,6 @@ public class eMarket_group extends AbstractEntity implements eveDatabaseproperti
         this.market_groupPK = market_groupPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.market_groupPK == null;
     }
@@ -108,9 +94,6 @@ public class eMarket_group extends AbstractEntity implements eveDatabaseproperti
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Market_groupPK
-     */
     @Override
     public Market_groupPK getPrimaryKey() {
         return this.market_groupPK;

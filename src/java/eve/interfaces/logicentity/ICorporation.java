@@ -1,9 +1,7 @@
 /*
- * ICorporation.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ICorporation
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ICorporation extends LogicEntity {
 
     public ICorporationPK getPrimaryKey();
@@ -78,172 +68,60 @@ public interface ICorporation extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return ceo value
-     */
     public long getCeo();
 
-    /**
-     * set ceo value
-     * @param ceo: new value
-     */
     public void setCeo(long ceo);
 
-    /**
-     * 
-     * @return creator value
-     */
     public long getCreator();
 
-    /**
-     * set creator value
-     * @param creator: new value
-     */
     public void setCreator(long creator);
 
-    /**
-     * 
-     * @return member_count value
-     */
     public int getMember_count();
 
-    /**
-     * set member_count value
-     * @param member_count: new value
-     */
     public void setMember_count(int member_count);
 
-    /**
-     * 
-     * @return tax_rate value
-     */
     public double getTax_rate();
 
-    /**
-     * set tax_rate value
-     * @param tax_rate: new value
-     */
     public void setTax_rate(double tax_rate);
 
-    /**
-     * 
-     * @return ticker value
-     */
     public java.lang.String getTicker();
 
-    /**
-     * set ticker value
-     * @param ticker: new value
-     */
     public void setTicker(java.lang.String ticker);
 
-    /**
-     * 
-     * @return date_founded value
-     */
     public java.sql.Timestamp getDate_founded();
 
-    /**
-     * set date_founded value
-     * @param date_founded: new value
-     */
     public void setDate_founded(java.sql.Timestamp date_founded);
 
-    /**
-     * 
-     * @return description value
-     */
     public java.lang.String getDescription();
 
-    /**
-     * set description value
-     * @param description: new value
-     */
     public void setDescription(java.lang.String description);
 
-    /**
-     * 
-     * @return shares value
-     */
     public int getShares();
 
-    /**
-     * set shares value
-     * @param shares: new value
-     */
     public void setShares(int shares);
 
-    /**
-     * 
-     * @return url value
-     */
     public java.lang.String getUrl();
 
-    /**
-     * set url value
-     * @param url: new value
-     */
     public void setUrl(java.lang.String url);
 
-    /**
-     * 
-     * @return war_eligible value
-     */
     public boolean getWar_eligible();
 
-    /**
-     * set war_eligible value
-     * @param war_eligible: new value
-     */
     public void setWar_eligible(boolean war_eligible);
 
-    /**
-     * 
-     * @return foreign key stationPK, instance of StationPK
-     */
     public IStationPK getStationPK();
 
-    /**
-     * set foreign key station
-     * @param stationPK: instance of StationPK
-     */
     public void setStationPK(IStationPK stationPK);
 
-    /**
-     * 
-     * @return foreign key factionPK, instance of FactionPK
-     */
     public IFactionPK getFactionPK();
 
-    /**
-     * set foreign key faction
-     * @param factionPK: instance of FactionPK
-     */
     public void setFactionPK(IFactionPK factionPK);
 
-    /**
-     * 
-     * @return foreign key alliancePK, instance of AlliancePK
-     */
     public IAlliancePK getAlliancePK();
 
-    /**
-     * set foreign key alliance
-     * @param alliancePK: instance of AlliancePK
-     */
     public void setAlliancePK(IAlliancePK alliancePK);
 
     

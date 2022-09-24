@@ -1,13 +1,12 @@
 /*
- * eCategory.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,46 +18,20 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ICategory;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Category
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Category Entity
- * 
- * @author Franky Laseure
- */
 public class eCategory extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected CategoryPK categoryPK;
     private java.lang.String name;
     private boolean published;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "category";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return ICategory.fieldnames[fieldconstant-1];
     }
@@ -67,6 +40,20 @@ public class eCategory extends AbstractEntity implements eveDatabaseproperties, 
         return ICategory.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eCategory.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eCategory.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eCategory() {
     }
 
@@ -78,7 +65,6 @@ public class eCategory extends AbstractEntity implements eveDatabaseproperties, 
         this.categoryPK = categoryPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.categoryPK == null;
     }
@@ -105,9 +91,6 @@ public class eCategory extends AbstractEntity implements eveDatabaseproperties, 
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return CategoryPK
-     */
     @Override
     public CategoryPK getPrimaryKey() {
         return this.categoryPK;

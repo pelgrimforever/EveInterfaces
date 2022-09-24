@@ -1,9 +1,7 @@
 /*
- * IStation.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IStation
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IStation extends LogicEntity {
 
     public IStationPK getPrimaryKey();
@@ -70,124 +60,44 @@ public interface IStation extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return office_rental_cost value
-     */
     public double getOffice_rental_cost();
 
-    /**
-     * set office_rental_cost value
-     * @param office_rental_cost: new value
-     */
     public void setOffice_rental_cost(double office_rental_cost);
 
-    /**
-     * 
-     * @return reprocessing_efficiency value
-     */
     public double getReprocessing_efficiency();
 
-    /**
-     * set reprocessing_efficiency value
-     * @param reprocessing_efficiency: new value
-     */
     public void setReprocessing_efficiency(double reprocessing_efficiency);
 
-    /**
-     * 
-     * @return reprocessing_stations_take value
-     */
     public double getReprocessing_stations_take();
 
-    /**
-     * set reprocessing_stations_take value
-     * @param reprocessing_stations_take: new value
-     */
     public void setReprocessing_stations_take(double reprocessing_stations_take);
 
-    /**
-     * 
-     * @return max_dockable_ship_volume value
-     */
     public double getMax_dockable_ship_volume();
 
-    /**
-     * set max_dockable_ship_volume value
-     * @param max_dockable_ship_volume: new value
-     */
     public void setMax_dockable_ship_volume(double max_dockable_ship_volume);
 
-    /**
-     * 
-     * @return owner value
-     */
     public long getOwner();
 
-    /**
-     * set owner value
-     * @param owner: new value
-     */
     public void setOwner(long owner);
 
-    /**
-     * 
-     * @return downloaddate value
-     */
     public java.sql.Date getDownloaddate();
 
-    /**
-     * set downloaddate value
-     * @param downloaddate: new value
-     */
     public void setDownloaddate(java.sql.Date downloaddate);
 
-    /**
-     * 
-     * @return foreign key racePK, instance of RacePK
-     */
     public IRacePK getRacePK();
 
-    /**
-     * set foreign key race
-     * @param racePK: instance of RacePK
-     */
     public void setRacePK(IRacePK racePK);
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of EvetypePK
-     */
     public IEvetypePK getEvetypePK();
 
-    /**
-     * set foreign key evetype
-     * @param evetypePK: instance of EvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK);
 
-    /**
-     * 
-     * @return foreign key systemPK, instance of SystemPK
-     */
     public ISystemPK getSystemPK();
 
-    /**
-     * set foreign key system
-     * @param systemPK: instance of SystemPK
-     */
     public void setSystemPK(ISystemPK systemPK);
 
     

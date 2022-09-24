@@ -1,9 +1,7 @@
 /*
- * IConstellation.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IConstellation
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IConstellation extends LogicEntity {
 
     public IConstellationPK getPrimaryKey();
@@ -52,40 +42,16 @@ public interface IConstellation extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return noaccess value
-     */
     public boolean getNoaccess();
 
-    /**
-     * set noaccess value
-     * @param noaccess: new value
-     */
     public void setNoaccess(boolean noaccess);
 
-    /**
-     * 
-     * @return foreign key regionPK, instance of RegionPK
-     */
     public IRegionPK getRegionPK();
 
-    /**
-     * set foreign key region
-     * @param regionPK: instance of RegionPK
-     */
     public void setRegionPK(IRegionPK regionPK);
 
     

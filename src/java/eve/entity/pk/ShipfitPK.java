@@ -1,9 +1,7 @@
 /*
- * ShipfitPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,38 +15,19 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class ShipfitPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class ShipfitPK implements IShipfitPK {
 
     private java.lang.String username;
     private java.lang.String shipname;
   
-    /** 
-     * Constructor
-     * Creates an empty ShipfitPK
-     */
     public ShipfitPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty ShipfitPK with initialized field values
-     */
     public ShipfitPK(java.lang.String username, java.lang.String shipname) {
         this.username = username;
         this.shipname = shipname;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"shipfit.username", username}, 
@@ -57,10 +36,6 @@ public class ShipfitPK implements IShipfitPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IShipfit.USERNAME, username}, 
@@ -69,42 +44,22 @@ public class ShipfitPK implements IShipfitPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.username;
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.username = username;
     }
 
-    /**
-     * 
-     * @return shipname value
-     */
     public java.lang.String getShipname() {
         return this.shipname;
     }
 
-    /**
-     * set shipname value
-     * @param shipname: new value
-     */
     public void setShipname(java.lang.String shipname) {
         this.shipname = shipname;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
@@ -114,11 +69,6 @@ public class ShipfitPK implements IShipfitPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return ShipfitPK constructed from keystring
-     */
     public static ShipfitPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -136,11 +86,6 @@ public class ShipfitPK implements IShipfitPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param shipfitPK2: ShipfitPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IShipfitPK shipfitPK2) {
         boolean isequal = shipfitPK2!=null;
         if(isequal) {

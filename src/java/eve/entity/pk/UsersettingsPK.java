@@ -1,9 +1,7 @@
 /*
- * UsersettingsPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,38 +15,19 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class UsersettingsPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class UsersettingsPK implements IUsersettingsPK {
 
     private ISettingsPK settingsPK = new SettingsPK();
     private java.lang.String username;
   
-    /** 
-     * Constructor
-     * Creates an empty UsersettingsPK
-     */
     public UsersettingsPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty UsersettingsPK with initialized field values
-     */
     public UsersettingsPK(java.lang.String username, java.lang.String name) {
         this.settingsPK = new SettingsPK(name);
         this.username = username;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"usersettings.name", settingsPK.getName()}, 
@@ -57,10 +36,6 @@ public class UsersettingsPK implements IUsersettingsPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IUsersettings.NAME, settingsPK.getName()}, 
@@ -69,58 +44,30 @@ public class UsersettingsPK implements IUsersettingsPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key settingsPK, instance of ISettingsPK
-     */
     public ISettingsPK getSettingsPK() {
         return this.settingsPK;
     }
 
-    /**
-     * set foreign key settingsPK
-     * @param settingsPK: instance of ISettingsPK
-     */
     public void setSettingsPK(ISettingsPK settingsPK) {
         this.settingsPK = settingsPK;
     }
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName() {
         return this.settingsPK.getName();
     }
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name) {
         this.settingsPK.setName(name);
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.username;
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.username = username;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
@@ -130,11 +77,6 @@ public class UsersettingsPK implements IUsersettingsPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return UsersettingsPK constructed from keystring
-     */
     public static UsersettingsPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -152,11 +94,6 @@ public class UsersettingsPK implements IUsersettingsPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param usersettingsPK2: UsersettingsPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IUsersettingsPK usersettingsPK2) {
         boolean isequal = usersettingsPK2!=null;
         if(isequal) {

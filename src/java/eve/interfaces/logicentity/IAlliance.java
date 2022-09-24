@@ -1,9 +1,7 @@
 /*
- * IAlliance.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IAlliance
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IAlliance extends LogicEntity {
 
     public IAlliancePK getPrimaryKey();
@@ -62,88 +52,32 @@ public interface IAlliance extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return creator value
-     */
     public long getCreator();
 
-    /**
-     * set creator value
-     * @param creator: new value
-     */
     public void setCreator(long creator);
 
-    /**
-     * 
-     * @return date_founded value
-     */
     public java.sql.Timestamp getDate_founded();
 
-    /**
-     * set date_founded value
-     * @param date_founded: new value
-     */
     public void setDate_founded(java.sql.Timestamp date_founded);
 
-    /**
-     * 
-     * @return ticker value
-     */
     public java.lang.String getTicker();
 
-    /**
-     * set ticker value
-     * @param ticker: new value
-     */
     public void setTicker(java.lang.String ticker);
 
-    /**
-     * 
-     * @return faction_id value
-     */
     public long getFaction_id();
 
-    /**
-     * set faction_id value
-     * @param faction_id: new value
-     */
     public void setFaction_id(long faction_id);
 
-    /**
-     * 
-     * @return foreign key corporationCreator_corporationPK, instance of CorporationPK
-     */
     public ICorporationPK getCorporationcreator_corporationPK();
 
-    /**
-     * set foreign key corporation
-     * @param corporationCreator_corporationPK: instance of CorporationPK
-     */
     public void setCorporationcreator_corporationPK(ICorporationPK corporationCreator_corporationPK);
 
-    /**
-     * 
-     * @return foreign key corporationExecutor_corporationPK, instance of CorporationPK
-     */
     public ICorporationPK getCorporationexecutor_corporationPK();
 
-    /**
-     * set foreign key corporation
-     * @param corporationExecutor_corporationPK: instance of CorporationPK
-     */
     public void setCorporationexecutor_corporationPK(ICorporationPK corporationExecutor_corporationPK);
 
     

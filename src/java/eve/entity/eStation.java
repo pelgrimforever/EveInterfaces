@@ -1,13 +1,12 @@
 /*
- * eStation.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IStation;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Station
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Station Entity
- * 
- * @author Franky Laseure
- */
 public class eStation extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected StationPK stationPK;
@@ -49,24 +38,8 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
     private long owner;
     private java.sql.Date downloaddate;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "station";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IStation.fieldnames[fieldconstant-1];
     }
@@ -75,6 +48,20 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
         return IStation.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eStation.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eStation.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eStation() {
     }
 
@@ -86,7 +73,6 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
         this.stationPK = stationPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.stationPK == null;
     }
@@ -124,9 +110,6 @@ public class eStation extends AbstractEntity implements eveDatabaseproperties, E
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return StationPK
-     */
     @Override
     public StationPK getPrimaryKey() {
         return this.stationPK;

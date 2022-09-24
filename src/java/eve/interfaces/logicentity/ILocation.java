@@ -1,9 +1,7 @@
 /*
- * ILocation.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ILocation
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ILocation extends LogicEntity {
 
     public ILocationPK getPrimaryKey();
@@ -54,52 +44,20 @@ public interface ILocation extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return visited value
-     */
     public boolean getVisited();
 
-    /**
-     * set visited value
-     * @param visited: new value
-     */
     public void setVisited(boolean visited);
 
-    /**
-     * 
-     * @return access value
-     */
     public boolean getAccess();
 
-    /**
-     * set access value
-     * @param access: new value
-     */
     public void setAccess(boolean access);
 
-    /**
-     * 
-     * @return foreign key systemPK, instance of SystemPK
-     */
     public ISystemPK getSystemPK();
 
-    /**
-     * set foreign key system
-     * @param systemPK: instance of SystemPK
-     */
     public void setSystemPK(ISystemPK systemPK);
 
     

@@ -1,9 +1,7 @@
 /*
- * EveuserPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,36 +15,17 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class EveuserPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class EveuserPK implements IEveuserPK {
 
     private java.lang.String username;
   
-    /** 
-     * Constructor
-     * Creates an empty EveuserPK
-     */
     public EveuserPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty EveuserPK with initialized field values
-     */
     public EveuserPK(java.lang.String username) {
         this.username = username;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"eveuser.username", username}
@@ -54,10 +33,6 @@ public class EveuserPK implements IEveuserPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IEveuser.USERNAME, username}
@@ -65,37 +40,20 @@ public class EveuserPK implements IEveuserPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.username;
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.username = username;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return EveuserPK constructed from keystring
-     */
     public static EveuserPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -108,11 +66,6 @@ public class EveuserPK implements IEveuserPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param eveuserPK2: EveuserPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IEveuserPK eveuserPK2) {
         boolean isequal = eveuserPK2!=null;
         if(isequal) {

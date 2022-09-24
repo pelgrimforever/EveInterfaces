@@ -1,9 +1,7 @@
 /*
- * IShipfitmodule.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IShipfitmodule
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IShipfitmodule extends LogicEntity {
 
     public IShipfitmodulePK getPrimaryKey();
@@ -54,16 +44,8 @@ public interface IShipfitmodule extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return amount value
-     */
     public int getAmount();
 
-    /**
-     * set amount value
-     * @param amount: new value
-     */
     public void setAmount(int amount);
 
     

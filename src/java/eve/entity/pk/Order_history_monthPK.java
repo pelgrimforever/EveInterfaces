@@ -1,9 +1,7 @@
 /*
- * Order_history_monthPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,13 +15,6 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class Order_history_monthPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class Order_history_monthPK implements IOrder_history_monthPK {
 
     private IEvetypePK evetypePK = new EvetypePK();
@@ -31,17 +22,9 @@ public class Order_history_monthPK implements IOrder_history_monthPK {
     private int year;
     private int month;
   
-    /** 
-     * Constructor
-     * Creates an empty Order_history_monthPK
-     */
     public Order_history_monthPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty Order_history_monthPK with initialized field values
-     */
     public Order_history_monthPK(long region, long evetype, int year, int month) {
         this.evetypePK = new EvetypePK(evetype);
         this.regionPK = new RegionPK(region);
@@ -49,10 +32,6 @@ public class Order_history_monthPK implements IOrder_history_monthPK {
         this.month = month;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"order_history_month.region", regionPK.getId()}, 
@@ -63,10 +42,6 @@ public class Order_history_monthPK implements IOrder_history_monthPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IOrder_history_month.REGION, regionPK.getId()}, 
@@ -77,106 +52,54 @@ public class Order_history_monthPK implements IOrder_history_monthPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of IEvetypePK
-     */
     public IEvetypePK getEvetypePK() {
         return this.evetypePK;
     }
 
-    /**
-     * set foreign key evetypePK
-     * @param evetypePK: instance of IEvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK) {
         this.evetypePK = evetypePK;
     }
 
-    /**
-     * 
-     * @return foreign key regionPK, instance of IRegionPK
-     */
     public IRegionPK getRegionPK() {
         return this.regionPK;
     }
 
-    /**
-     * set foreign key regionPK
-     * @param regionPK: instance of IRegionPK
-     */
     public void setRegionPK(IRegionPK regionPK) {
         this.regionPK = regionPK;
     }
 
-    /**
-     * 
-     * @return region value
-     */
     public long getRegion() {
         return this.regionPK.getId();
     }
 
-    /**
-     * set region value
-     * @param region: new value
-     */
     public void setRegion(long region) {
         this.regionPK.setId(region);
     }
 
-    /**
-     * 
-     * @return evetype value
-     */
     public long getEvetype() {
         return this.evetypePK.getId();
     }
 
-    /**
-     * set evetype value
-     * @param evetype: new value
-     */
     public void setEvetype(long evetype) {
         this.evetypePK.setId(evetype);
     }
 
-    /**
-     * 
-     * @return year value
-     */
     public int getYear() {
         return this.year;
     }
 
-    /**
-     * set year value
-     * @param year: new value
-     */
     public void setYear(int year) {
         this.year = year;
     }
 
-    /**
-     * 
-     * @return month value
-     */
     public int getMonth() {
         return this.month;
     }
 
-    /**
-     * set month value
-     * @param month: new value
-     */
     public void setMonth(int month) {
         this.month = month;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getRegion();
@@ -192,11 +115,6 @@ public class Order_history_monthPK implements IOrder_history_monthPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return Order_history_monthPK constructed from keystring
-     */
     public static Order_history_monthPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -236,11 +154,6 @@ public class Order_history_monthPK implements IOrder_history_monthPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param order_history_monthPK2: Order_history_monthPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IOrder_history_monthPK order_history_monthPK2) {
         boolean isequal = order_history_monthPK2!=null;
         if(isequal) {

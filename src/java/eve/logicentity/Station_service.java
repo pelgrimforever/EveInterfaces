@@ -1,9 +1,7 @@
 /*
- * Station_service.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Station_service
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Station_service extends eve.entity.eStation_service implements IStation_service {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Station_service entity
-     */
     public Station_service() {
     }
     
-    /**
-     * Constructor
-     * build an empty Station_service entity with initialized field values
-     */
     public Station_service(long station, java.lang.String service) {
         super(station, service);
     }
 
-    /**
-     * Constructor
-     * build an empty Station_service entity with initialized Primarykey parameter
-     * @param station_servicePK: Station_service Primarykey
-     */
     public Station_service(Station_servicePK station_servicePK) {
         super(station_servicePK);
     }

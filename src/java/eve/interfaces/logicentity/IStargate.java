@@ -1,9 +1,7 @@
 /*
- * IStargate.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IStargate
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IStargate extends LogicEntity {
 
     public IStargatePK getPrimaryKey();
@@ -68,124 +58,44 @@ public interface IStargate extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return to_stargate value
-     */
     public long getTo_stargate();
 
-    /**
-     * set to_stargate value
-     * @param to_stargate: new value
-     */
     public void setTo_stargate(long to_stargate);
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return x value
-     */
     public double getX();
 
-    /**
-     * set x value
-     * @param x: new value
-     */
     public void setX(double x);
 
-    /**
-     * 
-     * @return y value
-     */
     public double getY();
 
-    /**
-     * set y value
-     * @param y: new value
-     */
     public void setY(double y);
 
-    /**
-     * 
-     * @return z value
-     */
     public double getZ();
 
-    /**
-     * set z value
-     * @param z: new value
-     */
     public void setZ(double z);
 
-    /**
-     * 
-     * @return isconstellationborder value
-     */
     public boolean getIsconstellationborder();
 
-    /**
-     * set isconstellationborder value
-     * @param isconstellationborder: new value
-     */
     public void setIsconstellationborder(boolean isconstellationborder);
 
-    /**
-     * 
-     * @return isregionborder value
-     */
     public boolean getIsregionborder();
 
-    /**
-     * set isregionborder value
-     * @param isregionborder: new value
-     */
     public void setIsregionborder(boolean isregionborder);
 
-    /**
-     * 
-     * @return downloaddate value
-     */
     public java.sql.Date getDownloaddate();
 
-    /**
-     * set downloaddate value
-     * @param downloaddate: new value
-     */
     public void setDownloaddate(java.sql.Date downloaddate);
 
-    /**
-     * 
-     * @return foreign key systemSystemPK, instance of SystemPK
-     */
     public ISystemPK getSystemsystemPK();
 
-    /**
-     * set foreign key system
-     * @param systemSystemPK: instance of SystemPK
-     */
     public void setSystemsystemPK(ISystemPK systemSystemPK);
 
-    /**
-     * 
-     * @return foreign key systemTo_systemPK, instance of SystemPK
-     */
     public ISystemPK getSystemto_systemPK();
 
-    /**
-     * set foreign key system
-     * @param systemTo_systemPK: instance of SystemPK
-     */
     public void setSystemto_systemPK(ISystemPK systemTo_systemPK);
 
     

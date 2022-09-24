@@ -1,6 +1,7 @@
 /*
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:23
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.view;
@@ -15,9 +16,6 @@ import java.sql.Time;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/**
- * @author Franky Laseure
- */
 public class eOrder_history_maxdate implements eveDatabaseproperties, EntityView {
 
     public static final String table = "order_history_maxdate";
@@ -25,24 +23,21 @@ public class eOrder_history_maxdate implements eveDatabaseproperties, EntityView
 	  
     @Override
     public String getDbtool() {
-        return databasetool;
+        return eOrder_history_maxdate.databasetool;
     }
     
     @Override
     public String getConnectionpool() {
-        return connectionpool;
+        return eOrder_history_maxdate.connectionpool;
     }
     
-    @Override
     public String getTable() { return table; }
 
-    @Override
     public String getClassName() { return this.getClass().getName(); };
 	  
     public eOrder_history_maxdate() {
     }
 
-    @Override
     public boolean isEmpty() {
         return false;
     }

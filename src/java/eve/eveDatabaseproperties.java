@@ -1,15 +1,10 @@
 /*
- * eveDatabaseproperties.java
- *
  * Created on Okt 7, 2021
- * Generated on 11.5.2022 19:10
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 package eve;
 
-/**
- * Database properties
- * @author Franky Laseure
- */
 public interface eveDatabaseproperties {
     
     public static final String connectionpool = "jdbc/eve";

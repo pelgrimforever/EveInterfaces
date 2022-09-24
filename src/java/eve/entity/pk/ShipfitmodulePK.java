@@ -1,9 +1,7 @@
 /*
- * ShipfitmodulePK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,38 +15,19 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class ShipfitmodulePK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class ShipfitmodulePK implements IShipfitmodulePK {
 
     private IEvetypePK evetypePK = new EvetypePK();
     private IShipfitPK shipfitPK = new ShipfitPK();
   
-    /** 
-     * Constructor
-     * Creates an empty ShipfitmodulePK
-     */
     public ShipfitmodulePK() {
     }
 
-    /**
-     * Constructor
-     * build an empty ShipfitmodulePK with initialized field values
-     */
     public ShipfitmodulePK(java.lang.String username, java.lang.String shipname, long moduletype) {
         this.evetypePK = new EvetypePK(moduletype);
         this.shipfitPK = new ShipfitPK(username, shipname);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"shipfitmodule.username", shipfitPK.getUsername()}, 
@@ -58,10 +37,6 @@ public class ShipfitmodulePK implements IShipfitmodulePK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IShipfitmodule.USERNAME, shipfitPK.getUsername()}, 
@@ -71,90 +46,46 @@ public class ShipfitmodulePK implements IShipfitmodulePK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of IEvetypePK
-     */
     public IEvetypePK getEvetypePK() {
         return this.evetypePK;
     }
 
-    /**
-     * set foreign key evetypePK
-     * @param evetypePK: instance of IEvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK) {
         this.evetypePK = evetypePK;
     }
 
-    /**
-     * 
-     * @return foreign key shipfitPK, instance of IShipfitPK
-     */
     public IShipfitPK getShipfitPK() {
         return this.shipfitPK;
     }
 
-    /**
-     * set foreign key shipfitPK
-     * @param shipfitPK: instance of IShipfitPK
-     */
     public void setShipfitPK(IShipfitPK shipfitPK) {
         this.shipfitPK = shipfitPK;
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.shipfitPK.getUsername();
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.shipfitPK.setUsername(username);
     }
 
-    /**
-     * 
-     * @return shipname value
-     */
     public java.lang.String getShipname() {
         return this.shipfitPK.getShipname();
     }
 
-    /**
-     * set shipname value
-     * @param shipname: new value
-     */
     public void setShipname(java.lang.String shipname) {
         this.shipfitPK.setShipname(shipname);
     }
 
-    /**
-     * 
-     * @return moduletype value
-     */
     public long getModuletype() {
         return this.evetypePK.getId();
     }
 
-    /**
-     * set moduletype value
-     * @param moduletype: new value
-     */
     public void setModuletype(long moduletype) {
         this.evetypePK.setId(moduletype);
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
@@ -167,11 +98,6 @@ public class ShipfitmodulePK implements IShipfitmodulePK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return ShipfitmodulePK constructed from keystring
-     */
     public static ShipfitmodulePK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -197,11 +123,6 @@ public class ShipfitmodulePK implements IShipfitmodulePK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param shipfitmodulePK2: ShipfitmodulePK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IShipfitmodulePK shipfitmodulePK2) {
         boolean isequal = shipfitmodulePK2!=null;
         if(isequal) {

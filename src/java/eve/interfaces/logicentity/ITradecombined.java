@@ -1,9 +1,7 @@
 /*
- * ITradecombined.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ITradecombined
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ITradecombined extends LogicEntity {
 
     public ITradecombinedPK getPrimaryKey();
@@ -60,40 +50,16 @@ public interface ITradecombined extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return jumps value
-     */
     public int getJumps();
 
-    /**
-     * set jumps value
-     * @param jumps: new value
-     */
     public void setJumps(int jumps);
 
-    /**
-     * 
-     * @return jumpslowsec value
-     */
     public int getJumpslowsec();
 
-    /**
-     * set jumpslowsec value
-     * @param jumpslowsec: new value
-     */
     public void setJumpslowsec(int jumpslowsec);
 
-    /**
-     * 
-     * @return jumpsnullsec value
-     */
     public int getJumpsnullsec();
 
-    /**
-     * set jumpsnullsec value
-     * @param jumpsnullsec: new value
-     */
     public void setJumpsnullsec(int jumpsnullsec);
 
     

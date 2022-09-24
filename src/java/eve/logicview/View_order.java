@@ -1,9 +1,7 @@
 /*
- * View_order.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicview;
@@ -22,15 +20,6 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * View class View_order
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class View_order extends eve.view.eView_order implements IView_order {
 
 //Custom code, do not change this line
@@ -39,10 +28,6 @@ public class View_order extends eve.view.eView_order implements IView_order {
     private int start_system_jumpsnullsec = 0;
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty View_order entity
-     */
     public View_order() {
     }
     

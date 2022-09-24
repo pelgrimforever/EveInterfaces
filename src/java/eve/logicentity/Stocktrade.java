@@ -1,9 +1,7 @@
 /*
- * Stocktrade.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Stocktrade
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Stocktrade extends eve.entity.eStocktrade implements IStocktrade {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Stocktrade entity
-     */
     public Stocktrade() {
     }
     
-    /**
-     * Constructor
-     * build an empty Stocktrade entity with initialized field values
-     */
     public Stocktrade(java.lang.String username, long evetype, long orderid) {
         super(username, evetype, orderid);
     }
 
-    /**
-     * Constructor
-     * build an empty Stocktrade entity with initialized Primarykey parameter
-     * @param stocktradePK: Stocktrade Primarykey
-     */
     public Stocktrade(StocktradePK stocktradePK) {
         super(stocktradePK);
     }

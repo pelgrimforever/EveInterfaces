@@ -1,9 +1,7 @@
 /*
- * ICategory.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ICategory
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ICategory extends LogicEntity {
 
     public ICategoryPK getPrimaryKey();
@@ -48,28 +38,12 @@ public interface ICategory extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return name value
-     */
     public java.lang.String getName();
 
-    /**
-     * set name value
-     * @param name: new value
-     */
     public void setName(java.lang.String name);
 
-    /**
-     * 
-     * @return published value
-     */
     public boolean getPublished();
 
-    /**
-     * set published value
-     * @param published: new value
-     */
     public void setPublished(boolean published);
 
     

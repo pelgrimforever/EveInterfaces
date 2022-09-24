@@ -1,13 +1,12 @@
 /*
- * eRoutetype.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,46 +18,20 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IRoutetype;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Routetype
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Routetype Entity
- * 
- * @author Franky Laseure
- */
 public class eRoutetype extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected RoutetypePK routetypePK;
     private Security_islandPK security_islandPK;
     private java.lang.String name;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "routetype";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IRoutetype.fieldnames[fieldconstant-1];
     }
@@ -67,6 +40,20 @@ public class eRoutetype extends AbstractEntity implements eveDatabaseproperties,
         return IRoutetype.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eRoutetype.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eRoutetype.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eRoutetype() {
     }
 
@@ -78,7 +65,6 @@ public class eRoutetype extends AbstractEntity implements eveDatabaseproperties,
         this.routetypePK = routetypePK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.routetypePK == null;
     }
@@ -106,9 +92,6 @@ public class eRoutetype extends AbstractEntity implements eveDatabaseproperties,
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return RoutetypePK
-     */
     @Override
     public RoutetypePK getPrimaryKey() {
         return this.routetypePK;

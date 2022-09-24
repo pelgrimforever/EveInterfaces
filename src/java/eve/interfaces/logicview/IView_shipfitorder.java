@@ -1,9 +1,7 @@
 /*
- * IView_shipfitorder.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicview;
@@ -18,14 +16,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * View Interface IView_shipfitorder
- *
- * extended attributes and methods possibility:
- * view level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IView_shipfitorder extends View {
 
     public static byte EVETYPENAME = 1;

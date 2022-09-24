@@ -1,13 +1,12 @@
 /*
- * eUserbp.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IUserbp;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Userbp
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Userbp Entity
- * 
- * @author Franky Laseure
- */
 public class eUserbp extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected UserbpPK userbpPK;
@@ -46,24 +35,8 @@ public class eUserbp extends AbstractEntity implements eveDatabaseproperties, En
     private double researchcost;
     private double stationfee;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "userbp";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IUserbp.fieldnames[fieldconstant-1];
     }
@@ -72,6 +45,20 @@ public class eUserbp extends AbstractEntity implements eveDatabaseproperties, En
         return IUserbp.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eUserbp.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eUserbp.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eUserbp() {
     }
 
@@ -83,7 +70,6 @@ public class eUserbp extends AbstractEntity implements eveDatabaseproperties, En
         this.userbpPK = userbpPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.userbpPK == null;
     }
@@ -115,9 +101,6 @@ public class eUserbp extends AbstractEntity implements eveDatabaseproperties, En
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return UserbpPK
-     */
     @Override
     public UserbpPK getPrimaryKey() {
         return this.userbpPK;

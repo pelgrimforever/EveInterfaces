@@ -1,13 +1,12 @@
 /*
- * eFrontendpage.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,44 +18,18 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IFrontendpage;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Frontendpage
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Frontendpage Entity
- * 
- * @author Franky Laseure
- */
 public class eFrontendpage extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected FrontendpagePK frontendpagePK;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "frontendpage";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IFrontendpage.fieldnames[fieldconstant-1];
     }
@@ -65,6 +38,20 @@ public class eFrontendpage extends AbstractEntity implements eveDatabaseproperti
         return IFrontendpage.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eFrontendpage.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eFrontendpage.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eFrontendpage() {
     }
 
@@ -76,7 +63,6 @@ public class eFrontendpage extends AbstractEntity implements eveDatabaseproperti
         this.frontendpagePK = frontendpagePK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.frontendpagePK == null;
     }
@@ -101,9 +87,6 @@ public class eFrontendpage extends AbstractEntity implements eveDatabaseproperti
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return FrontendpagePK
-     */
     @Override
     public FrontendpagePK getPrimaryKey() {
         return this.frontendpagePK;

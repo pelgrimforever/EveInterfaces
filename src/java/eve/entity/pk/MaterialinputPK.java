@@ -1,9 +1,7 @@
 /*
- * MaterialinputPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,40 +15,21 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class MaterialinputPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class MaterialinputPK implements IMaterialinputPK {
 
     private IEvetypePK evetypePK = new EvetypePK();
     private java.lang.String username;
     private java.sql.Timestamp addtimestamp;
   
-    /** 
-     * Constructor
-     * Creates an empty MaterialinputPK
-     */
     public MaterialinputPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty MaterialinputPK with initialized field values
-     */
     public MaterialinputPK(java.lang.String username, long evetype, java.sql.Timestamp addtimestamp) {
         this.evetypePK = new EvetypePK(evetype);
         this.username = username;
         this.addtimestamp = addtimestamp;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"materialinput.evetype", evetypePK.getId()}, 
@@ -60,10 +39,6 @@ public class MaterialinputPK implements IMaterialinputPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IMaterialinput.EVETYPE, evetypePK.getId()}, 
@@ -73,74 +48,38 @@ public class MaterialinputPK implements IMaterialinputPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key evetypePK, instance of IEvetypePK
-     */
     public IEvetypePK getEvetypePK() {
         return this.evetypePK;
     }
 
-    /**
-     * set foreign key evetypePK
-     * @param evetypePK: instance of IEvetypePK
-     */
     public void setEvetypePK(IEvetypePK evetypePK) {
         this.evetypePK = evetypePK;
     }
 
-    /**
-     * 
-     * @return evetype value
-     */
     public long getEvetype() {
         return this.evetypePK.getId();
     }
 
-    /**
-     * set evetype value
-     * @param evetype: new value
-     */
     public void setEvetype(long evetype) {
         this.evetypePK.setId(evetype);
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.username;
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.username = username;
     }
 
-    /**
-     * 
-     * @return addtimestamp value
-     */
     public java.sql.Timestamp getAddtimestamp() {
         return this.addtimestamp;
     }
 
-    /**
-     * set addtimestamp value
-     * @param addtimestamp: new value
-     */
     public void setAddtimestamp(java.sql.Timestamp addtimestamp) {
         this.addtimestamp = addtimestamp;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
@@ -153,11 +92,6 @@ public class MaterialinputPK implements IMaterialinputPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return MaterialinputPK constructed from keystring
-     */
     public static MaterialinputPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -186,11 +120,6 @@ public class MaterialinputPK implements IMaterialinputPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param materialinputPK2: MaterialinputPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IMaterialinputPK materialinputPK2) {
         boolean isequal = materialinputPK2!=null;
         if(isequal) {

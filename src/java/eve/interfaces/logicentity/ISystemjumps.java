@@ -1,9 +1,7 @@
 /*
- * ISystemjumps.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ISystemjumps
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ISystemjumps extends LogicEntity {
 
     public ISystemjumpsPK getPrimaryKey();
@@ -62,76 +52,28 @@ public interface ISystemjumps extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return jumps value
-     */
     public int getJumps();
 
-    /**
-     * set jumps value
-     * @param jumps: new value
-     */
     public void setJumps(int jumps);
 
-    /**
-     * 
-     * @return jumpslowsec value
-     */
     public int getJumpslowsec();
 
-    /**
-     * set jumpslowsec value
-     * @param jumpslowsec: new value
-     */
     public void setJumpslowsec(int jumpslowsec);
 
-    /**
-     * 
-     * @return jumpsnullsec value
-     */
     public int getJumpsnullsec();
 
-    /**
-     * set jumpsnullsec value
-     * @param jumpsnullsec: new value
-     */
     public void setJumpsnullsec(int jumpsnullsec);
 
-    /**
-     * 
-     * @return jumpssafe value
-     */
     public int getJumpssafe();
 
-    /**
-     * set jumpssafe value
-     * @param jumpssafe: new value
-     */
     public void setJumpssafe(int jumpssafe);
 
-    /**
-     * 
-     * @return jumpssafelowsec value
-     */
     public int getJumpssafelowsec();
 
-    /**
-     * set jumpssafelowsec value
-     * @param jumpssafelowsec: new value
-     */
     public void setJumpssafelowsec(int jumpssafelowsec);
 
-    /**
-     * 
-     * @return jumpssafenullsec value
-     */
     public int getJumpssafenullsec();
 
-    /**
-     * set jumpssafenullsec value
-     * @param jumpssafenullsec: new value
-     */
     public void setJumpssafenullsec(int jumpssafenullsec);
 
     

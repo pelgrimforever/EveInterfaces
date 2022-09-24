@@ -1,9 +1,7 @@
 /*
- * ITrade.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ITrade
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ITrade extends LogicEntity {
 
     public ITradePK getPrimaryKey();
@@ -74,148 +64,52 @@ public interface ITrade extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return total_volume value
-     */
     public double getTotal_volume();
 
-    /**
-     * set total_volume value
-     * @param total_volume: new value
-     */
     public void setTotal_volume(double total_volume);
 
-    /**
-     * 
-     * @return buy_order_value value
-     */
     public double getBuy_order_value();
 
-    /**
-     * set buy_order_value value
-     * @param buy_order_value: new value
-     */
     public void setBuy_order_value(double buy_order_value);
 
-    /**
-     * 
-     * @return sell_order_value value
-     */
     public double getSell_order_value();
 
-    /**
-     * set sell_order_value value
-     * @param sell_order_value: new value
-     */
     public void setSell_order_value(double sell_order_value);
 
-    /**
-     * 
-     * @return profit value
-     */
     public double getProfit();
 
-    /**
-     * set profit value
-     * @param profit: new value
-     */
     public void setProfit(double profit);
 
-    /**
-     * 
-     * @return jumps value
-     */
     public int getJumps();
 
-    /**
-     * set jumps value
-     * @param jumps: new value
-     */
     public void setJumps(int jumps);
 
-    /**
-     * 
-     * @return runs value
-     */
     public int getRuns();
 
-    /**
-     * set runs value
-     * @param runs: new value
-     */
     public void setRuns(int runs);
 
-    /**
-     * 
-     * @return total_jumps value
-     */
     public int getTotal_jumps();
 
-    /**
-     * set total_jumps value
-     * @param total_jumps: new value
-     */
     public void setTotal_jumps(int total_jumps);
 
-    /**
-     * 
-     * @return profit_per_jump value
-     */
     public double getProfit_per_jump();
 
-    /**
-     * set profit_per_jump value
-     * @param profit_per_jump: new value
-     */
     public void setProfit_per_jump(double profit_per_jump);
 
-    /**
-     * 
-     * @return singlerun_profit_per_jump value
-     */
     public double getSinglerun_profit_per_jump();
 
-    /**
-     * set singlerun_profit_per_jump value
-     * @param singlerun_profit_per_jump: new value
-     */
     public void setSinglerun_profit_per_jump(double singlerun_profit_per_jump);
 
-    /**
-     * 
-     * @return maxunits_per_run value
-     */
     public int getMaxunits_per_run();
 
-    /**
-     * set maxunits_per_run value
-     * @param maxunits_per_run: new value
-     */
     public void setMaxunits_per_run(int maxunits_per_run);
 
-    /**
-     * 
-     * @return jumpslowsec value
-     */
     public int getJumpslowsec();
 
-    /**
-     * set jumpslowsec value
-     * @param jumpslowsec: new value
-     */
     public void setJumpslowsec(int jumpslowsec);
 
-    /**
-     * 
-     * @return jumpsnullsec value
-     */
     public int getJumpsnullsec();
 
-    /**
-     * set jumpsnullsec value
-     * @param jumpsnullsec: new value
-     */
     public void setJumpsnullsec(int jumpsnullsec);
 
     

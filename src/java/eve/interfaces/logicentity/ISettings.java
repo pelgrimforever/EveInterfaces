@@ -1,9 +1,7 @@
 /*
- * ISettings.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ISettings
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ISettings extends LogicEntity {
 
     public ISettingsPK getPrimaryKey();
@@ -51,16 +41,8 @@ public interface ISettings extends LogicEntity {
     };
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return value value
-     */
     public java.lang.String getValue();
 
-    /**
-     * set value value
-     * @param value: new value
-     */
     public void setValue(java.lang.String value);
 
     

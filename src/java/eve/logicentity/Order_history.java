@@ -1,9 +1,7 @@
 /*
- * Order_history.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Order_history
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Order_history extends eve.entity.eOrder_history implements IOrder_history {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Order_history entity
-     */
     public Order_history() {
     }
     
-    /**
-     * Constructor
-     * build an empty Order_history entity with initialized field values
-     */
     public Order_history(long region, long evetype, java.sql.Date date) {
         super(region, evetype, date);
     }
 
-    /**
-     * Constructor
-     * build an empty Order_history entity with initialized Primarykey parameter
-     * @param order_historyPK: Order_history Primarykey
-     */
     public Order_history(Order_historyPK order_historyPK) {
         super(order_historyPK);
     }

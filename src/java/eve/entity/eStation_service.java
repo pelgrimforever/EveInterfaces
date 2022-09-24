@@ -1,13 +1,12 @@
 /*
- * eStation_service.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,44 +18,18 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IStation_service;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Station_service
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Station_service Entity
- * 
- * @author Franky Laseure
- */
 public class eStation_service extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Station_servicePK station_servicePK;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "station_service";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IStation_service.fieldnames[fieldconstant-1];
     }
@@ -65,6 +38,20 @@ public class eStation_service extends AbstractEntity implements eveDatabaseprope
         return IStation_service.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eStation_service.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eStation_service.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eStation_service() {
     }
 
@@ -76,7 +63,6 @@ public class eStation_service extends AbstractEntity implements eveDatabaseprope
         this.station_servicePK = station_servicePK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.station_servicePK == null;
     }
@@ -101,9 +87,6 @@ public class eStation_service extends AbstractEntity implements eveDatabaseprope
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Station_servicePK
-     */
     @Override
     public Station_servicePK getPrimaryKey() {
         return this.station_servicePK;

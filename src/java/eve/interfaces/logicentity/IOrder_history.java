@@ -1,9 +1,7 @@
 /*
- * IOrder_history.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IOrder_history
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IOrder_history extends LogicEntity {
 
     public IOrder_historyPK getPrimaryKey();
@@ -62,64 +52,24 @@ public interface IOrder_history extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return average value
-     */
     public double getAverage();
 
-    /**
-     * set average value
-     * @param average: new value
-     */
     public void setAverage(double average);
 
-    /**
-     * 
-     * @return highest value
-     */
     public double getHighest();
 
-    /**
-     * set highest value
-     * @param highest: new value
-     */
     public void setHighest(double highest);
 
-    /**
-     * 
-     * @return lowest value
-     */
     public double getLowest();
 
-    /**
-     * set lowest value
-     * @param lowest: new value
-     */
     public void setLowest(double lowest);
 
-    /**
-     * 
-     * @return volume value
-     */
     public int getVolume();
 
-    /**
-     * set volume value
-     * @param volume: new value
-     */
     public void setVolume(int volume);
 
-    /**
-     * 
-     * @return order_count value
-     */
     public int getOrder_count();
 
-    /**
-     * set order_count value
-     * @param order_count: new value
-     */
     public void setOrder_count(int order_count);
 
     

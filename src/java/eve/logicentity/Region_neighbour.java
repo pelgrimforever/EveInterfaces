@@ -1,9 +1,7 @@
 /*
- * Region_neighbour.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Region_neighbour
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Region_neighbour extends eve.entity.eRegion_neighbour implements IRegion_neighbour {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Region_neighbour entity
-     */
     public Region_neighbour() {
     }
     
-    /**
-     * Constructor
-     * build an empty Region_neighbour entity with initialized field values
-     */
     public Region_neighbour(long region, long neighbour) {
         super(region, neighbour);
     }
 
-    /**
-     * Constructor
-     * build an empty Region_neighbour entity with initialized Primarykey parameter
-     * @param region_neighbourPK: Region_neighbour Primarykey
-     */
     public Region_neighbour(Region_neighbourPK region_neighbourPK) {
         super(region_neighbourPK);
     }

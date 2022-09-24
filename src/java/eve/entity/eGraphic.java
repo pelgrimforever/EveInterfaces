@@ -1,13 +1,12 @@
 /*
- * eGraphic.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IGraphic;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Graphic
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Graphic Entity
- * 
- * @author Franky Laseure
- */
 public class eGraphic extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected GraphicPK graphicPK;
@@ -46,24 +35,8 @@ public class eGraphic extends AbstractEntity implements eveDatabaseproperties, E
     private java.lang.String sof_hull_name;
     private java.lang.String sof_race_name;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "graphic";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IGraphic.fieldnames[fieldconstant-1];
     }
@@ -72,6 +45,20 @@ public class eGraphic extends AbstractEntity implements eveDatabaseproperties, E
         return IGraphic.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eGraphic.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eGraphic.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eGraphic() {
     }
 
@@ -83,7 +70,6 @@ public class eGraphic extends AbstractEntity implements eveDatabaseproperties, E
         this.graphicPK = graphicPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.graphicPK == null;
     }
@@ -115,9 +101,6 @@ public class eGraphic extends AbstractEntity implements eveDatabaseproperties, E
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return GraphicPK
-     */
     @Override
     public GraphicPK getPrimaryKey() {
         return this.graphicPK;

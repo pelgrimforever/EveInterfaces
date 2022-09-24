@@ -1,20 +1,11 @@
 /*
- * IStockOperation.java
- *
  * Created on Dec 13, 2012, 12:22 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.servlet;
 
-/**
- * Interface IStockOperation
- * 
- * Attributes: Defines the possible operations for the specified table
- * Methods: 
- * @author Franky Laseure
- */
 public interface IStockOperation {
 
     //SELECT OPERATIONS

@@ -1,9 +1,7 @@
 /*
- * Region_neighbourPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,38 +15,19 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class Region_neighbourPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class Region_neighbourPK implements IRegion_neighbourPK {
 
     private IRegionPK regionRegionPK = new RegionPK();
     private IRegionPK regionNeighbourPK = new RegionPK();
   
-    /** 
-     * Constructor
-     * Creates an empty Region_neighbourPK
-     */
     public Region_neighbourPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty Region_neighbourPK with initialized field values
-     */
     public Region_neighbourPK(long region, long neighbour) {
         this.regionRegionPK = new RegionPK(region);
         this.regionNeighbourPK = new RegionPK(neighbour);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"region_neighbour.region", regionRegionPK.getId()}, 
@@ -57,10 +36,6 @@ public class Region_neighbourPK implements IRegion_neighbourPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IRegion_neighbour.REGION, regionRegionPK.getId()}, 
@@ -69,74 +44,38 @@ public class Region_neighbourPK implements IRegion_neighbourPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key regionPK1, instance of IRegionPK
-     */
     public IRegionPK getRegionregionPK() {
         return this.regionRegionPK;
     }
 
-    /**
-     * set foreign key regionRegionPK
-     * @param regionPK: instance of IRegionPK
-     */
     public void setRegionregionPK(IRegionPK regionPK) {
         this.regionRegionPK = regionPK;
     }
 
-    /**
-     * 
-     * @return foreign key regionPK, instance of IRegionPK
-     */
     public IRegionPK getRegionneighbourPK() {
         return this.regionNeighbourPK;
     }
 
-    /**
-     * set foreign key regionNeighbourPK
-     * @param regionPK: instance of IRegionPK
-     */
     public void setRegionneighbourPK(IRegionPK regionPK) {
         this.regionNeighbourPK = regionPK;
     }
 
-    /**
-     * 
-     * @return region value
-     */
     public long getRegion() {
         return this.regionRegionPK.getId();
     }
 
-    /**
-     * set region value
-     * @param region: new value
-     */
     public void setRegion(long region) {
         this.regionRegionPK.setId(region);
     }
 
-    /**
-     * 
-     * @return neighbour value
-     */
     public long getNeighbour() {
         return this.regionNeighbourPK.getId();
     }
 
-    /**
-     * set neighbour value
-     * @param neighbour: new value
-     */
     public void setNeighbour(long neighbour) {
         this.regionNeighbourPK.setId(neighbour);
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getRegion();
@@ -146,11 +85,6 @@ public class Region_neighbourPK implements IRegion_neighbourPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return Region_neighbourPK constructed from keystring
-     */
     public static Region_neighbourPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -174,11 +108,6 @@ public class Region_neighbourPK implements IRegion_neighbourPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param region_neighbourPK2: Region_neighbourPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IRegion_neighbourPK region_neighbourPK2) {
         boolean isequal = region_neighbourPK2!=null;
         if(isequal) {

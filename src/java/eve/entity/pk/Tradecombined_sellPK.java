@@ -1,9 +1,7 @@
 /*
- * Tradecombined_sellPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,40 +15,21 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class Tradecombined_sellPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class Tradecombined_sellPK implements ITradecombined_sellPK {
 
     private IOrdersPK ordersBuy_order_idPK = new OrdersPK();
     private IOrdersPK ordersSell_order_idPK = new OrdersPK();
     private ITradecombinedPK tradecombinedPK = new TradecombinedPK();
   
-    /** 
-     * Constructor
-     * Creates an empty Tradecombined_sellPK
-     */
     public Tradecombined_sellPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty Tradecombined_sellPK with initialized field values
-     */
     public Tradecombined_sellPK(long sell_system, long buy_system, long evetype, long buy_order_id, long sell_order_id) {
         this.ordersBuy_order_idPK = new OrdersPK(buy_order_id);
         this.ordersSell_order_idPK = new OrdersPK(sell_order_id);
         this.tradecombinedPK = new TradecombinedPK(sell_system, buy_system, evetype);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"tradecombined_sell.sell_system", tradecombinedPK.getSell_system()}, 
@@ -62,10 +41,6 @@ public class Tradecombined_sellPK implements ITradecombined_sellPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {ITradecombined_sell.SELL_SYSTEM, tradecombinedPK.getSell_system()}, 
@@ -77,138 +52,70 @@ public class Tradecombined_sellPK implements ITradecombined_sellPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key ordersPK1, instance of IOrdersPK
-     */
     public IOrdersPK getOrdersbuy_order_idPK() {
         return this.ordersBuy_order_idPK;
     }
 
-    /**
-     * set foreign key ordersBuy_order_idPK
-     * @param ordersPK: instance of IOrdersPK
-     */
     public void setOrdersbuy_order_idPK(IOrdersPK ordersPK) {
         this.ordersBuy_order_idPK = ordersPK;
     }
 
-    /**
-     * 
-     * @return foreign key ordersPK, instance of IOrdersPK
-     */
     public IOrdersPK getOrderssell_order_idPK() {
         return this.ordersSell_order_idPK;
     }
 
-    /**
-     * set foreign key ordersSell_order_idPK
-     * @param ordersPK: instance of IOrdersPK
-     */
     public void setOrderssell_order_idPK(IOrdersPK ordersPK) {
         this.ordersSell_order_idPK = ordersPK;
     }
 
-    /**
-     * 
-     * @return foreign key tradecombinedPK, instance of ITradecombinedPK
-     */
     public ITradecombinedPK getTradecombinedPK() {
         return this.tradecombinedPK;
     }
 
-    /**
-     * set foreign key tradecombinedPK
-     * @param tradecombinedPK: instance of ITradecombinedPK
-     */
     public void setTradecombinedPK(ITradecombinedPK tradecombinedPK) {
         this.tradecombinedPK = tradecombinedPK;
     }
 
-    /**
-     * 
-     * @return sell_system value
-     */
     public long getSell_system() {
         return this.tradecombinedPK.getSell_system();
     }
 
-    /**
-     * set sell_system value
-     * @param sell_system: new value
-     */
     public void setSell_system(long sell_system) {
         this.tradecombinedPK.setSell_system(sell_system);
     }
 
-    /**
-     * 
-     * @return buy_system value
-     */
     public long getBuy_system() {
         return this.tradecombinedPK.getBuy_system();
     }
 
-    /**
-     * set buy_system value
-     * @param buy_system: new value
-     */
     public void setBuy_system(long buy_system) {
         this.tradecombinedPK.setBuy_system(buy_system);
     }
 
-    /**
-     * 
-     * @return evetype value
-     */
     public long getEvetype() {
         return this.tradecombinedPK.getEvetype();
     }
 
-    /**
-     * set evetype value
-     * @param evetype: new value
-     */
     public void setEvetype(long evetype) {
         this.tradecombinedPK.setEvetype(evetype);
     }
 
-    /**
-     * 
-     * @return buy_order_id value
-     */
     public long getBuy_order_id() {
         return this.ordersBuy_order_idPK.getId();
     }
 
-    /**
-     * set buy_order_id value
-     * @param buy_order_id: new value
-     */
     public void setBuy_order_id(long buy_order_id) {
         this.ordersBuy_order_idPK.setId(buy_order_id);
     }
 
-    /**
-     * 
-     * @return sell_order_id value
-     */
     public long getSell_order_id() {
         return this.ordersSell_order_idPK.getId();
     }
 
-    /**
-     * set sell_order_id value
-     * @param sell_order_id: new value
-     */
     public void setSell_order_id(long sell_order_id) {
         this.ordersSell_order_idPK.setId(sell_order_id);
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getSell_system();
@@ -227,11 +134,6 @@ public class Tradecombined_sellPK implements ITradecombined_sellPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return Tradecombined_sellPK constructed from keystring
-     */
     public static Tradecombined_sellPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -279,11 +181,6 @@ public class Tradecombined_sellPK implements ITradecombined_sellPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param tradecombined_sellPK2: Tradecombined_sellPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(ITradecombined_sellPK tradecombined_sellPK2) {
         boolean isequal = tradecombined_sellPK2!=null;
         if(isequal) {

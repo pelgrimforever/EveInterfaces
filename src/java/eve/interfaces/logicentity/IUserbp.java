@@ -1,9 +1,7 @@
 /*
- * IUserbp.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface IUserbp
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface IUserbp extends LogicEntity {
 
     public IUserbpPK getPrimaryKey();
@@ -64,88 +54,32 @@ public interface IUserbp extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return original value
-     */
     public boolean getOriginal();
 
-    /**
-     * set original value
-     * @param original: new value
-     */
     public void setOriginal(boolean original);
 
-    /**
-     * 
-     * @return materialefficiency value
-     */
     public int getMaterialefficiency();
 
-    /**
-     * set materialefficiency value
-     * @param materialefficiency: new value
-     */
     public void setMaterialefficiency(int materialefficiency);
 
-    /**
-     * 
-     * @return amountproduced value
-     */
     public int getAmountproduced();
 
-    /**
-     * set amountproduced value
-     * @param amountproduced: new value
-     */
     public void setAmountproduced(int amountproduced);
 
-    /**
-     * 
-     * @return totalamount value
-     */
     public int getTotalamount();
 
-    /**
-     * set totalamount value
-     * @param totalamount: new value
-     */
     public void setTotalamount(int totalamount);
 
-    /**
-     * 
-     * @return bpprice value
-     */
     public double getBpprice();
 
-    /**
-     * set bpprice value
-     * @param bpprice: new value
-     */
     public void setBpprice(double bpprice);
 
-    /**
-     * 
-     * @return researchcost value
-     */
     public double getResearchcost();
 
-    /**
-     * set researchcost value
-     * @param researchcost: new value
-     */
     public void setResearchcost(double researchcost);
 
-    /**
-     * 
-     * @return stationfee value
-     */
     public double getStationfee();
 
-    /**
-     * set stationfee value
-     * @param stationfee: new value
-     */
     public void setStationfee(double stationfee);
 
     

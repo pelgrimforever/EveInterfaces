@@ -1,9 +1,7 @@
 /*
- * Market_groupPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,36 +15,17 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class Market_groupPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class Market_groupPK implements IMarket_groupPK {
 
     private long id;
   
-    /** 
-     * Constructor
-     * Creates an empty Market_groupPK
-     */
     public Market_groupPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty Market_groupPK with initialized field values
-     */
     public Market_groupPK(long id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"market_group.id", id}
@@ -54,10 +33,6 @@ public class Market_groupPK implements IMarket_groupPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IMarket_group.ID, id}
@@ -65,37 +40,20 @@ public class Market_groupPK implements IMarket_groupPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return id value
-     */
     public long getId() {
         return this.id;
     }
 
-    /**
-     * set id value
-     * @param id: new value
-     */
     public void setId(long id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getId();
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return Market_groupPK constructed from keystring
-     */
     public static Market_groupPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -111,11 +69,6 @@ public class Market_groupPK implements IMarket_groupPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param market_groupPK2: Market_groupPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IMarket_groupPK market_groupPK2) {
         boolean isequal = market_groupPK2!=null;
         if(isequal) {

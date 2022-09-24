@@ -1,9 +1,7 @@
 /*
- * Locationsearch.java
- *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.searchentity;
@@ -18,11 +16,6 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-/**
- * Search class for Location table
- * construct sql where part and parameter array from search parameters
- * @author Franky Laseure
- */
 public class Locationsearch extends Tablesearch implements ILocationsearch {
 
     Numbersearch id = new Numbersearch("location.id");
@@ -33,35 +26,19 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
     Foreignkeysearch systemsearcher = new Foreignkeysearch("system", ILocation.systemPKfields, ILocation.systemFKfields);
 //external foreign keys
 
-    /**
-     * @return tablename
-     */
     public String getTable() {
         return Location.table;
     }
 
-    /**
-     * Constructor
-     * add IFieldsearcher classes for all relevant fields
-     */
     public Locationsearch() {
         setFieldsearchers();
     }
 
-    /**
-     * Constructor
-     * add IFieldsearcher classes for all relevant fields
-     * set andor parameter
-     * @param andor: containts AND or OR contant, indicates all conditions must apply or only one
-     */
     public Locationsearch(byte andor) {
         super(andor);
         setFieldsearchers();
     }
 
-    /**
-     * add IFieldsearcher classes for all relevant fields
-     */
     private void setFieldsearchers() {
         addFieldsearcher(id);
         addFieldsearcher(name);
@@ -70,82 +47,41 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
         addKeysearcher(systemsearcher);
     }
 
-    /**
-     * add a primary key instance to search for
-     * @param locationPK: Location primery key
-     */
     public void addPrimarykey(ILocationPK locationPK) {
         super.addPrimarykey(locationPK);
     }
 
-    /**
-     * add Numeric search values for field id, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void id(long[] values, byte[] operators) {
         addNumbervalues(id, values, operators);
     }
     
-    /**
-     * add Numeric search values for field id
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void id(long[] values, byte[] operators, byte andor) {
         addNumbervalues(id, values, operators);
         id.setAndoroperator(andor);
     }
     
-    /**
-     * add String search values for field name, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
     public void name(String[] values) {
         addStringvalues(name, values);
     }
     
-    /**
-     * add String search values for field name
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
     public void name(String[] values, byte compare, byte andor) {
         addStringvalues(name, values);
         name.setCompareoperator(compare);
         name.setAndoroperator(andor);
     }
     
-    /**
-     * add Boolean search values for field visited
-     * @param value: true or false
-     */
     public void visited(Boolean value) {
         addBooleanvalue(visited, value);
     }
     
-    /**
-     * add Boolean search values for field access
-     * @param value: true or false
-     */
     public void access(Boolean value) {
         addBooleanvalue(access, value);
     }
     
-    /**
-     * set foreign key subsearch system ISystemsearch
-     * @param systemsearch: ISystemsearch
-     */
     public void system(ISystemsearch systemsearch) {
         systemsearcher.setTablesearch(systemsearch);
     }
     
-    /**
-     * get foreign key subsearch system ISystemsearch
-     * @return Tablesearch for Location
-     */
     public ISystemsearch getSystemsearch() {
         if(systemsearcher.used()) {
             return (ISystemsearch)systemsearcher.getTablesearches().get(0);
@@ -154,11 +90,6 @@ public class Locationsearch extends Tablesearch implements ILocationsearch {
         }
     }
 
-    /**
-     * force to return inner join statement
-     * ignore if systemsearcher is not used
-     * @return inner join statement
-     */
     public String getSystemInnerjoin() {
         return systemsearcher.getInnerjoin();
     }

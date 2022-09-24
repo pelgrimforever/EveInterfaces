@@ -1,9 +1,7 @@
 /*
- * Order_history_month.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Order_history_month
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Order_history_month extends eve.entity.eOrder_history_month implements IOrder_history_month {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Order_history_month entity
-     */
     public Order_history_month() {
     }
     
-    /**
-     * Constructor
-     * build an empty Order_history_month entity with initialized field values
-     */
     public Order_history_month(long region, long evetype, int year, int month) {
         super(region, evetype, year, month);
     }
 
-    /**
-     * Constructor
-     * build an empty Order_history_month entity with initialized Primarykey parameter
-     * @param order_history_monthPK: Order_history_month Primarykey
-     */
     public Order_history_month(Order_history_monthPK order_history_monthPK) {
         super(order_history_monthPK);
     }

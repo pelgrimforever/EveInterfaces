@@ -1,13 +1,12 @@
 /*
- * eTradecombined_sell.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.ITradecombined_sell;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Tradecombined_sell
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Tradecombined_sell Entity
- * 
- * @author Franky Laseure
- */
 public class eTradecombined_sell extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Tradecombined_sellPK tradecombined_sellPK;
@@ -43,24 +32,8 @@ public class eTradecombined_sell extends AbstractEntity implements eveDatabasepr
     private double sell_order_value;
     private double profit;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "tradecombined_sell";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return ITradecombined_sell.fieldnames[fieldconstant-1];
     }
@@ -69,6 +42,20 @@ public class eTradecombined_sell extends AbstractEntity implements eveDatabasepr
         return ITradecombined_sell.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eTradecombined_sell.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eTradecombined_sell.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eTradecombined_sell() {
     }
 
@@ -80,7 +67,6 @@ public class eTradecombined_sell extends AbstractEntity implements eveDatabasepr
         this.tradecombined_sellPK = tradecombined_sellPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.tradecombined_sellPK == null;
     }
@@ -109,9 +95,6 @@ public class eTradecombined_sell extends AbstractEntity implements eveDatabasepr
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Tradecombined_sellPK
-     */
     @Override
     public Tradecombined_sellPK getPrimaryKey() {
         return this.tradecombined_sellPK;

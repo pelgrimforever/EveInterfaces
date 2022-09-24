@@ -1,9 +1,7 @@
 /*
- * Frontendpage_authPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,38 +15,19 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class Frontendpage_authPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class Frontendpage_authPK implements IFrontendpage_authPK {
 
     private IFrontendpagePK frontendpagePK = new FrontendpagePK();
     private IEveuserPK eveuserPK = new EveuserPK();
   
-    /** 
-     * Constructor
-     * Creates an empty Frontendpage_authPK
-     */
     public Frontendpage_authPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty Frontendpage_authPK with initialized field values
-     */
     public Frontendpage_authPK(java.lang.String username, java.lang.String frontendpage) {
         this.frontendpagePK = new FrontendpagePK(frontendpage);
         this.eveuserPK = new EveuserPK(username);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"frontendpage_auth.username", eveuserPK.getUsername()}, 
@@ -57,10 +36,6 @@ public class Frontendpage_authPK implements IFrontendpage_authPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IFrontendpage_auth.USERNAME, eveuserPK.getUsername()}, 
@@ -69,74 +44,38 @@ public class Frontendpage_authPK implements IFrontendpage_authPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return foreign key frontendpagePK, instance of IFrontendpagePK
-     */
     public IFrontendpagePK getFrontendpagePK() {
         return this.frontendpagePK;
     }
 
-    /**
-     * set foreign key frontendpagePK
-     * @param frontendpagePK: instance of IFrontendpagePK
-     */
     public void setFrontendpagePK(IFrontendpagePK frontendpagePK) {
         this.frontendpagePK = frontendpagePK;
     }
 
-    /**
-     * 
-     * @return foreign key eveuserPK, instance of IEveuserPK
-     */
     public IEveuserPK getEveuserPK() {
         return this.eveuserPK;
     }
 
-    /**
-     * set foreign key eveuserPK
-     * @param eveuserPK: instance of IEveuserPK
-     */
     public void setEveuserPK(IEveuserPK eveuserPK) {
         this.eveuserPK = eveuserPK;
     }
 
-    /**
-     * 
-     * @return username value
-     */
     public java.lang.String getUsername() {
         return this.eveuserPK.getUsername();
     }
 
-    /**
-     * set username value
-     * @param username: new value
-     */
     public void setUsername(java.lang.String username) {
         this.eveuserPK.setUsername(username);
     }
 
-    /**
-     * 
-     * @return frontendpage value
-     */
     public java.lang.String getFrontendpage() {
         return this.frontendpagePK.getName();
     }
 
-    /**
-     * set frontendpage value
-     * @param frontendpage: new value
-     */
     public void setFrontendpage(java.lang.String frontendpage) {
         this.frontendpagePK.setName(frontendpage);
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         if(getUsername()!=null) key += getUsername().length() + "_" + getUsername();
@@ -146,11 +85,6 @@ public class Frontendpage_authPK implements IFrontendpage_authPK {
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return Frontendpage_authPK constructed from keystring
-     */
     public static Frontendpage_authPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -168,11 +102,6 @@ public class Frontendpage_authPK implements IFrontendpage_authPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param frontendpage_authPK2: Frontendpage_authPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IFrontendpage_authPK frontendpage_authPK2) {
         boolean isequal = frontendpage_authPK2!=null;
         if(isequal) {

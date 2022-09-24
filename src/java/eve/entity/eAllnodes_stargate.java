@@ -1,13 +1,12 @@
 /*
- * eAllnodes_stargate.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IAllnodes_stargate;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Allnodes_stargate
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Allnodes_stargate Entity
- * 
- * @author Franky Laseure
- */
 public class eAllnodes_stargate extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Allnodes_stargatePK allnodes_stargatePK;
@@ -43,24 +32,8 @@ public class eAllnodes_stargate extends AbstractEntity implements eveDatabasepro
     private long to_system;
     private boolean deadend;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "allnodes_stargate";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IAllnodes_stargate.fieldnames[fieldconstant-1];
     }
@@ -69,6 +42,20 @@ public class eAllnodes_stargate extends AbstractEntity implements eveDatabasepro
         return IAllnodes_stargate.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eAllnodes_stargate.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eAllnodes_stargate.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eAllnodes_stargate() {
     }
 
@@ -80,7 +67,6 @@ public class eAllnodes_stargate extends AbstractEntity implements eveDatabasepro
         this.allnodes_stargatePK = allnodes_stargatePK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.allnodes_stargatePK == null;
     }
@@ -109,9 +95,6 @@ public class eAllnodes_stargate extends AbstractEntity implements eveDatabasepro
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Allnodes_stargatePK
-     */
     @Override
     public Allnodes_stargatePK getPrimaryKey() {
         return this.allnodes_stargatePK;

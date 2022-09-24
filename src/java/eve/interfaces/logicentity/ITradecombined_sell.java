@@ -1,9 +1,7 @@
 /*
- * ITradecombined_sell.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.interfaces.logicentity;
@@ -21,14 +19,6 @@ import java.sql.SQLException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Entity Interface ITradecombined_sell
- *
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public interface ITradecombined_sell extends LogicEntity {
 
     public ITradecombined_sellPK getPrimaryKey();
@@ -66,52 +56,20 @@ public interface ITradecombined_sell extends LogicEntity {
 //Put custom variables here
 //Custom code, do not change this line
 
-    /**
-     * 
-     * @return amount value
-     */
     public long getAmount();
 
-    /**
-     * set amount value
-     * @param amount: new value
-     */
     public void setAmount(long amount);
 
-    /**
-     * 
-     * @return buy_order_value value
-     */
     public double getBuy_order_value();
 
-    /**
-     * set buy_order_value value
-     * @param buy_order_value: new value
-     */
     public void setBuy_order_value(double buy_order_value);
 
-    /**
-     * 
-     * @return sell_order_value value
-     */
     public double getSell_order_value();
 
-    /**
-     * set sell_order_value value
-     * @param sell_order_value: new value
-     */
     public void setSell_order_value(double sell_order_value);
 
-    /**
-     * 
-     * @return profit value
-     */
     public double getProfit();
 
-    /**
-     * set profit value
-     * @param profit: new value
-     */
     public void setProfit(double profit);
 
     

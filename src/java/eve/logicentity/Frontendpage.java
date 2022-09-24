@@ -1,9 +1,7 @@
 /*
- * Frontendpage.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.logicentity;
@@ -26,40 +24,18 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-/**
- * Entity class Frontendpage
- *
- * Attributes: Database independent SQL-construction strings adjusments
- * extended attributes and methods possibility:
- * table level programming is done here
- *
- * @author Franky Laseure
- */
 public class Frontendpage extends eve.entity.eFrontendpage implements IFrontendpage {
 
 //Custom code, do not change this line
 //Custom code, do not change this line
 
-    /**
-     * Constructor
-     * Creates an empty Frontendpage entity
-     */
     public Frontendpage() {
     }
     
-    /**
-     * Constructor
-     * build an empty Frontendpage entity with initialized field values
-     */
     public Frontendpage(java.lang.String name) {
         super(name);
     }
 
-    /**
-     * Constructor
-     * build an empty Frontendpage entity with initialized Primarykey parameter
-     * @param frontendpagePK: Frontendpage Primarykey
-     */
     public Frontendpage(FrontendpagePK frontendpagePK) {
         super(frontendpagePK);
     }

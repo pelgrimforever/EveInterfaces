@@ -1,13 +1,12 @@
 /*
- * eShipfitmodule.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,45 +18,19 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IShipfitmodule;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Shipfitmodule
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Shipfitmodule Entity
- * 
- * @author Franky Laseure
- */
 public class eShipfitmodule extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected ShipfitmodulePK shipfitmodulePK;
     private int amount;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "shipfitmodule";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IShipfitmodule.fieldnames[fieldconstant-1];
     }
@@ -66,6 +39,20 @@ public class eShipfitmodule extends AbstractEntity implements eveDatabasepropert
         return IShipfitmodule.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eShipfitmodule.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eShipfitmodule.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eShipfitmodule() {
     }
 
@@ -77,7 +64,6 @@ public class eShipfitmodule extends AbstractEntity implements eveDatabasepropert
         this.shipfitmodulePK = shipfitmodulePK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.shipfitmodulePK == null;
     }
@@ -103,9 +89,6 @@ public class eShipfitmodule extends AbstractEntity implements eveDatabasepropert
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return ShipfitmodulePK
-     */
     @Override
     public ShipfitmodulePK getPrimaryKey() {
         return this.shipfitmodulePK;

@@ -1,9 +1,7 @@
 /*
- * Stargatesearch.java
- *
  * Created on Feb 29, 2012, 18:15 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.searchentity;
@@ -18,11 +16,6 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
-/**
- * Search class for Stargate table
- * construct sql where part and parameter array from search parameters
- * @author Franky Laseure
- */
 public class Stargatesearch extends Tablesearch implements IStargatesearch {
 
     Numbersearch id = new Numbersearch("stargate.id");
@@ -39,35 +32,19 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
     Foreignkeysearch systemTo_systemsearcher = new Foreignkeysearch("system", IStargate.systemTo_systemPKfields, IStargate.systemTo_systemFKfields);
 //external foreign keys
 
-    /**
-     * @return tablename
-     */
     public String getTable() {
         return Stargate.table;
     }
 
-    /**
-     * Constructor
-     * add IFieldsearcher classes for all relevant fields
-     */
     public Stargatesearch() {
         setFieldsearchers();
     }
 
-    /**
-     * Constructor
-     * add IFieldsearcher classes for all relevant fields
-     * set andor parameter
-     * @param andor: containts AND or OR contant, indicates all conditions must apply or only one
-     */
     public Stargatesearch(byte andor) {
         super(andor);
         setFieldsearchers();
     }
 
-    /**
-     * add IFieldsearcher classes for all relevant fields
-     */
     private void setFieldsearchers() {
         addFieldsearcher(id);
         addFieldsearcher(to_stargate);
@@ -82,182 +59,86 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
         addKeysearcher(systemTo_systemsearcher);
     }
 
-    /**
-     * add a primary key instance to search for
-     * @param stargatePK: Stargate primery key
-     */
     public void addPrimarykey(IStargatePK stargatePK) {
         super.addPrimarykey(stargatePK);
     }
 
-    /**
-     * add Numeric search values for field id, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void id(long[] values, byte[] operators) {
         addNumbervalues(id, values, operators);
     }
     
-    /**
-     * add Numeric search values for field id
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void id(long[] values, byte[] operators, byte andor) {
         addNumbervalues(id, values, operators);
         id.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field to_stargate, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void to_stargate(Double[] values, byte[] operators) {
         addNumbervalues(to_stargate, values, operators);
     }
     
-    /**
-     * add Numeric search values for field to_stargate
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void to_stargate(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(to_stargate, values, operators);
         to_stargate.setAndoroperator(andor);
     }
     
-    /**
-     * add String search values for field name, default OR and LIKE operators are used
-     * @param values: Array of String search values
-     */
     public void name(String[] values) {
         addStringvalues(name, values);
     }
     
-    /**
-     * add String search values for field name
-     * @param values: Array of String search values
-     * @param andor; AND/OR constant
-     * @param compare: EQUAL/LIKE constant
-     */
     public void name(String[] values, byte compare, byte andor) {
         addStringvalues(name, values);
         name.setCompareoperator(compare);
         name.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field x, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void x(Double[] values, byte[] operators) {
         addNumbervalues(x, values, operators);
     }
     
-    /**
-     * add Numeric search values for field x
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void x(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(x, values, operators);
         x.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field y, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void y(Double[] values, byte[] operators) {
         addNumbervalues(y, values, operators);
     }
     
-    /**
-     * add Numeric search values for field y
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void y(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(y, values, operators);
         y.setAndoroperator(andor);
     }
     
-    /**
-     * add Numeric search values for field z, default OR operator is used
-     * @param values: Array of numeric search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void z(Double[] values, byte[] operators) {
         addNumbervalues(z, values, operators);
     }
     
-    /**
-     * add Numeric search values for field z
-     * @param values: Array of String search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void z(Double[] values, byte[] operators, byte andor) {
         addNumbervalues(z, values, operators);
         z.setAndoroperator(andor);
     }
     
-    /**
-     * add Boolean search values for field isconstellationborder
-     * @param value: true or false
-     */
     public void isconstellationborder(Boolean value) {
         addBooleanvalue(isconstellationborder, value);
     }
     
-    /**
-     * add Boolean search values for field isregionborder
-     * @param value: true or false
-     */
     public void isregionborder(Boolean value) {
         addBooleanvalue(isregionborder, value);
     }
     
-    /**
-     * add Date search values for field downloaddate, default OR operator is used
-     * @param values: Array of date search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     */
     public void downloaddate(Date[] values, byte[] operators) {
         addDatevalues(downloaddate, values, operators);
     }
     
-    /**
-     * add Date search values for field downloaddate
-     * @param values: Array of date search values
-     * @param operators: Array of byte contants for comparison (= < <= > >=)
-     * @param andor; AND/OR constant
-     */
     public void downloaddate(Date[] values, byte[] operators, byte andor) {
         addDatevalues(downloaddate, values, operators);
         downloaddate.setAndoroperator(andor);
     }
     
-    /**
-     * set foreign key subsearch systemSystem ISystemsearch
-     * @param systemsearch: ISystemsearch
-     */
     public void systemSystem(ISystemsearch systemsearch) {
         systemSystemsearcher.setTablesearch(systemsearch);
     }
     
-    /**
-     * get foreign key subsearch systemSystem ISystemsearch
-     * @return Tablesearch for Stargate
-     */
     public ISystemsearch getSystemsystemsearch() {
         if(systemSystemsearcher.used()) {
             return (ISystemsearch)systemSystemsearcher.getTablesearches().get(0);
@@ -266,27 +147,14 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
         }
     }
 
-    /**
-     * force to return inner join statement
-     * ignore if systemSystemsearcher is not used
-     * @return inner join statement
-     */
     public String getSystemsystemInnerjoin() {
         return systemSystemsearcher.getInnerjoin();
     }
 
-    /**
-     * set foreign key subsearch systemTo_system ISystemsearch
-     * @param systemsearch: ISystemsearch
-     */
     public void systemTo_system(ISystemsearch systemsearch) {
         systemTo_systemsearcher.setTablesearch(systemsearch);
     }
     
-    /**
-     * get foreign key subsearch systemTo_system ISystemsearch
-     * @return Tablesearch for Stargate
-     */
     public ISystemsearch getSystemto_systemsearch() {
         if(systemTo_systemsearcher.used()) {
             return (ISystemsearch)systemTo_systemsearcher.getTablesearches().get(0);
@@ -295,11 +163,6 @@ public class Stargatesearch extends Tablesearch implements IStargatesearch {
         }
     }
 
-    /**
-     * force to return inner join statement
-     * ignore if systemTo_systemsearcher is not used
-     * @return inner join statement
-     */
     public String getSystemto_systemInnerjoin() {
         return systemTo_systemsearcher.getInnerjoin();
     }

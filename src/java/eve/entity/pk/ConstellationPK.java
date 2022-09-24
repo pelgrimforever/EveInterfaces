@@ -1,9 +1,7 @@
 /*
- * ConstellationPK.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 9.5.2022 11:11
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity.pk;
@@ -17,36 +15,17 @@ import java.sql.Timestamp;
 import db.SQLparameters;
 import db.Entityvalues;
 
-/**
- * Primarykey class ConstellationPK
- * 
- * Attributes: primary key fields and foreign keys
- * Methods: conversion to and from string for use in GUI
- * @author Franky Laseure
- */
 public class ConstellationPK implements IConstellationPK {
 
     private long id;
   
-    /** 
-     * Constructor
-     * Creates an empty ConstellationPK
-     */
     public ConstellationPK() {
     }
 
-    /**
-     * Constructor
-     * build an empty ConstellationPK with initialized field values
-     */
     public ConstellationPK(long id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldname, value) as a SQLparameters object
-     */
     public SQLparameters getSQLprimarykey() {
         Object[][] keyfields = { 
             {"constellation.id", id}
@@ -54,10 +33,6 @@ public class ConstellationPK implements IConstellationPK {
         return new SQLparameters(keyfields);
     }
 
-    /**
-     * 
-     * @return primarykey fields (fieldreference, value) as Entityvalues
-     */
     public Entityvalues getPrimarykeyvalues() {
         Object[][] keyfields = { 
             {IConstellation.ID, id}
@@ -65,37 +40,20 @@ public class ConstellationPK implements IConstellationPK {
         return new Entityvalues(keyfields);
     }
 
-    /**
-     * 
-     * @return id value
-     */
     public long getId() {
         return this.id;
     }
 
-    /**
-     * set id value
-     * @param id: new value
-     */
     public void setId(long id) {
         this.id = id;
     }
 
-    /**
-     * 
-     * @return primary key in one formatted string
-     */
     public String getKeystring() {
         String key = "";
         key += getId();
         return key;
     }
 
-    /**
-     * 
-     * @param keystring: formated string from getKeystring() method
-     * @return ConstellationPK constructed from keystring
-     */
     public static ConstellationPK getKey(String keystring) {
         if(keystring==null || keystring.length()==0) return null;
         else {
@@ -111,11 +69,6 @@ public class ConstellationPK implements IConstellationPK {
         }
     }
 
-    /**
-     * compare this primary key with second primary key
-     * @param constellationPK2: ConstellationPK instance
-     * @return true if all fields and foreign keys are equal
-     */
     public boolean equals(IConstellationPK constellationPK2) {
         boolean isequal = constellationPK2!=null;
         if(isequal) {

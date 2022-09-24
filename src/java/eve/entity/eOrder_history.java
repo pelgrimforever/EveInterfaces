@@ -1,13 +1,12 @@
 /*
- * eOrder_history.java
- *
  * Created on March 26, 2007, 5:44 PM
- * Generated on 14.5.2022 11:24
- *
+ * Generated on 23.8.2022 15:18
+ * @author Franky Laseure
  */
 
 package eve.entity;
 
+import eve.eveDatabaseproperties;
 import data.interfaces.db.AbstractEntity;
 import data.interfaces.db.Entity;
 import data.interfaces.db.Filedata;
@@ -19,22 +18,12 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Iterator;
 
-import eve.eveDatabaseproperties;
 import eve.entity.pk.*;
 import eve.interfaces.logicentity.IOrder_history;
 import eve.interfaces.entity.pk.*;
 import db.Entityvalues;
 import db.SQLparameters;
 
-/**
- * Entity class Order_history
- * 
- * Attributes: primary key, foreign keys en fields
- * Attributes: Database independent SQL-construction strings
- * Conversion methods for java.sql.ResultSet ==> Order_history Entity
- * 
- * @author Franky Laseure
- */
 public class eOrder_history extends AbstractEntity implements eveDatabaseproperties, Entity {
 
     protected Order_historyPK order_historyPK;
@@ -44,24 +33,8 @@ public class eOrder_history extends AbstractEntity implements eveDatabasepropert
     private int volume;
     private int order_count;
 	  
-    @Override
-    public String getDbtool() {
-        return databasetool;
-    }
-    
-    @Override
-    public String getConnectionpool() {
-        return connectionpool;
-    }
-
     public static final String table = "order_history";
 	  
-    @Override
-    public String getTable() { return table; }
-
-    @Override
-    public String getClassName() { return this.getClass().getName(); };
-
     public String getFieldname(short fieldconstant) {
         return IOrder_history.fieldnames[fieldconstant-1];
     }
@@ -70,6 +43,20 @@ public class eOrder_history extends AbstractEntity implements eveDatabasepropert
         return IOrder_history.fieldtypes[fieldconstant-1];
     }
         
+    @Override
+    public String getDbtool() {
+        return eOrder_history.databasetool;
+    }
+    
+    @Override
+    public String getConnectionpool() {
+        return eOrder_history.connectionpool;
+    }
+    
+    public String getTable() { return table; }
+
+    public String getClassName() { return this.getClass().getName(); };
+	  
     public eOrder_history() {
     }
 
@@ -81,7 +68,6 @@ public class eOrder_history extends AbstractEntity implements eveDatabasepropert
         this.order_historyPK = order_historyPK;
     }
 
-    @Override
     public boolean isEmpty() {
         return this.order_historyPK == null;
     }
@@ -111,9 +97,6 @@ public class eOrder_history extends AbstractEntity implements eveDatabasepropert
         return this.getPrimaryKey();
     }
   
-    /**
-     * @return Order_historyPK
-     */
     @Override
     public Order_historyPK getPrimaryKey() {
         return this.order_historyPK;
