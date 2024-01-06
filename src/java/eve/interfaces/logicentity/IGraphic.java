@@ -1,6 +1,6 @@
 /*
  * Created on March 26, 2007, 5:44 PM
- * Generated on 23.8.2022 15:18
+ * Generated on 31.11.2022 15:34
  * @author Franky Laseure
  */
 
@@ -36,7 +36,7 @@ public interface IGraphic extends LogicEntity {
     public static final int SIZE_COLLISION_FILE = 150;
     public static final int SIZE_GRAPHIC_FILE = 75;
     public static final int SIZE_ICON_FOLDER = 50;
-    public static final int SIZE_SOF_DNA = 50;
+    public static final int SIZE_SOF_DNA = 200;
     public static final int SIZE_SOF_FATION_NAME = 50;
     public static final int SIZE_SOF_HULL_NAME = 50;
     public static final int SIZE_SOF_RACE_NAME = 50;

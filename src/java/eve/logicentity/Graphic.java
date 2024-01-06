@@ -1,6 +1,6 @@
 /*
  * Created on March 26, 2007, 5:44 PM
- * Generated on 23.8.2022 15:18
+ * Generated on 31.11.2022 15:11
  * @author Franky Laseure
  */
 
@@ -41,9 +41,11 @@ public class Graphic extends eve.entity.eGraphic implements IGraphic {
     }
 
 //Custom code, do not change this line
-    /**
-     * @return Entity string representation
-     */
+    @Override
+    public void setSof_dna(java.lang.String sof_dna) {
+	if(sof_dna.length()<201) this.setSof_dna(sof_dna);
+    }
+
     public String toString() {
         return super.toString();
     }
